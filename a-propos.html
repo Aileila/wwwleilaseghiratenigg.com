@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>À propos — Leila Seghirate-Nigg</title>
+  <meta name="description" content="À propos de Leila Seghirate-Nigg — pédagogue, conceptrice de dispositifs IA, vibe coder."/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%233333CC'/%3E%3Ctext x='16' y='22' font-family='serif' font-weight='700' font-size='20' fill='white' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Portfolio · Leila Seghirate-Nigg"/>
+  <meta property="og:title" content="À propos — Leila Seghirate-Nigg"/>
+  <meta property="og:description" content="À propos de Leila Seghirate-Nigg — pédagogue, conceptrice de dispositifs IA, vibe coder."/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="À propos — Leila Seghirate-Nigg"/>
+  <meta name="twitter:description" content="À propos de Leila Seghirate-Nigg — pédagogue, conceptrice de dispositifs IA, vibe coder."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2A2A34","primary-container": "#3333CC","on-primary": "#ffffff",
+            "on-primary-container": "#EDE9E3",
+            "background": "#fbf9f9","on-background": "#2A2A34","surface": "#fbf9f9",
+            "on-surface": "#2A2A34","surface-variant": "#e3e2e2","on-surface-variant": "#2A2A34",
+            "surface-container-lowest": "#ffffff","surface-container-low": "#f5f3f3",
+            "surface-container": "#efeded","surface-container-high": "#e9e8e7",
+            "outline": "#948F8A","outline-variant": "#948F8A","surface-tint": "#3333CC"
+          },
+          fontFamily: {
+            "headline": ["Noto Serif","serif"],"body": ["Manrope","sans-serif"],"label": ["Manrope","sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Brand Interaction Matrix - official palette lock */
+    :root {
+      --brand-blue: #3333CC;
+      --brand-cream: #EDE9E3;
+      --brand-ink: #2A2A34;
+      --brand-taupe: #948F8A;
+    }
+    .bg-primary-container { background-color: var(--brand-blue) !important; }
+    .hover\:bg-primary:hover { background-color: var(--brand-ink) !important; }
+    .text-primary-container { color: var(--brand-blue) !important; }
+    .hover\:text-primary-container:hover { color: var(--brand-blue) !important; }
+    .border-primary-container { border-color: var(--brand-blue) !important; }
+    .hover\:border-primary-container:hover { border-color: var(--brand-blue) !important; }
+    .border-outline-variant { border-color: var(--brand-taupe) !important; }
+    .text-on-surface-variant { color: var(--brand-ink) !important; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
+    .skip-link { position:absolute;top:-40px;left:1rem;background:#3333CC;color:#fff;padding:.5rem 1rem;border-radius:4px;font-weight:600;z-index:100;transition:top .2s; }
+    .skip-link:focus { top:1rem; }
+    #mobile-menu { display:none; }
+    #mobile-menu.open { display:block; }
+    .skill-pill {
+      display:inline-flex; align-items:center; gap:.45rem;
+      background:#fff; border:1.5px solid #948F8A;
+      border-radius:999px; padding:.35rem 1rem;
+      font-size:.8rem; font-weight:600; color:#2A2A34;
+      font-family:Manrope,sans-serif;
+      transition:border-color .2s, color .2s;
+    }
+    .skill-pill:hover { border-color:#3333CC; color:#3333CC; }
+    .skill-pill .dot { width:6px;height:6px;border-radius:50%;background:#3333CC;flex-shrink:0; }
+    .timeline-item { position:relative;padding-left:2rem; }
+    .timeline-item::before {
+      content:''; position:absolute; left:.5rem; top:.6rem; bottom:-1.5rem;
+      width:1px; background:#948F8A;
+    }
+    .timeline-item:last-child::before { display:none; }
+    .timeline-dot {
+      position:absolute; left:0; top:.5rem;
+      width:1.1rem; height:1.1rem; border-radius:50%;
+      background:#3333CC; border:2px solid #fff;
+      box-shadow:0 0 0 2px #948F8A;
+    }
+
+    .editorial-portrait {
+      display: block;
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      object-position: top center;
+      aspect-ratio: 4 / 5;
+      box-shadow: 0 18px 48px rgba(27,28,28,.13);
+      filter: saturate(0.78) brightness(1.03) contrast(0.96);
+      transition: filter .4s ease;
+    }
+    .editorial-portrait:hover {
+      filter: saturate(0.90) brightness(1.04) contrast(0.97);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased min-h-screen flex flex-col">
+
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- Nav -->
+  <nav class="sticky top-0 z-50 backdrop-blur-md border-b border-surface-variant" style="background:rgba(237,233,227,0.95);">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="font-headline font-bold text-xl tracking-tight text-on-surface hover:text-primary-container transition-colors">Leila Seghirate-Nigg</a>
+        <div class="hidden sm:flex sm:items-center sm:space-x-8">
+          <a href="offre.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Expertise</a>
+          <a href="a-propos.html" class="text-primary-container text-sm font-medium border-b-2 border-primary-container pb-1">À propos</a>
+          <a href="index.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Réalisations</a>
+          <a href="methodologie.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Méthodologie</a>
+          <a href="frameworks.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Frameworks</a>
+          <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" class="bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Me contacter</a>
+        </div>
+        <button id="hamburger" class="sm:hidden p-2 rounded-md text-on-surface hover:bg-surface-container transition-colors" aria-label="Menu" aria-expanded="false">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="sm:hidden pb-4 border-t border-surface-variant mt-1">
+        <div class="flex flex-col gap-2 pt-3">
+          <a href="index.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Réalisations</a>
+          <a href="methodologie.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Méthodologie</a>
+          <a href="frameworks.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Frameworks</a>
+          <a href="a-propos.html" class="px-3 py-2 text-primary-container bg-surface-container-low rounded-md text-sm font-medium">À propos</a>
+          <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" class="mt-2 mx-3 text-center bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Me contacter</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="flex-grow">
+
+    <!-- Hero -->
+    <section class="relative overflow-hidden border-b border-surface-variant" style="height:520px;">
+      <!-- Image plein largeur -->
+      <img src="assets/images/heroes/image.webp" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover object-center"/>
+      <!-- Overlay sombre zone texte -->
+      <div class="absolute inset-0" style="background:linear-gradient(to right, rgba(15,15,15,0.78) 0%, rgba(15,15,15,0.55) 38%, rgba(15,15,15,0.15) 60%, transparent 100%);"></div>
+      <!-- Contenu -->
+      <div class="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 py-24 md:py-32">
+        <span class="text-xs font-bold tracking-[.18em] uppercase text-[#EDE9E3] font-label mb-4 block">À propos</span>
+        <h1 class="font-headline text-5xl md:text-6xl text-white mb-6 leading-[1.1]">
+          Leila<br/><span class="text-[#EDE9E3] italic">Seghirate-Nigg</span>
+        </h1>
+        <p class="text-white/75 text-xl leading-relaxed mb-8 max-w-lg">
+          <!-- À affiner avec toi -->
+          Pédagogue, conceptrice de dispositifs IA, vibe coder. Je conçois des expériences d'apprentissage augmentées par l'intelligence artificielle.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="index.html" class="inline-flex items-center gap-2 bg-primary-container text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-primary transition-colors">
+            Voir mes réalisations
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 border border-white/40 text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white/10 transition-colors">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 py-20">
+
+      <!-- Bio principale -->
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-12 mb-20 items-start">
+        <div>
+          <h2 class="font-headline text-3xl font-bold text-on-surface mb-6 pb-4 border-b border-surface-variant">Ma <em>démarche</em></h2>
+
+          <div class="space-y-5 text-on-surface-variant leading-relaxed text-[1.05rem]">
+            <p>
+              <span class="block text-on-surface italic font-headline text-xl mb-3">"L'apprentissage n'est pas une obligation mais une opportunité. C'est une chance de grandir, de découvrir de nouvelles choses et de se réinventer."</span>
+              <span class="block text-sm uppercase tracking-[.14em] text-outline font-label mb-4">Wendy Schaetzel LesKo</span>
+              Je me suis construite avec cette idée en fil conducteur.</p>
+            <p class="mt-4">J'ai grandi entre Alger, Nice, Brazzaville, Londres et Bruxelles, une trajectoire cosmopolite qui m'a appris <strong class="font-headline not-italic font-semibold text-xl" style="color:#3333CC;">l'adaptation</strong>, mais surtout le goût des <strong class="font-headline not-italic font-semibold text-xl" style="color:#3333CC;">mondes inconnus</strong> et une <strong class="font-headline not-italic font-semibold text-xl" style="color:#3333CC;">curiosité</strong> tenace pour ce qui reste à comprendre. Après des études en information-communication et marketing, puis une spécialisation en dynamique des organisations et ressources humaines, j'ai passé près de vingt ans dans le <strong class="text-on-surface font-semibold">marketing stratégique international</strong> (Pfizer, Renault/Dacia, Hewlett-Packard, MoneyGram), puis par amour pour l'apprentissage et la transmission dans le monde de la <strong class="text-on-surface font-semibold">formation pour adultes</strong>.
+            </p>
+            <p class="font-headline text-xl text-on-surface italic leading-relaxed mt-6">
+              Aujourd'hui, j'ai déplacé ce même regard — celui qui relie vision, expérience et impact — vers <strong class="not-italic font-semibold">la pédagogie, les récits, et l'IA générative</strong>.
+            </p>
+          </div>
+        </div>
+
+        <!-- Colonne éditoriale : photo + CTAs -->
+        <div class="flex flex-col gap-5">
+          <figure aria-label="Portrait de Leila Seghirate-Nigg" class="m-0">
+              <img src="assets/images/logos/leila%20seghirate%20Photo%20Profil.svg"
+                 alt="Portrait de Leila Seghirate-Nigg"
+                 class="editorial-portrait"
+                 loading="lazy"/>
+          </figure>
+          <a href="mailto:seghirate@gmail.com" class="flex items-center justify-center gap-2 bg-primary-container text-white rounded-2xl p-5 font-semibold text-sm hover:bg-primary transition-colors">
+            <span class="material-symbols-outlined text-lg">mail</span>
+            Me contacter par e-mail
+          </a>
+          <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 bg-surface-container-lowest border border-surface-variant text-on-surface rounded-2xl p-5 font-semibold text-sm hover:border-primary-container hover:text-primary-container transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            Profil LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <!-- 3 piliers — cartes avec pictos -->
+      <div class="mb-24 pt-14 border-t border-surface-variant">
+        <h2 class="font-headline text-3xl font-bold text-on-surface mb-8">Ce que je crée <em>concrètement</em></h2>
+
+        <!-- Grande image -->
+        <img src="assets/images/design/icones ce que je cree.png" alt="IA créative, pédagogie, stratégie" class="w-full max-w-3xl mx-auto block mb-10 object-contain" loading="lazy"/>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <!-- Pédagogie -->
+          <div class="bg-[#EDE9E3] rounded-2xl p-6 flex flex-col gap-4">
+            <div>
+              <h4 class="font-headline text-base text-on-surface mb-2 leading-snug">Expériences apprenantes <strong>immersives</strong></h4>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Parcours narratifs, scénarios à embranchements, design émotionnel — former autrement qu'avec des slides pour aider les apprenants à décider, ressentir, comprendre.
+              </p>
+            </div>
+          </div>
+
+          <!-- Intelligence artificielle -->
+          <div class="bg-[#EDE9E3] rounded-2xl p-6 flex flex-col gap-4">
+            <div>
+              <h4 class="font-headline text-base text-on-surface mb-2 leading-snug">Architecture pédagogique <strong>augmentée par l'IA</strong></h4>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Du prompt engineering à l'automatisation (agents Notion, pipelines script → visuel → voix → vidéo) — pour les équipes L&amp;D qui veulent gagner en vitesse sans perdre en cohérence.
+              </p>
+            </div>
+          </div>
+
+          <!-- Stratégie -->
+          <div class="bg-[#EDE9E3] rounded-2xl p-6 flex flex-col gap-4">
+            <div>
+              <h4 class="font-headline text-base text-on-surface mb-2 leading-snug">Stratégie d'<strong>adoption</strong> et de transmission</h4>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Ateliers, acculturation, accompagnement (FR/EN) pour directions Innovation et RH — installer des usages concrets, mesurables et réellement appropriés par les équipes.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Compétences -->
+      <div class="mb-28">
+        <h2 class="font-headline text-3xl text-on-surface mb-10 pb-4 border-t border-surface-variant pt-14">Domaines d'expertise</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- Colonne 1 -->
+          <div>
+            <h3 class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label mb-4">Pédagogie &amp; design learning</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-pill"><span class="dot"></span>Ingénierie pédagogique</span>
+              <span class="skill-pill"><span class="dot"></span>Expérience apprenant</span>
+              <span class="skill-pill"><span class="dot"></span>Formation digitale</span>
+              <span class="skill-pill"><span class="dot"></span>Scénarisation LMS</span>
+              <span class="skill-pill"><span class="dot"></span>Méthode ADDIE</span>
+              <span class="skill-pill"><span class="dot"></span>Storyboard & narration</span>
+              <span class="skill-pill"><span class="dot"></span>Classes virtuelles</span>
+              <span class="skill-pill"><span class="dot"></span>Blended learning</span>
+              <span class="skill-pill"><span class="dot"></span>Coaching d'intervenants</span>
+            </div>
+          </div>
+          <!-- Colonne 2 -->
+          <div>
+            <h3 class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label mb-4">IA &amp; technologie</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-pill"><span class="dot"></span>Prompt engineering</span>
+              <span class="skill-pill"><span class="dot"></span>Vibe coding</span>
+              <span class="skill-pill"><span class="dot"></span>Automatisation Python</span>
+              <span class="skill-pill"><span class="dot"></span>Midjourney / génération d'images</span>
+              <span class="skill-pill"><span class="dot"></span>Claude / ChatGPT</span>
+              <span class="skill-pill"><span class="dot"></span>Runway · CapCut · Heygen</span>
+              <span class="skill-pill"><span class="dot"></span>Krea AI · Suno</span>
+              <span class="skill-pill"><span class="dot"></span>SCORM / xAPI</span>
+            </div>
+          </div>
+          <!-- Colonne 3 -->
+          <div>
+            <h3 class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label mb-4">Création &amp; outils</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-pill"><span class="dot"></span>Canva API</span>
+              <span class="skill-pill"><span class="dot"></span>HTML / CSS / JS</span>
+              <span class="skill-pill"><span class="dot"></span>Three.js / WebGL</span>
+              <span class="skill-pill"><span class="dot"></span>Articulate Storyline</span>
+              <span class="skill-pill"><span class="dot"></span>iSpring</span>
+              <span class="skill-pill"><span class="dot"></span>Genially</span>
+              <span class="skill-pill"><span class="dot"></span>Notion AI</span>
+              <span class="skill-pill"><span class="dot"></span>Microsoft 365 Copilot</span>
+            </div>
+          </div>
+          <!-- Colonne 4 -->
+          <div>
+            <h3 class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label mb-4">Stratégie marketing &amp; marque</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-pill"><span class="dot"></span>Stratégie de marque</span>
+              <span class="skill-pill"><span class="dot"></span>Identité visuelle</span>
+              <span class="skill-pill"><span class="dot"></span>Ligne éditoriale</span>
+              <span class="skill-pill"><span class="dot"></span>Positionnement</span>
+              <span class="skill-pill"><span class="dot"></span>Brand storytelling</span>
+              <span class="skill-pill"><span class="dot"></span>Marketing de contenu</span>
+              <span class="skill-pill"><span class="dot"></span>Campagnes d'activation</span>
+              <span class="skill-pill"><span class="dot"></span>Marketing multi-pays</span>
+              <span class="skill-pill"><span class="dot"></span>Expérience utilisateur</span>
+              <span class="skill-pill"><span class="dot"></span>Pilotage par la data</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CTA final -->
+      <section id="form-contact" class="relative bg-surface py-8 mb-4">
+        <div class="relative mx-auto flex w-full max-w-3xl flex-col justify-between gap-y-6 border-y border-outline/40 bg-[radial-gradient(35%_80%_at_25%_0%,rgba(51,51,204,0.08),transparent)] px-4 py-8 sm:px-8">
+          <span aria-hidden="true" class="absolute -top-3 -left-3 z-10 text-primary-container text-xl leading-none">+</span>
+          <span aria-hidden="true" class="absolute -top-3 -right-3 z-10 text-primary-container text-xl leading-none">+</span>
+          <span aria-hidden="true" class="absolute -bottom-3 -left-3 z-10 text-primary-container text-xl leading-none">+</span>
+          <span aria-hidden="true" class="absolute -right-3 -bottom-3 z-10 text-primary-container text-xl leading-none">+</span>
+
+          <div class="-inset-y-6 pointer-events-none absolute left-0 w-px border-l border-outline/40"></div>
+          <div class="-inset-y-6 pointer-events-none absolute right-0 w-px border-r border-outline/40"></div>
+          <div class="pointer-events-none absolute top-0 left-1/2 -z-10 h-full border-l border-dashed border-outline/50"></div>
+
+          <div class="space-y-1 text-center">
+            <h2 class="font-headline text-2xl font-bold text-on-surface">Parlons de votre projet de formation.</h2>
+            <p class="text-sm text-on-surface-variant">Réponse sous 24h. Aucun engagement.</p>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-2 sm:flex-row">
+            <a href="mailto:seghirate@gmail.com" class="inline-flex items-center justify-center rounded-full border border-outline/60 px-4 py-2 text-sm font-semibold text-on-surface hover:border-primary-container hover:text-primary-container transition-colors">Envoyer un message</a>
+            <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1 rounded-full bg-primary-container px-4 py-2 text-sm font-semibold text-white hover:bg-primary transition-colors">Prendre rendez-vous <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="bg-surface-container border-t border-surface-variant">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <h3 class="font-headline text-xl mb-1 text-on-surface">Leila Seghirate-Nigg</h3>
+          <p class="text-xs font-bold tracking-[.14em] uppercase text-primary-container font-label mb-3">LSN Consulting</p>
+          <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Architecte de systèmes pédagogiques IA compliant.</p>
+          <div class="flex gap-1.5 flex-wrap">
+            <span class="text-xs px-2.5 py-1 rounded-full border border-outline/30 text-on-surface-variant">IA Créative</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-outline/30 text-on-surface-variant">Expériences Immersives</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-outline/30 text-on-surface-variant">Marketing Formation</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold tracking-[.18em] uppercase text-on-surface mb-4 font-label">Navigation</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="offre.html" class="text-on-surface-variant hover:text-primary-container transition-colors">Expertise</a></li>
+            <li><a href="index.html" class="text-on-surface-variant hover:text-primary-container transition-colors">Réalisations</a></li>
+            <li><a href="a-propos.html" class="text-on-surface-variant hover:text-primary-container transition-colors">À propos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold tracking-[.18em] uppercase text-on-surface mb-4 font-label">Contact</h4>
+          <a href="mailto:seghirate@gmail.com" class="text-sm text-primary-container hover:underline">seghirate@gmail.com</a>
+          <div class="mt-4">
+            <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" target="_blank" rel="noopener noreferrer" class="text-on-surface-variant hover:text-primary-container transition-colors" aria-label="LinkedIn">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pt-6 border-t border-surface-variant text-center text-xs text-on-surface-variant">
+        <p>© 2026 Leila Seghirate-Nigg · LSN Consulting. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+      const m = document.getElementById('mobile-menu');
+      m.classList.toggle('open');
+      this.setAttribute('aria-expanded', m.classList.contains('open'));
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

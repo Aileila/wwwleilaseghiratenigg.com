@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestion de projet — Parcours MOOC (2022 & 2023) — Leila Seghirate-Nigg</title>
+  <meta name="description" content="Case study — Pilotage de production de parcours MOOC sur deux contextes clients (2022 First Finance et 2023 SKEMA), de la planification à la livraison SCORM."/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%233333CC'/%3E%3Ctext x='16' y='22' font-family='serif' font-weight='700' font-size='20' fill='white' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="Portfolio · Leila Seghirate-Nigg"/>
+  <meta property="og:title" content="Gestion de projet — Parcours MOOC (2022 &amp; 2023) — Leila Seghirate-Nigg"/>
+  <meta property="og:description" content="Case study — Pilotage de production de parcours MOOC sur deux contextes clients (2022 First Finance et 2023 SKEMA), de la planification à la livraison SCORM."/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Gestion de projet — Parcours MOOC (2022 &amp; 2023) — Leila Seghirate-Nigg"/>
+  <meta name="twitter:description" content="Case study — Pilotage de production de parcours MOOC sur deux contextes clients (2022 First Finance et 2023 SKEMA), de la planification à la livraison SCORM."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2A2A34","primary-container": "#3333CC","on-primary": "#ffffff",
+            "on-primary-container": "#EDE9E3","secondary": "#5f5e5e","secondary-container": "#e5e2e1",
+            "background": "#fbf9f9","on-background": "#2A2A34","surface": "#fbf9f9",
+            "on-surface": "#2A2A34","surface-variant": "#e3e2e2","on-surface-variant": "#2A2A34",
+            "surface-container-lowest": "#ffffff","surface-container-low": "#f5f3f3",
+            "surface-container": "#efeded","surface-container-high": "#e9e8e7",
+            "surface-container-highest": "#e3e2e2","outline": "#948F8A","outline-variant": "#948F8A",
+            "inverse-primary": "#EDE9E3","surface-tint": "#3333CC"
+          },
+          fontFamily: {
+            "display": ["Noto Serif","serif"],"headline": ["Noto Serif","serif"],
+            "body": ["Manrope","sans-serif"],"label": ["Manrope","sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Brand Interaction Matrix - official palette lock */
+    :root {
+      --brand-blue: #3333CC;
+      --brand-cream: #EDE9E3;
+      --brand-ink: #2A2A34;
+      --brand-taupe: #948F8A;
+    }
+    .bg-primary-container { background-color: var(--brand-blue) !important; }
+    .hover\:bg-primary:hover { background-color: var(--brand-ink) !important; }
+    .text-primary-container { color: var(--brand-blue) !important; }
+    .hover\:text-primary-container:hover { color: var(--brand-blue) !important; }
+    .border-primary-container { border-color: var(--brand-blue) !important; }
+    .hover\:border-primary-container:hover { border-color: var(--brand-blue) !important; }
+    .border-outline-variant { border-color: var(--brand-taupe) !important; }
+    .text-on-surface-variant { color: var(--brand-ink) !important; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
+    .skip-link { position:absolute;top:-40px;left:1rem;background:#3333CC;color:#fff;padding:.5rem 1rem;border-radius:4px;font-weight:600;z-index:100;transition:top .2s;font-family:Manrope,sans-serif; }
+    .skip-link:focus { top:1rem; }
+    #mobile-menu { display:none; }
+    #mobile-menu.open { display:block; }
+    #lightbox { display:none; position:fixed; inset:0; z-index:200; background:rgba(15,15,15,.88); align-items:center; justify-content:center; }
+    #lightbox.open { display:flex; }
+    #lightbox img { max-width:90vw; max-height:88vh; border-radius:12px; box-shadow:0 24px 64px rgba(0,0,0,.5); }
+    #lightbox-close { position:absolute; top:1.5rem; right:1.5rem; background:#fff; border:none; border-radius:50%; width:2.5rem; height:2.5rem; font-size:1.2rem; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased min-h-screen flex flex-col">
+
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <nav id="main-nav" class="sticky top-0 z-50 backdrop-blur-md border-b border-surface-variant" style="background:rgba(237,233,227,0.95);">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="../index.html" class="font-headline font-bold text-xl tracking-tight text-on-surface hover:text-primary-container transition-colors">Leila Seghirate-Nigg</a>
+        <div class="hidden sm:flex sm:items-center sm:space-x-8">
+          <a href="../offre.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Expertise</a>
+          <a href="../index.html" class="text-primary-container text-sm font-medium border-b-2 border-primary-container pb-1">Réalisations</a>
+          <a href="../methodologie.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Méthodologie</a>
+          <a href="../frameworks.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Frameworks</a>
+          <a href="../a-propos.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">À propos</a>
+          <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" class="bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Me contacter</a>
+        </div>
+        <button id="hamburger" class="sm:hidden p-2 rounded-md text-on-surface hover:bg-surface-container transition-colors" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="sm:hidden pb-4 border-t border-surface-variant mt-1">
+        <div class="flex flex-col gap-2 pt-3">
+          <a href="../offre.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Expertise</a>
+          <a href="../index.html" class="px-3 py-2 text-primary-container bg-surface-container-low rounded-md text-sm font-medium">Réalisations</a>
+          <a href="../methodologie.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Méthodologie</a>
+          <a href="../frameworks.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Frameworks</a>
+          <a href="../a-propos.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">À propos</a>
+          <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" class="mt-2 mx-3 text-center bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Me contacter</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="bg-surface-container-low border-b border-surface-variant px-4 sm:px-8 py-3">
+    <div class="max-w-[1200px] mx-auto">
+      <nav aria-label="Fil d'Ariane" class="text-sm text-on-surface-variant">
+        <a href="../index.html" class="hover:text-primary-container transition-colors">Réalisations</a>
+        <span class="mx-2 text-outline">/</span>
+        <span class="text-xs font-bold tracking-widest uppercase text-outline mr-2 font-label">Formation &amp; transmission</span>
+        <span class="text-on-surface font-medium">Gestion de projet Parcours MOOC</span>
+      </nav>
+    </div>
+  </div>
+
+  <main id="main" class="flex-grow">
+    <section class="bg-[#EDE9E3] border-b border-surface-variant px-4 sm:px-8 lg:px-16 py-20 md:py-28">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="inline-block text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label">Formation &amp; transmission</span>
+          <span class="text-outline text-xs">·</span>
+          <span class="text-xs text-outline font-label tracking-wider uppercase">Avant l'IA · Gestion de production</span>
+        </div>
+        <h1 class="font-headline text-4xl md:text-5xl text-on-surface mb-4 leading-tight">
+          Gestion de projet Parcours MOOC
+          <span class="block italic font-normal text-3xl md:text-4xl mt-2">Comparatif 2022 et 2023</span>
+        </h1>
+        <p class="text-on-surface-variant text-lg leading-relaxed max-w-2xl mt-6">
+          Pilotage de production sur toute la chaîne de valeur (coordination prestataires, experts contenus, tournages, design, intégration SCORM) avec deux contextes clients distincts : <strong class="text-on-surface">First Finance en 2022</strong> et <strong class="text-on-surface">SKEMA en 2023</strong>.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-8">
+          <span class="inline-flex items-center gap-1.5 bg-white border border-surface-variant text-on-surface text-xs font-semibold px-3 py-1.5 rounded-full"><span class="material-symbols-outlined text-primary-container" style="font-size:14px">event</span>2022 &amp; 2023</span>
+          <span class="inline-flex items-center gap-1.5 bg-white border border-surface-variant text-on-surface text-xs font-semibold px-3 py-1.5 rounded-full"><span class="material-symbols-outlined text-primary-container" style="font-size:14px">movie</span>Production multimédia</span>
+          <span class="inline-flex items-center gap-1.5 bg-white border border-surface-variant text-on-surface text-xs font-semibold px-3 py-1.5 rounded-full"><span class="material-symbols-outlined text-primary-container" style="font-size:14px">task_alt</span>Workflow + conformité</span>
+          <span class="inline-flex items-center gap-1.5 bg-white border border-surface-variant text-on-surface text-xs font-semibold px-3 py-1.5 rounded-full"><span class="material-symbols-outlined text-primary-container" style="font-size:14px">settings_slow_motion</span>SCORM</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="px-4 sm:px-8 lg:px-16 -mt-8 max-w-[1200px] mx-auto mb-20">
+      <div class="aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl border border-surface-variant bg-surface-container-highest cursor-zoom-in img-lightbox" data-src="../assets/images/pedagogie/mooc-gestion-hero.webp">
+        <img src="../assets/images/pedagogie/mooc-gestion-hero.webp" alt="Plan de projet de production MOOC"
+          class="w-full h-full object-cover object-top"
+          onerror="this.parentElement.innerHTML='<div class=\'flex flex-col items-center gap-3 text-outline p-12\'><span class=\'material-symbols-outlined text-5xl\'>image</span><span class=\'text-sm font-label\'>Ajoute ton image ici — assets/images/pedagogie/mooc-gestion-hero.webp</span></div>'"/>
+      </div>
+    </div>
+
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-20 p-6 bg-surface-container-lowest rounded-2xl border border-surface-variant">
+        <div class="text-center p-2">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Mandats</div>
+          <div class="font-semibold text-primary-container">2 projets</div>
+        </div>
+        <div class="text-center p-2 border-l border-surface-variant">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Période</div>
+          <div class="font-semibold text-primary-container">2022-2023</div>
+        </div>
+        <div class="text-center p-2 border-l border-surface-variant">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Livrables</div>
+          <div class="font-semibold text-primary-container">SCORM + vidéos</div>
+        </div>
+        <div class="text-center p-2 border-l border-surface-variant">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Rôle</div>
+          <div class="font-semibold text-primary-container">Cheffe de projet production</div>
+        </div>
+      </div>
+
+      <h2 class="font-headline text-3xl text-on-surface mb-8 pb-4 border-t border-surface-variant pt-12">Deux années, deux contextes</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <article class="bg-surface-container-lowest rounded-2xl border border-surface-variant overflow-hidden">
+          <div class="p-6 border-b border-surface-variant bg-primary-container/10">
+            <p class="text-xs font-bold tracking-widest uppercase text-outline font-label mb-2">2022</p>
+            <h3 class="font-headline text-2xl text-on-surface">First Finance</h3>
+          </div>
+          <div class="p-6 space-y-4 text-on-surface-variant">
+            <p>Création d'un parcours d'apprentissage MOOC permettant de valider <strong class="text-on-surface">15 heures de formation</strong> obligatoire pour le secteur banques et assurances.</p>
+            <p>Pilotage de la production avec coordination d'équipes pluridisciplinaires, planification des jalons qualité, workflows et checklists pour assurer conformité et délais.</p>
+            <div class="grid grid-cols-3 gap-3 pt-2">
+              <div class="rounded-lg border border-surface-variant p-3 text-center"><div class="text-lg font-bold text-primary-container">15h</div><div class="text-[11px] uppercase tracking-wide text-outline">Formation</div></div>
+              <div class="rounded-lg border border-surface-variant p-3 text-center"><div class="text-lg font-bold text-primary-container">12</div><div class="text-[11px] uppercase tracking-wide text-outline">SCORM</div></div>
+              <div class="rounded-lg border border-surface-variant p-3 text-center"><div class="text-lg font-bold text-primary-container">98</div><div class="text-[11px] uppercase tracking-wide text-outline">Vidéos</div></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-surface-container-lowest rounded-2xl border border-surface-variant overflow-hidden">
+          <div class="p-6 border-b border-surface-variant bg-primary-container/10">
+            <p class="text-xs font-bold tracking-widest uppercase text-outline font-label mb-2">2023</p>
+            <h3 class="font-headline text-2xl text-on-surface">SKEMA</h3>
+          </div>
+          <div class="p-6 space-y-4 text-on-surface-variant">
+            <p>Parcours certifiant format MOOC <strong class="text-on-surface">Fondamentaux du Digital Marketing</strong>, conçu pour des professionnels en exercice.</p>
+            <p>Pilotage intégral de la production multimédia : du script à la livraison SCORM, coordination des sessions studio, coaching intervenants et supervision design graphique.</p>
+            <div class="grid grid-cols-3 gap-3 pt-2">
+              <div class="rounded-lg border border-surface-variant p-3 text-center"><div class="text-lg font-bold text-primary-container">5h</div><div class="text-[11px] uppercase tracking-wide text-outline">Formation</div></div>
+              <div class="rounded-lg border border-surface-variant p-3 text-center"><div class="text-lg font-bold text-primary-container">40</div><div class="text-[11px] uppercase tracking-wide text-outline">SCORM</div></div>
+              <div class="rounded-lg border border-surface-variant p-3 text-center"><div class="text-lg font-bold text-primary-container">6</div><div class="text-[11px] uppercase tracking-wide text-outline">Vidéos</div></div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <h2 class="font-headline text-3xl text-on-surface mb-4 pb-4 border-t border-surface-variant pt-12">Aperçu visuel</h2>
+      <p class="text-on-surface-variant mb-8 max-w-2xl">Les deux versions sont intégrées dans la même page pour comparer le contexte et les livrables par année.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+        <figure class="rounded-xl overflow-hidden border border-surface-variant shadow-sm cursor-zoom-in img-lightbox group" data-src="../assets/images/pedagogie/mooc-gestion-2022.webp">
+          <div class="aspect-[16/11] bg-surface-container-highest overflow-hidden">
+            <img src="../assets/images/pedagogie/mooc-gestion-2022.webp" alt="Version 2022 First Finance"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.style.display='none'"/>
+          </div>
+          <figcaption class="px-4 py-3 text-xs text-on-surface-variant font-label bg-surface-container-lowest">Version 2022 — First Finance</figcaption>
+        </figure>
+        <figure class="rounded-xl overflow-hidden border border-surface-variant shadow-sm cursor-zoom-in img-lightbox group" data-src="../assets/images/pedagogie/mooc-gestion-2023.webp">
+          <div class="aspect-[16/11] bg-surface-container-highest overflow-hidden">
+            <img src="../assets/images/pedagogie/mooc-gestion-2023.webp" alt="Version 2023 SKEMA"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.style.display='none'"/>
+          </div>
+          <figcaption class="px-4 py-3 text-xs text-on-surface-variant font-label bg-surface-container-lowest">Version 2023 — SKEMA</figcaption>
+        </figure>
+      </div>
+
+      <div class="bg-primary-container/5 border border-primary-container/20 rounded-2xl p-10 mb-20">
+        <h2 class="font-headline text-2xl text-on-surface mb-6">Ce qu'il faut retenir</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="space-y-4 text-on-surface-variant leading-relaxed">
+            <p>Ce projet montre une même compétence de pilotage appliquée à deux réalités différentes : un parcours réglementaire long (2022) et un parcours certifiant plus compact (2023).</p>
+            <p>La valeur produite reste constante : <strong class="text-on-surface">alignement pédagogique, maîtrise de la production multimédia et fiabilité de livraison</strong>.</p>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span><span>Coordination prestataires (vidéastes, motion, voix-off, intégration SCORM)</span></li>
+            <li class="flex items-start gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span><span>Planification et suivi d'avancement multi-parties prenantes</span></li>
+            <li class="flex items-start gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span><span>Gestion de la relation avec experts contenus et équipes pédagogiques</span></li>
+            <li class="flex items-start gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span><span>Mise en place de workflows qualité et conformité</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 items-center justify-between pt-8 border-t border-surface-variant mb-20">
+        <a href="../index.html" class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary-container transition-colors text-sm font-semibold">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Retour au portfolio
+        </a>
+        <a href="plan-evaluation-formation.html" class="inline-flex items-center gap-2 bg-primary-container text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-primary transition-colors">
+          Voir aussi : Plan d'évaluation
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="bg-surface-container border-t border-surface-variant">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 py-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
+      <span>© 2026 Leila Seghirate-Nigg. Tous droits réservés.</span>
+      <div class="flex gap-6">
+        <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" target="_blank" rel="noopener noreferrer" class="hover:text-primary-container transition-colors">LinkedIn</a>
+        <a href="../index.html" class="hover:text-primary-container transition-colors">Portfolio</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image agrandie">
+    <button id="lightbox-close" aria-label="Fermer">✕</button>
+    <img id="lightbox-img" src="" alt=""/>
+  </div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', mobileMenu.classList.contains('open'));
+    });
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    document.querySelectorAll('.img-lightbox').forEach(el => {
+      el.addEventListener('click', () => {
+        const src = el.dataset.src || el.querySelector('img')?.src;
+        if (src) { lightboxImg.src = src; lightbox.classList.add('open'); }
+      });
+    });
+    lightboxClose.addEventListener('click', () => lightbox.classList.remove('open'));
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') lightbox.classList.remove('open'); });
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mon Offre — LSN Consulting · Leila Seghirate-Nigg</title>
+  <meta name="description" content="Solutions digitales pour la formation — IA Créative, Expériences Immersives, Marketing de la Formation. LSN Consulting par Leila Seghirate-Nigg."/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%233333CC'/%3E%3Ctext x='16' y='22' font-family='serif' font-weight='700' font-size='20' fill='white' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Portfolio · Leila Seghirate-Nigg"/>
+  <meta property="og:title" content="Mon Offre — LSN Consulting · Leila Seghirate-Nigg"/>
+  <meta property="og:description" content="Solutions digitales pour la formation — IA Créative, Expériences Immersives, Marketing de la Formation. LSN Consulting par Leila Seghirate-Nigg."/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Mon Offre — LSN Consulting · Leila Seghirate-Nigg"/>
+  <meta name="twitter:description" content="Solutions digitales pour la formation — IA Créative, Expériences Immersives, Marketing de la Formation. LSN Consulting par Leila Seghirate-Nigg."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2A2A34",
+            "primary-container": "#3333CC",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#EDE9E3",
+            "secondary": "#5f5e5e",
+            "secondary-container": "#e5e2e1",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#656464",
+            "tertiary": "#393b3a",
+            "tertiary-container": "#505251",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-container": "#c4c5c3",
+            "background": "#fbf9f9",
+            "on-background": "#2A2A34",
+            "surface": "#fbf9f9",
+            "on-surface": "#2A2A34",
+            "surface-variant": "#e3e2e2",
+            "on-surface-variant": "#2A2A34",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f5f3f3",
+            "surface-container": "#efeded",
+            "surface-container-high": "#e9e8e7",
+            "surface-container-highest": "#e3e2e2",
+            "outline": "#948F8A",
+            "outline-variant": "#948F8A",
+            "inverse-surface": "#303031",
+            "inverse-on-surface": "#f2f0f0",
+            "inverse-primary": "#EDE9E3",
+            "surface-tint": "#3333CC",
+            "surface-dim": "#dbdad9",
+            "surface-bright": "#fbf9f9",
+            "error": "#ba1a1a",
+            "on-error": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a"
+          },
+          fontFamily: {
+            "display": ["Noto Serif", "serif"],
+            "headline": ["Noto Serif", "serif"],
+            "body": ["Manrope", "sans-serif"],
+            "label": ["Manrope", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Brand Interaction Matrix - official palette lock */
+    :root {
+      --brand-blue: #3333CC;
+      --brand-cream: #EDE9E3;
+      --brand-ink: #2A2A34;
+      --brand-taupe: #948F8A;
+    }
+    .bg-primary-container { background-color: var(--brand-blue) !important; }
+    .hover\:bg-primary:hover { background-color: var(--brand-ink) !important; }
+    .text-primary-container { color: var(--brand-blue) !important; }
+    .hover\:text-primary-container:hover { color: var(--brand-blue) !important; }
+    .border-primary-container { border-color: var(--brand-blue) !important; }
+    .hover\:border-primary-container:hover { border-color: var(--brand-blue) !important; }
+    .border-outline-variant { border-color: var(--brand-taupe) !important; }
+    .text-on-surface-variant { color: var(--brand-ink) !important; }
+    :root {
+      --blue: #3333CC;
+      --indigo: #2A2A34;
+      --dark: #2A2A34;
+      --grey: #948F8A;
+      --pearl: #f5f3f3;
+      --beige: #EDE9E3;
+      --tr: all .2s ease;
+      --rsm: 4px;
+      --rmd: 8px;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .skip-link {
+      position: absolute; top: -40px; left: 1rem;
+      background: var(--blue); color: #fff;
+      padding: .5rem 1rem; border-radius: var(--rsm);
+      font-weight: 600; z-index: 100; transition: top .2s;
+      font-family: Manrope, sans-serif;
+    }
+    .skip-link:focus { top: 1rem; }
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+
+    /* ── Nav scroll shadow ── */
+    #main-nav { transition: box-shadow 0.25s ease; }
+    #main-nav.scrolled { box-shadow: 0 4px 20px rgba(13,12,43,0.10); }
+
+    /* ── Focus rings ── */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid #3333CC;
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    /* ── Pillar cards ── */
+    .pillar-card {
+      transition: transform 0.28s cubic-bezier(.22,1,.36,1), box-shadow 0.28s ease;
+    }
+    .pillar-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 48px rgba(42,42,52,0.10);
+    }
+
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s ease, transform 0.55s cubic-bezier(.22,1,.36,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Subtle scroll reveal for 3 expertise pillars ── */
+    .pillar-scroll {
+      --pillar-progress: 0;
+      clip-path: inset(calc((1 - var(--pillar-progress)) * 10%) 0 0 0 round 1.5rem);
+      opacity: calc(.62 + (var(--pillar-progress) * .38));
+      transform: translateY(calc((1 - var(--pillar-progress)) * 34px)) scale(calc(.965 + (var(--pillar-progress) * .035)));
+      box-shadow: 0 calc(6px + (var(--pillar-progress) * 16px)) calc(16px + (var(--pillar-progress) * 34px)) rgba(42,42,52,calc(.06 + (var(--pillar-progress) * .08)));
+      transition: clip-path .16s linear, opacity .16s linear, transform .16s linear, box-shadow .16s linear;
+      will-change: clip-path, opacity, transform, box-shadow;
+    }
+    .pillar-scroll .pillar-banner {
+      clip-path: inset(calc((1 - var(--pillar-progress)) * 30%) 0 0 0 round 1.5rem 1.5rem 0 0);
+      opacity: calc(.5 + (var(--pillar-progress) * .5));
+      transform: translateY(calc((1 - var(--pillar-progress)) * 18px)) scale(calc(.972 + (var(--pillar-progress) * .028)));
+      transition: clip-path .16s linear, opacity .16s linear, transform .16s linear;
+      will-change: clip-path, opacity, transform;
+    }
+    .pillar-scroll .pillar-copy-main {
+      opacity: calc(.65 + (var(--pillar-progress) * .35));
+      transform: translateY(calc((1 - var(--pillar-progress)) * 22px));
+      transition: opacity .16s linear, transform .16s linear;
+      will-change: opacity, transform;
+    }
+    .pillar-scroll .pillar-copy-side {
+      opacity: calc(.58 + (var(--pillar-progress) * .42));
+      transform: translateY(calc((1 - var(--pillar-progress)) * 30px));
+      transition: opacity .16s linear, transform .16s linear;
+      will-change: opacity, transform;
+    }
+
+    /* ── Kerning ── */
+    .font-headline { font-feature-settings: "kern" 1, "liga" 1; }
+
+    /* ── Pillar tile interactive ── */
+    .pillar-tile {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 1rem;
+      transition: background 0.28s cubic-bezier(.22,1,.36,1), color 0.28s ease;
+    }
+    /* Filet bas discret au hover — style premium */
+    .pillar-tile::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 20%; right: 20%;
+      height: 1px;
+      background: rgba(237,233,227,0);
+      transition: background 0.3s ease, left 0.3s ease, right 0.3s ease;
+    }
+    .pillar-tile:hover::after {
+      background: rgba(237,233,227,0.45);
+      left: 10%; right: 10%;
+    }
+    .pillar-tile.active::after {
+      background: rgba(237,233,227,0.9);
+      left: 10%; right: 10%;
+    }
+    .pillar-tile:hover .pillar-tile-text { color: #ffffff; }
+    .pillar-tile.active {
+      background: rgba(255,255,255,0.05);
+    }
+    .pillar-tile.active .pillar-tile-text {
+      color: #ffffff !important;
+    }
+
+    /* ── Reduced motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .pillar-card:hover { transform: none; }
+      .pillar-tile.active { background: none; }
+      .pillar-tile.active .pillar-tile-text { color: #EDE9E3 !important; }
+      .pillar-scroll .pillar-banner,
+      .pillar-scroll .pillar-copy-main,
+      .pillar-scroll .pillar-copy-side {
+        clip-path: none;
+        opacity: 1;
+        transform: none;
+      }
+      .pillar-scroll {
+        clip-path: none;
+        opacity: 1;
+        transform: none;
+        box-shadow: none;
+      }
+    }
+
+    /* ── Pillar number ── */
+    .pillar-number {
+      font-family: Noto Serif, serif;
+      font-size: 4rem;
+      font-weight: 700;
+      line-height: 1;
+      color: rgba(51,51,204,0.08);
+      position: absolute;
+      top: -0.5rem;
+      right: 1.5rem;
+      pointer-events: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    /* ── Pillar image placeholder ── */
+    .pillar-img {
+      background: linear-gradient(135deg, #EDE9E3 0%, #ddd9d3 60%, #e8e2f0 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+      .pillar-img-media {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 42%;
+        display: block;
+      }
+    .pillar-img-bleed {
+      margin-left: -2rem;
+      margin-right: -2rem;
+      margin-top: -2rem;
+      width: calc(100% + 4rem);
+      aspect-ratio: 16 / 10;
+      height: auto;
+      overflow: hidden;
+      border-radius: 1.5rem 1.5rem 0 0;
+      margin-bottom: 2.5rem;
+    }
+    @media (min-width: 768px) {
+      .pillar-img-bleed {
+        margin-left: -3rem;
+        margin-right: -3rem;
+        margin-top: -3rem;
+        width: calc(100% + 6rem);
+      }
+    }
+
+    /* ── Pillar mosaic grid ── */
+    .pillar-mosaic {
+      display: grid;
+      grid-template-columns: 1.25fr 0.9fr 1.1fr 0.75fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 4px;
+      background: #ffffff;
+      margin-left: -2rem;
+      margin-right: -2rem;
+      margin-top: -2rem;
+      width: calc(100% + 4rem);
+      height: 230px;
+      border-radius: 1.5rem 1.5rem 0 0;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+    }
+    @media (min-width: 768px) {
+      .pillar-mosaic {
+        margin-left: -3rem;
+        margin-right: -3rem;
+        margin-top: -3rem;
+        width: calc(100% + 6rem);
+        height: 260px;
+      }
+    }
+    .pillar-mosaic-cell {
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .pillar-mosaic-cell.tall { grid-row: span 2; }
+      .pillar-img-bleed {
+        margin-left: -3rem;
+        margin-right: -3rem;
+        margin-top: -3rem;
+        width: calc(100% + 6rem);
+      }
+    }
+    
+    /* ── Divider row ── */
+    .pillar-divider {
+      width: 40px; height: 3px;
+      background: linear-gradient(to right, #3333CC, #EDE9E3);
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased min-h-screen flex flex-col">
+
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- ── Navigation ── -->
+  <nav id="main-nav" class="sticky top-0 z-50 backdrop-blur-md border-b border-surface-variant" style="background:rgba(237,233,227,0.95);">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="flex-shrink-0 font-headline font-bold text-xl tracking-tight text-on-surface hover:text-primary-container transition-colors">
+          Leila Seghirate-Nigg
+        </a>
+        <div class="hidden sm:flex sm:items-center sm:space-x-8">
+          <a href="offre.html" class="text-primary-container text-sm font-medium border-b-2 border-primary-container pb-1">Expertise</a>
+          <a href="a-propos.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">À propos</a>
+          <a href="index.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Réalisations</a>
+          <a href="methodologie.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Méthodologie</a>
+          <a href="frameworks.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Frameworks</a>
+          <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" class="bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Me contacter</a>
+        </div>
+        <button id="hamburger" class="sm:hidden p-2 rounded-md text-on-surface hover:bg-surface-container transition-colors" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="sm:hidden pb-4 border-t border-surface-variant mt-1">
+        <div class="flex flex-col gap-2 pt-3">
+          <a href="offre.html" class="px-3 py-2 text-primary-container bg-surface-container-low rounded-md text-sm font-medium">Expertise</a>
+          <a href="a-propos.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">À propos</a>
+          <a href="index.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Réalisations</a>
+          <a href="methodologie.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Méthodologie</a>
+          <a href="frameworks.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Frameworks</a>
+          <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" class="mt-2 mx-3 text-center bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Me contacter</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="flex-grow">
+
+    <!-- ── Hero ── -->
+    <section class="relative overflow-hidden" style="height:520px;">
+      <img src="assets/images/heroes/image.webp" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover object-center"/>
+      <!-- Overlay sombre zone texte -->
+      <div class="absolute inset-0" style="background:linear-gradient(to right, rgba(15,15,15,0.78) 0%, rgba(15,15,15,0.55) 38%, rgba(15,15,15,0.15) 60%, transparent 100%);"></div>
+      <div class="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-10 pt-14 pb-16 md:pt-20 md:pb-24">
+        <span class="text-xs font-bold tracking-[.18em] uppercase text-white/70 font-label mb-4 block">Solutions digitales pour la formation · LSN Consulting</span>
+        <h1 class="font-headline text-5xl md:text-6xl text-white mb-5 leading-[1.1]">
+          Mon <span class="text-[#EDE9E3] italic">expertise</span>
+        </h1>
+        <p class="text-white/85 text-xl leading-relaxed mb-6 max-w-lg">
+          IA Créative · Expériences Immersives · Marketing de la Formation
+        </p>
+        <!-- 3 stats -->
+        <div class="flex flex-wrap gap-6 mb-6">
+          <div>
+            <span class="block text-3xl font-headline font-bold text-white leading-none">20 ans</span>
+            <span class="text-[#EDE9E3] text-xs font-bold tracking-widest uppercase font-label">Marketing stratégique</span>
+          </div>
+          <div class="border-l border-white/20 pl-6">
+            <span class="block text-3xl font-headline font-bold text-white leading-none">5 ans</span>
+            <span class="text-[#EDE9E3] text-xs font-bold tracking-widest uppercase font-label">Ingénierie pédagogique</span>
+          </div>
+          <div class="border-l border-white/20 pl-6">
+            <span class="block text-3xl font-headline font-bold text-white leading-none">3 ans</span>
+            <span class="text-[#EDE9E3] text-xs font-bold tracking-widest uppercase font-label">R&D IA intensive</span>
+          </div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-3 mt-16">
+          <a href="mailto:seghirate@gmail.com" class="inline-flex items-center gap-2 bg-primary-container text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-primary transition-colors">
+            Discutons de votre projet
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a href="index.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity" style="background:#EDE9E3; color:#2A2A34;">
+            Voir mes réalisations
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Pillars headline ── -->
+    <section class="bg-[#2A2A34] reveal">
+      <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 py-3">
+        <div class="flex flex-col sm:flex-row items-stretch divide-y sm:divide-y-0 sm:divide-x divide-white/10">
+          <div class="pillar-tile flex-1 text-center px-10 py-4" data-target="pillar-ia" role="link" tabindex="0" aria-label="Aller à IA Créative">
+            <p class="pillar-tile-text font-body font-light text-[#EDE9E3] uppercase tracking-[.2em] text-xs leading-snug transition-colors duration-200">IA Créative</p>
+          </div>
+          <div class="pillar-tile flex-1 text-center px-10 py-4" data-target="pillar-experiences" role="link" tabindex="0" aria-label="Aller à Expériences d'apprentissage">
+            <p class="pillar-tile-text font-body font-light text-[#EDE9E3] uppercase tracking-[.2em] text-xs leading-snug transition-colors duration-200">Expériences d'apprentissage immersives</p>
+          </div>
+          <div class="pillar-tile flex-1 text-center px-10 py-4" data-target="pillar-marketing" role="link" tabindex="0" aria-label="Aller à Stratégie marketing">
+            <p class="pillar-tile-text font-body font-light text-[#EDE9E3] uppercase tracking-[.2em] text-xs leading-snug transition-colors duration-200">Stratégie marketing de la formation</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Pillar cards ── -->
+    <section class="px-4 sm:px-8 lg:px-16 py-14">
+      <div class="max-w-[1200px] mx-auto">
+
+        <div class="mb-10 reveal">
+          <span class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label mb-2 block">Ce que je propose</span>
+          <h2 class="font-headline text-3xl text-on-surface">Trois domaines d'intervention</h2>
+        </div>
+
+        <!-- Pillar 1 — IA Créative -->
+        <div id="pillar-ia" class="pillar-card pillar-scroll reveal bg-surface-container-lowest rounded-3xl border border-surface-variant p-8 md:p-12 mb-8 relative overflow-hidden">
+          <span class="pillar-number">01</span>
+          <!-- Bannière pilier pleine largeur -->
+          <div class="pillar-banner overflow-hidden mb-8 -mx-8 md:-mx-12 -mt-8 md:-mt-12 rounded-t-3xl" aria-hidden="true">
+            <img src="assets/images/logos/IA Créative.svg" alt="" class="w-full block" />
+          </div>
+          <!-- Contenu texte 2-col -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div class="pillar-copy-main">
+              <div class="pillar-divider"></div>
+              <span class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label mb-3 block">Pilier 01</span>
+              <h3 class="font-headline text-3xl text-on-surface mb-6 leading-tight">IA <span class="text-primary-container italic">Créative</span></h3>
+              <p class="font-headline text-lg text-on-surface italic leading-snug mb-8">
+                L’IA n’est pas un raccourci. C’est un amplificateur — à condition de savoir quoi amplifier.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">Prompt engineering</span>
+                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">Assistants pédagogiques IA</span>
+                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">Génération d'images</span>
+                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">Outils IA sur mesure</span>
+              </div>
+            </div>
+            <div class="pillar-copy-side space-y-3 text-on-surface-variant leading-[1.55] text-[0.98rem]">
+              <p>Je conçois des dispositifs où l'IA sert réellement l'apprentissage — non par tendance, mais parce qu'un outil bien réglé peut changer l'attention, la mémoire et l'engagement.</p>
+              <p>Je suis l'écosystème LLM de près depuis <strong>fin 2022</strong> : assez pour distinguer ce qui tient dans la durée du simple bruit.</p>
+              <p>J'accorde la même importance au fond qu'aux conditions sensibles de la transmission : une interface, un rythme, une ambiance. Parce qu'on n'apprend pas seulement avec des contenus — on apprend aussi avec des atmosphères.</p>
+              <p>Chaque outil est <strong>fonctionnel, esthétique et documenté</strong>, et s'intègre à l'existant sans le déstabiliser.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 2 — Expériences Immersives -->
+        <div id="pillar-experiences" class="pillar-card pillar-scroll reveal bg-surface-container-lowest rounded-3xl border border-surface-variant p-8 md:p-12 mb-8 relative overflow-hidden">
+          <span class="pillar-number">02</span>
+          <!-- Bannière pilier pleine largeur -->
+          <div class="pillar-banner overflow-hidden mb-8 -mx-8 md:-mx-12 -mt-8 md:-mt-12 rounded-t-3xl" aria-hidden="true">
+            <img src="assets/images/logos/Expériences Immersives.svg" alt="" class="w-full block" />
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div class="pillar-copy-main">
+              <div class="pillar-divider"></div>
+              <span class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label mb-3 block">Pilier 02</span>
+              <h3 class="font-headline text-3xl text-on-surface mb-6 leading-tight">Expériences <span class="text-primary-container italic">Immersives</span></h3>
+              <p class="font-headline text-lg text-on-surface italic leading-snug mb-8">
+                Ce que l'on retient, on l'a vécu.&nbsp;Rarement lu.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">Three.js / WebGL</span>
+                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">E-learning interactif</span>
+                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">POC digitaux</span>
+                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">Interfaces 3D navigables</span>
+              </div>
+            </div>
+            <div class="pillar-copy-side space-y-5 text-on-surface-variant leading-relaxed text-[1.02rem]">
+              <p>Il y a un écart massif entre ce que la technologie rend possible et ce que la plupart des formations classiques délivrent. <strong>Je travaille dans cet écart — avec rigueur et créativité.</strong></p>
+              <p>En amont, j’acculture et j’ancre le sujet dans le réel via des webinars, des démonstrations de cas d’usage et la création d’outils immédiatement activables par les équipes.</p>
+              <p>Ensuite, qu’il s’agisse d’un MOOC, d’une expérience narrative immersive, ou d’un dispositif de formation hybride, l’exigence reste la même : des livrables <strong>démontrables, transmissibles, extensibles</strong>, conçus pour que l’apprenant retienne, s’implique, revienne.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 3 — Marketing de la Formation -->
+        <div id="pillar-marketing" class="pillar-card pillar-scroll reveal bg-surface-container-lowest rounded-3xl border border-surface-variant p-8 md:p-12 mb-8 relative overflow-hidden">
+          <span class="pillar-number">03</span>
+          <!-- Bannière pilier pleine largeur -->
+          <div class="pillar-banner overflow-hidden mb-8 -mx-8 md:-mx-12 -mt-8 md:-mt-12 rounded-t-3xl" aria-hidden="true">
+            <img src="assets/images/heroes/Stratégie marketing de la formation.svg" alt="" class="w-full block" />
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div class="pillar-copy-main">
+              <div class="pillar-divider"></div>
+              <span class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label mb-3 block">Pilier 03</span>
+              <h3 class="font-headline text-3xl text-on-surface mb-6 leading-tight">Stratégie marketing <span class="text-primary-container italic">de la formation</span></h3>
+              <p class="font-headline text-lg text-on-surface italic leading-snug mb-8">
+                Une formation de qualité mérite un discours à sa hauteur.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">Stratégie de contenu</span>
+                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">Pages de vente</span>
+                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">Positionnement d’offre</span>
+                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">Séquences email</span>
+              </div>
+            </div>
+            <div class="pillar-copy-side space-y-5 text-on-surface-variant leading-relaxed text-[1.02rem]">
+              <p>Pour émerger, il faut surtout <strong>un positionnement net, une voix identifiable</strong>, et des contenus qui portent une idée forte.</p>
+              <p>Je travaille autant <strong>le fond que la forme</strong> : ce que vous dites, comment l’offre est structurée, la communication qui amène l’apprenant à entrer dedans.</p>
+              <p>Après <strong>vingt ans</strong> à concevoir et lancer des stratégies marketing dans des contextes internationaux (grandes marques comme structures agiles), j’ai appris que les mêmes erreurs reviennent — et que la rigueur n’est pas une question de budget. C’est cette manière de travailler, <strong>concrète, mesurable, créative</strong> quand il le faut, que j’applique à chaque projet.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── CTA final ── -->
+    <section id="form-contact" class="relative bg-surface py-8 px-4 sm:px-8 lg:px-16 pb-20 reveal">
+      <div class="max-w-[1200px] mx-auto">
+        <div class="relative mx-auto flex w-full max-w-3xl flex-col justify-between gap-y-6 border-y border-outline/40 bg-[radial-gradient(35%_80%_at_25%_0%,rgba(51,51,204,0.08),transparent)] px-4 py-8 sm:px-8">
+          <span aria-hidden="true" class="absolute -top-3 -left-3 z-10 text-primary-container text-xl leading-none">+</span>
+          <span aria-hidden="true" class="absolute -top-3 -right-3 z-10 text-primary-container text-xl leading-none">+</span>
+          <span aria-hidden="true" class="absolute -bottom-3 -left-3 z-10 text-primary-container text-xl leading-none">+</span>
+          <span aria-hidden="true" class="absolute -right-3 -bottom-3 z-10 text-primary-container text-xl leading-none">+</span>
+
+          <div class="-inset-y-6 pointer-events-none absolute left-0 w-px border-l border-outline/40"></div>
+          <div class="-inset-y-6 pointer-events-none absolute right-0 w-px border-r border-outline/40"></div>
+          <div class="pointer-events-none absolute top-0 left-1/2 -z-10 h-full border-l border-dashed border-outline/50"></div>
+
+          <div class="space-y-1 text-center">
+            <h2 class="font-headline text-2xl font-bold text-on-surface">Parlons de votre projet de formation.</h2>
+            <p class="text-sm text-on-surface-variant">Réponse sous 24h. Aucun engagement.</p>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-2 sm:flex-row">
+            <a href="mailto:seghirate@gmail.com" class="inline-flex items-center justify-center rounded-full border border-outline/60 px-4 py-2 text-sm font-semibold text-on-surface hover:border-primary-container hover:text-primary-container transition-colors">Envoyer un message</a>
+            <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1 rounded-full bg-primary-container px-4 py-2 text-sm font-semibold text-white hover:bg-primary transition-colors">Prendre rendez-vous <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="bg-surface-container border-t border-surface-variant">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Solutions digitales pour la formation.</p>
+          <div class="flex gap-1.5 flex-wrap">
+            <span class="text-xs px-2.5 py-1 rounded-full border border-outline/30 text-on-surface-variant">IA Créative</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-outline/30 text-on-surface-variant">Expériences Immersives</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-outline/30 text-on-surface-variant">Marketing Formation</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold tracking-[.18em] uppercase text-on-surface mb-4 font-label">Navigation</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="offre.html" class="text-primary-container font-medium transition-colors">Expertise</a></li>
+            <li><a href="index.html" class="text-on-surface-variant hover:text-primary-container transition-colors">Réalisations</a></li>
+            <li><a href="a-propos.html" class="text-on-surface-variant hover:text-primary-container transition-colors">À propos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold tracking-[.18em] uppercase text-on-surface mb-4 font-label">Contact</h4>
+          <a href="mailto:seghirate@gmail.com" class="text-sm text-primary-container hover:underline">seghirate@gmail.com</a>
+          <div class="mt-4 flex space-x-4">
+            <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" target="_blank" rel="noopener noreferrer" class="text-on-surface-variant hover:text-primary-container transition-colors" aria-label="LinkedIn">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pt-6 border-t border-surface-variant text-center text-xs text-on-surface-variant">
+        <p>© 2026 Leila Seghirate-Nigg. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      iconOpen.classList.toggle('hidden', isOpen);
+      iconClose.classList.toggle('hidden', !isOpen);
+    });
+
+    // Pillar tile click → active state + smooth scroll
+    const allTiles = document.querySelectorAll('.pillar-tile');
+    document.querySelectorAll('.pillar-tile').forEach(tile => {
+      const activate = () => {
+        const target = document.getElementById(tile.dataset.target);
+        if (!target) return;
+        allTiles.forEach(t => t.classList.remove('active'));
+        tile.classList.add('active');
+        setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
+      };
+      tile.addEventListener('click', activate);
+      tile.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); } });
+    });
+
+    // Nav scroll shadow
+    const mainNav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      mainNav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    // Scroll reveal
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    // Subtle scroll progress on 3 pillar cards (inspired by parallax section behavior)
+    const scrollPillars = document.querySelectorAll('.pillar-scroll');
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let rafId = null;
+
+    function updatePillarProgress() {
+      const vh = window.innerHeight || 1;
+      scrollPillars.forEach((card) => {
+        const rect = card.getBoundingClientRect();
+        const start = vh * 1.08;
+        const end = vh * 0.08;
+        const raw = (start - rect.top) / (start - end);
+        const progress = Math.max(0, Math.min(1, raw));
+        card.style.setProperty('--pillar-progress', progress.toFixed(3));
+      });
+      rafId = null;
+    }
+
+    function queuePillarProgress() {
+      if (rafId !== null) return;
+      rafId = window.requestAnimationFrame(updatePillarProgress);
+    }
+
+    if (!reduceMotion) {
+      queuePillarProgress();
+      window.addEventListener('scroll', queuePillarProgress, { passive: true });
+      window.addEventListener('resize', queuePillarProgress);
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

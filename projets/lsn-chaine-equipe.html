@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chaîne LSN · Outil Équipe</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0E117A;font-family:'DM Mono',monospace;min-height:100vh}
+.page{max-width:800px;margin:0 auto;padding:0 24px 60px}
+
+/* ── HEADER ── */
+header{padding:32px 0 24px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(255,255,255,.15)}
+.eyebrow{font-size:9px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#12E2A4;margin-bottom:8px}
+h1{font-family:'Barlow Condensed',sans-serif;font-size:3.6rem;font-weight:900;line-height:.88;text-transform:uppercase;color:#fff}
+h1 .slash{color:#DCF516}
+.hd-right{text-align:right;flex-shrink:0;padding-bottom:4px}
+.hd-right p{font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);line-height:2}
+.share-btn{margin-top:6px;font-family:'DM Mono',monospace;font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.2);border-radius:3px;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:6px;margin-left:auto}
+.share-btn:hover{background:rgba(255,255,255,.18);color:#fff}
+
+/* ── SUB + PROGRESS ── */
+.sub{padding:18px 0 20px;font-size:10.5px;color:rgba(255,255,255,.75);letter-spacing:.04em;line-height:1.9;border-bottom:1px solid rgba(255,255,255,.1)}
+.sub strong{color:#DCF516;font-weight:500}
+.progress-wrap{padding:18px 0 6px;display:flex;align-items:center;gap:14px}
+.bar-track{flex:1;height:3px;background:rgba(255,255,255,.15);border-radius:2px;overflow:hidden}
+.bar-fill{height:100%;background:#12E2A4;border-radius:2px;width:0%;transition:width .45s cubic-bezier(.4,0,.2,1)}
+.bar-label{font-size:10px;font-weight:500;letter-spacing:.1em;color:#12E2A4;min-width:40px;text-align:right}
+
+/* ── PHASE CARDS ── */
+.phases{margin-top:10px;display:flex;flex-direction:column;gap:6px}
+.phase-card{background:#fff;border-radius:6px;display:grid;grid-template-columns:64px 112px 1fr 72px;align-items:stretch;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:border-color .18s,transform .15s,box-shadow .18s;animation:up .4s both}
+.phase-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.22);border-color:#12E2A4}
+.phase-card.go-on{border-color:#12E2A4;background:#F2FDF9}
+@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.phase-card:nth-child(1){animation-delay:.04s}.phase-card:nth-child(2){animation-delay:.10s}.phase-card:nth-child(3){animation-delay:.16s}.phase-card:nth-child(4){animation-delay:.22s}.phase-card:nth-child(5){animation-delay:.28s}.phase-card:nth-child(6){animation-delay:.34s}
+
+.ph-num-col{display:flex;align-items:center;justify-content:center;padding:16px 8px;background:#0E117A;transition:background .18s;flex-direction:column;gap:4px}
+.phase-card.go-on .ph-num-col{background:#12E2A4}
+.ph-num{font-family:'Barlow Condensed',sans-serif;font-size:2.4rem;font-weight:900;line-height:1;color:#DCF516;user-select:none;transition:color .18s}
+.phase-card.go-on .ph-num{color:#0E117A}
+
+.ph-code-col{padding:14px;border-right:1px solid #EBF0F7;display:flex;flex-direction:column;justify-content:center;gap:5px}
+.ph-badge{font-family:'Barlow Condensed',sans-serif;font-size:.95rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;background:#0E117A;color:#DCF516;display:inline-block;padding:2px 8px 1px;border-radius:3px;line-height:1.7;transition:background .18s,color .18s}
+.phase-card.go-on .ph-badge{background:#12E2A4;color:#0E117A}
+.ph-label{font-size:8px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#8A94B0;line-height:1.4}
+
+.ph-crit-col{padding:14px 16px;display:flex;flex-direction:column;justify-content:center;gap:5px}
+.crit-tag{font-size:8px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#399169;transition:color .18s}
+.phase-card.go-on .crit-tag{color:#0BA374}
+.crit-text{font-size:11px;color:#1A1D3A;line-height:1.5;letter-spacing:.01em}
+
+.ph-stats-col{border-left:1px solid #EBF0F7;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 8px;gap:6px}
+.stat-done{font-size:10px;font-weight:700;color:#0E117A;letter-spacing:.04em}
+.stat-label{font-size:7.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#8A94B0}
+.open-hint{font-size:8px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#12E2A4;border:1px solid #12E2A4;padding:3px 8px;border-radius:3px}
+
+/* ── ACTIONS ── */
+.actions{margin-top:18px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.btn-primary{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:11px 22px;background:#DCF516;color:#0E117A;border:none;border-radius:4px;cursor:pointer;transition:opacity .15s,transform .1s}
+.btn-primary:hover{opacity:.88;transform:translateY(-1px)}
+.btn-ghost{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:11px 18px;background:transparent;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.22);border-radius:4px;cursor:pointer;transition:color .15s,border-color .15s}
+.btn-ghost:hover{color:#fff;border-color:rgba(255,255,255,.55)}
+
+/* ── VERDICT ── */
+.verdict-wrap{margin-top:14px;max-height:0;overflow:hidden;opacity:0;transition:max-height .5s cubic-bezier(.4,0,.2,1),opacity .35s}
+.verdict-wrap.open{max-height:260px;opacity:1}
+.verdict-go,.verdict-nogo{background:#fff;border-radius:6px;padding:24px 28px;display:none}
+.verdict-go{border-left:6px solid #12E2A4}.verdict-nogo{border-left:6px solid #DCF516}
+.verdict-go.show,.verdict-nogo.show{display:block}
+.v-eyebrow{font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px}
+.verdict-go .v-eyebrow{color:#0BA374}.verdict-nogo .v-eyebrow{color:#399169}
+.v-title{font-family:'Barlow Condensed',sans-serif;font-size:2.8rem;font-weight:900;text-transform:uppercase;line-height:.9;color:#0E117A;margin-bottom:10px}
+.v-body{font-size:11px;color:#4A5068;line-height:1.8;letter-spacing:.02em}
+.missing-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.m-pill{font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;background:#FFFBE6;border:1px solid #DCF516;color:#5A4400;border-radius:3px}
+
+/* ── FOOTER ── */
+footer{margin-top:40px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center}
+footer p{font-size:8.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.25)}
+
+/* ── OVERLAY ── */
+.overlay{position:fixed;inset:0;background:rgba(5,7,40,.65);z-index:100;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(2px)}
+.overlay.active{opacity:1;pointer-events:all}
+
+/* ── DRAWER ── */
+.drawer{position:fixed;top:0;right:0;height:100vh;width:540px;max-width:100vw;background:#fff;z-index:101;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-8px 0 40px rgba(14,17,122,.25)}
+.drawer.open{transform:translateX(0)}
+
+/* drawer header */
+.d-header{background:#0E117A;padding:20px 22px 16px;flex-shrink:0;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.d-header-left{}
+.d-badge{font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;background:#DCF516;color:#0E117A;display:inline-block;padding:2px 8px 1px;border-radius:3px;line-height:1.7;margin-bottom:5px}
+.d-title{font-family:'Barlow Condensed',sans-serif;font-size:1.7rem;font-weight:900;line-height:1;color:#fff;text-transform:uppercase}
+.d-sub{font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:4px}
+.d-close{background:none;border:none;color:rgba(255,255,255,.45);cursor:pointer;font-size:1.3rem;padding:2px;line-height:1;transition:color .15s;flex-shrink:0}
+.d-close:hover{color:#fff}
+
+/* go criterion bar */
+.d-go-bar{padding:10px 22px;flex-shrink:0;display:flex;align-items:center;gap:10px;border-bottom:1px solid #EBF0F7}
+.d-go-bar.go-active{background:#F2FDF9}
+.go-pill{font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:2px 8px;background:#E6F8F2;border:1px solid #A8E8D2;color:#0BA374;border-radius:3px;white-space:nowrap;flex-shrink:0}
+.go-crit-text{font-size:10.5px;color:#1A1D3A;line-height:1.4;flex:1}
+.btn-go-toggle{font-family:'DM Mono',monospace;font-size:8.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;background:#fff;color:#8A94B0;border:1.5px solid #D0D8E8;border-radius:3px;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all .18s}
+.btn-go-toggle.on{background:#12E2A4;border-color:#12E2A4;color:#0E117A}
+
+/* drawer progress */
+.d-progress{padding:10px 22px 8px;border-bottom:1px solid #EBF0F7;flex-shrink:0;display:flex;align-items:center;gap:12px}
+.d-prog-track{flex:1;height:2px;background:#EBF0F7;border-radius:2px;overflow:hidden}
+.d-prog-fill{height:100%;background:#12E2A4;width:0%;transition:width .3s;border-radius:2px}
+.d-prog-label{font-size:9px;font-weight:500;letter-spacing:.1em;color:#8A94B0;white-space:nowrap}
+
+/* drawer body */
+.d-body{flex:1;overflow-y:auto;padding:4px 22px 20px}
+.d-section{margin-top:18px}
+.d-section-title{font-size:8px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#8A94B0;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid #EBF0F7}
+
+/* todo list */
+.todo-list{display:flex;flex-direction:column;gap:3px}
+.todo-item{border-radius:4px;border:1px solid #EBF0F7;overflow:hidden;transition:border-color .15s}
+.todo-item:hover{border-color:#D0D8E8}
+.todo-item.todo-done .todo-main-row{opacity:.55}
+
+.todo-main-row{display:grid;grid-template-columns:20px 1fr auto;align-items:center;gap:8px;padding:8px 10px;background:#FAFBFD;cursor:pointer}
+.todo-item.todo-done .todo-main-row{background:#F8F9FC}
+.t-cb{width:16px;height:16px;border:1.5px solid #C8D0E0;border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s}
+.t-cb.on{background:#12E2A4;border-color:#12E2A4}
+.t-cb svg{display:none}
+.t-cb.on svg{display:block}
+.t-text-block{}
+.t-text{font-size:10.5px;color:#1A1D3A;line-height:1.4;letter-spacing:.01em}
+.todo-item.todo-done .t-text{text-decoration:line-through;color:#8A94B0}
+.t-meta-inline{display:flex;gap:6px;margin-top:3px;flex-wrap:wrap}
+.t-assignee-chip{font-size:8px;font-weight:500;letter-spacing:.06em;padding:1px 6px;background:#EEF1F8;border:1px solid #D8DCE8;color:#5A6180;border-radius:2px}
+.t-date-chip{font-size:8px;font-weight:500;letter-spacing:.06em;padding:1px 6px;background:#E6F8F2;border:1px solid #A8E8D2;color:#0BA374;border-radius:2px}
+.t-default-tag{font-size:7px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1px 5px;background:#EEF1F8;border:1px solid #D8DCE8;color:#8A94B0;border-radius:2px}
+.t-actions{display:flex;gap:2px;flex-shrink:0}
+.t-btn{background:none;border:none;cursor:pointer;color:#C8D0E0;padding:3px 5px;border-radius:3px;line-height:1;font-size:12px;transition:color .15s,background .15s}
+.t-btn:hover{color:#0E117A;background:#EEF1F8}
+.t-del:hover{color:#E04040;background:#FEEAEA}
+
+/* inline edit form */
+.todo-edit-row{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:end;padding:8px 10px 10px;background:#F4F7FB;border-top:1px solid #E0E6F0}
+.ef-group label{display:block;font-size:7.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8A94B0;margin-bottom:3px}
+.ef-group input{width:100%;font-family:'DM Mono',monospace;font-size:10px;padding:5px 8px;border:1.5px solid #D0D8E8;border-radius:3px;color:#1A1D3A;outline:none;transition:border-color .15s;background:#fff}
+.ef-group input:focus{border-color:#0E117A}
+.ef-save{font-family:'DM Mono',monospace;font-size:8.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;background:#0E117A;color:#DCF516;border:none;border-radius:3px;cursor:pointer;white-space:nowrap;height:28px}
+
+/* add todo */
+.add-row{display:flex;gap:6px;margin-top:8px}
+.add-input{flex:1;font-family:'DM Mono',monospace;font-size:10.5px;padding:8px 12px;border:1.5px solid #D0D8E8;border-radius:4px;color:#1A1D3A;outline:none;background:#fff;transition:border-color .15s}
+.add-input:focus{border-color:#0E117A}
+.add-input::placeholder{color:#B0B8C8}
+.btn-add{font-family:'DM Mono',monospace;font-size:9.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:8px 14px;background:#0E117A;color:#DCF516;border:none;border-radius:4px;cursor:pointer;white-space:nowrap;transition:opacity .15s}
+.btn-add:hover{opacity:.85}
+
+/* notes */
+.notes-ta{width:100%;font-family:'DM Mono',monospace;font-size:10.5px;padding:10px 12px;border:1.5px solid #D0D8E8;border-radius:4px;color:#1A1D3A;resize:vertical;min-height:72px;outline:none;line-height:1.65;background:#fff;transition:border-color .15s}
+.notes-ta:focus{border-color:#0E117A}
+.notes-ta::placeholder{color:#B0B8C8}
+
+/* drawer footer */
+.d-footer{border-top:1px solid #EBF0F7;padding:12px 22px;flex-shrink:0;display:flex;gap:8px;align-items:center}
+.btn-ics{font-family:'DM Mono',monospace;font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:9px 16px;background:#0E117A;color:#DCF516;border:none;border-radius:4px;cursor:pointer;transition:opacity .15s;display:flex;align-items:center;gap:5px}
+.btn-ics:hover{opacity:.85}
+.btn-cp-link{font-family:'DM Mono',monospace;font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:9px 14px;background:transparent;color:#8A94B0;border:1px solid #D0D8E8;border-radius:4px;cursor:pointer;display:flex;align-items:center;gap:5px;transition:color .15s,border-color .15s}
+.btn-cp-link:hover{color:#0E117A;border-color:#0E117A}
+
+/* toast */
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(12px);background:#0E117A;color:#DCF516;font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:10px 22px;border-radius:4px;z-index:300;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header>
+    <div>
+      <p class="eyebrow">Outil Équipe · LSN Consulting</p>
+      <h1>Chaîne<br>LSN <span class="slash">↗</span></h1>
+    </div>
+    <div class="hd-right">
+      <p>6 phases · interservice</p>
+      <p>Todos · Agenda · Partage</p>
+      <button class="share-btn" onclick="copyLink()">⬡ Copier le lien équipe</button>
+    </div>
+  </header>
+
+  <div class="sub">
+    Cliquez une phase pour ouvrir le détail — <strong>todos, assignations, deadlines</strong>.<br>
+    Le lien de partage encode l'état complet pour toute l'équipe.
+  </div>
+
+  <div class="progress-wrap">
+    <div class="bar-track"><div class="bar-fill" id="barFill"></div></div>
+    <div class="bar-label" id="barLabel">0 / 6 GO</div>
+  </div>
+
+  <div class="phases" id="phaseList"></div>
+
+  <div class="actions">
+    <button class="btn-primary" onclick="evaluate()">↳ Évaluer le projet</button>
+    <button class="btn-ghost" onclick="resetAll()">Réinitialiser</button>
+    <button class="btn-ghost" onclick="exportAllIcs()">⬇ Export agenda global</button>
+  </div>
+
+  <div class="verdict-wrap" id="verdictWrap">
+    <div class="verdict-go" id="vGo">
+      <p class="v-eyebrow">Résultat · 6 / 6</p>
+      <div class="v-title">Feu Vert</div>
+      <p class="v-body">Les 6 critères GO de la Chaîne LSN sont validés. Le projet peut entrer en production.</p>
+    </div>
+    <div class="verdict-nogo" id="vNogo">
+      <p class="v-eyebrow">Résultat · blocage identifié</p>
+      <div class="v-title">Bloquer</div>
+      <p class="v-body" id="vBody"></p>
+      <div class="missing-pills" id="vPills"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Confidentiel · Usage pédagogique LSN Consulting</p>
+    <p>v2026 · Méthode Leila Seghirate</p>
+  </footer>
+</div>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="closeDrawer()"></div>
+
+<!-- DRAWER -->
+<div class="drawer" id="drawer">
+  <div class="d-header">
+    <div class="d-header-left">
+      <div class="d-badge" id="dBadge"></div>
+      <div class="d-title" id="dTitle"></div>
+      <div class="d-sub" id="dSub"></div>
+    </div>
+    <button class="d-close" onclick="closeDrawer()">✕</button>
+  </div>
+
+  <div class="d-go-bar" id="dGoBar">
+    <span class="go-pill">GO</span>
+    <span class="go-crit-text" id="dGoCrit"></span>
+    <button class="btn-go-toggle" id="btnGoToggle" onclick="toggleGo()">Valider</button>
+  </div>
+
+  <div class="d-progress">
+    <div class="d-prog-track"><div class="d-prog-fill" id="dProgFill"></div></div>
+    <div class="d-prog-label" id="dProgLabel">0 tâche</div>
+  </div>
+
+  <div class="d-body">
+    <div class="d-section">
+      <div class="d-section-title">Livrables & tâches</div>
+      <div class="todo-list" id="todoList"></div>
+      <div class="add-row" style="margin-top:10px">
+        <input class="add-input" id="addInput" placeholder="Ajouter une tâche..." onkeydown="onAddKey(event)">
+        <button class="btn-add" onclick="addTodo()">+ Ajouter</button>
+      </div>
+    </div>
+    <div class="d-section">
+      <div class="d-section-title">Notes de phase</div>
+      <textarea class="notes-ta" id="notesArea" placeholder="Notes libres — décisions, blocages, contexte..." rows="3" oninput="saveNotes()"></textarea>
+    </div>
+  </div>
+
+  <div class="d-footer">
+    <button class="btn-ics" onclick="exportIcs()">⬇ Export .ics</button>
+    <button class="btn-cp-link" onclick="copyLink()">⬡ Lien équipe</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const PHASES = [
+  { num:'01', code:'BRIEF',       name:'Cadrage Stratégique',         verb:'Écouter · Comprendre · Aligner',     go:'Le brief est co-signé par le commanditaire',
+    livrables:['Fiche de brief complétée et signée','Diagnostic des écarts de compétences','Périmètre du projet validé','Personae apprenants (1–3 profils)'] },
+  { num:'02', code:'CAHIER',      name:'Documentation Exhaustive',    verb:'Structurer · Documenter · Formaliser', go:"L'estimation de charge est documentée",
+    livrables:['Cahier des charges pédagogique (CCP)','Arborescence des modules et séquences','Tableau des objectifs pédagogiques (Bloom)','Plan d\'évaluation (diagnostic, formative, sommative)'] },
+  { num:'03', code:'DÉCISION',    name:'Arbitrage & Validation',      verb:'Arbitrer · Valider · Décider',       go:'Le planning révisé est accepté par toutes les parties',
+    livrables:['Fiche de décision signée','Arbitrages documentés avec justifications','Planning de production ajusté','Liste des dépendances et risques identifiés'] },
+  { num:'04', code:'TÂCHES',      name:'Planification Opérationnelle',verb:'Décomposer · Prioriser · Orchestrer', go:'Un point hebdo de suivi est planifié',
+    livrables:['Backlog de production complet et priorisé','Calendrier de production semaine par semaine','Matrice de responsabilités (RACI simplifié)','Indicateurs de suivi d\'avancement'] },
+  { num:'05', code:'RÉALISATION', name:'Production des Contenus',     verb:'Créer · Produire · Itérer',          go:'Tous les modules sont testés sur les navigateurs cibles',
+    livrables:['Scripts pédagogiques finalisés','Modules e-learning produits','Ressources complémentaires (fiches, quiz, vidéos)','Rapport de révision et corrections intégrées'] },
+  { num:'06', code:'BILAN',       name:'Capitalisation & Clôture',    verb:'Évaluer · Capitaliser · Transmettre',go:'Le commanditaire a signé le procès-verbal de réception',
+    livrables:['Rapport de bilan projet','Évaluation de satisfaction commanditaire','Fiche de capitalisation (leçons apprises)','Kit de déploiement remis (modules + guide admin)'] },
+];
+
+// ── STATE ──
+// state.phases[i] = { goChecked, notes, todos:[{id,text,done,assignee,deadline,isDefault}] }
+let state = { phases: PHASES.map((p,i) => ({
+  goChecked: false,
+  notes: '',
+  todos: p.livrables.map((t,j) => ({ id:'d'+i+'_'+j, text:t, done:false, assignee:'', deadline:'', isDefault:true }))
+}))};
+
+let currentPhase = -1;
+let editingTodo = null;
+
+// ── LOAD FROM HASH ──
+function loadHash() {
+  const h = location.hash.slice(1);
+  if (!h) return;
+  try {
+    const raw = decodeURIComponent(escape(atob(h)));
+    const saved = JSON.parse(raw);
+    // Merge: keep default todo texts from code, restore state
+    if (saved.phases) {
+      saved.phases.forEach((sp, i) => {
+        if (!state.phases[i]) return;
+        state.phases[i].goChecked = sp.goChecked || false;
+        state.phases[i].notes = sp.notes || '';
+        // Restore default todo states
+        if (sp.defaultStates) {
+          sp.defaultStates.forEach((ds, j) => {
+            if (state.phases[i].todos[j]) {
+              state.phases[i].todos[j].done = ds.done || false;
+              state.phases[i].todos[j].assignee = ds.assignee || '';
+              state.phases[i].todos[j].deadline = ds.deadline || '';
+            }
+          });
+        }
+        // Restore custom todos
+        if (sp.customTodos) {
+          sp.customTodos.forEach(ct => {
+            state.phases[i].todos.push({ id:ct.id, text:ct.text, done:ct.done||false, assignee:ct.assignee||'', deadline:ct.deadline||'', isDefault:false });
+          });
+        }
+      });
+    }
+  } catch(e) { /* invalid hash, ignore */ }
+}
+
+function saveHash() {
+  const compact = { phases: state.phases.map(p => ({
+    goChecked: p.goChecked,
+    notes: p.notes,
+    defaultStates: p.todos.filter(t=>t.isDefault).map(t=>({ done:t.done, assignee:t.assignee, deadline:t.deadline })),
+    customTodos: p.todos.filter(t=>!t.isDefault).map(t=>({ id:t.id, text:t.text, done:t.done, assignee:t.assignee, deadline:t.deadline }))
+  }))};
+  try {
+    const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(compact))));
+    history.replaceState(null, '', '#' + encoded);
+  } catch(e) {}
+}
+
+// ── BUILD MAIN CARDS ──
+function buildCards() {
+  const list = document.getElementById('phaseList');
+  list.innerHTML = '';
+  PHASES.forEach((p, i) => {
+    const s = state.phases[i];
+    const total = s.todos.length;
+    const done = s.todos.filter(t=>t.done).length;
+    const card = document.createElement('div');
+    card.className = 'phase-card' + (s.goChecked ? ' go-on' : '');
+    card.id = 'pcard'+i;
+    card.innerHTML = `
+      <div class="ph-num-col"><div class="ph-num">${p.num}</div></div>
+      <div class="ph-code-col">
+        <span class="ph-badge">${p.code}</span>
+        <span class="ph-label">${p.name}</span>
+      </div>
+      <div class="ph-crit-col">
+        <span class="crit-tag">· critère go</span>
+        <span class="crit-text">${p.go}</span>
+      </div>
+      <div class="ph-stats-col">
+        <div class="stat-done">${done}/${total}</div>
+        <div class="stat-label">tâches</div>
+        <div class="open-hint">Ouvrir ↗</div>
+      </div>`;
+    card.addEventListener('click', () => openDrawer(i));
+    list.appendChild(card);
+  });
+  updateMainBar();
+}
+
+function updateMainBar() {
+  const n = state.phases.filter(p=>p.goChecked).length;
+  document.getElementById('barFill').style.width = Math.round(n/6*100)+'%';
+  document.getElementById('barLabel').textContent = n+' / 6 GO';
+  // Refresh card go states
+  state.phases.forEach((p,i) => {
+    const c = document.getElementById('pcard'+i);
+    if (c) c.className = 'phase-card' + (p.goChecked?' go-on':'');
+  });
+}
+
+function updateCardStats(i) {
+  const c = document.getElementById('pcard'+i);
+  if (!c) return;
+  const s = state.phases[i];
+  const total = s.todos.length;
+  const done = s.todos.filter(t=>t.done).length;
+  const statsCol = c.querySelector('.ph-stats-col');
+  if (statsCol) statsCol.innerHTML = `<div class="stat-done">${done}/${total}</div><div class="stat-label">tâches</div><div class="open-hint">Ouvrir ↗</div>`;
+  c.className = 'phase-card' + (s.goChecked?' go-on':'');
+}
+
+// ── DRAWER ──
+function openDrawer(idx) {
+  currentPhase = idx;
+  const p = PHASES[idx];
+  const s = state.phases[idx];
+  document.getElementById('dBadge').textContent = p.code;
+  document.getElementById('dTitle').textContent = p.name;
+  document.getElementById('dSub').textContent = 'Phase '+p.num+' · '+p.verb;
+  document.getElementById('dGoCrit').textContent = p.go;
+  renderGoBtn();
+  renderTodos();
+  document.getElementById('notesArea').value = s.notes;
+  document.getElementById('overlay').classList.add('active');
+  document.getElementById('drawer').classList.add('open');
+  updateDrawerProgress();
+}
+
+function closeDrawer() {
+  document.getElementById('overlay').classList.remove('active');
+  document.getElementById('drawer').classList.remove('open');
+  currentPhase = -1;
+  editingTodo = null;
+}
+
+function renderGoBtn() {
+  const s = state.phases[currentPhase];
+  const btn = document.getElementById('btnGoToggle');
+  const bar = document.getElementById('dGoBar');
+  btn.className = 'btn-go-toggle' + (s.goChecked?' on':'');
+  btn.textContent = s.goChecked ? '✓ Validé' : 'Valider';
+  bar.className = 'd-go-bar' + (s.goChecked?' go-active':'');
+}
+
+function toggleGo() {
+  if (currentPhase < 0) return;
+  state.phases[currentPhase].goChecked = !state.phases[currentPhase].goChecked;
+  renderGoBtn();
+  updateMainBar();
+  saveHash();
+}
+
+function renderTodos() {
+  if (currentPhase < 0) return;
+  const s = state.phases[currentPhase];
+  const list = document.getElementById('todoList');
+  list.innerHTML = '';
+  s.todos.forEach((t, j) => {
+    const item = document.createElement('div');
+    item.className = 'todo-item' + (t.done?' todo-done':'');
+    item.id = 'todo_'+t.id;
+    const metaHtml = [
+      t.assignee ? `<span class="t-assignee-chip">@${t.assignee}</span>` : '',
+      t.deadline ? `<span class="t-date-chip">${formatDate(t.deadline)}</span>` : '',
+      t.isDefault ? `<span class="t-default-tag">livrable</span>` : ''
+    ].filter(Boolean).join('');
+    item.innerHTML = `
+      <div class="todo-main-row" onclick="toggleTodo('${t.id}')">
+        <div class="t-cb ${t.done?'on':''}" id="tcb_${t.id}">
+          <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><polyline points="1,4 3.5,6.5 9,1" stroke="#0E117A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="t-text-block">
+          <div class="t-text">${t.text}</div>
+          ${metaHtml ? `<div class="t-meta-inline">${metaHtml}</div>` : ''}
+        </div>
+        <div class="t-actions" onclick="event.stopPropagation()">
+          <button class="t-btn" onclick="openEdit('${t.id}')" title="Assigner / deadline">✎</button>
+          ${!t.isDefault ? `<button class="t-btn t-del" onclick="deleteTodo('${t.id}')" title="Supprimer">×</button>` : ''}
+        </div>
+      </div>
+      <div class="todo-edit-row" id="edit_${t.id}" style="display:none" onclick="event.stopPropagation()">
+        <div class="ef-group">
+          <label>Assigné à</label>
+          <input type="text" id="ef_assignee_${t.id}" value="${t.assignee}" placeholder="ex: Sarah">
+        </div>
+        <div class="ef-group">
+          <label>Deadline</label>
+          <input type="date" id="ef_date_${t.id}" value="${t.deadline}">
+        </div>
+        <button class="ef-save" onclick="saveEdit('${t.id}')">OK</button>
+      </div>`;
+    list.appendChild(item);
+  });
+  updateDrawerProgress();
+}
+
+function openEdit(id) {
+  if (editingTodo && editingTodo !== id) {
+    const prev = document.getElementById('edit_'+editingTodo);
+    if (prev) prev.style.display = 'none';
+  }
+  const row = document.getElementById('edit_'+id);
+  if (!row) return;
+  if (row.style.display === 'none') { row.style.display = 'grid'; editingTodo = id; }
+  else { row.style.display = 'none'; editingTodo = null; }
+}
+
+function saveEdit(id) {
+  if (currentPhase < 0) return;
+  const t = state.phases[currentPhase].todos.find(x=>x.id===id);
+  if (!t) return;
+  t.assignee = document.getElementById('ef_assignee_'+id).value.trim();
+  t.deadline = document.getElementById('ef_date_'+id).value;
+  document.getElementById('edit_'+id).style.display = 'none';
+  editingTodo = null;
+  renderTodos();
+  updateCardStats(currentPhase);
+  saveHash();
+}
+
+function toggleTodo(id) {
+  if (currentPhase < 0) return;
+  const t = state.phases[currentPhase].todos.find(x=>x.id===id);
+  if (!t) return;
+  t.done = !t.done;
+  renderTodos();
+  updateCardStats(currentPhase);
+  saveHash();
+}
+
+function deleteTodo(id) {
+  if (currentPhase < 0) return;
+  state.phases[currentPhase].todos = state.phases[currentPhase].todos.filter(x=>x.id!==id);
+  renderTodos();
+  updateCardStats(currentPhase);
+  saveHash();
+}
+
+function addTodo() {
+  if (currentPhase < 0) return;
+  const inp = document.getElementById('addInput');
+  const text = inp.value.trim();
+  if (!text) return;
+  const id = 'c'+ Date.now();
+  state.phases[currentPhase].todos.push({ id, text, done:false, assignee:'', deadline:'', isDefault:false });
+  inp.value = '';
+  renderTodos();
+  updateCardStats(currentPhase);
+  saveHash();
+}
+
+function onAddKey(e) { if (e.key==='Enter') addTodo(); }
+
+function saveNotes() {
+  if (currentPhase < 0) return;
+  state.phases[currentPhase].notes = document.getElementById('notesArea').value;
+  saveHash();
+}
+
+function updateDrawerProgress() {
+  if (currentPhase < 0) return;
+  const s = state.phases[currentPhase];
+  const total = s.todos.length;
+  const done = s.todos.filter(t=>t.done).length;
+  const pct = total ? Math.round(done/total*100) : 0;
+  document.getElementById('dProgFill').style.width = pct+'%';
+  document.getElementById('dProgLabel').textContent = done+' / '+total+' tâche'+(total>1?'s':'');
+}
+
+// ── ICS EXPORT ──
+function makeIcsDate(dateStr) {
+  // dateStr = "YYYY-MM-DD"
+  return dateStr.replace(/-/g,'');
+}
+
+function buildIcs(todos, phaseName) {
+  const lines = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//LSN Consulting//Chaine-LSN//FR','CALSCALE:GREGORIAN'];
+  todos.filter(t=>t.deadline).forEach(t => {
+    const uid = 'lsn-'+t.id+'@lsn-formation';
+    const dtstart = makeIcsDate(t.deadline);
+    // Add 1 day for DTEND (all-day)
+    const dt = new Date(t.deadline+'T00:00:00');
+    dt.setDate(dt.getDate()+1);
+    const dtend = dt.toISOString().slice(0,10).replace(/-/g,'');
+    lines.push('BEGIN:VEVENT');
+    lines.push('UID:'+uid);
+    lines.push('DTSTART;VALUE=DATE:'+dtstart);
+    lines.push('DTEND;VALUE=DATE:'+dtend);
+    lines.push('SUMMARY:[LSN '+phaseName+'] '+t.text);
+    if (t.assignee) lines.push('DESCRIPTION:Assigné à : '+t.assignee);
+    lines.push('END:VEVENT');
+  });
+  lines.push('END:VCALENDAR');
+  return lines.join('\r\n');
+}
+
+function downloadIcs(content, filename) {
+  const blob = new Blob([content], {type:'text/calendar;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function exportIcs() {
+  if (currentPhase < 0) return;
+  const p = PHASES[currentPhase];
+  const s = state.phases[currentPhase];
+  const hasDates = s.todos.some(t=>t.deadline);
+  if (!hasDates) { showToast('Aucune deadline définie — ajoutez des dates via ✎'); return; }
+  const ics = buildIcs(s.todos, p.code);
+  downloadIcs(ics, 'LSN-'+p.code+'-todos.ics');
+  showToast('Fichier .ics exporté — importez dans votre agenda');
+}
+
+function exportAllIcs() {
+  const allTodos = [];
+  PHASES.forEach((p, i) => {
+    state.phases[i].todos.forEach(t => {
+      if (t.deadline) allTodos.push({ ...t, text:'['+p.code+'] '+t.text });
+    });
+  });
+  if (!allTodos.length) { showToast('Aucune deadline définie sur le projet'); return; }
+  const lines = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//LSN Consulting//Chaine-LSN//FR','CALSCALE:GREGORIAN'];
+  allTodos.forEach(t => {
+    const uid = 'lsn-all-'+t.id+'@lsn-formation';
+    const dtstart = makeIcsDate(t.deadline);
+    const dt = new Date(t.deadline+'T00:00:00');
+    dt.setDate(dt.getDate()+1);
+    const dtend = dt.toISOString().slice(0,10).replace(/-/g,'');
+    lines.push('BEGIN:VEVENT','UID:'+uid,'DTSTART;VALUE=DATE:'+dtstart,'DTEND;VALUE=DATE:'+dtend,'SUMMARY:'+t.text);
+    if (t.assignee) lines.push('DESCRIPTION:Assigné à : '+t.assignee);
+    lines.push('END:VEVENT');
+  });
+  lines.push('END:VCALENDAR');
+  downloadIcs(lines.join('\r\n'), 'LSN-Projet-Complet.ics');
+  showToast('Export agenda projet complet généré');
+}
+
+// ── COPY LINK ──
+function copyLink() {
+  saveHash();
+  const url = location.href;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(url).then(() => showToast('Lien copié — partagez à l\'équipe'));
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = url; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showToast('Lien copié — partagez à l\'équipe');
+  }
+}
+
+// ── EVALUATE ──
+function evaluate() {
+  const missing = PHASES.filter((_,i) => !state.phases[i].goChecked);
+  const wrap = document.getElementById('verdictWrap');
+  const vGo = document.getElementById('vGo');
+  const vNo = document.getElementById('vNogo');
+  vGo.classList.remove('show'); vNo.classList.remove('show');
+  wrap.classList.remove('open');
+  setTimeout(() => {
+    if (!missing.length) { vGo.classList.add('show'); }
+    else {
+      document.getElementById('vBody').textContent = missing.length+' phase'+(missing.length>1?'s':'')+' non validée'+(missing.length>1?'s':'')+' — traiter avant toute production.';
+      document.getElementById('vPills').innerHTML = missing.map(p=>`<span class="m-pill">${p.code}</span>`).join('');
+      vNo.classList.add('show');
+    }
+    wrap.classList.add('open');
+    setTimeout(()=>wrap.scrollIntoView({behavior:'smooth',block:'nearest'}),80);
+  }, 60);
+}
+
+// ── RESET ──
+function resetAll() {
+  state.phases.forEach(p => {
+    p.goChecked = false; p.notes = '';
+    p.todos.forEach(t => { t.done=false; t.assignee=''; t.deadline=''; });
+    p.todos = p.todos.filter(t=>t.isDefault);
+  });
+  history.replaceState(null,'','#');
+  buildCards();
+  document.getElementById('verdictWrap').classList.remove('open');
+  document.getElementById('vGo').classList.remove('show');
+  document.getElementById('vNogo').classList.remove('show');
+  closeDrawer();
+  showToast('Projet réinitialisé');
+}
+
+// ── TOAST ──
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// ── HELPERS ──
+function formatDate(d) {
+  if (!d) return '';
+  const [y,m,day] = d.split('-');
+  return day+'/'+m+'/'+y;
+}
+
+// ── INIT ──
+loadHash();
+buildCards();
+</script>
+</body>
+</html>

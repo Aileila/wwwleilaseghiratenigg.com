@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Frameworks — Leila Seghirate-Nigg</title>
+  <meta name="description" content="6 frameworks propriétaires d'architecture pédagogique et IA — LSN Consulting."/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%233333CC'/%3E%3Ctext x='16' y='22' font-family='serif' font-weight='700' font-size='20' fill='white' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Portfolio · Leila Seghirate-Nigg"/>
+  <meta property="og:title" content="Frameworks — Leila Seghirate-Nigg"/>
+  <meta property="og:description" content="6 frameworks propriétaires d'architecture pédagogique et IA — LSN Consulting."/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Frameworks — Leila Seghirate-Nigg"/>
+  <meta name="twitter:description" content="6 frameworks propriétaires d'architecture pédagogique et IA — LSN Consulting."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          "primary":"#2A2A34","primary-container":"#3333CC","on-primary":"#ffffff",
+          "background":"#fbf9f9","on-background":"#2A2A34","surface":"#fbf9f9","on-surface":"#2A2A34",
+          "surface-variant":"#e3e2e2","on-surface-variant":"#2A2A34","surface-container-lowest":"#ffffff",
+          "surface-container-low":"#f5f3f3","surface-container":"#efeded","surface-container-high":"#e9e8e7",
+          "outline":"#948F8A","outline-variant":"#948F8A",
+        },
+        fontFamily: {
+          "headline":["Noto Serif","serif"],
+          "body":["Manrope","sans-serif"],
+          "label":["Manrope","sans-serif"]
+        }
+      }}
+    }
+  </script>
+  <style>
+    /* Brand Interaction Matrix - official palette lock */
+    :root {
+      --brand-blue: #3333CC;
+      --brand-cream: #EDE9E3;
+      --brand-ink: #2A2A34;
+      --brand-taupe: #948F8A;
+    }
+    .bg-primary-container { background-color: var(--brand-blue) !important; }
+    .hover\:bg-primary:hover { background-color: var(--brand-ink) !important; }
+    .text-primary-container { color: var(--brand-blue) !important; }
+    .hover\:text-primary-container:hover { color: var(--brand-blue) !important; }
+    .border-primary-container { border-color: var(--brand-blue) !important; }
+    .hover\:border-primary-container:hover { border-color: var(--brand-blue) !important; }
+    .border-outline-variant { border-color: var(--brand-taupe) !important; }
+    .text-on-surface-variant { color: var(--brand-ink) !important; }
+    :root{--blue:#3333CC;--indigo:#1A1AAF;--vif:#3333CC;--dark:#2A2A34;--grey:#948F8A;--pearl:#f5f3f3;--creme:#EDE9E3;}
+
+    #main-nav{transition:box-shadow .25s ease}
+    #main-nav.nav-soft{
+      background:rgba(245,243,243,.94);
+      border-bottom-color:rgba(148,143,138,.26);
+      box-shadow:0 8px 22px rgba(42,42,52,.05);
+    }
+    #main-nav.nav-soft.scrolled{box-shadow:0 10px 28px rgba(42,42,52,.09)}
+    #main-nav.scrolled{box-shadow:0 4px 20px rgba(13,12,43,.10)}
+    #mobile-menu{display:none} #mobile-menu.open{display:block}
+
+    /* Reveal */
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s cubic-bezier(.22,1,.36,1)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    /* Sidebar nav */
+    .fw-nav-link{
+      display:block;padding:.5rem 1rem;border-left:2px solid transparent;
+      font-size:.72rem;font-weight:600;letter-spacing:.06em;color:var(--grey);
+      font-family:Manrope,sans-serif;transition:all .2s;cursor:pointer;text-decoration:none;
+    }
+    .fw-nav-link:hover{color:var(--blue);border-left-color:rgba(51,51,204,.3);}
+    .fw-nav-link.active{color:var(--blue);border-left-color:var(--blue);background:rgba(51,51,204,.04);}
+
+    /* Framework section */
+    .fw-section{
+      padding:4rem 0;border-top:1px solid #e3e2e2;
+      scroll-margin-top:80px;
+    }
+    .fw-section:first-child{border-top:none;padding-top:2rem}
+
+    /* Number badge */
+    .fw-badge{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:42px;height:42px;border-radius:10px;
+      background:#2A2A34;color:#EDE9E3;
+      font-size:.78rem;font-weight:700;font-family:Manrope,sans-serif;
+      flex-shrink:0;
+    }
+
+    /* Composant item */
+    .composant-item{
+      display:flex;align-items:flex-start;gap:.75rem;
+      padding:1rem 1.25rem;background:#fff;border:1px solid #e3e2e2;
+      border-radius:8px;transition:border-color .2s,box-shadow .2s;
+    }
+    .composant-item:hover{border-color:rgba(51,51,204,.25);box-shadow:0 4px 16px rgba(42,42,52,.06);}
+
+    .composant-num{
+      width:26px;height:26px;border-radius:50%;background:rgba(51,51,204,.08);
+      display:flex;align-items:center;justify-content:center;
+      font-size:.6rem;font-weight:700;color:var(--blue);flex-shrink:0;font-family:Manrope,sans-serif;
+    }
+
+    /* Pill tags */
+    .pill{
+      display:inline-block;font-size:.58rem;font-weight:700;letter-spacing:.12em;
+      text-transform:uppercase;padding:.28rem .75rem;border-radius:999px;
+      border:1px solid;font-family:Manrope,sans-serif;
+    }
+
+    /* Gain highlight */
+    .gain-card{
+      background:#EDE9E3;color:#2A2A34;border-radius:10px;padding:1.25rem 1.5rem;
+      border:1px solid rgba(42,42,52,.1);
+    }
+
+    /* Sticky sidebar */
+    @media(min-width:1024px){
+      .sidebar-sticky{position:sticky;top:88px;max-height:calc(100vh - 100px);overflow-y:auto;}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+      .reveal{opacity:1;transform:none}
+    }
+
+    /* Interactive explorer */
+    .fw-explorer-stage{
+      position:relative;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid #d9d6d2;
+      background:#efeeeb;
+      min-height:460px;
+      height:100%;
+      box-shadow:0 16px 42px rgba(42,42,52,.14);
+    }
+    .fw-explorer-bg{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:var(--fw-pos-x, 50%) var(--fw-pos-y, 50%);
+      filter:var(--fw-filter, grayscale(100%) brightness(.95) contrast(1.06));
+      transform:scale(var(--fw-scale, 1));
+      transition:opacity .45s ease, transform .6s ease;
+    }
+    .fw-explorer-bg.is-changing{
+      opacity:.72;
+      transform:scale(calc(var(--fw-scale, 1) + .03));
+    }
+    .fw-explorer-layer{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(125deg, rgba(248,247,244,.2), rgba(30,30,30,.12));
+    }
+    .fw-current-chip{
+      position:absolute;
+      top:14px;
+      left:50%;
+      transform:translateX(-50%);
+      white-space:nowrap;
+      background:rgba(255,255,255,.92);
+      color:#1f1f1f;
+      border-radius:999px;
+      padding:.28rem .72rem;
+      font-size:.6rem;
+      font-weight:700;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      z-index:12;
+    }
+
+    .fw-detail-card{
+      border:1px solid #ddd9d2;
+      border-radius:16px;
+      background:#fff;
+      padding:1.2rem;
+      box-shadow:0 10px 30px rgba(42,42,52,.08);
+      height:100%;
+      min-height:460px;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .fw-btn-radiant{
+      font-size:.78rem;
+      font-weight:700;
+      border-radius:999px;
+      padding:.68rem 1.1rem;
+      min-width:126px;
+      border:1px solid rgba(148,143,138,.36);
+      color:#2f2c2a;
+      background:linear-gradient(145deg, rgba(255,255,255,.96), rgba(244,241,239,.96));
+      position:relative;
+      overflow:hidden;
+      transition:all .24s ease;
+    }
+    .fw-btn-radiant::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(140% 140% at 0% 0%, rgba(60,60,60,.16), transparent 50%);
+      pointer-events:none;
+    }
+    .fw-btn-radiant::after{
+      content:"";
+      position:absolute;
+      inset:-45% -58%;
+      background:linear-gradient(115deg, transparent 36%, rgba(255,255,255,.52) 50%, transparent 64%);
+      transform:translateX(-50%) rotate(8deg);
+      opacity:0;
+      pointer-events:none;
+    }
+    .fw-btn-radiant:hover,
+    .fw-btn-radiant:focus-visible{
+      border-color:rgba(42,42,52,.42);
+      box-shadow:0 10px 22px rgba(42,42,52,.16);
+      transform:translateY(-1px);
+      outline:none;
+    }
+    .fw-btn-radiant:hover::after,
+    .fw-btn-radiant:focus-visible::after{
+      opacity:.9;
+      animation:fw-radiant-sweep 980ms ease-out 1;
+    }
+
+    .fw-btn-ink{
+      font-size:.86rem;
+      font-weight:700;
+      border-radius:999px;
+      padding:.7rem 1.2rem;
+      color:#fff;
+      background:linear-gradient(140deg, #2f2f2f 0%, #1f1f1f 52%, #111 100%);
+      border:1px solid rgba(18,18,18,.8);
+      white-space:nowrap;
+      transition:all .24s ease;
+      box-shadow:0 10px 24px rgba(23,23,23,.26);
+    }
+    .fw-btn-ink:hover,
+    .fw-btn-ink:focus-visible{
+      transform:translateY(-1px);
+      box-shadow:0 12px 28px rgba(23,23,23,.34);
+      outline:none;
+    }
+
+    .fw-gain-card{
+      background:#EDE9E3;
+      color:#2A2A34;
+      border-radius:12px;
+      padding:.88rem .95rem;
+      border:1px solid rgba(42,42,52,.12);
+      box-shadow:0 4px 14px rgba(42,42,52,.08);
+      margin-bottom:1rem;
+    }
+
+
+    @keyframes fw-radiant-sweep {
+      from { transform:translateX(-58%) rotate(8deg); opacity:0; }
+      25% { opacity:.9; }
+      to { transform:translateX(58%) rotate(8deg); opacity:0; }
+    }
+
+    @media (max-width: 768px){
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased min-h-screen flex flex-col">
+
+<!-- NAV -->
+<nav id="main-nav" class="nav-soft sticky top-0 z-50 backdrop-blur-md border-b border-surface-variant">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <a href="index.html" class="font-headline font-bold text-xl tracking-tight text-on-surface hover:text-primary-container transition-colors">Leila Seghirate-Nigg</a>
+      <div class="hidden sm:flex sm:items-center sm:space-x-8">
+        <a href="offre.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Expertise</a>
+        <a href="a-propos.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">À propos</a>
+        <a href="index.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Réalisations</a>
+        <a href="methodologie.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Méthodologie</a>
+        <a href="frameworks.html" class="text-primary-container text-sm font-medium border-b-2 border-primary-container pb-1">Frameworks</a>
+        <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" class="bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Me contacter</a>
+      </div>
+      <button id="hamburger" class="sm:hidden p-2 rounded-md text-on-surface hover:bg-surface-container transition-colors" aria-label="Menu" aria-expanded="false">
+        <svg id="icon-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="icon-close" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="sm:hidden pb-4 border-t border-surface-variant mt-1">
+      <div class="flex flex-col gap-2 pt-3">
+        <a href="offre.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium">Expertise</a>
+        <a href="a-propos.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium">À propos</a>
+        <a href="index.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium">Réalisations</a>
+        <a href="methodologie.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium">Méthodologie</a>
+        <a href="frameworks.html" class="px-3 py-2 text-primary-container bg-surface-container-low rounded-md text-sm font-medium">Frameworks</a>
+        <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" class="mt-2 mx-3 text-center bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold">Me contacter</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="flex-1">
+
+  <!-- HERO -->
+  <section style="background:var(--creme)">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-12 reveal">
+      <a href="methodologie.html#archi" class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-primary-container font-label mb-5 hover:gap-3 transition-all">
+        <span>←</span> Architecture Pédagogique & IA
+      </a>
+      <h1 class="font-headline text-4xl sm:text-5xl font-bold tracking-tight text-on-surface leading-tight mb-4 max-w-2xl">
+        6 Frameworks<br>
+        <span class="font-light italic text-on-surface-variant">propriétaires LSN</span>
+      </h1>
+      <p class="text-on-surface-variant text-base leading-relaxed max-w-xl mb-6">
+        Du prompt engineering à la chaîne de production automatisée. Chaque framework est un système complet — testé, documenté, transmissible.
+      </p>
+    </div>
+  </section>
+
+  <!-- VISUAL EXPLORER -->
+  <section class="py-12 border-t border-surface-variant bg-surface-container-low">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 reveal">
+      <div class="flex items-end justify-between gap-4 mb-6">
+        <div>
+          <p class="text-xs font-bold tracking-[.16em] uppercase text-primary-container font-label mb-2">Cadres d'intervention</p>
+          <h2 class="font-headline text-2xl sm:text-3xl font-bold text-on-surface">Des frameworks activables en mission, pour co-construire des projets solides.</h2>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-[1.35fr_.8fr] gap-6 items-stretch">
+        <div class="fw-explorer-stage">
+          <img id="fwExplorerImage" src="assets/images/heroes/image.webp" alt="Galerie des frameworks LSN" class="fw-explorer-bg"/>
+          <div class="fw-explorer-layer"></div>
+          <div id="fwCurrentChip" class="fw-current-chip">Framework 01</div>
+        </div>
+
+        <aside id="fwDetailCard" class="fw-detail-card" aria-live="polite"></aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="flex gap-12 items-start">
+
+      <!-- SIDEBAR NAV (desktop) -->
+      <aside class="hidden lg:block w-52 flex-shrink-0 sidebar-sticky">
+        <div class="text-xs font-bold tracking-widest uppercase text-on-surface-variant font-label mb-4">Navigation</div>
+        <nav id="sidebarNav" class="flex flex-col gap-1"></nav>
+        <div class="mt-8 pt-6 border-t border-surface-variant">
+          <a href="methodologie.html" class="text-xs font-bold font-label text-primary-container hover:underline flex items-center gap-1">← Méthodologie</a>
+        </div>
+      </aside>
+
+      <!-- FRAMEWORKS LIST -->
+      <div class="flex-1 min-w-0" id="fwList"></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="border-t border-surface-variant" style="background:var(--creme)">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-14 flex flex-col sm:flex-row items-center justify-between gap-6 reveal">
+      <div>
+        <h2 class="font-headline text-2xl font-bold text-on-surface tracking-tight">Un de ces frameworks correspond à votre besoin&nbsp;?</h2>
+        <p class="text-on-surface-variant text-sm mt-2">Discutons de son application dans votre contexte.</p>
+      </div>
+      <a href="mailto:seghirate@gmail.com" class="flex-shrink-0 bg-primary-container text-white px-7 py-3 rounded-full text-sm font-bold hover:bg-primary transition-colors" style="box-shadow:0 6px 20px rgba(51,51,204,.3)">
+        Démarrer une conversation →
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="border-t border-surface-variant py-8">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-3">
+    <span class="font-headline font-bold text-on-surface tracking-tight">Leila Seghirate-Nigg</span>
+    <p class="text-xs text-on-surface-variant font-label">Architecte d'expériences IA · LSN Consulting © 2026</p>
+    <a href="methodologie.html" class="text-xs text-primary-container font-semibold font-label hover:underline">← Méthodologie</a>
+  </div>
+</footer>
+
+<script>
+const frameworks = [
+  {
+    id:'ppa', num:'#1', title:'Ingénierie pédagogique assistée',
+    tagline:'Expériences interactives sans développeur.',
+    cible:'Directions L&D, agences Digital Learning, RH Transformation',
+    gain:'Le formateur recentre son énergie sur ce qui compte : transmettre, pas produire',
+    desc:'Suite de templates HTML brandés reposant sur une architecture CONFIG-only — séparation stricte entre le contenu et le layout. Claude intervient comme moteur de génération. Le résultat : branching stories, quiz adaptatifs, simulations décisionnelles — livrés en fichier HTML unique, déployable en SCORM ou standalone, sans une ligne de code côté client.',
+    composants:[
+      {num:'01', label:'8 templates HTML brandés', detail:'Montserrat, Bleu Électrique + Crème — cohérence visuelle garantie à chaque module'},
+      {num:'02', label:'Architecture CONFIG-only', detail:'Séparation stricte contenu / layout — zéro ligne de code pour le formateur'},
+      {num:'03', label:'Moteur de génération Claude intégré', detail:'Prompts calibrés par type de module : quiz, scénario, simulation'},
+      {num:'04', label:'Export SCORM 1.2 / 2004 + standalone', detail:'Compatible toutes plateformes LMS et déploiement hors LMS'},
+    ],
+    tags:['E-learning','HTML/JS','Claude IA','SCORM'],
+  },
+  {
+    id:'idi', num:'#2', title:'Structuration documentaire intelligente',
+    tagline:'Flux standardisés, zéro perte de format.',
+    cible:'Services formation, directions juridiques et RH, cabinets conseil',
+    gain:'L\'ingénieur pédagogique garde la maîtrise intellectuelle, l\'outil gère la mise en forme',
+    desc:'Pipelines de génération documentaire pilotés par IA. Des templates Notion connectés à Claude pour produire cahiers des charges pédagogiques, rapports de bilan, guides apprenant et supports formateur — en maintenant une cohérence stricte de ton et de format, quel que soit l\'opérateur.',
+    composants:[
+      {num:'01', label:'Templates Notion → export multi-format', detail:'PDF, DOCX, HTML — un seul document source, toutes les sorties'},
+      {num:'02', label:'Prompts systèmes calibrés par type', detail:'CCP, bilan, guide apprenant, rapport RSE — chaque type a son prompt dédié'},
+      {num:'03', label:'Contrôle qualité automatisé', detail:'Vérification cohérence de ton, complétude des sections, respect du format'},
+      {num:'04', label:'Bibliothèque de blocs réutilisables', detail:'Par domaine métier : finance, juridique, RH, tech, formation'},
+    ],
+    tags:['Notion','IA générative','Automatisation','Multi-format'],
+  },
+  {
+    id:'pec', num:'#3', title:'Pilotage de la génération par l\'IA',
+    tagline:'Des résultats reproductibles, quelle que soit l\'opérateur.',
+    cible:'Équipes L&D souhaitant intégrer l\'IA durablement dans leurs flux',
+    gain:'Chaque apprenant reçoit un contenu pensé pour lui, pas une version générique',
+    desc:'Conception et documentation de bibliothèques de prompts par cas d\'usage pédagogique. Chaînes de génération multi-étapes avec validation humaine aux points critiques. L\'objectif : que l\'IA produise des résultats constants, pas des résultats aléatoires — et que les équipes en soient les pilotes, pas les subies.',
+    composants:[
+      {num:'01', label:'Audit des besoins de génération', detail:'Par rôle (formateur, chef de projet, expert métier) et par usage'},
+      {num:'02', label:'Bibliothèque de prompts validés', detail:'Notion + versionning — chaque prompt testé, documenté, améliorable'},
+      {num:'03', label:'Chaînes multi-étapes avec gates', detail:'Validation humaine intégrée aux points à fort enjeu (brief, validation, livraison)'},
+      {num:'04', label:'Formation équipe + gouvernance', detail:'Transfert de compétence et documentation de la politique d\'usage IA'},
+    ],
+    tags:['Prompt Engineering','Gouvernance IA','Formation équipe','Claude'],
+  },
+  {
+    id:'coma', num:'#4', title:'Diffusion multi-formats et multi-niveaux',
+    tagline:'Une source canonique, des déclinaisons sans reconstruction.',
+    cible:'Grands comptes, organisations multiculturelles, réseaux franchisés',
+    gain:'Un seul effort de création, une présence cohérente sur tous les canaux',
+    desc:'Architecture de contenu permettant de produire depuis une source canonique (Notion) des déclinaisons pour audiences multiples : niveaux experts/non-experts, langues FR/EN, formats synchrone/asynchrone, mobile/desktop. La cohérence est structurelle, pas éditoriale — elle ne dépend pas de la vigilance de l\'auteur.',
+    composants:[
+      {num:'01', label:'Cartographie audiences et besoins', detail:'Matrice des publics × formats × niveaux de maîtrise'},
+      {num:'02', label:'Architecture source canonique', detail:'Un document Notion maître → variables d\'adaptation par audience'},
+      {num:'03', label:'Flux de localisation FR/EN intégré', detail:'Traduction + adaptation culturelle — pas seulement traduction mot à mot'},
+      {num:'04', label:'Templates de déclinaison par format', detail:'Synchrone, asynchrone, mobile, desktop, print — chaque format a son template'},
+    ],
+    tags:['Content Strategy','Multilangue','Notion','Automatisation'],
+  },
+  {
+    id:'fg', num:'#5', title:'Capitalisation des expertises métier',
+    tagline:'Transformer une expertise métier en outil transmissible.',
+    cible:'Consultants, experts métier, formateurs internes',
+    gain:'Ce que l\'expert sait depuis 15 ans devient transmissible à toute une équipe',
+    desc:'Processus structuré d\'extraction et de packaging d\'expertises métier en frameworks pédagogiques autonomes. Ce qui est dans la tête d\'un expert depuis 15 ans devient un outil visuel, textuel, transmissible — que d\'autres peuvent utiliser et améliorer. Chaque projet enrichit le suivant.',
+    composants:[
+      {num:'01', label:'Entretiens d\'extraction', detail:'Méthode semi-directive pour extraire l\'expertise implicite et les heuristiques'},
+      {num:'02', label:'Formalisation framework', detail:'Visualisation + documentation textuelle — le framework prend forme'},
+      {num:'03', label:'Packaging pédagogique', detail:'Module de formation + guide facilitateur — le framework devient enseignable'},
+      {num:'04', label:'Versionning et capitalisation', detail:'Intégration dans le Second Cerveau LSN — chaque version est traçable'},
+    ],
+    tags:['Knowledge Management','Design pédagogique','Capitalisation','Second Cerveau'],
+  },
+  {
+    id:'adc', num:'#6', title:'Production documentaire institutionnelle',
+    tagline:'Documents corporate générés à la demande, en cohérence de marque.',
+    cible:'Directions communication, RH, marketing interne grands groupes',
+    gain:'L\'équipe retrouve du temps pour l\'essentiel : penser, décider, accompagner',
+    desc:'Chaînes de production automatisées pour les documents récurrents à forte valeur : onboarding, rapports RSE, supports de management, aide-mémoire. Cohérence de ton, de format et de marque garantie à chaque génération — même quand c\'est une personne différente qui génère.',
+    composants:[
+      {num:'01', label:'Audit des documents récurrents', detail:'Cartographie des documents à fort volume et fort coût de production'},
+      {num:'02', label:'Templates génératifs par type', detail:'Onboarding, reporting, aide-mémoire — chaque type a son pipeline dédié'},
+      {num:'03', label:'Workflow de validation interne', detail:'Boucle de relecture et approbation intégrée au pipeline'},
+      {num:'04', label:'Dashboard de suivi de production', detail:'Volume, délais, taux de validation — pilotage documentaire en temps réel'},
+    ],
+    tags:['Corporate','Automatisation','Onboarding','RSE'],
+  },
+];
+
+const frameworkVisuals = {
+  ppa: 'assets/images/05965b08-7200-4999-84f5-865783e17fb9.webp',
+  idi: 'assets/images/Frameworks/Structuration%20documentaire%20intelligente.jpg?v=20260518',
+  pec: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&h=1000&fit=crop&crop=entropy&auto=format&q=80',
+  coma: 'assets/images/Frameworks/Diffusion%20multi-formats%20et%20multi-niveaux.jpg?v=20260518',
+  fg:  'https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1600&h=1000&fit=crop&crop=faces,entropy&auto=format&q=80',
+  adc: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&h=1000&fit=crop&crop=faces,entropy&auto=format&q=80',
+};
+
+let activeFramework = frameworks[0]?.id;
+const AUTO_PLAY_MS = 8000;
+let autoPlayTimer = null;
+let userPaused = false;
+
+const fwExplorerImage = document.getElementById('fwExplorerImage');
+const fwExplorerStage = document.querySelector('.fw-explorer-stage');
+const fwCurrentChip = document.getElementById('fwCurrentChip');
+const fwDetailCard = document.getElementById('fwDetailCard');
+const fwRibbonInner = document.getElementById('fwRibbonInner');
+const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function setActiveFramework(id) {
+  const data = frameworks.find(f => f.id === id);
+  if (!data) return;
+  activeFramework = id;
+
+  const currentIdx = frameworks.findIndex(f => f.id === id);
+  const visual = frameworkVisuals[id] || 'assets/images/heroes/image.webp';
+  if (fwExplorerImage) {
+    // Keep the LSN blue visible and tighten framing for the bicolor PPA test image.
+    if (id === 'ppa') {
+      fwExplorerImage.style.setProperty('--fw-filter', 'grayscale(28%) brightness(.96) contrast(1.08) saturate(1.35)');
+      fwExplorerImage.style.setProperty('--fw-scale', '1.14');
+      fwExplorerImage.style.setProperty('--fw-pos-x', '50%');
+      fwExplorerImage.style.setProperty('--fw-pos-y', '38%');
+    } else {
+      fwExplorerImage.style.removeProperty('--fw-filter');
+      fwExplorerImage.style.removeProperty('--fw-scale');
+      fwExplorerImage.style.removeProperty('--fw-pos-x');
+      fwExplorerImage.style.removeProperty('--fw-pos-y');
+    }
+
+    fwExplorerImage.classList.add('is-changing');
+    setTimeout(() => {
+      fwExplorerImage.src = visual;
+      fwExplorerImage.alt = `Visuel ${data.title}`;
+    }, 120);
+    setTimeout(() => fwExplorerImage.classList.remove('is-changing'), 520);
+  }
+  if (fwCurrentChip) {
+    fwCurrentChip.textContent = `Framework ${String(currentIdx + 1).padStart(2, '0')} · ${data.id.toUpperCase()}`;
+  }
+
+  fwDetailCard.innerHTML = `
+    <div class="flex items-start justify-between gap-3 mb-3">
+      <span class="fw-badge" style="width:38px;height:38px;border-radius:9px;">${data.num}</span>
+      <div class="text-right text-xs font-bold uppercase tracking-widest text-on-surface-variant font-label">Framework actif</div>
+    </div>
+
+    <h3 class="font-headline text-2xl leading-tight text-on-surface mb-1">${data.title}</h3>
+    <p class="text-sm italic text-on-surface-variant font-label mb-4">${data.tagline}</p>
+
+    <div class="fw-gain-card">
+      <div class="text-[11px] font-bold uppercase tracking-widest opacity-75 font-label mb-1">Gain clé</div>
+      <p class="text-sm font-semibold leading-snug">${data.gain}</p>
+    </div>
+
+    <div class="space-y-2 mb-4 flex-1">
+      ${data.composants.slice(0,3).map(c => `
+        <div class="rounded-lg border border-surface-variant px-3 py-2">
+          <div class="text-xs font-semibold text-on-surface font-label">${c.num}. ${c.label}</div>
+          <div class="text-xs text-on-surface-variant mt-0.5">${c.detail}</div>
+        </div>
+      `).join('')}
+    </div>
+
+    <div class="flex items-center justify-between gap-3 sm:gap-4">
+      <button type="button" id="fwPrev" class="fw-btn-radiant">← Précédent</button>
+      <a href="#${data.id}" class="fw-btn-ink">Voir le framework complet</a>
+      <button type="button" id="fwNext" class="fw-btn-radiant">Suivant →</button>
+    </div>
+  `;
+
+  document.getElementById('fwPrev')?.addEventListener('click', () => {
+    const prev = (currentIdx - 1 + frameworks.length) % frameworks.length;
+    setActiveFramework(frameworks[prev].id);
+  });
+  document.getElementById('fwNext')?.addEventListener('click', () => {
+    const next = (currentIdx + 1) % frameworks.length;
+    setActiveFramework(frameworks[next].id);
+  });
+}
+
+setActiveFramework(activeFramework);
+
+function goToNextFramework() {
+  const idx = frameworks.findIndex(f => f.id === activeFramework);
+  const next = frameworks[(idx + 1) % frameworks.length];
+  if (next) setActiveFramework(next.id);
+}
+
+function stopAutoPlay() {
+  if (autoPlayTimer) {
+    clearInterval(autoPlayTimer);
+    autoPlayTimer = null;
+  }
+}
+
+function startAutoPlay() {
+  if (prefersReducedMotion || userPaused || frameworks.length < 2 || autoPlayTimer) return;
+  autoPlayTimer = setInterval(goToNextFramework, AUTO_PLAY_MS);
+}
+
+function bindPauseZone(el) {
+  if (!el) return;
+  el.addEventListener('mouseenter', () => {
+    userPaused = true;
+    stopAutoPlay();
+  });
+  el.addEventListener('mouseleave', () => {
+    userPaused = false;
+    startAutoPlay();
+  });
+  el.addEventListener('focusin', () => {
+    userPaused = true;
+    stopAutoPlay();
+  });
+  el.addEventListener('focusout', () => {
+    userPaused = false;
+    startAutoPlay();
+  });
+}
+
+bindPauseZone(fwExplorerStage);
+bindPauseZone(fwDetailCard);
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) stopAutoPlay();
+  else startAutoPlay();
+});
+
+startAutoPlay();
+
+// ── Build sidebar nav ──
+const sidebar = document.getElementById('sidebarNav');
+frameworks.forEach(f => {
+  const a = document.createElement('a');
+  a.href = `#${f.id}`;
+  a.className = 'fw-nav-link';
+  a.dataset.id = f.id;
+  a.innerHTML = `<span class="text-primary-container font-bold">${f.num}</span> ${f.title.split(' ').slice(0,3).join(' ')}…`;
+  sidebar.appendChild(a);
+});
+
+// ── Build framework sections ──
+const list = document.getElementById('fwList');
+frameworks.forEach((f, i) => {
+  const section = document.createElement('section');
+  section.id = f.id;
+  section.className = 'fw-section reveal';
+
+  section.innerHTML = `
+    <!-- Header -->
+    <div class="flex items-start gap-4 mb-8">
+      <div class="fw-badge">${f.num}</div>
+      <div class="flex-1">
+        <h2 class="font-headline text-2xl sm:text-3xl font-bold text-on-surface tracking-tight leading-tight">${f.title}</h2>
+        <p class="font-label italic text-on-surface-variant mt-1">${f.tagline}</p>
+      </div>
+    </div>
+
+    <!-- Content grid -->
+    <div class="grid lg:grid-cols-3 gap-6 mb-8">
+
+      <!-- Description + tags (2 cols) -->
+      <div class="lg:col-span-2 flex flex-col gap-5">
+        <div>
+          <div class="text-xs font-bold tracking-widest uppercase font-label mb-2" style="color:var(--blue)">Description</div>
+          <p class="text-on-surface text-sm leading-relaxed">${f.desc}</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          ${f.tags.map(t => `<span class="pill" style="color:var(--blue);border-color:rgba(51,51,204,.2);background:rgba(51,51,204,.04)">${t}</span>`).join('')}
+        </div>
+      </div>
+
+      <!-- Meta (1 col) -->
+      <div class="flex flex-col gap-4">
+        <!-- Gain highlight -->
+        <div class="gain-card">
+          <div class="text-xs font-bold tracking-widest uppercase font-label mb-2 opacity-70">Gain mesurable</div>
+          <p class="text-sm font-semibold leading-snug font-label">${f.gain}</p>
+        </div>
+        <!-- Cible -->
+        <div class="bg-surface-container-low rounded-xl p-4 border border-surface-variant">
+          <div class="text-xs font-bold tracking-widest uppercase font-label text-on-surface-variant mb-2">Cible</div>
+          <p class="text-sm text-on-surface font-label leading-relaxed">${f.cible}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Composants -->
+    <div>
+      <div class="text-xs font-bold tracking-widest uppercase font-label mb-4" style="color:var(--blue)">Composants du framework</div>
+      <div class="grid sm:grid-cols-2 gap-3">
+        ${f.composants.map(c => `
+          <div class="composant-item">
+            <div class="composant-num">${c.num}</div>
+            <div>
+              <div class="text-sm font-semibold text-on-surface font-label mb-0.5">${c.label}</div>
+              <div class="text-xs text-on-surface-variant font-label leading-relaxed">${c.detail}</div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+
+    <!-- Nav prev/next -->
+    <div class="flex items-center justify-between mt-10 pt-6 border-t border-surface-variant">
+      ${i > 0 ? `<a href="#${frameworks[i-1].id}" class="text-xs font-bold font-label flex items-center gap-2 hover:gap-3 transition-all" style="color:var(--blue)">← ${frameworks[i-1].num} ${frameworks[i-1].title.split(' ').slice(0,3).join(' ')}</a>` : '<span></span>'}
+      ${i < frameworks.length-1 ? `<a href="#${frameworks[i+1].id}" class="text-xs font-bold font-label flex items-center gap-2 hover:gap-3 transition-all ml-auto" style="color:var(--blue)">${frameworks[i+1].num} ${frameworks[i+1].title.split(' ').slice(0,3).join(' ')} →</a>` : '<span></span>'}
+    </div>
+  `;
+
+  list.appendChild(section);
+});
+
+// ── Active sidebar on scroll ──
+const sections = frameworks.map(f => document.getElementById(f.id));
+const navLinks = document.querySelectorAll('.fw-nav-link');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      navLinks.forEach(l => l.classList.toggle('active', l.dataset.id === e.target.id));
+    }
+  });
+}, {threshold:0.3, rootMargin:'-80px 0px -60% 0px'});
+
+sections.forEach(s => { if(s) observer.observe(s); });
+
+// ── Nav ──
+document.getElementById('hamburger').addEventListener('click', function() {
+  const open = document.getElementById('mobile-menu').classList.toggle('open');
+  this.setAttribute('aria-expanded', open);
+  document.getElementById('icon-open').classList.toggle('hidden', open);
+  document.getElementById('icon-close').classList.toggle('hidden', !open);
+});
+window.addEventListener('scroll', () => {
+  document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 10);
+}, {passive:true});
+
+// ── Reveals ──
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');revObs.unobserve(e.target);} });
+}, {threshold:.06});
+document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+// ── Handle anchor on load ──
+if(window.location.hash) {
+  setTimeout(() => {
+    const el = document.querySelector(window.location.hash);
+    if(el) el.scrollIntoView({behavior:'smooth'});
+  }, 300);
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

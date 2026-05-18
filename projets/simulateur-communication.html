@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simulateur de styles de communication — Leila Seghirate-Nigg</title>
+  <meta name="description" content="Case study — Simulateur interactif de décision managériale à embranchements pour entraîner les managers à communiquer selon les profils de communication."/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%233333CC'/%3E%3Ctext x='16' y='22' font-family='serif' font-weight='700' font-size='20' fill='white' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="Portfolio · Leila Seghirate-Nigg"/>
+  <meta property="og:title" content="Simulateur de styles de communication — Leila Seghirate-Nigg"/>
+  <meta property="og:description" content="Case study — Simulateur interactif de décision managériale à embranchements pour entraîner les managers à communiquer selon les profils."/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Simulateur de styles de communication — Leila Seghirate-Nigg"/>
+  <meta name="twitter:description" content="Case study — Simulateur interactif de décision managériale à embranchements pour entraîner les managers à communiquer selon les profils."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2A2A34","primary-container": "#3333CC","on-primary": "#ffffff",
+            "background": "#fbf9f9","on-background": "#2A2A34","surface": "#fbf9f9",
+            "on-surface": "#2A2A34","surface-variant": "#e3e2e2","on-surface-variant": "#2A2A34",
+            "surface-container-lowest": "#ffffff","surface-container-low": "#f5f3f3",
+            "surface-container": "#efeded","outline": "#948F8A","outline-variant": "#948F8A"
+          },
+          fontFamily: { "headline": ["Noto Serif","serif"],"body": ["Manrope","sans-serif"],"label": ["Manrope","sans-serif"] }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --brand-blue: #3333CC;
+      --brand-cream: #EDE9E3;
+      --brand-ink: #2A2A34;
+      --brand-taupe: #948F8A;
+    }
+    .bg-primary-container { background-color: var(--brand-blue) !important; }
+    .hover\:bg-primary:hover { background-color: var(--brand-ink) !important; }
+    .text-primary-container { color: var(--brand-blue) !important; }
+    .hover\:text-primary-container:hover { color: var(--brand-blue) !important; }
+    .border-primary-container { border-color: var(--brand-blue) !important; }
+    .border-outline-variant { border-color: var(--brand-taupe) !important; }
+    .text-on-surface-variant { color: var(--brand-ink) !important; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
+    .skip-link { position:absolute;top:-40px;left:1rem;background:#3333CC;color:#fff;padding:.5rem 1rem;border-radius:4px;font-weight:600;z-index:100;transition:top .2s; }
+    .skip-link:focus { top:1rem; }
+    #mobile-menu { display:none; }
+    #mobile-menu.open { display:block; }
+    .flow-step { position:relative; padding-left:3rem; }
+    .flow-step::before { content:attr(data-step);position:absolute;left:0;top:0;width:2rem;height:2rem;background:#3333CC;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;font-family:Manrope,sans-serif; }
+    .flow-step:not(:last-child)::after { content:'';position:absolute;left:.95rem;top:2.5rem;width:1.5px;height:calc(100% - 1rem);background:#e3e2e2; }
+
+    /* Branch diagram */
+    .branch-node {
+      border: 1.5px solid var(--brand-taupe);
+      border-radius: 10px;
+      padding: 10px 16px;
+      background: #fff;
+      font-size: 0.8rem;
+      line-height: 1.4;
+      text-align: center;
+      position: relative;
+    }
+    .branch-node.root { background: var(--brand-blue); color: #fff; border-color: var(--brand-blue); font-weight: 700; }
+    .branch-node.choice-1 { border-color: #10b981; }
+    .branch-node.choice-2 { border-color: #f59e0b; }
+    .branch-node.choice-3 { border-color: #ef4444; }
+    .branch-node.end-ok { background: #ecfdf5; border-color: #10b981; color: #065f46; font-weight: 600; }
+    .branch-node.end-mid { background: #fffbeb; border-color: #f59e0b; color: #92400e; font-weight: 600; }
+    .branch-node.end-ko { background: #fef2f2; border-color: #ef4444; color: #991b1b; font-weight: 600; }
+
+    .kpi-demo {
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 8px;
+    }
+    .kpi-card-demo {
+      border-radius: 10px; padding: 14px;
+      border: 1.5px solid #e3e2e2;
+      background: #f5f3f3;
+      position: relative; overflow: hidden;
+    }
+    .kpi-card-demo::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 2px 2px 0 0;
+    }
+    .kpi-card-demo.clarity::before  { background: #6EE7FF; }
+    .kpi-card-demo.accuracy::before { background: #A78BFA; }
+    .kpi-card-demo.trust::before    { background: #34D399; }
+    .kpi-card-demo.risk::before     { background: #FB7185; }
+    .kpi-val { font-size: 1.5rem; font-weight: 700; color: var(--brand-ink); line-height: 1; font-family: 'Courier New', monospace; }
+    .kpi-lbl { font-size: 0.65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--brand-taupe); margin-bottom: 6px; }
+    .kpi-bar { height: 3px; background: #e3e2e2; border-radius: 3px; margin-top: 8px; overflow: hidden; }
+    .kpi-bar-fill { height: 100%; border-radius: 3px; }
+    .kpi-card-demo.clarity  .kpi-bar-fill { background: #6EE7FF; width: 75%; }
+    .kpi-card-demo.accuracy .kpi-bar-fill { background: #A78BFA; width: 60%; }
+    .kpi-card-demo.trust    .kpi-bar-fill { background: #34D399; width: 80%; }
+    .kpi-card-demo.risk     .kpi-bar-fill { background: #FB7185; width: 30%; }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased min-h-screen flex flex-col">
+
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- Nav -->
+  <nav id="main-nav" class="sticky top-0 z-50 backdrop-blur-md border-b border-surface-variant" style="background:rgba(237,233,227,0.95);">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="../index.html" class="font-headline font-bold text-xl tracking-tight text-on-surface hover:text-primary-container transition-colors">Leila Seghirate-Nigg</a>
+        <div class="hidden sm:flex sm:items-center sm:space-x-8">
+          <a href="../offre.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Expertise</a>
+          <a href="../index.html" class="text-primary-container text-sm font-medium border-b-2 border-primary-container pb-1">Réalisations</a>
+          <a href="../methodologie.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Méthodologie</a>
+          <a href="../frameworks.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Frameworks</a>
+          <a href="../a-propos.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">À propos</a>
+          <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" class="bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Me contacter</a>
+        </div>
+        <button id="hamburger" class="sm:hidden p-2 rounded-md text-on-surface hover:bg-surface-container transition-colors" aria-label="Menu" aria-expanded="false">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="sm:hidden pb-4 border-t border-surface-variant mt-1">
+        <div class="flex flex-col gap-2 pt-3">
+          <a href="../offre.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Expertise</a>
+          <a href="../index.html" class="px-3 py-2 text-primary-container bg-surface-container-low rounded-md text-sm font-medium">Réalisations</a>
+          <a href="../methodologie.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Méthodologie</a>
+          <a href="../frameworks.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Frameworks</a>
+          <a href="../a-propos.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">À propos</a>
+          <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" class="mt-2 mx-3 text-center bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Me contacter</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="bg-surface-container-low border-b border-surface-variant px-4 sm:px-8 py-3">
+    <div class="max-w-[1200px] mx-auto text-sm text-on-surface-variant">
+      <a href="../index.html" class="hover:text-primary-container transition-colors">Réalisations</a>
+      <span class="mx-2 text-outline">/</span>
+      <span class="text-on-surface font-medium">Simulateur de styles de communication</span>
+    </div>
+  </div>
+
+  <main id="main" class="flex-grow">
+
+    <!-- Hero -->
+    <section class="bg-[#EDE9E3] border-b border-surface-variant px-4 sm:px-8 lg:px-16 py-20 md:py-28">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block text-xs font-bold tracking-[.18em] uppercase text-primary-container mb-4 font-label">Prototypes &amp; vibe coding · HTML/JS · Pédagogie digitale</span>
+        <h1 class="font-headline text-5xl md:text-6xl text-on-surface mb-6 leading-tight">Simulateur de styles<br/>de communication</h1>
+        <p class="text-on-surface-variant text-xl leading-relaxed max-w-2xl mx-auto">Démo interactive à embranchements pour entraîner les managers à adapter leur communication selon le profil analytique de leur interlocuteur — conçue à partir de contenus de formation classiques.</p>
+      </div>
+    </section>
+
+    <!-- Screenshots simulateur réel -->
+    <div class="px-4 sm:px-8 lg:px-16 -mt-8 max-w-[1200px] mx-auto">
+
+      <!-- 2 captures côte à côte -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div class="rounded-2xl overflow-hidden shadow-xl border border-surface-variant">
+          <img src="../assets/images/projects/Simulateur%20de%20styles%20de%20communication%20Heros.png"
+               alt="The Brief Analytics — écran de couverture"
+               class="w-full h-full object-cover object-top"
+               loading="eager"/>
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow-xl border border-surface-variant">
+          <img src="../assets/images/projects/Simulateur%20de%20styles%20de%20communication.png"
+               alt="The Brief Analytics — écran d'introduction et choix de langue"
+               class="w-full h-full object-cover object-top"
+               loading="eager"/>
+        </div>
+      </div>
+
+      <!-- CTA tester le simulateur -->
+      <div class="flex justify-center">
+        <a href="https://interactive-briefdemo.netlify.app/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="inline-flex items-center gap-3 bg-primary-container text-white px-8 py-4 rounded-full text-sm font-bold hover:bg-primary transition-colors shadow-lg">
+          <span class="material-symbols-outlined text-lg">play_circle</span>
+          Tester le simulateur en ligne
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 py-20">
+
+      <!-- Meta strip -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16 p-6 bg-surface-container-lowest rounded-2xl border border-surface-variant">
+        <div class="text-center p-2">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Type</div>
+          <div class="font-semibold text-primary-container">Simulateur interactif</div>
+        </div>
+        <div class="text-center p-2 border-l border-surface-variant">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Format</div>
+          <div class="font-semibold text-primary-container">HTML autonome · 0 back-end</div>
+        </div>
+        <div class="text-center p-2 border-l border-surface-variant">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Langues</div>
+          <div class="font-semibold text-primary-container">Bilingue FR / EN</div>
+        </div>
+        <div class="text-center p-2 border-l border-surface-variant">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Profil ciblé</div>
+          <div class="font-semibold text-primary-container">High Analytical</div>
+        </div>
+      </div>
+
+      <!-- Narrative + Stack -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <div class="lg:col-span-2 bg-surface-container-lowest p-10 rounded-2xl border border-surface-variant">
+          <h2 class="font-headline text-2xl text-on-surface mb-6 pb-4 border-b border-surface-variant">La problématique</h2>
+          <div class="space-y-4 text-on-surface-variant leading-relaxed">
+            <p class="text-xs font-bold tracking-[.15em] uppercase text-outline font-label">FR</p>
+            <p>Ce document présente une démo créée suite à un échange avec un ami, directeur e-learning. En parlant d'IA et de pédagogies plus engageantes, je lui ai proposé de transformer des contenus "classiques" en scénarios à embranchements, afin de concevoir des expériences d'apprentissage décisionnel — des dispositifs qui font vivre une situation plutôt que l'expliquer.</p>
+            <p>À partir d'un cas d'usage lié aux styles de communication (profil "High Analytical"), j'ai construit une simulation interactive en HTML autonome : 3 chemins de décision, des indicateurs qui évoluent (clarté, accuracy, confiance, risque) et des fins émotionnelles qui ancrent l'apprentissage.</p>
+            <p>Cette démo est aussi une base extensible : elle peut évoluer vers une suite Communication Styles intégrant les 4 profils (Analytical, Driver, Expressif, Amiable), avec un simulateur multi-profils (sélecteur de profil), un kit de facilitation complet, et un dispositif de formation des formateurs internes.</p>
+            <p class="text-xs font-bold tracking-[.15em] uppercase text-outline font-label pt-3">EN</p>
+            <p>This document presents a demo created after a conversation with a friend, an e-learning director. While discussing AI and more engaging learning approaches, I suggested transforming "classic" content into branching scenarios to design decision-based learning experiences — formats that let learners live a situation rather than only read about it.</p>
+            <p>Using a communication-styles use case ("High Analytical" profile), I built a standalone HTML interactive simulation with 3 decision paths, evolving indicators (clarity, accuracy, trust, risk), and emotional endings that reinforce learning.</p>
+            <p>This demo is also an extensible foundation: it can evolve into a full Communication Styles suite covering the 4 profiles (Analytical, Driver, Expressive, Amiable), with a multi-profile simulator (profile selector), a complete facilitation kit, and a train-the-trainer program for internal facilitators.</p>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest p-10 rounded-2xl border border-surface-variant">
+          <h2 class="font-headline text-2xl text-on-surface mb-6 pb-4 border-b border-surface-variant">Stack technique</h2>
+          <ul class="space-y-4">
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container">code</span><span class="text-sm font-bold uppercase tracking-widest text-on-surface font-label">HTML / CSS / JS</span></li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container">account_tree</span><span class="text-sm font-bold uppercase tracking-widest text-on-surface font-label">Moteur à graphe de nœuds</span></li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container">analytics</span><span class="text-sm font-bold uppercase tracking-widest text-on-surface font-label">KPIs dynamiques temps réel</span></li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container">translate</span><span class="text-sm font-bold uppercase tracking-widest text-on-surface font-label">Toggle bilingue FR / EN</span></li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container">download</span><span class="text-sm font-bold uppercase tracking-widest text-on-surface font-label">Export de session</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Branching diagram -->
+      <div class="mb-16">
+        <h2 class="font-headline text-3xl text-on-surface mb-10 pb-4 border-t border-surface-variant pt-12">Architecture à embranchements</h2>
+        <div class="bg-surface-container-lowest rounded-2xl border border-surface-variant p-8 overflow-x-auto">
+          <!-- Simplified visual tree -->
+          <div class="flex flex-col items-center gap-4 min-w-[600px]">
+            <!-- Prologue -->
+            <div class="branch-node root w-64">Prologue — Brief manager ↓ Sophie (ASM, profil Analytique)</div>
+            <div class="w-px h-5 bg-surface-variant"></div>
+            <!-- Decision node -->
+            <div class="branch-node w-72 text-center" style="border-color: #3333CC; font-weight:600;">Décision : délai de livraison du rapport</div>
+            <!-- 3 branches -->
+            <div class="grid grid-cols-3 gap-6 w-full">
+              <div class="flex flex-col items-center gap-3">
+                <div class="w-px h-5 bg-green-300"></div>
+                <div class="branch-node choice-1 w-full">① Accorder le délai supplémentaire</div>
+                <div class="w-px h-5 bg-green-300"></div>
+                <div class="branch-node end-ok w-full">Rapport précis · Vendredi réussi<br/><span class="text-xs">Score élevé · Fin positive</span></div>
+              </div>
+              <div class="flex flex-col items-center gap-3">
+                <div class="w-px h-5 bg-amber-300"></div>
+                <div class="branch-node choice-2 w-full">② Maintenir l'échéance initiale</div>
+                <div class="w-px h-5 bg-amber-300"></div>
+                <div class="branch-node end-mid w-full">Rapport livré, données approximatives<br/><span class="text-xs">Score moyen · Fin mitigée</span></div>
+              </div>
+              <div class="flex flex-col items-center gap-3">
+                <div class="w-px h-5 bg-red-300"></div>
+                <div class="branch-node choice-3 w-full">③ Laisser Sophie décider seule</div>
+                <div class="w-px h-5 bg-red-300"></div>
+                <div class="branch-node end-ko w-full">Ambiguïté · Livraison sous-optimale<br/><span class="text-xs">Score bas · Fin difficile</span></div>
+              </div>
+            </div>
+            <p class="text-xs text-outline mt-2 text-center">Chaque chemin déclenche des pensées internes différentes chez Sophie (visibles par le manager) et impacte les 4 KPIs en temps réel.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flow -->
+      <div class="mb-16">
+        <h2 class="font-headline text-3xl text-on-surface mb-10">De la graine au simulateur</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div class="space-y-8">
+            <div class="flow-step" data-step="1">
+              <h3 class="font-headline text-lg text-on-surface mb-1">Notes brutes client</h3>
+              <p class="text-on-surface-variant text-sm leading-relaxed">3 paragraphes de notes : un scénario de brief, 3 choix managers, 3 pensées internes du collaborateur. Aucune architecture, aucun KPI, aucun design.</p>
+            </div>
+            <div class="flow-step" data-step="2">
+              <h3 class="font-headline text-lg text-on-surface mb-1">Diagnostic &amp; cadrage pédagogique</h3>
+              <p class="text-on-surface-variant text-sm leading-relaxed">Identification du cadre pédagogique "Communication Styles – High Analytical". Définition des 4 KPIs pertinents : Clarté, Précision, Confiance, Risque.</p>
+            </div>
+            <div class="flow-step" data-step="3">
+              <h3 class="font-headline text-lg text-on-surface mb-1">Moteur narratif + design système</h3>
+              <p class="text-on-surface-variant text-sm leading-relaxed">Graphe de 11 nœuds, 3 chemins narratifs, système de scoring, ambiance visuelle cinématographique par type de scène.</p>
+            </div>
+            <div class="flow-step" data-step="4">
+              <h3 class="font-headline text-lg text-on-surface mb-1">Bilingue + insight pédagogique</h3>
+              <p class="text-on-surface-variant text-sm leading-relaxed">Contenu complet en FR et EN embarqué dans le même fichier. Bloc d'enseignement explicite sur le profil analytique dans les 3 écrans de fin.</p>
+            </div>
+          </div>
+          <!-- KPI demo widget -->
+          <div class="bg-surface-container-lowest rounded-2xl border border-surface-variant p-8">
+            <p class="text-xs font-bold tracking-widest uppercase text-outline mb-4 font-label">KPIs — état en cours de simulation</p>
+            <div class="kpi-demo mb-4">
+              <div class="kpi-card-demo clarity">
+                <div class="kpi-lbl">Clarté</div>
+                <div class="kpi-val">68%</div>
+                <div class="kpi-bar"><div class="kpi-bar-fill"></div></div>
+              </div>
+              <div class="kpi-card-demo accuracy">
+                <div class="kpi-lbl">Précision</div>
+                <div class="kpi-val">54%</div>
+                <div class="kpi-bar"><div class="kpi-bar-fill"></div></div>
+              </div>
+              <div class="kpi-card-demo trust">
+                <div class="kpi-lbl">Confiance</div>
+                <div class="kpi-val">72%</div>
+                <div class="kpi-bar"><div class="kpi-bar-fill"></div></div>
+              </div>
+              <div class="kpi-card-demo risk">
+                <div class="kpi-lbl">Risque</div>
+                <div class="kpi-val">28%</div>
+                <div class="kpi-bar"><div class="kpi-bar-fill"></div></div>
+              </div>
+            </div>
+            <p class="text-xs text-on-surface-variant leading-relaxed">Chaque décision du manager impacte les 4 indicateurs en temps réel. À la fin, l'écran de résultat relie le score obtenu aux caractéristiques du profil analytique — transformant la démo en outil de prise de conscience.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant hover:border-primary-container/30 transition-colors">
+          <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center mb-5"><span class="material-symbols-outlined text-primary-container">psychology</span></div>
+          <h3 class="font-headline text-xl text-on-surface mb-3">Pensées internes visibles</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Après chaque décision, le manager voit ce que pense réellement Sophie — ses doutes, sa satisfaction ou sa frustration. Un mécanisme pédagogique qui rend l'empathie managériale concrète.</p>
+        </div>
+        <div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant hover:border-primary-container/30 transition-colors">
+          <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center mb-5"><span class="material-symbols-outlined text-primary-container">bar_chart</span></div>
+          <h3 class="font-headline text-xl text-on-surface mb-3">Dashboard KPI en temps réel</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">4 indicateurs (Clarté, Précision, Confiance, Risque) évoluent à chaque nœud. Le manager pilote une relation managériale comme il piloterait un tableau de bord.</p>
+        </div>
+        <div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant hover:border-primary-container/30 transition-colors">
+          <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center mb-5"><span class="material-symbols-outlined text-primary-container">school</span></div>
+          <h3 class="font-headline text-xl text-on-surface mb-3">Enseignement explicite en fin</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Les 3 écrans de fin intègrent un bloc pédagogique "High Analytical — Enseignement". Le résultat ne donne pas seulement un verdict, il explique ce que le parcours révèle sur la communication avec un analytique.</p>
+        </div>
+      </div>
+
+      <!-- Impact -->
+      <div class="bg-primary-container/5 rounded-2xl border border-primary-container/20 p-10 mb-16">
+        <h2 class="font-headline text-2xl text-on-surface mb-6">Ce que ce projet démontre</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="space-y-4 text-on-surface-variant leading-relaxed">
+            <p>Ce simulateur est une démonstration directe de ce que l'IA permet en pédagogie digitale : transformer un matériau brut minimal en expérience d'apprentissage décisionnel, sans équipe de développement, sans mois de production.</p>
+            <p>Ce que des agences de serious game facturent 25 000 à 80 000 € et livrent en 4 à 6 mois peut aujourd'hui être prototypé de façon plus agile. Non pas parce que c'est moins bien — mais parce que le pipeline de production a fondamentalement changé.</p>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span><span>3 paragraphes de notes → simulateur interactif complet et prêt à tester</span></li>
+            <li class="flex items-start gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span><span>11 nœuds narratifs, 3 chemins, 3 fins émotionnelles distinctes</span></li>
+            <li class="flex items-start gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span><span>Bilingue FR/EN embarqué dans un seul fichier HTML autonome</span></li>
+            <li class="flex items-start gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span><span>Déployable en un clic — zéro dépendance back-end</span></li>
+            <li class="flex items-start gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span><span>Extensible : autres profils (Driver, Expressif, Amiable), autres scénarios</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Perspectives -->
+      <div class="bg-surface-container-lowest rounded-2xl border border-surface-variant p-10 mb-16">
+        <h2 class="font-headline text-2xl text-on-surface mb-6">Perspectives &amp; extensibilité</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="text-center p-6 rounded-xl bg-surface-container">
+            <div class="w-10 h-10 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto mb-3"><span class="material-symbols-outlined text-primary-container text-sm">person</span></div>
+            <h3 class="font-semibold text-on-surface mb-1 text-sm">Module complet</h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed">Un profil produit avec soin : scénario custom, images professionnelles, guide facilitateur, version brandée aux couleurs du client.</p>
+          </div>
+          <div class="text-center p-6 rounded-xl bg-surface-container">
+            <div class="w-10 h-10 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto mb-3"><span class="material-symbols-outlined text-primary-container text-sm">group</span></div>
+            <h3 class="font-semibold text-on-surface mb-1 text-sm">Suite 4 profils</h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed">Analytical, Driver, Expressif, Amiable — sélecteur de profil, kit de facilitation, formation des formateurs internes.</p>
+          </div>
+          <div class="text-center p-6 rounded-xl bg-surface-container">
+            <div class="w-10 h-10 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto mb-3"><span class="material-symbols-outlined text-primary-container text-sm">edit</span></div>
+            <h3 class="font-semibold text-on-surface mb-1 text-sm">Authoring UI</h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed">Interface d'édition pour créer de nouveaux scénarios sans toucher au code — outil auteur pour formateurs.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA nav -->
+      <div class="flex flex-col sm:flex-row gap-4 items-center justify-between pt-8 border-t border-surface-variant">
+        <a href="../index.html" class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary-container transition-colors text-sm font-semibold">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Retour au portfolio
+        </a>
+        <a href="mj-prompt-generator.html" class="inline-flex items-center gap-2 bg-primary-container text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-primary transition-colors">
+          Projet suivant : MJ Prompt Generator
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-surface-container border-t border-surface-variant">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 py-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
+      <span>© 2026 Leila Seghirate-Nigg. Tous droits réservés.</span>
+      <div class="flex gap-6">
+        <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" target="_blank" rel="noopener noreferrer" class="hover:text-primary-container transition-colors">LinkedIn</a>
+        <a href="../index.html" class="hover:text-primary-container transition-colors">Portfolio</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+      const m = document.getElementById('mobile-menu');
+      m.classList.toggle('open');
+      this.setAttribute('aria-expanded', m.classList.contains('open'));
+    });
+  </script>
+</body>
+</html>
+
+
+

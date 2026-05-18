@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Générateur d'identités symboliques — Leila Seghirate-Nigg</title>
+  <meta name="description" content="Case study — Générateur pédagogique de personnages fictifs avec jeux de mots et symboles pour enrichir les modules de formation."/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%233333CC'/%3E%3Ctext x='16' y='22' font-family='serif' font-weight='700' font-size='20' fill='white' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="Portfolio · Leila Seghirate-Nigg"/>
+  <meta property="og:title" content="Générateur d'identités symboliques — Leila Seghirate-Nigg"/>
+  <meta property="og:description" content="Case study — Générateur pédagogique de personnages fictifs avec jeux de mots et symboles pour enrichir les modules de formation."/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Générateur d'identités symboliques — Leila Seghirate-Nigg"/>
+  <meta name="twitter:description" content="Case study — Générateur pédagogique de personnages fictifs avec jeux de mots et symboles pour enrichir les modules de formation."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2A2A34","primary-container": "#3333CC","on-primary": "#ffffff",
+            "background": "#fbf9f9","on-background": "#2A2A34","surface": "#fbf9f9",
+            "on-surface": "#2A2A34","surface-variant": "#e3e2e2","on-surface-variant": "#2A2A34",
+            "surface-container-lowest": "#ffffff","surface-container-low": "#f5f3f3",
+            "surface-container": "#efeded","outline": "#948F8A","outline-variant": "#948F8A"
+          },
+          fontFamily: { "headline": ["Noto Serif","serif"],"body": ["Manrope","sans-serif"],"label": ["Manrope","sans-serif"] }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --brand-blue: #3333CC;
+      --brand-cream: #EDE9E3;
+      --brand-ink: #2A2A34;
+      --brand-taupe: #948F8A;
+    }
+    .bg-primary-container { background-color: var(--brand-blue) !important; }
+    .hover\:bg-primary:hover { background-color: var(--brand-ink) !important; }
+    .text-primary-container { color: var(--brand-blue) !important; }
+    .hover\:text-primary-container:hover { color: var(--brand-blue) !important; }
+    .border-primary-container { border-color: var(--brand-blue) !important; }
+    .border-outline-variant { border-color: var(--brand-taupe) !important; }
+    .text-on-surface-variant { color: var(--brand-ink) !important; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
+    .skip-link { position:absolute;top:-40px;left:1rem;background:#3333CC;color:#fff;padding:.5rem 1rem;border-radius:4px;font-weight:600;z-index:100;transition:top .2s; }
+    .skip-link:focus { top:1rem; }
+    #mobile-menu { display:none; }
+    #mobile-menu.open { display:block; }
+    .flow-step { position:relative; padding-left:3rem; }
+    .flow-step::before { content:attr(data-step);position:absolute;left:0;top:0;width:2rem;height:2rem;background:#3333CC;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;font-family:Manrope,sans-serif; }
+    .flow-step:not(:last-child)::after { content:'';position:absolute;left:.95rem;top:2.5rem;width:1.5px;height:calc(100% - 1rem);background:#e3e2e2; }
+
+    .example-persona {
+      border: 1.5px solid var(--brand-taupe);
+      border-radius: 10px;
+      padding: 14px;
+      background: #fff;
+      font-size: 0.8rem;
+      line-height: 1.4;
+      position: relative;
+    }
+    .example-persona strong { color: var(--brand-ink); font-weight: 700; }
+    .example-persona em { color: var(--brand-blue); font-style: italic; }
+    .example-persona .symbol { color: #c8932a; font-weight: 600; }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased min-h-screen flex flex-col">
+
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- Nav -->
+  <nav id="main-nav" class="sticky top-0 z-50 backdrop-blur-md border-b border-surface-variant" style="background:rgba(237,233,227,0.95);">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="../index.html" class="font-headline font-bold text-xl tracking-tight text-on-surface hover:text-primary-container transition-colors">Leila Seghirate-Nigg</a>
+        <div class="hidden sm:flex sm:items-center sm:space-x-8">
+          <a href="../offre.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Expertise</a>
+          <a href="../index.html" class="text-primary-container text-sm font-medium border-b-2 border-primary-container pb-1">Réalisations</a>
+          <a href="../methodologie.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Méthodologie</a>
+          <a href="../frameworks.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Frameworks</a>
+          <a href="../a-propos.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">À propos</a>
+          <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" class="bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Me contacter</a>
+        </div>
+        <button id="hamburger" class="sm:hidden p-2 rounded-md text-on-surface hover:bg-surface-container transition-colors" aria-label="Menu" aria-expanded="false">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="sm:hidden pb-4 border-t border-surface-variant mt-1">
+        <div class="flex flex-col gap-2 pt-3">
+          <a href="../offre.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Expertise</a>
+          <a href="../index.html" class="px-3 py-2 text-primary-container bg-surface-container-low rounded-md text-sm font-medium">Réalisations</a>
+          <a href="../methodologie.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Méthodologie</a>
+          <a href="../frameworks.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Frameworks</a>
+          <a href="../a-propos.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">À propos</a>
+          <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" class="mt-2 mx-3 text-center bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Me contacter</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="bg-surface-container-low border-b border-surface-variant px-4 sm:px-8 py-3">
+    <div class="max-w-[1200px] mx-auto text-sm text-on-surface-variant">
+      <a href="../index.html" class="hover:text-primary-container transition-colors">Réalisations</a>
+      <span class="mx-2 text-outline">/</span>
+      <span class="text-on-surface font-medium">Générateur d'identités symboliques</span>
+    </div>
+  </div>
+
+  <main id="main" class="flex-grow">
+
+    <!-- Hero -->
+    <section class="bg-[#EDE9E3] border-b border-surface-variant px-4 sm:px-8 lg:px-16 py-20 md:py-28">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block text-xs font-bold tracking-[.18em] uppercase text-primary-container mb-4 font-label">Prototypes &amp; vibe coding · HTML/JS · Framework pédagogique</span>
+        <h1 class="font-headline text-5xl md:text-6xl text-on-surface mb-6 leading-tight">Générateur d'<em>identités</em><br/>symboliques</h1>
+        <p class="text-on-surface-variant text-xl leading-relaxed max-w-2xl mx-auto">Outil pédagogique automatisé pour générer des personnages fictifs, jeux de mots et symboles narratifs — enrichir les modules de formation avec des identités cohérentes et mémorables.</p>
+      </div>
+    </section>
+
+    <!-- Hero image -->
+    <div class="px-4 sm:px-8 lg:px-16 -mt-8 max-w-[1200px] mx-auto mb-6">
+      <div class="rounded-2xl overflow-hidden shadow-xl border border-surface-variant">
+        <img src="../assets/images/projects/generateur-identites-symboliques-hero.webp"
+             alt="Générateur d'identités symboliques — Interface"
+             class="w-full h-auto object-cover"
+             loading="eager"/>
+      </div>
+
+      <!-- CTA générer -->
+      <div class="flex justify-center mt-6">
+        <a href="file:///C:/Users/seghi/OneDrive/Bureau/tmp_PACK%202026/499572/Auto-Learning%20Builder%20Générateur%20automatisé%20de%20modules%20e-learning/Générateurs_Dashboards/GENERATEUR_PROPRE/GENERATEUR%20PROPRE/generateur_identites_symboliques.html"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="inline-flex items-center gap-3 bg-primary-container text-white px-8 py-4 rounded-full text-sm font-bold hover:bg-primary transition-colors shadow-lg">
+          <span class="material-symbols-outlined text-lg">auto_awesome</span>
+          Accéder au générateur
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 py-20">
+
+      <!-- Meta strip -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16 p-6 bg-surface-container-lowest rounded-2xl border border-surface-variant">
+        <div class="text-center p-2">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Type</div>
+          <div class="font-semibold text-primary-container">Générateur piloté IA</div>
+        </div>
+        <div class="text-center p-2 border-l border-surface-variant">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Format</div>
+          <div class="font-semibold text-primary-container">HTML autonome</div>
+        </div>
+        <div class="text-center p-2 border-l border-surface-variant">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Sortie</div>
+          <div class="font-semibold text-primary-container">Table interactif + Copy</div>
+        </div>
+        <div class="text-center p-2 border-l border-surface-variant">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Public cible</div>
+          <div class="font-semibold text-primary-container">Formateurs &amp; créatifs</div>
+        </div>
+      </div>
+
+      <!-- Objectif pédagogique + stack -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <div class="lg:col-span-2 bg-surface-container-lowest p-10 rounded-2xl border border-surface-variant">
+          <h2 class="font-headline text-2xl text-on-surface mb-6 pb-4 border-b border-surface-variant">L'objectif pédagogique</h2>
+          <div class="space-y-4 text-on-surface-variant leading-relaxed">
+            <p><strong class="text-on-surface">Explorer l'identité narrative et la construction de persona.</strong></p>
+            <p>Ce générateur résout un problème classique en conception pédagogique : comment créer des personnages fictifs mémorables, cohérents et symboliquement chargés pour enrichir les modules de formation ?</p>
+            
+            <p class="text-xs font-bold tracking-[.15em] uppercase text-outline pt-3 pb-1">Dimension 1 : Identité symbolique</p>
+            <p>Chaque personnage généré combine un <strong>nom complet</strong>, un <strong>jeu de mots</strong> caché et une <strong>signification symbolique</strong>. Cette couche de sens encode le concept de formation (ex: pour un module sur le "Plafond de verre", un personnage pourrait s'appeler "Claire Voilette" — claire + voile = invisibilité). Les apprenants découvrent progressivement ces symboles, renforçant la rétention.</p>
+
+            <p class="text-xs font-bold tracking-[.15em] uppercase text-outline pt-3 pb-1">Dimension 2 : Narration de persona</p>
+            <p>Les formateurs peuvent piloter le générateur avec un <strong>thème de formation</strong>, un <strong>concept central</strong> et des <strong>tonalités narratives</strong> (humoristique, critique, poétique, international, absurde). Chaque combinaison génère une suite de 5 à 15 identités cohérentes — un micro-univers narratif d'où extraire des personnages pour des jeux de rôle, des études de cas, des dialogues pédagogiques.</p>
+
+            <p class="text-xs font-bold tracking-[.15em] uppercase text-outline pt-3 pb-1">Dimension 3 : Accessibilité créative</p>
+            <p>Sans IA, concevoir 10 identités symboliques prend des heures. Avec ce générateur, c'est instantané. Les formateurs peuvent explorer 50 variantes en minutes, composer des ensembles cohérents et adapter selon le public réel. C'est un <strong>accélérateur créatif</strong> qui démocratise la conception pédagogique narrative.</p>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest p-10 rounded-2xl border border-surface-variant">
+          <h2 class="font-headline text-2xl text-on-surface mb-6 pb-4 border-b border-surface-variant">Stack technique</h2>
+          <ul class="space-y-4">
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container">code</span><span class="text-sm font-bold uppercase tracking-widest text-on-surface font-label">HTML / CSS / JS</span></li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container">api</span><span class="text-sm font-bold uppercase tracking-widest text-on-surface font-label">API IA (Claude)</span></li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container">table_chart</span><span class="text-sm font-bold uppercase tracking-widest text-on-surface font-label">Rendition tableau</span></li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container">content_copy</span><span class="text-sm font-bold uppercase tracking-widest text-on-surface font-label">Export presse-papiers</span></li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container">tune</span><span class="text-sm font-bold uppercase tracking-widest text-on-surface font-label">Sélecteurs multi-tonalité</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Exemple de sorties -->
+      <div class="mb-16">
+        <h2 class="font-headline text-3xl text-on-surface mb-10 pb-4 border-t border-surface-variant pt-12">Exemples de personnages générés</h2>
+        <p class="text-on-surface-variant mb-6 text-sm leading-relaxed"><strong>Thème :</strong> Leadership · <strong>Concept :</strong> Authentique vs Performance · <strong>Tonalités :</strong> Poétique + Critique</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="example-persona">
+            <strong>Marion Sincère</strong><br/>
+            <em>Jeu de mots :</em> Marier (combiner) + Sincère (vérité)<br/>
+            <span class="symbol">⚡ Symbole :</span> L'authenticité qui marie le vrai au courage
+          </div>
+          <div class="example-persona">
+            <strong>Sacha Masqué</strong><br/>
+            <em>Jeu de mots :</em> Sacher (cacher) + Masqué<br/>
+            <span class="symbol">🎭 Symbole :</span> Le mensonge de la performance
+          </div>
+          <div class="example-persona">
+            <strong>Léo Transparent</strong><br/>
+            <em>Jeu de mots :</em> Leitmotiv + Transparent<br/>
+            <span class="symbol">🪟 Symbole :</span> La vulnérabilité comme force
+          </div>
+        </div>
+      </div>
+
+      <!-- Architecture framework -->
+      <div class="mb-16">
+        <h2 class="font-headline text-3xl text-on-surface mb-10 pb-4">Fonctionnement du framework</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div class="space-y-8">
+            <div class="flow-step" data-step="1">
+              <h3 class="font-headline text-lg text-on-surface mb-1">Saisir le contexte pédagogique</h3>
+              <p class="text-on-surface-variant text-sm leading-relaxed">Thème de formation (ex: Leadership, IA, Biais cognitifs), concept central (ex: Authenticité, Responsabilité), contexte ou intention pédagogique (ex: Formation des managers, Jeu de rôle).</p>
+            </div>
+            <div class="flow-step" data-step="2">
+              <h3 class="font-headline text-lg text-on-surface mb-1">Inspirer l'IA</h3>
+              <p class="text-on-surface-variant text-sm leading-relaxed">Coller un texte d'inspiration (extrait d'article, citation, notes) qui enrichira le vocabulaire et les associations symboliques. Optionnel mais puissant pour affiner le style.</p>
+            </div>
+            <div class="flow-step" data-step="3">
+              <h3 class="font-headline text-lg text-on-surface mb-1">Choisir les tonalités narratives</h3>
+              <p class="text-on-surface-variant text-sm leading-relaxed">Multi-sélection : Humoristique, Critique, Poétique, International, Absurde. Chaque tonalité ajuste le ton, le registre et la complexité symbolique des identités.</p>
+            </div>
+            <div class="flow-step" data-step="4">
+              <h3 class="font-headline text-lg text-on-surface mb-1">Générer et explorer</h3>
+              <p class="text-on-surface-variant text-sm leading-relaxed">Lancer la génération (5, 8, 12 ou 15 personnages). Les résultats s'affichent dans un tableau interactif. Copier individuellement ou en bloc pour réutiliser dans des outils de création (Canva, Google Slides, Miro…).</p>
+            </div>
+          </div>
+          <div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant">
+            <h3 class="font-headline text-lg text-on-surface mb-4">Cas d'usage réels</h3>
+            <ul class="space-y-3 text-sm text-on-surface-variant">
+              <li class="flex gap-2">
+                <span class="text-primary-container font-bold">→</span>
+                <span><strong>Jeux de rôle pédagogiques :</strong> Générer 8 personnages pour un exercice "conflits relationnels" — chacun incarne un archétype.</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="text-primary-container font-bold">→</span>
+                <span><strong>Études de cas narratives :</strong> Un cluster de 5 identités devient une micro-histoire d'équipe à analyser.</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="text-primary-container font-bold">→</span>
+                <span><strong>Engagement apprenant :</strong> Les symboles cachés invitent à la découverte — débriefing riche autour du "pourquoi ce nom ?".</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="text-primary-container font-bold">→</span>
+                <span><strong>Facilitation immersive :</strong> Intégrer les personnages dans des dialogues pédagogiques ou vidéos de mise en contexte.</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="text-primary-container font-bold">→</span>
+                <span><strong>Prototypage rapide :</strong> Tester 50 univers narratifs pour choisir celui qui résonne le plus.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Philosophie -->
+      <div class="bg-surface-container-lowest p-10 rounded-2xl border border-surface-variant mb-16">
+        <h2 class="font-headline text-2xl text-on-surface mb-6">Philosophie du framework</h2>
+        <div class="space-y-4 text-on-surface-variant leading-relaxed">
+          <p><strong class="text-on-surface">La narration crée du sens.</strong> Les apprenants ne retiennent pas des listes de concepts — ils retiennent des histoires. En associant chaque concept à un personnage symbolique, on crée une <em>ancre narrative</em> qui persiste en mémoire.</p>
+          
+          <p><strong class="text-on-surface">L'automatisation libère la créativité.</strong> Les formateurs dépensent des heures à nommer des personnages, à vérifier la cohérence symbolique, à chercher le "bon" jeu de mots. Ce générateur absorbe cette charge — ils peuvent se concentrer sur <strong>quoi transmettre</strong>, pas comment l'emballer.</p>
+          
+          <p><strong class="text-on-surface">L'exploration accélère l'itération.</strong> Plutôt que de choisir "le bon" univers narratif une fois pour toutes, les formateurs en explorent 50 variantes et composent un ensemble qui résonne avec le groupe réel — feedback immédiat, adaptation rapide.</p>
+        </div>
+      </div>
+
+      <!-- Résultats -->
+      <div class="mb-16">
+        <h2 class="font-headline text-3xl text-on-surface mb-10">Résultats &amp; impact pédagogique</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-[#f0f8ff] border border-[#6EE7FF] rounded-2xl p-8">
+            <h3 class="font-headline text-lg text-on-surface mb-3 flex items-center gap-2">
+              <span style="color:#6EE7FF;">◆</span> Gain de temps créatif
+            </h3>
+            <p class="text-on-surface-variant text-sm">De 2-3 heures par cohort (~10-15 identités) à 5 minutes. Les formateurs récupèrent du temps pour le contenu pédagogique lui-même.</p>
+          </div>
+          <div class="bg-[#f0fdf4] border border-[#34D399] rounded-2xl p-8">
+            <h3 class="font-headline text-lg text-on-surface mb-3 flex items-center gap-2">
+              <span style="color:#34D399;">◆</span> Cohérence narrative
+            </h3>
+            <p class="text-on-surface-variant text-sm">Toutes les identités sont générées dans le contexte pédagogique — pas de hors-sujet, pas de clichés isolés. L'univers narratif est unifié.</p>
+          </div>
+          <div class="bg-[#fef3c7] border border-[#f59e0b] rounded-2xl p-8">
+            <h3 class="font-headline text-lg text-on-surface mb-3 flex items-center gap-2">
+              <span style="color:#f59e0b;">◆</span> Engagement apprenant
+            </h3>
+            <p class="text-on-surface-variant text-sm">Les symboles cachés invitent à l'interprétation — les apprenants deviennent co-créateurs du sens, pas consommateurs passifs.</p>
+          </div>
+          <div class="bg-[#fef2f2] border border-[#FB7185] rounded-2xl p-8">
+            <h3 class="font-headline text-lg text-on-surface mb-3 flex items-center gap-2">
+              <span style="color:#FB7185;">◆</span> Rétention mémoire
+            </h3>
+            <p class="text-on-surface-variant text-sm">L'association concept → persona + jeu de mots crée une ancre triple (visuelle, sémantique, ludique) — rétention à long terme amplifiée.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface-container border-t border-surface-variant">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="font-headline text-xl mb-1 text-on-surface">Leila Seghirate-Nigg</h3>
+          <p class="text-xs font-bold tracking-[.14em] uppercase text-primary-container font-label mb-3">LSN Consulting</p>
+          <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Architecte de systèmes pédagogiques IA compliant.</p>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold tracking-[.18em] uppercase text-on-surface mb-4 font-label">Navigation</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../offre.html" class="text-on-surface-variant hover:text-primary-container transition-colors">Expertise</a></li>
+            <li><a href="../index.html" class="text-on-surface-variant hover:text-primary-container transition-colors">Réalisations</a></li>
+            <li><a href="../a-propos.html" class="text-on-surface-variant hover:text-primary-container transition-colors">À propos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold tracking-[.18em] uppercase text-on-surface mb-4 font-label">Contact</h4>
+          <a href="mailto:seghirate@gmail.com" class="text-sm text-primary-container hover:underline">seghirate@gmail.com</a>
+          <div class="mt-4 flex space-x-4">
+            <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" target="_blank" rel="noopener noreferrer" class="text-on-surface-variant hover:text-primary-container transition-colors" aria-label="LinkedIn">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 pt-6 border-t border-surface-variant text-center text-xs text-on-surface-variant">
+        <p>© 2026 Leila Seghirate-Nigg · LSN Consulting. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('hamburger')?.addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>

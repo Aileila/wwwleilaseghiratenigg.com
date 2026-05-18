@@ -1,0 +1,1365 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio — Leila Seghirate-Nigg</title>
+  <meta name="description" content="Portfolio de Leila Seghirate-Nigg — Pédagogie digitale, IA, vibe coding, automatisation et création visuelle."/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%233333CC'/%3E%3Ctext x='16' y='22' font-family='serif' font-weight='700' font-size='20' fill='white' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Portfolio · Leila Seghirate-Nigg"/>
+  <meta property="og:title" content="Portfolio — Leila Seghirate-Nigg"/>
+  <meta property="og:description" content="Portfolio de Leila Seghirate-Nigg — Pédagogie digitale, IA, vibe coding, automatisation et création visuelle."/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Portfolio — Leila Seghirate-Nigg"/>
+  <meta name="twitter:description" content="Portfolio de Leila Seghirate-Nigg — Pédagogie digitale, IA, vibe coding, automatisation et création visuelle."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2A2A34",
+            "primary-container": "#3333CC",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#EDE9E3",
+            "secondary": "#5f5e5e",
+            "secondary-container": "#e5e2e1",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#656464",
+            "tertiary": "#393b3a",
+            "tertiary-container": "#505251",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-container": "#c4c5c3",
+            "background": "#fbf9f9",
+            "on-background": "#2A2A34",
+            "surface": "#fbf9f9",
+            "on-surface": "#2A2A34",
+            "surface-variant": "#e3e2e2",
+            "on-surface-variant": "#2A2A34",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f5f3f3",
+            "surface-container": "#efeded",
+            "surface-container-high": "#e9e8e7",
+            "surface-container-highest": "#e3e2e2",
+            "outline": "#948F8A",
+            "outline-variant": "#948F8A",
+            "inverse-surface": "#303031",
+            "inverse-on-surface": "#f2f0f0",
+            "inverse-primary": "#EDE9E3",
+            "surface-tint": "#3333CC",
+            "surface-dim": "#dbdad9",
+            "surface-bright": "#fbf9f9",
+            "error": "#ba1a1a",
+            "on-error": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a"
+          },
+          fontFamily: {
+            "display": ["Noto Serif", "serif"],
+            "headline": ["Noto Serif", "serif"],
+            "body": ["Manrope", "sans-serif"],
+            "label": ["Manrope", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Brand Interaction Matrix - official palette lock */
+    :root {
+      --brand-blue: #3333CC;
+      --brand-cream: #EDE9E3;
+      --brand-ink: #2A2A34;
+      --brand-taupe: #948F8A;
+    }
+    .bg-primary-container { background-color: var(--brand-blue) !important; }
+    .hover\:bg-primary:hover { background-color: var(--brand-ink) !important; }
+    .text-primary-container { color: var(--brand-blue) !important; }
+    .hover\:text-primary-container:hover { color: var(--brand-blue) !important; }
+    .border-primary-container { border-color: var(--brand-blue) !important; }
+    .hover\:border-primary-container:hover { border-color: var(--brand-blue) !important; }
+    .border-outline-variant { border-color: var(--brand-taupe) !important; }
+    .text-on-surface-variant { color: var(--brand-ink) !important; }
+    :root {
+      --blue: #3333CC;
+      --indigo: #2A2A34;
+      --dark: #2A2A34;
+      --grey: #948F8A;
+      --pearl: #f5f3f3;
+      --tr: all .2s ease;
+      --rsm: 4px;
+      --rmd: 8px;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Skip link */
+    .skip-link {
+      position: absolute; top: -40px; left: 1rem;
+      background: var(--blue); color: #fff;
+      padding: .5rem 1rem; border-radius: var(--rsm);
+      font-weight: 600; z-index: 100; transition: top .2s;
+      font-family: Manrope, sans-serif;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    /* Mobile menu */
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+
+    /* Drawer overlay */
+    .drawer-overlay {
+      position: fixed; inset: 0;
+      background: rgba(3,4,90,.45); backdrop-filter: blur(3px);
+      z-index: 200; opacity: 0; pointer-events: none;
+      transition: opacity .35s ease;
+    }
+    .drawer-overlay.open { opacity: 1; pointer-events: all; }
+
+    /* Drawer panel */
+    .drawer {
+      position: fixed; top: 0; right: 0; bottom: 0;
+      width: min(560px, 100vw); background: #fff;
+      z-index: 201; transform: translateX(100%);
+      transition: transform .4s cubic-bezier(.4,0,.2,1);
+      display: flex; flex-direction: column; overflow: hidden;
+    }
+    .drawer.open { transform: translateX(0); }
+
+    .drawer-header { position: relative; height: 260px; flex-shrink: 0; overflow: hidden; }
+    .drawer-header img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .drawer-header::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 35%, rgba(3,4,90,.8) 100%);
+    }
+    .drawer-header-meta { position: absolute; bottom: 1.25rem; left: 1.5rem; right: 1.5rem; z-index: 1; }
+    .drawer-category-badge {
+      display: inline-block; font-size: .65rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: #fff; background: var(--blue);
+      padding: .28rem .7rem; border-radius: 999px; margin-bottom: .5rem;
+    }
+    .drawer-title {
+      font-size: 1.4rem; font-weight: 900; color: #fff;
+      line-height: 1.2; letter-spacing: -.02em; text-transform: uppercase;
+      font-family: Noto Serif, serif;
+    }
+    .drawer-close {
+      position: absolute; top: 1rem; right: 1rem; z-index: 2;
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,.15); backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,.3); border-radius: 50%;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: var(--tr); color: #fff; font-size: 1.1rem; line-height: 1;
+    }
+    .drawer-close:hover { background: rgba(255,255,255,.3); }
+
+    .drawer-body {
+      flex: 1; overflow-y: auto;
+      padding: 2rem 1.75rem 3rem;
+      display: flex; flex-direction: column; gap: 1.75rem;
+    }
+    .drawer-body::-webkit-scrollbar { width: 4px; }
+    .drawer-body::-webkit-scrollbar-track { background: transparent; }
+    .drawer-body::-webkit-scrollbar-thumb { background: rgba(3,4,90,.15); border-radius: 2px; }
+
+    .drawer-section { display: flex; flex-direction: column; gap: .55rem; }
+    .drawer-section-label { font-size: .65rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--blue); font-family: Manrope, sans-serif; }
+    .drawer-section-content { font-size: .93rem; color: var(--dark); line-height: 1.7; }
+
+    .drawer-meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .drawer-meta-item { background: var(--pearl); border-radius: var(--rmd); padding: 1rem 1.1rem; border: 1px solid rgba(3,4,90,.07); }
+    .meta-label { font-size: .62rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: #5E5A57; margin-bottom: .35rem; font-family: Manrope, sans-serif; }
+    .meta-value { font-size: .88rem; font-weight: 600; color: var(--indigo); font-family: Manrope, sans-serif; }
+
+    .drawer-divider { height: 1px; background: rgba(3,4,90,.08); border: none; }
+    .drawer-cta { display: flex; gap: .75rem; flex-wrap: wrap; }
+
+    .btn-drawer {
+      flex: 1; min-width: 160px;
+      display: inline-flex; align-items: center; justify-content: center; gap: .4rem;
+      font-family: Manrope, sans-serif; font-size: .82rem; font-weight: 700; letter-spacing: .04em;
+      text-decoration: none; padding: .8rem 1.4rem;
+      border-radius: var(--rsm); border: none; cursor: pointer;
+      background: var(--blue); color: #fff;
+      box-shadow: 0 4px 14px rgba(63,65,218,.25);
+      transition: var(--tr);
+    }
+    .btn-drawer:hover { background: var(--indigo); box-shadow: 0 6px 20px rgba(3,4,90,.3); transform: translateY(-1px); }
+    .btn-drawer.disabled {
+      background: var(--pearl); color: var(--grey);
+      box-shadow: none; cursor: not-allowed; pointer-events: none;
+      border: 1.5px dashed #ccc; font-style: italic;
+    }
+
+    /* Filter active state */
+    .filter-btn.active,
+    .filter-btn.active:hover,
+    .filter-btn.active:focus-visible {
+      background-color: #3333CC;
+      color: #fff !important;
+      border-color: #3333CC;
+    }
+
+    @media (max-width: 640px) {
+      .drawer { width: 100vw; }
+      .drawer-meta-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── B: Card hover lift ── */
+    .project-card {
+      cursor: pointer;
+      transition: transform 0.28s cubic-bezier(.22,1,.36,1), box-shadow 0.28s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(42,42,52,0.1);
+    }
+    .project-card:active { transform: translateY(-2px); }
+
+    /* Anthracite brand for all project card vignettes */
+    #projets .project-card .absolute.top-3.left-3,
+    #projets .project-card .absolute.top-3.right-3 {
+      background: #2A2A34 !important;
+      color: #EDE9E3 !important;
+      border: 1px solid rgba(237, 233, 227, 0.22);
+    }
+
+    #projets .project-card .absolute.top-3.left-3 {
+      box-shadow: 0 3px 10px rgba(42, 42, 52, 0.2);
+    }
+
+    #projets .project-card .absolute.top-3.right-3 {
+      background: rgba(42, 42, 52, 0.82) !important;
+      border-color: rgba(237, 233, 227, 0.16) !important;
+      box-shadow: none;
+      backdrop-filter: blur(2px);
+    }
+
+    #projets .project-card .flex.flex-wrap.gap-2.mb-3 span {
+      background: #2A2A34 !important;
+      color: #EDE9E3 !important;
+      border: 1px solid rgba(237, 233, 227, 0.2);
+    }
+
+
+    #projets .project-card > h3 {
+      line-height: 1.22;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.55rem;
+    }
+
+    #projets .project-card > p.text-on-surface-variant {
+      color: #4B4A56 !important;
+      line-height: 1.5;
+    }
+
+    /* Global thumbnail grade: black and white at rest, color reveal on hover */
+    #projets .project-card .aspect-\[3\/2\] {
+      position: relative;
+      isolation: isolate;
+    }
+
+    #projets .project-card .aspect-\[3\/2\]::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(
+        to bottom,
+        rgba(42, 42, 52, 0.08) 0%,
+        rgba(42, 42, 52, 0.05) 48%,
+        rgba(42, 42, 52, 0.03) 100%
+      );
+      opacity: 1;
+      transition: opacity 320ms ease;
+      z-index: 1;
+    }
+
+    #projets .project-card .aspect-\[3\/2\] img {
+      filter: grayscale(1) saturate(0.9) contrast(0.98) brightness(1.07);
+      transition: filter 360ms ease, transform 500ms ease;
+    }
+
+    #projets .project-card:hover .aspect-\[3\/2\]::after,
+    #projets .project-card:focus-visible .aspect-\[3\/2\]::after {
+      opacity: 0;
+    }
+
+    #projets .project-card:hover .aspect-\[3\/2\] img,
+    #projets .project-card:focus-visible .aspect-\[3\/2\] img {
+      filter: grayscale(0) saturate(1) contrast(1.05) brightness(1.03);
+    }
+
+    /* ── A: Card entrance reveal ── */
+    @keyframes cardReveal {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .card-reveal {
+      opacity: 0;
+      animation: cardReveal 0.48s cubic-bezier(.22,1,.36,1) forwards;
+    }
+
+    /* ── D: Section scroll reveal ── */
+    .section-reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s cubic-bezier(.22,1,.36,1);
+    }
+    .section-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── E: Nav scroll shadow ── */
+    #main-nav { transition: box-shadow 0.25s ease; }
+    #main-nav.scrolled { box-shadow: 0 4px 20px rgba(13,12,43,0.10); }
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 70;
+      pointer-events: none;
+      background: rgba(51,51,204,0.12);
+      transform-origin: left center;
+      transform: scaleX(0);
+      transition: transform 0.08s linear;
+    }
+
+    .hero-parallax {
+      transform: translate3d(0, 0, 0) scale(1.05);
+      will-change: transform;
+    }
+
+    .positioning-signature {
+      transform: translate3d(0, 12px, 0);
+      opacity: 1;
+      transition: transform 0.7s cubic-bezier(.22,1,.36,1);
+      will-change: transform, opacity;
+    }
+    .positioning-signature.visible {
+      transform: translate3d(0, 0, 0);
+    }
+
+    /* ── F: Custom focus rings ── */
+    .filter-btn:focus-visible,
+    .project-card:focus-visible,
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid #3333CC;
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    /* ── I: Kerning & ligatures ── */
+    .font-headline { font-feature-settings: "kern" 1, "liga" 1; }
+
+    /* ── G: Empty state ── */
+    #emptyState {
+      animation: cardReveal 0.35s ease forwards;
+    }
+
+    /* ── Option B: Card redesign askharriet-inspired ── */
+    .project-card {
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(42,42,52,.07);
+    }
+    .project-card > div:first-child {
+      border-radius: 0 !important;
+      margin-bottom: 0 !important;
+    }
+    .project-card > :not(:first-child) {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+    .project-card > h3 {
+      padding-top: 1.25rem;
+    }
+    .project-card > span:last-of-type {
+      padding-bottom: 1.5rem;
+      display: block;
+    }
+
+    /* Project-specific framing helpers */
+    .focus-laptop {
+      object-position: center 64%;
+    }
+
+    /* ── C: prefers-reduced-motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      #scroll-progress { display: none; }
+      .hero-parallax,
+      .positioning-signature,
+      .positioning-signature.visible {
+        transform: none !important;
+        opacity: 1 !important;
+        transition: none !important;
+      }
+      .card-reveal { animation: none; opacity: 1; }
+      .section-reveal { opacity: 1; transform: none; transition: none; }
+      .project-card:hover { transform: none; }
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased min-h-screen flex flex-col">
+
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#projets">Aller au contenu</a>
+
+  <!-- ── Navigation ── -->
+  <nav id="main-nav" class="sticky top-0 z-50 backdrop-blur-md border-b border-surface-variant" style="background:rgba(237,233,227,0.95);">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <a href="index.html" class="flex-shrink-0 font-headline font-bold text-xl tracking-tight text-on-surface hover:text-primary-container transition-colors">
+          Leila Seghirate-Nigg
+        </a>
+        <!-- Desktop nav -->
+        <div class="hidden sm:flex sm:items-center sm:space-x-8">
+          <a href="offre.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Expertise</a>
+          <a href="a-propos.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">À propos</a>
+          <a href="index.html" class="text-primary-container text-sm font-medium border-b-2 border-primary-container pb-1">Réalisations</a>
+          <a href="methodologie.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Méthodologie</a>
+          <a href="frameworks.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Frameworks</a>
+          <a href="#form-contact" class="bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">
+            Contact
+          </a>
+        </div>
+        <!-- Mobile hamburger -->
+        <button id="hamburger" class="sm:hidden p-2 rounded-md text-on-surface hover:bg-surface-container transition-colors" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="sm:hidden pb-4 border-t border-surface-variant mt-1">
+        <div class="flex flex-col gap-2 pt-3">
+          <a href="offre.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Expertise</a>
+          <a href="a-propos.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">À propos</a>
+          <a href="index.html" class="px-3 py-2 text-primary-container bg-surface-container-low rounded-md text-sm font-medium">Réalisations</a>
+          <a href="methodologie.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Méthodologie</a>
+          <a href="frameworks.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Frameworks</a>
+          <a href="#form-contact" class="mt-2 mx-3 text-center bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <main class="flex-grow">
+    <section class="relative overflow-hidden border-b border-surface-variant" style="height:520px;">
+      <!-- Image plein largeur -->
+      <img id="hero-image" src="assets/images/heroes/image.webp" alt="" aria-hidden="true" class="hero-parallax absolute inset-0 w-full h-full object-cover object-center"/>
+      <!-- Overlay sombre zone texte -->
+      <div class="absolute inset-0" style="background:linear-gradient(to right, rgba(15,15,15,0.78) 0%, rgba(15,15,15,0.55) 38%, rgba(15,15,15,0.15) 60%, transparent 100%);"></div>
+      <!-- Contenu -->
+      <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 pt-14 pb-16 md:pt-20 md:pb-24">
+        <span class="text-xs font-bold tracking-[.18em] uppercase text-white/70 font-label mb-4 block">Solutions digitales pour la formation · LSN Consulting</span>
+        <h1 class="font-headline text-5xl md:text-6xl text-white mb-6 leading-[1.1]">
+          Mes <span class="text-[#EDE9E3] italic">réalisations</span>
+        </h1>
+        <!-- Badge mention flottant -->
+        <div class="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-md" style="background:rgba(42,42,52,0.82); backdrop-filter:blur(4px); border:1px solid rgba(237,233,227,0.18);">
+          <span class="text-[#EDE9E3] text-xs font-semibold tracking-[.12em] uppercase font-label">Architecte de systèmes pédagogiques "IA compliant"</span>
+        </div>
+        <div class="flex flex-wrap gap-3 mt-8 md:mt-10">
+          <a href="#projets" class="inline-flex items-center gap-2 bg-primary-container text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-primary transition-colors">
+            Voir les projets
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <a href="a-propos.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity" style="background:#EDE9E3; color:#2A2A34;">
+            À propos de moi
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Positionnement ── -->
+    <section id="positioning" class="pt-14 pb-10 bg-white section-reveal">
+      <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <!-- Colonne 1: Texte -->
+          <div class="space-y-6">
+            <div>
+              <span class="text-xs font-bold tracking-widest uppercase text-primary-container font-label">Positionnement</span>
+              <h2 class="font-headline text-3xl font-bold tracking-tight text-on-surface mt-2">À la croisée de trois disciplines</h2>
+              <p class="text-on-surface leading-relaxed font-headline italic text-base mt-3" style="color:#2A2A34;">
+                Chaque projet — architecture sur mesure au croisement de l'IA, pédagogie et sens.
+              </p>
+            </div>
+            <div class="space-y-4">
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3">
+                  <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary-container flex-shrink-0"></span>
+                  <span class="text-on-surface"><strong class="font-semibold">Stratégie</strong> — clarifier une intention et la faire adopter</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary-container flex-shrink-0"></span>
+                  <span class="text-on-surface"><strong class="font-semibold">Ingénierie pédagogique</strong> — concevoir des parcours qui transforment vraiment</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary-container flex-shrink-0"></span>
+                  <span class="text-on-surface"><strong class="font-semibold">R&D IA</strong> — prototyper, automatiser, industrialiser</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Colonne 2: Vision -->
+          <div class="positioning-signature space-y-3 p-5 md:p-6 text-[0.98rem] leading-[1.55] bg-surface-container-lowest rounded-xl border border-surface-variant">
+            <p class="text-on-surface">
+              Je conçois des dispositifs où l'IA sert réellement l'apprentissage — non par tendance, mais parce qu'un outil bien réglé peut changer l'attention, la mémoire et l'engagement.
+            </p>
+            <p class="text-on-surface">
+              Je suis l'écosystème LLM de près depuis fin 2022 : assez pour distinguer ce qui tient dans la durée du simple bruit.
+            </p>
+            <p class="text-on-surface">
+              J'accorde la même importance au fond qu'aux conditions sensibles de la transmission : une interface, un rythme, une ambiance. Parce qu'on n'apprend pas seulement avec des contenus — on apprend aussi avec des atmosphères.
+            </p>
+            <p class="text-on-surface">
+              Chaque outil est fonctionnel, esthétique et documenté, et s'intègre à l'existant sans le déstabiliser.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="px-4 sm:px-8 lg:px-16 pb-6 section-reveal">
+      <div class="max-w-[1200px] mx-auto text-center">
+        <a href="#projets" class="inline-flex items-center gap-2 font-headline italic text-2xl sm:text-3xl text-on-surface hover:text-primary-container transition-colors">
+          Découvrez mes projets
+          <span aria-hidden="true" class="text-primary-container">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ── Projects grid ── -->
+    <section id="projets" class="px-4 sm:px-8 lg:px-16 pt-10 pb-16">
+      <div class="max-w-[1200px] mx-auto">
+
+        <!-- Filters -->
+        <div class="flex flex-wrap gap-2 mb-10 section-reveal" id="filters" role="group" aria-label="Filtres par catégorie">
+            <button class="filter-btn active px-4 py-2 rounded-full text-sm font-semibold border border-primary-container bg-primary-container text-white transition-colors" data-filter="all">Tous</button>
+            <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium border border-outline text-on-surface hover:border-primary-container hover:text-primary-container transition-colors" data-filter="creation_visuelle_immersive">Création visuelle IA et expériences immersives</button>
+            <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium border border-outline text-on-surface hover:border-primary-container hover:text-primary-container transition-colors" data-filter="prototypes_vibe_coding">Prototypes &amp; vibe coding</button>
+            <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium border border-outline text-on-surface hover:border-primary-container hover:text-primary-container transition-colors" data-filter="strategie_marketing_formation">Stratégie marketing de la formation</button>
+            <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium border border-outline text-on-surface hover:border-primary-container hover:text-primary-container transition-colors" data-filter="formation_pedagogie">Formation &amp; pédagogie</button>
+          </div>
+
+        <!-- Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 lg:gap-12" id="grid">
+
+          <article class="project-card group cursor-pointer" data-category="prototypes_vibe_coding" data-id="simulateur_communication">
+            <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
+              <img src="assets/images/projects/brief%20analytic%20image.png" alt="Simulateur de styles de communication" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary-container uppercase tracking-wider shadow-sm">Prototypes</div>
+              <div class="absolute top-3 right-3 bg-primary-container text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">Case study ↗</div>
+            </div>
+            <h3 class="font-headline text-xl text-on-surface mb-2 group-hover:text-primary-container transition-colors">Simulateur de styles de communication</h3>
+            <p class="text-on-surface-variant text-sm mb-3 line-clamp-1">Simulateur interactif pour entraîner les managers à communiquer selon les profils.</p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">simulator</span>
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">HTML/JS</span>
+            </div>
+            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+          </article>
+
+          <article class="project-card group cursor-pointer" data-category="creation_visuelle_immersive" data-id="mj_prompt_generator">
+            <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
+              <img src="assets/images/projects/MJ%20Prompt%20Generator%202.webp" alt="MJ Prompt Generator" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='assets/images/projects/MJ%20Prompt%20Generator%202.webp'"/>
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary-container uppercase tracking-wider shadow-sm">Création visuelle IA &amp; immersif</div>
+              <div class="absolute top-3 right-3 bg-primary-container text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">Case study ↗</div>
+            </div>
+            <h3 class="font-headline text-xl text-on-surface mb-2 group-hover:text-primary-container transition-colors">MJ Prompt Generator</h3>
+            <p class="text-on-surface-variant text-sm mb-3 line-clamp-1">Générateur de prompts Midjourney pour accélérer la création visuelle.</p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">generator</span>
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">HTML/JS</span>
+            </div>
+            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+          </article>
+
+          <article class="project-card group cursor-pointer" data-category="prototypes_vibe_coding" data-id="canva_api_starter">
+            <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
+              <img src="assets/images/projects/Canva%20API%20Starter%20New.webp" alt="Canva API Starter" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary-container uppercase tracking-wider shadow-sm">Prototypes</div>
+              <div class="absolute top-3 right-3 bg-primary-container text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">Case study ↗</div>
+            </div>
+            <h3 class="font-headline text-xl text-on-surface mb-2 group-hover:text-primary-container transition-colors">Canva API Starter</h3>
+            <p class="text-on-surface-variant text-sm mb-3 line-clamp-1">Automatisation et génération de moodboards via API Canva.</p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">automation</span>
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">Python</span>
+            </div>
+            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+          </article>
+
+          <article class="project-card group cursor-pointer" data-category="creation_visuelle_immersive" data-id="plafond_de_verre">
+            <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
+              <img src="assets/images/immersive/header image plafond de verre.png" alt="Plafond de Verre — série pédagogique immersive" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&h=400&fit=crop'"/>
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary-container uppercase tracking-wider shadow-sm">Création visuelle IA &amp; immersif</div>
+              <div class="absolute top-3 right-3 bg-primary-container text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">Case study ↗</div>
+            </div>
+            <h3 class="font-headline text-xl text-on-surface mb-2 group-hover:text-primary-container transition-colors">Plafond de Verre</h3>
+            <p class="text-on-surface-variant text-sm mb-3 line-clamp-1">Série immersive : 5 modules narratifs sur l'invisibilisation des femmes.</p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">série pédagogique</span>
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">HTML/CSS/JS</span>
+            </div>
+            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+          </article>
+
+          <article class="project-card group cursor-pointer" data-category="prototypes_vibe_coding" data-id="generateur_propre">
+            <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
+              <img src="assets/images/projects/generateur-identites-symboliques-hero.webp" alt="Générateur d'identités symboliques" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=600&h=400&fit=crop'"/>
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary-container uppercase tracking-wider shadow-sm">Prototypes</div>
+            </div>
+            <h3 class="font-headline text-xl text-on-surface mb-2 group-hover:text-primary-container transition-colors">Générateur d'identités symboliques</h3>
+            <p class="text-on-surface-variant text-sm mb-3 line-clamp-1">Génération d'identité et narration de persona avec tonalités multiples.</p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">generator</span>
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">HTML/JS</span>
+            </div>
+            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+          </article>
+
+          <article class="project-card group cursor-pointer" data-category="prototypes_vibe_coding" data-id="document_template_generator">
+            <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
+              <img src="assets/images/projects/Document%20Template%20Generator-768.webp" srcset="assets/images/projects/Document%20Template%20Generator-480.webp 480w, assets/images/projects/Document%20Template%20Generator-768.webp 768w, assets/images/projects/Document%20Template%20Generator-1200.webp 1200w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 560px" alt="Document Template Generator" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary-container uppercase tracking-wider shadow-sm">Prototypes</div>
+            </div>
+            <h3 class="font-headline text-xl text-on-surface mb-2 group-hover:text-primary-container transition-colors">Document Template Generator</h3>
+            <p class="text-on-surface-variant text-sm mb-3 line-clamp-1">Générateur de templates pour standardiser la production documentaire.</p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">generator</span>
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">Python</span>
+            </div>
+            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+          </article>
+
+          <article class="project-card group cursor-pointer" data-category="creation_visuelle_immersive" data-id="harmoniseur_couleurs">
+            <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
+              <img src="assets/images/projects/Harmoniseur%20de%20couleurs.webp" alt="Harmoniseur de couleurs" loading="lazy" decoding="async" class="w-full h-full object-contain object-top bg-surface-container-low p-2 transition-transform duration-500 group-hover:scale-105"/>
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary-container uppercase tracking-wider shadow-sm">Création visuelle IA &amp; immersif</div>
+            </div>
+            <h3 class="font-headline text-xl text-on-surface mb-2 group-hover:text-primary-container transition-colors">Harmoniseur de couleurs</h3>
+              <p class="text-on-surface-variant text-sm mb-3 line-clamp-1">Vibecoding : friction réelle → solution batch pour production visuelle.</p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">tool</span>
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">Python</span>
+            </div>
+            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+          </article>
+
+          <article class="project-card group cursor-pointer" data-category="prototypes_vibe_coding" data-id="storystudio">
+            <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
+              <img src="assets/images/sante/storrytelling.webp" alt="StoryStudio" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary-container uppercase tracking-wider shadow-sm">Prototypes</div>
+            </div>
+            <h3 class="font-headline text-xl text-on-surface mb-2 group-hover:text-primary-container transition-colors">StoryStudio</h3>
+            <p class="text-on-surface-variant text-sm mb-3 line-clamp-1">Studio de création de stories avec flux de production optimisé.</p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">app</span>
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">HTML/JS</span>
+            </div>
+            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+          </article>
+
+          <article class="project-card group cursor-pointer" data-category="prototypes_vibe_coding" data-id="lsn_chaine_equipe">
+            <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
+              <img src="assets/images/team/lsn%20chaine%20equipe%201-768.webp" srcset="assets/images/team/lsn%20chaine%20equipe%201-480.webp 480w, assets/images/team/lsn%20chaine%20equipe%201-768.webp 768w, assets/images/team/lsn%20chaine%20equipe%201-1200.webp 1200w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 560px" alt="LSN Chaîne Équipe" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary-container uppercase tracking-wider shadow-sm">Prototypes</div>
+              <div class="absolute top-3 right-3 bg-primary-container text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">Case study ↗</div>
+            </div>
+            <h3 class="font-headline text-xl text-on-surface mb-2 group-hover:text-primary-container transition-colors">LSN Chaîne Équipe</h3>
+            <p class="text-on-surface-variant text-sm mb-3 line-clamp-1">Aide à la décision pour qualifier la préparation avant lancement projet.</p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">outil équipe</span>
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">HTML/CSS/JS</span>
+            </div>
+            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+          </article>
+
+          <article class="project-card group cursor-pointer" data-category="strategie_marketing_formation" data-id="campagne_learning_for_life">
+            <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Campagne Learning for Life" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop'"/>
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary-container uppercase tracking-wider shadow-sm">Marketing formation</div>
+              <div class="absolute top-3 right-3 bg-primary-container text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">Case study ↗</div>
+            </div>
+            <h3 class="font-headline text-xl text-on-surface mb-2 group-hover:text-primary-container transition-colors">Campagne Learning for Life</h3>
+            <p class="text-on-surface-variant text-sm mb-3 line-clamp-1">Stratégie de communication interne pour adoption LinkedIn Learning groupe.</p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">LinkedIn Learning</span>
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">CAC 40</span>
+            </div>
+            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+          </article>
+
+          <article class="project-card group cursor-pointer" data-category="strategie_marketing_formation" data-id="data_driven_learning_reporting">
+            <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
+              <img src="assets/images/projects/Data-driven%20learning%20%E2%80%94%20Reporting%20%26%20webinars.webp" alt="Data-driven learning — Reporting & webinars" loading="lazy" decoding="async" class="w-full h-full object-cover focus-laptop transition-transform duration-500 group-hover:scale-105"
+                onerror="this.src='assets/images/projects/Data-driven%20learning%20%E2%80%94%20Reporting%20%26%20webinars.webp'"/>
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary-container uppercase tracking-wider shadow-sm">Marketing formation</div>
+              <div class="absolute top-3 right-3 bg-primary-container text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">Case study ↗</div>
+            </div>
+            <h3 class="font-headline text-xl text-on-surface mb-2 group-hover:text-primary-container transition-colors">Data-driven learning</h3>
+            <p class="text-on-surface-variant text-sm mb-3 line-clamp-1">Reporting & webinars pour piloter adoption et animer communauté L&D.</p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">LinkedIn Learning</span>
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">Reporting</span>
+            </div>
+            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+          </article>
+
+          <article class="project-card group cursor-pointer" data-category="formation_pedagogie" data-id="savoir_utiliser_sa_voix">
+            <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
+              <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=600&h=400&fit=crop" alt="Module Savoir utiliser sa voix" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                onerror="this.src='https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=600&h=400&fit=crop'"/>
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary-container uppercase tracking-wider shadow-sm">Formation &amp; pédagogie</div>
+              <div class="absolute top-3 right-3 bg-primary-container text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">Case study ↗</div>
+              <div class="absolute bottom-3 left-3 bg-black/50 text-white text-xs font-semibold px-2 py-1 rounded font-label tracking-wider">Avant l’IA</div>
+            </div>
+            <h3 class="font-headline text-xl text-on-surface mb-2 group-hover:text-primary-container transition-colors">Savoir utiliser sa voix</h3>
+            <p class="text-on-surface-variant text-sm mb-3 line-clamp-1">Module multimédia sur les fondamentaux de la communication orale.</p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">iSpring Suite</span>
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">Parcours hybride</span>
+            </div>
+            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+          </article>
+
+          <article class="project-card group cursor-pointer" data-category="formation_pedagogie" data-id="arret_cardiaque_module">
+            <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
+              <img src="assets/images/projects/image de coouverture.webp" alt="Module auto-formatif arrêt cardiaque" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                onerror="this.src='https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop'"/>
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary-container uppercase tracking-wider shadow-sm">Formation &amp; pédagogie</div>
+              <div class="absolute top-3 right-3 bg-primary-container text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">Case study ↗</div>
+              <div class="absolute bottom-3 left-3 bg-black/50 text-white text-xs font-semibold px-2 py-1 rounded font-label tracking-wider">Avant l’IA</div>
+            </div>
+            <h3 class="font-headline text-xl text-on-surface mb-2 group-hover:text-primary-container transition-colors">Module auto-formatif &mdash; Arr&ecirc;t cardiaque</h3>
+            <p class="text-on-surface-variant text-sm mb-3 line-clamp-2">Module e-learning de sensibilisation aux gestes qui sauvent, con&ccedil;u pour Harmonie Mutuelle.</p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">Storyline 360</span>
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">SCORM</span>
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">15 min</span>
+            </div>
+            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le d&eacute;tail <span aria-hidden="true">→</span></span>
+          </article>
+
+          <article class="project-card group cursor-pointer" data-category="formation_pedagogie" data-id="guide_animation_tutorale">
+            <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
+              <img src="assets/images/projects/guide%20d%27animation%20tutorale-768.webp" srcset="assets/images/projects/guide%20d%27animation%20tutorale-480.webp 480w, assets/images/projects/guide%20d%27animation%20tutorale-768.webp 768w, assets/images/projects/guide%20d%27animation%20tutorale-1200.webp 1200w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 560px" alt="Guide d'animation tutorale" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                onerror="this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=400&fit=crop'"/>
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary-container uppercase tracking-wider shadow-sm">Formation &amp; pédagogie</div>
+              <div class="absolute top-3 right-3 bg-primary-container text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">Case study ↗</div>
+              <div class="absolute bottom-3 left-3 bg-black/50 text-white text-xs font-semibold px-2 py-1 rounded font-label tracking-wider">Avant l'IA</div>
+            </div>
+            <h3 class="font-headline text-xl text-on-surface mb-2 group-hover:text-primary-container transition-colors">Guide d'animation tutorale</h3>
+            <p class="text-on-surface-variant text-sm mb-3 line-clamp-1">Guide pour piloter la séquence Structurer son discours en blended learning.</p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">LMS TOTARA</span>
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">Blended Learning</span>
+            </div>
+            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+          </article>
+
+          <article class="project-card group cursor-pointer" data-category="formation_pedagogie" data-id="plan_evaluation_formation">
+            <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
+              <img src="assets/images/pedagogie/Plan%20d%27%C3%A9valuation%20d%27une%20formation.webp" alt="Plan d'évaluation d'une formation hybride" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                onerror="this.src='assets/images/pedagogie/Plan%20d%27%C3%A9valuation%20d%27une%20formation.webp'"/>
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary-container uppercase tracking-wider shadow-sm">Formation &amp; pédagogie</div>
+              <div class="absolute top-3 right-3 bg-primary-container text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">Case study ↗</div>
+              <div class="absolute bottom-3 left-3 bg-black/50 text-white text-xs font-semibold px-2 py-1 rounded font-label tracking-wider">Avant l'IA</div>
+            </div>
+            <h3 class="font-headline text-xl text-on-surface mb-2 group-hover:text-primary-container transition-colors">Plan d'évaluation d'une formation hybride</h3>
+            <p class="text-on-surface-variant text-sm mb-3 line-clamp-1">Plan d'évaluation selon la méthode Kirkpatrick 4 niveaux pour blended learning.</p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">Kirkpatrick</span>
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">Studigroup</span>
+            </div>
+            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+          </article>
+
+          <article class="project-card group cursor-pointer" data-category="formation_pedagogie" data-id="gestion_projet_parcours_mooc">
+            <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
+              <img src="assets/images/pedagogie/mooc-gestion-hero.webp" alt="Gestion de projet Parcours MOOC" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop'"/>
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary-container uppercase tracking-wider shadow-sm">Formation &amp; pédagogie</div>
+              <div class="absolute top-3 right-3 bg-primary-container text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">Case study ↗</div>
+              <div class="absolute bottom-3 left-3 bg-black/50 text-white text-xs font-semibold px-2 py-1 rounded font-label tracking-wider">Avant l'IA</div>
+            </div>
+            <h3 class="font-headline text-xl text-on-surface mb-2 group-hover:text-primary-container transition-colors">Gestion de projet Parcours MOOC</h3>
+            <p class="text-on-surface-variant text-sm mb-3 line-clamp-1">Pilotage de production MOOC sur deux contextes clients (First Finance, SKEMA).</p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">2022-2023</span>
+              <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">SCORM</span>
+            </div>
+            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+          </article>
+
+          <!-- Empty state -->
+          <div class="col-span-full text-center py-16 hidden" id="emptyState">
+            <div class="inline-flex flex-col items-center gap-3">
+              <span class="material-symbols-outlined text-4xl text-outline">folder_open</span>
+              <p class="text-on-surface font-headline text-xl">Aucune réalisation ici</p>
+              <p class="text-on-surface-variant text-sm">Cette catégorie n'a pas encore de projet — revenez bientôt !</p>
+            </div>
+          </div>
+
+        </div><!-- /grid -->
+      </div>
+    </section>
+
+    <section id="form-contact" class="relative bg-surface py-16">
+      <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16">
+        <div class="relative mx-auto flex w-full max-w-3xl flex-col justify-between gap-y-6 border-y border-outline/40 bg-[radial-gradient(35%_80%_at_25%_0%,rgba(51,51,204,0.08),transparent)] px-4 py-8 sm:px-8">
+          <span aria-hidden="true" class="absolute -top-3 -left-3 z-10 text-primary-container text-xl leading-none">+</span>
+          <span aria-hidden="true" class="absolute -top-3 -right-3 z-10 text-primary-container text-xl leading-none">+</span>
+          <span aria-hidden="true" class="absolute -bottom-3 -left-3 z-10 text-primary-container text-xl leading-none">+</span>
+          <span aria-hidden="true" class="absolute -right-3 -bottom-3 z-10 text-primary-container text-xl leading-none">+</span>
+
+          <div class="-inset-y-6 pointer-events-none absolute left-0 w-px border-l border-outline/40"></div>
+          <div class="-inset-y-6 pointer-events-none absolute right-0 w-px border-r border-outline/40"></div>
+          <div class="pointer-events-none absolute top-0 left-1/2 -z-10 h-full border-l border-dashed border-outline/50"></div>
+
+          <div class="space-y-1 text-center">
+            <h2 class="font-headline text-2xl font-bold text-on-surface">Parlons de votre projet de formation.</h2>
+            <p class="text-sm text-on-surface-variant">Réponse sous 24h. Aucun engagement.</p>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-2 sm:flex-row">
+            <a href="mailto:seghirate@gmail.com" class="inline-flex items-center justify-center rounded-full border border-outline/60 px-4 py-2 text-sm font-semibold text-on-surface hover:border-primary-container hover:text-primary-container transition-colors">Envoyer un message</a>
+            <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1 rounded-full bg-primary-container px-4 py-2 text-sm font-semibold text-white hover:bg-primary transition-colors">Prendre rendez-vous <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="bg-surface-container border-t border-surface-variant">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="font-headline text-xl mb-1 text-on-surface">Leila Seghirate-Nigg</h3>
+          <p class="text-xs font-bold tracking-[.14em] uppercase text-primary-container font-label mb-3">LSN Consulting</p>
+          <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Architecte de systèmes pédagogiques IA compliant.</p>
+          <div class="flex gap-1.5 flex-wrap">
+            <span class="text-xs px-2.5 py-1 rounded-full border border-outline/30 text-on-surface-variant">Création visuelle IA &amp; immersif</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-outline/30 text-on-surface-variant">Formation &amp; pédagogie</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-outline/30 text-on-surface-variant">Marketing Formation</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold tracking-[.18em] uppercase text-on-surface mb-4 font-label">Navigation</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="offre.html" class="text-on-surface-variant hover:text-primary-container transition-colors">Expertise</a></li>
+            <li><a href="index.html" class="text-on-surface-variant hover:text-primary-container transition-colors">Réalisations</a></li>
+            <li><a href="a-propos.html" class="text-on-surface-variant hover:text-primary-container transition-colors">À propos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold tracking-[.18em] uppercase text-on-surface mb-4 font-label">Contact</h4>
+          <a href="mailto:seghirate@gmail.com" class="text-sm text-primary-container hover:underline">seghirate@gmail.com</a>
+          <div class="mt-4 flex space-x-4">
+            <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" target="_blank" rel="noopener noreferrer" class="text-on-surface-variant hover:text-primary-container transition-colors" aria-label="LinkedIn">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 pt-6 border-t border-surface-variant text-center text-xs text-on-surface-variant">
+        <p>© 2026 Leila Seghirate-Nigg · LSN Consulting. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── Drawer overlay ── -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- ── Drawer panel ── -->
+  <aside id="drawer" role="dialog" aria-modal="true" aria-label="Détail du projet" class="drawer">
+    <div class="drawer-header">
+      <img id="drawerImg" src="" alt=""/>
+      <button id="drawerClose" class="drawer-close" aria-label="Fermer">✕</button>
+      <div class="drawer-header-meta">
+        <span id="drawerCategory" class="drawer-category-badge"></span>
+        <h2 id="drawerTitle" class="drawer-title"></h2>
+      </div>
+    </div>
+    <div id="drawerBody" class="drawer-body"></div>
+  </aside>
+
+  <!-- ── Scripts ── -->
+  <script>
+  // ── Project data ──
+  const PROJECTS = {
+    simulateur_communication: {
+      title: "Simulateur de styles de communication",
+      category: "Prototypes & vibe coding",
+      img: "assets/images/projects/brief%20analytic%20image.png",
+      type: "Simulateur interactif",
+      techno: "HTML/JS · Bilingue FR/EN",
+      objectif: "Entraîner les managers à adapter leur communication selon le profil analytique de leur interlocuteur.",
+      description: "Simulateur décisionnel à embranchements construit depuis 3 paragraphes de notes client. 11 nœuds narratifs, 3 chemins, 4 KPIs dynamiques (Clarté, Précision, Confiance, Risque), pensées internes visibles après chaque décision, enseignement pédagogique en écran de fin. Bilingue FR/EN en un fichier HTML autonome.",
+      contexte: "Un client manager souhaitait tester la puissance de l'IA appliquée à la formation — à partir d'un scénario minimal sur les styles de communication, démontrer qu'il est possible de produire un outil pédagogique engageant sans équipe de développement.",
+      resultat: "Transformation ×10 du matériau source. Simulateur complet livré en quelques jours, déployable en un clic, extensible à d'autres profils (Driver, Expressif, Amiable).",
+      case_study: "projets/simulateur-communication.html"
+    },
+    generateur_propre: {
+      title: "Générateur d'identités symboliques",
+      category: "Prototypes & vibe coding",
+      img: "assets/images/projects/generateur-identites-symboliques-hero.webp",
+      type: "Generator",
+      techno: "HTML/JS",
+      objectif: "Explorer la génération automatisée d'identités narratives et de personas symboliques.",
+      description: "Générateur permettant de créer des identités symboliques complètes (nom, archétype, valeurs, narration) à partir de paramètres simples. Outil de recherche et d'exploration autour du concept de persona augmenté par l'IA.",
+      contexte: "Exploration du potentiel narratif des LLMs appliqué à la construction d'identités et de personnages.",
+      resultat: "Outil d'idéation utilisable pour des projets de narration, de formation ou de branding.",
+      case_study: "projets/generateur-propre.html"
+    },
+    mj_prompt_generator: {
+      title: "MJ Prompt Generator",
+      category: "Création visuelle IA et expériences immersives",
+      img: "assets/images/projects/MJ%20Prompt%20Generator%202.webp",
+      type: "Generator",
+      techno: "HTML/JS + Claude API",
+      objectif: "Accélérer la création de prompts Midjourney structurés et cinématographiques.",
+      description: "Interface de génération de prompts pour Midjourney organisée en 7 couches (sujet, style, lumière, composition, références cinéma, format, paramètres). Intègre Claude API pour la traduction automatique des inputs français en anglais et l'enrichissement sémantique.",
+      contexte: "Optimisation du workflow de création visuelle IA — passer de prompts ad hoc à une production structurée et reproductible.",
+      resultat: "Gain de temps significatif sur la production de visuels. Cohérence stylistique accrue entre les générations.",
+      case_study: "projets/mj-prompt-generator.html"
+    },
+    canva_api_starter: {
+      title: "Canva API Starter",
+      category: "Prototypes & vibe coding",
+      img: "assets/images/projects/Canva%20API%20Starter%20New.webp",
+      type: "Automation",
+      techno: "Python + Canva API",
+      objectif: "Automatiser la production de visuels Canva et la génération de moodboards via API.",
+      description: "Kit de démarrage Python pour interfacer l'API Canva. Permet de créer des designs en batch, d'injecter du contenu dynamique dans des templates et de générer des moodboards automatisés à partir d'une liste d'assets.",
+      contexte: "Réduction du temps de production visuelle répétitive pour des projets nécessitant de nombreuses déclinaisons.",
+      resultat: "Automatisation de tâches manuelles Canva. Base réutilisable pour tout projet nécessitant une production visuelle en volume.",
+      case_study: "projets/canva-api.html"
+    },
+    document_template_generator: {
+      title: "Document Template Generator",
+      category: "Prototypes & vibe coding",
+      img: "assets/images/projects/Document Template Generator.svg",
+      type: "Generator",
+      techno: "Python",
+      objectif: "Standardiser et accélérer la production de documents structurés.",
+      description: "Générateur Python de templates documentaires (rapports, briefs, livrables) à partir de structures prédéfinies et de données variables. Exploite python-pptx et python-docx pour produire des fichiers prêts à l'emploi en quelques secondes.",
+      contexte: "Besoin de produire rapidement des documents types pour des projets clients récurrents.",
+      resultat: "Réduction drastique du temps de mise en forme. Templates cohérents et personnalisables à la volée.",
+      case_study: null
+    },
+    harmoniseur_couleurs: {
+      title: "Harmoniseur de couleurs",
+      category: "Création visuelle IA et expériences immersives",
+      img: "assets/images/projects/Harmoniseur%20de%20couleurs.webp",
+      type: "Cas pratique vibecoding",
+      techno: "Python",
+      objectif: "Resoudre un probleme concret de coherence visuelle sur une serie d'images IA, avec une approche rapide et reproductible.",
+      description: "Contexte reel : sur un projet marque (site/deck/feed), plusieurs images Midjourney/DALL-E utilisaient des bleus et beiges proches mais non alignes. Friction : harmoniser a la main prenait trop de temps et donnait des reglages inconsistants d'une image a l'autre. Hypothese : automatiser le traitement en batch sans detruire lumiere, reliefs et textures.",
+      contexte: "Vibecoding process : iterations courtes guidees par l'IA sur 2-3 images tests. Decisions cles : 1) cibler la teinte en HSV plutot qu'en RGB, 2) ajouter hue_tolerance + saturation_min pour eviter les gris et faux positifs, 3) conserver la luminosite pour garder contraste et matieres, 4) externaliser les regles dans un config JSON pour ajuster sans recoder. Realisation : script color_harmonizer.py + config.json, batch input/output, logs de pixels modifies et pourcentage d'impact par image.",
+      resultat: "Resultat : en une commande, la serie devient charte-compatible et visuellement coherente, sans toucher aux originaux. Preuve : sortie console avec nombre de pixels modifies, pourcentage et comparaison avant/apres. Limites : zones peu saturees, tons peau et lumieres colorees peuvent etre affectes si hue_tolerance est trop large; pistes suivantes : mode preview, rapport HTML, masques selectifs et mini-UI.",
+      case_study: null
+    },
+    plafond_de_verre: {
+      title: "Plafond de Verre",
+      category: "Création visuelle IA et expériences immersives",
+      img: "assets/images/immersive/header image plafond de verre.png",
+      type: "Série pédagogique",
+      techno: "HTML / CSS / JS statique",
+      objectif: "Faire ressentir le plafond de verre avant de le faire comprendre — 5 modules narratifs sur l'invisibilisation des femmes compétentes en entreprise.",
+      description: "Site multi-pages cinématographique présentant 5 histoires fictives construites pour déclencher l'identification émotionnelle : Sarah (l'invisible compétence), Léa (charge émotionnelle), Nadia (l'effet boomerang), Maya (maternité et carrière), Aïcha (l'initiative ignorée). Design sombre inspiré de l'esthétique Gaumont/Netflix, slider d'épisodes, témoignages RH, vidéo YouTube. Construit entièrement avec l'IA comme co-auteure.",
+      contexte: "Les formations sur les discriminations de genre en entreprise manquent d'impact émotionnel. L'objectif était de créer une expérience narrative qui contourne les défenses intellectuelles pour toucher.",
+      resultat: "Site HTML statique multi-pages déployable. 5 modules pédagogiques complets. Disponible sur YouTube.",
+      case_study: "projets/plafond-de-verre.html"
+    },
+    storystudio: {
+      title: "StoryStudio",
+      category: "Prototypes & vibe coding",
+      img: "assets/images/projects/storrytelling.webp",
+      type: "App",
+      techno: "HTML/JS",
+      objectif: "Créer un flux de production de stories optimisé et standardisé.",
+      description: "Application web de création de stories (Instagram, LinkedIn, formats courts) intégrant des templates, une gestion des formats et un workflow de production guidé. Conçu pour accélérer la production de contenus visuels courts pour les réseaux sociaux.",
+      contexte: "Temps de production de stories trop long avec les outils classiques. Besoin d'un flux dédié et efficace.",
+      resultat: "Réduction du temps de production. Templates cohérents et réutilisables par série.",
+      case_study: null
+    },
+    lsn_chaine_equipe: {
+      title: "LSN Chaîne Équipe",
+      category: "Prototypes & vibe coding",
+      img: "assets/images/team/lsn%20chaine%20equipe%201.webp",
+      type: "Outil d'aide à la décision",
+      techno: "HTML/CSS/JS",
+      objectif: "Structurer les critères Go/No-Go d'un projet pour fluidifier les décisions d'équipe.",
+      description: "Interface décisionnelle en étapes pour évaluer la préparation d'un projet, visualiser l'avancement des critères et faciliter l'alignement d'équipe avant lancement. Le parcours met en avant les points bloquants et propose une lecture claire des priorités.",
+      contexte: "Besoin d'un cadre simple et actionnable pour décider rapidement si un projet est prêt à passer en exécution.",
+      resultat: "Outil opérationnel de qualification partagé par l'équipe, avec une lecture immédiate des risques et des actions à traiter.",
+      case_study: "projets/lsn-chaine-equipe.html"
+    },
+    arret_cardiaque_module: {
+      title: "Module auto-formatif — Arrêt cardiaque",
+      category: "Formation & pédagogie",
+      img: "assets/images/sante/image de coouverture.png",
+      type: "Module e-learning",
+      techno: "Storyline 360 · SCORM",
+      objectif: "Permettre aux employés d'Harmonie Mutuelle d'intervenir efficacement en cas d'urgence cardiaque.",
+      description: "Module auto-formatif de 15 minutes conçu pour sensibiliser les collaborateurs aux gestes qui sauvent — reconnaître un arrêt cardiaque, alerter les secours, pratiquer le massage cardiaque et utiliser un défibrillateur.",
+      contexte: "Harmonie Mutuelle souhaitait sensibiliser l'ensemble de ses collaborateurs au risque cardiaque dans un format court, accessible sur tous les devices, déployable sur leur LMS interne.",
+      resultat: "Module livré et déployé sur la plateforme LMS en janvier 2022. Storytelling + vidéos d'expert + quiz interactifs en 15 minutes.",
+      case_study: "projets/arret-cardiaque-module.html"
+    },
+    savoir_utiliser_sa_voix: {
+      title: "Savoir utiliser sa voix",
+      category: "Formation & pédagogie",
+      img: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800&h=500&fit=crop",
+      type: "Module e-learning",
+      techno: "iSpring Suite · SCORM",
+      objectif: "Identifier les bonnes pratiques de communication orale et s'approprier la posture de bon communiquant.",
+      description: "Module auto-formatif multimédia de 15 minutes sur les fondamentaux de la communication orale — intonation, débit, articulation, rythme, répétition. Conçu dans le cadre d'un parcours hybride avec dispositif tutoral.",
+      contexte: "Partenariat client souhaitant renforcer les compétences de ses collaborateurs en prise de parole en public, dans le cadre d'un parcours de formation hybride.",
+      resultat: "Module intégré dans un parcours hybride. Approche inductive par analyse critique de vidéos, quiz intermédiaires et dispositif tutoral avec forum.",
+      case_study: "projets/savoir-utiliser-sa-voix.html"
+    },
+    guide_animation_tutorale: {
+      title: "Guide d'animation tutorale",
+      category: "Formation & pédagogie",
+      img: "assets/images/projects/guide%20d%27animation%20tutorale.webp",
+      type: "Guide pédagogique",
+      techno: "LMS TOTARA · VIA · Klaxoon · Padlet",
+      objectif: "Fournir au formateur-tuteur un cadre complet pour piloter la séquence Structurer son discours dans un parcours blended learning.",
+      description: "Guide d'animation tutorale pour la séquence 3 d'une formation blended learning sur la prise de parole en public. Plan de cours détaillé, instructions sur les ressources, outils de suivi et grille de remédiation du livrable.",
+      contexte: "Formation blended learning sur la prise de parole en public. La séquence 3 Structurer son discours implique synchronisation asynchrone/synchrone, animation de forum et classe virtuelle de remédiation.",
+      resultat: "Guide livré avec plan de cours détaillé, outil de suivi des actions tutorales et annexe dédiée au déroulé de la classe virtuelle (VIA + Klaxoon + Padlet).",
+      case_study: "projets/guide-animation-tutorale.html"
+    },
+    plan_evaluation_formation: {
+      title: "Plan d'évaluation d'une formation hybride",
+      category: "Formation & pédagogie",
+      img: "assets/images/pedagogie/Plan%20d%27%C3%A9valuation%20d%27une%20formation.webp",
+      type: "Ingénierie évaluative",
+      techno: "Modèle Kirkpatrick · 4 niveaux",
+      objectif: "Concevoir un plan d'évaluation complet pour mesurer l'efficacité d'une formation blended learning sur la prise de parole en public.",
+      description: "Plan d'évaluation selon la méthode Kirkpatrick 4 niveaux pour la formation Les fondamentaux de la prise de parole en public déployée par Studigroup. Document vivant pour le suivi long terme et l'amélioration continue.",
+      contexte: "Studigroup souhaitait disposer d'un outil structuré pour mesurer l'efficacité de sa formation hybride à plusieurs niveaux, de la satisfaction immédiate des apprenants jusqu'à l'impact sur les résultats organisationnels.",
+      resultat: "Plan d'évaluation structuré par niveau Kirkpatrick avec objectifs, indicateurs et outils de collecte. Restitution synthétique illustrée, conçue comme document vivant.",
+      case_study: "projets/plan-evaluation-formation.html"
+    },
+    campagne_learning_for_life: {
+      title: "Campagne Learning for Life",
+      category: "Stratégie marketing de la formation",
+      img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
+      type: "Marketing de la formation",
+      techno: "LinkedIn Learning · Communication interne · Multi-entités",
+      objectif: "Booster l'adoption de LinkedIn Learning au sein d'un grand groupe du CAC 40 via une stratégie de communication interne déployable par les entités.",
+      description: "Élaboration et déploiement d'une campagne marketing interne 'Learning for Life' : kit de communication complet (emails, bannières intranet, posts, vidéos teaser), organisation de webinars et pilotage des actions d'activation multicanale.",
+      contexte: "Plateforme de formation digitale déployée au niveau groupe avec un taux de création de comptes élevé mais une utilisation active en baisse. Décision de réengager l'adoption dans un contexte de renouvellement de contrat.",
+      resultat: "Pic d'engagement observé 1 mois après le lancement. Augmentation de plus de 30% du volume mensuel de complétions entre 2023 et 2024.",
+      case_study: "projets/campagne-learning-for-life.html"
+    },
+    data_driven_learning_reporting: {
+      title: "Data-driven learning — Reporting & webinars",
+      category: "Stratégie marketing de la formation",
+      img: "assets/images/projects/Data-driven%20learning%20%E2%80%94%20Reporting%20%26%20webinars.webp",
+      type: "Pilotage & animation communauté",
+      techno: "LinkedIn Learning · Tableau de bord · Teams",
+      objectif: "Identifier les leviers d'engagement et ajuster les actions d'activation via un pilotage basé sur les données et l'animation de la communauté L&D.",
+      description: "Reporting mensuel (adoption, activation, complétion, satisfaction, NPS), revues semestrielles, conception et animation d'ateliers admins et L&D bilingues (FR/EN), curation de collections, animation canal Teams.",
+      contexte: "Groupe du CAC 40 cherchant à pérenniser l'adoption de LinkedIn Learning au-delà des campagnes ponctuelles, en outillant les équipes L&D pour un pilotage autonome et data-driven.",
+      resultat: "Équipes L&D montées en compétences sur l'analyse des données LinkedIn Learning. Communauté active, supports réutilisables, dynamique durable d'usage de la plateforme.",
+      case_study: "projets/data-driven-learning-reporting.html"
+    },
+    gestion_projet_parcours_mooc: {
+      title: "Gestion de projet Parcours MOOC",
+      category: "Formation & pédagogie",
+      img: "assets/images/pedagogie/mooc-gestion-hero.webp",
+      type: "Gestion de production MOOC",
+      techno: "SCORM · Production multimédia",
+      objectif: "Piloter la production de parcours MOOC de bout en bout sur deux contextes clients et deux années distinctes.",
+      description: "Case study comparative entre 2022 (First Finance) et 2023 (SKEMA) : coordination des intervenants, organisation des tournages, suivi qualité, intégration SCORM et livraison des modules.",
+      contexte: "Même expertise mobilisée dans deux environnements différents : parcours réglementaire long pour First Finance et parcours certifiant digital marketing pour SKEMA.",
+      resultat: "Livraisons conformes aux objectifs dans les deux contextes, avec une structuration claire de la chaîne de valeur production et des workflows de suivi.",
+      case_study: "projets/gestion-projet-parcours-mooc.html"
+    }
+  };
+
+  // ── Mobile menu toggle ──
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    iconOpen.classList.toggle('hidden', isOpen);
+    iconClose.classList.toggle('hidden', !isOpen);
+  });
+
+  // ── Filters ──
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card');
+  const emptyState = document.getElementById('emptyState');
+
+  // ...existing code...
+
+  // ── H: Animated filter transition ──
+  filterBtns.forEach(btn => {
+    btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
+    btn.addEventListener('click', () => {
+      const f = btn.dataset.filter;
+      filterBtns.forEach(b => {
+        b.classList.remove('active', 'bg-primary-container', 'text-white', 'border-primary-container');
+        b.classList.remove('hover:text-white');
+        b.classList.add('border-outline', 'text-on-surface', 'hover:text-primary-container');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.remove('border-outline', 'text-on-surface', 'hover:text-primary-container');
+      btn.classList.add('active', 'bg-primary-container', 'text-white', 'border-primary-container');
+      btn.classList.add('hover:text-white');
+      btn.setAttribute('aria-pressed', 'true');
+
+      let visible = 0;
+      let staggerIdx = 0;
+      cards.forEach(c => {
+        const match = f === 'all' || c.dataset.category === f;
+        if (!match) {
+          c.style.transition = 'opacity 0.18s ease, transform 0.18s ease';
+          c.style.opacity = '0';
+          c.style.transform = 'translateY(8px)';
+          setTimeout(() => c.classList.add('hidden'), 190);
+        } else {
+          c.classList.remove('hidden');
+          const delay = staggerIdx * 48;
+          staggerIdx++;
+          c.style.transition = 'none';
+          c.style.opacity = '0';
+          c.style.transform = 'translateY(18px)';
+          requestAnimationFrame(() => requestAnimationFrame(() => {
+            c.style.transition = `opacity 0.38s ease ${delay}ms, transform 0.38s cubic-bezier(.22,1,.36,1) ${delay}ms, box-shadow 0.28s ease, translateY 0.28s ease`;
+            c.style.opacity = '1';
+            c.style.transform = 'translateY(0)';
+          }));
+          visible++;
+        }
+      });
+      emptyState.classList.toggle('hidden', visible > 0);
+    });
+  });
+
+  // ── Drawer ──
+  const drawer = document.getElementById('drawer');
+  const overlay = document.getElementById('drawerOverlay');
+  const closeBtn = document.getElementById('drawerClose');
+
+  function openDrawer(id) {
+    const p = PROJECTS[id];
+    if (!p) return;
+
+    const drawerImg = document.getElementById('drawerImg');
+    drawerImg.src = p.img;
+    drawerImg.alt = p.title;
+    const useContain = id === 'harmoniseur_couleurs';
+    const focusLaptop = id === 'data_driven_learning_reporting';
+    drawerImg.style.objectFit = useContain ? 'contain' : 'cover';
+    drawerImg.style.objectPosition = useContain ? 'top center' : (focusLaptop ? 'center 64%' : 'center');
+    drawerImg.style.backgroundColor = useContain ? '#f5f3f3' : '';
+    document.getElementById('drawerCategory').textContent = p.category;
+    document.getElementById('drawerTitle').textContent = p.title;
+
+    document.getElementById('drawerBody').innerHTML = `
+      <div class="drawer-section">
+        <span class="drawer-section-label">Objectif</span>
+        <p class="drawer-section-content">${p.objectif}</p>
+      </div>
+      <div class="drawer-meta-grid">
+        <div class="drawer-meta-item">
+          <div class="meta-label">Type</div>
+          <div class="meta-value">${p.type}</div>
+        </div>
+        <div class="drawer-meta-item">
+          <div class="meta-label">Techno</div>
+          <div class="meta-value">${p.techno}</div>
+        </div>
+      </div>
+      <hr class="drawer-divider"/>
+      <div class="drawer-section">
+        <span class="drawer-section-label">Description</span>
+        <p class="drawer-section-content">${p.description}</p>
+      </div>
+      <div class="drawer-section">
+        <span class="drawer-section-label">Contexte</span>
+        <p class="drawer-section-content">${p.contexte}</p>
+      </div>
+      <div class="drawer-section">
+        <span class="drawer-section-label">Résultat</span>
+        <p class="drawer-section-content">${p.resultat}</p>
+      </div>
+      <hr class="drawer-divider"/>
+      <div class="drawer-cta">
+        ${p.case_study
+          ? `<a href="${p.case_study}" class="btn-drawer">Voir le case study complet →</a>`
+          : `<span class="btn-drawer disabled">Case study à venir</span>`
+        }
+      </div>
+    `;
+
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+
+    // Focus trap
+    drawer.addEventListener('keydown', trapFocus);
+  }
+
+  function trapFocus(e) {
+    if (e.key !== 'Tab') return;
+    const focusable = drawer.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])');
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey ? document.activeElement === first : document.activeElement === last) {
+      e.preventDefault();
+      (e.shiftKey ? last : first).focus();
+    }
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    drawer.removeEventListener('keydown', trapFocus);
+  }
+
+  // Attach click to all cards
+  cards.forEach(card => {
+    card.addEventListener('click', () => openDrawer(card.dataset.id));
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openDrawer(card.dataset.id);
+      }
+    });
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', `Voir le détail : ${card.querySelector('h3').textContent}`);
+  });
+
+  closeBtn.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+
+  // Close on Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
+  });
+
+  // ── E: Nav scroll shadow ──
+  const mainNav = document.getElementById('main-nav');
+  const progressBar = document.getElementById('scroll-progress');
+  const heroImage = document.getElementById('hero-image');
+  const positioningSection = document.getElementById('positioning');
+  const positioningSignature = document.querySelector('.positioning-signature');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function updateScrollEffects() {
+    const scrollTop = window.scrollY || window.pageYOffset;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0;
+
+    mainNav.classList.toggle('scrolled', scrollTop > 10);
+    if (progressBar) progressBar.style.transform = `scaleX(${progress})`;
+
+    if (!reduceMotion && heroImage) {
+      const parallaxOffset = Math.min(scrollTop * 0.08, 42);
+      heroImage.style.transform = `translate3d(0, ${parallaxOffset}px, 0) scale(1.05)`;
+    }
+
+    if (!reduceMotion && positioningSection && positioningSignature) {
+      const rect = positioningSection.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const progressInView = Math.min(Math.max((viewportHeight - rect.top) / (viewportHeight + rect.height), 0), 1);
+      const lift = (1 - progressInView) * 16;
+      positioningSignature.style.transform = `translate3d(0, ${lift}px, 0)`;
+    }
+  }
+
+  window.addEventListener('scroll', updateScrollEffects, { passive: true });
+  window.addEventListener('resize', updateScrollEffects, { passive: true });
+  updateScrollEffects();
+
+  // ── A: Card entrance stagger (IntersectionObserver) ──
+  const allCardsInit = document.querySelectorAll('.project-card');
+  let globalIdx = 0;
+  const cardRevealObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const card = entry.target;
+        card.style.animationDelay = `${globalIdx * 48}ms`;
+        globalIdx++;
+        card.classList.add('card-reveal');
+        cardRevealObs.unobserve(card);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  allCardsInit.forEach(card => {
+    card.style.opacity = '0';
+    cardRevealObs.observe(card);
+  });
+
+  // ── D: Section scroll reveal ──
+  const sectionRevealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        sectionRevealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.section-reveal').forEach(el => sectionRevealObs.observe(el));
+
+  const positioningSignatureObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        positioningSignatureObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  if (positioningSignature) positioningSignatureObs.observe(positioningSignature);
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

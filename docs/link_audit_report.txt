@@ -1,0 +1,59 @@
+.\index.html | src | assets/images/projects/storrytelling.webp
+.\index.html | src | assets/images/sante/image de coouverture.png
+.\projets\arret-cardiaque-module.html | src | ../assets/images/sante/image de coouverture.png
+.\projets\arret-cardiaque-module.html | src | ../assets/images/sante/image de coouverture.png
+.\projets\arret-cardiaque-module.html | src | ../assets/images/sante/arret cardiaque projet.png
+.\projets\arret-cardiaque-module.html | src | ../assets/images/sante/arret cardiaque projet.png
+.\projets\arret-cardiaque-module.html | src | ../assets/images/projects/arret-cardiaque-ecran-3.png
+.\projets\arret-cardiaque-module.html | src | ../assets/images/projects/arret-cardiaque-ecran-3.png
+.\projets\arret-cardiaque-module.html | src | ../assets/images/projects/arret-cardiaque-ecran-4.png
+.\projets\arret-cardiaque-module.html | src | ../assets/images/projects/arret-cardiaque-ecran-4.png
+.\projets\arret-cardiaque-module.html | src | ../assets/images/projects/arret-cardiaque-ecran-5.png
+.\projets\arret-cardiaque-module.html | src | ../assets/images/projects/arret-cardiaque-ecran-5.png
+.\projets\arret-cardiaque-module.html | src | ../assets/images/projects/arret-cardiaque-ecran-6.png
+.\projets\arret-cardiaque-module.html | src | ../assets/images/projects/arret-cardiaque-ecran-6.png
+.\projets\arret-cardiaque-module.html | src | ../assets/images/projects/arret-cardiaque-process.png
+.\projets\arret-cardiaque-module.html | src | ../assets/images/projects/arret-cardiaque-process.png
+.\projets\campagne-learning-for-life.html | src | ../assets/images/projects/campagne-learning-for-life-hero.png
+.\projets\campagne-learning-for-life.html | src | ../assets/images/projects/campagne-learning-for-life-hero.png
+.\projets\campagne-learning-for-life.html | src | ../assets/images/projects/campagne-lfl-ecran-1.png
+.\projets\campagne-learning-for-life.html | src | ../assets/images/projects/campagne-lfl-ecran-1.png
+.\projets\campagne-learning-for-life.html | src | ../assets/images/projects/campagne-lfl-ecran-2.png
+.\projets\campagne-learning-for-life.html | src | ../assets/images/projects/campagne-lfl-ecran-2.png
+.\projets\campagne-learning-for-life.html | src | ../assets/images/projects/campagne-lfl-ecran-3.png
+.\projets\campagne-learning-for-life.html | src | ../assets/images/projects/campagne-lfl-ecran-3.png
+.\projets\canva-api.html | href | generateur-cv.html
+.\projets\data-driven-learning-reporting.html | src | ../assets/images/projects/data-driven-learning-hero.png
+.\projets\data-driven-learning-reporting.html | src | ../assets/images/projects/data-driven-learning-hero.png
+.\projets\data-driven-learning-reporting.html | src | ../assets/images/projects/data-driven-ecran-1.png
+.\projets\data-driven-learning-reporting.html | src | ../assets/images/projects/data-driven-ecran-1.png
+.\projets\data-driven-learning-reporting.html | src | ../assets/images/projects/data-driven-ecran-2.png
+.\projets\data-driven-learning-reporting.html | src | ../assets/images/projects/data-driven-ecran-2.png
+.\projets\data-driven-learning-reporting.html | src | ../assets/images/projects/data-driven-ecran-3.png
+.\projets\data-driven-learning-reporting.html | src | ../assets/images/projects/data-driven-ecran-3.png
+.\projets\guide-animation-tutorale.html | src | ../assets/images/projects/guide-animation-ecran-5.png
+.\projets\guide-animation-tutorale.html | src | ../assets/images/projects/guide-animation-ecran-5.png
+.\projets\guide-animation-tutorale.html | src | ../assets/images/projects/guide-animation-ecran-6.png
+.\projets\guide-animation-tutorale.html | src | ../assets/images/projects/guide-animation-ecran-6.png
+.\projets\plan-evaluation-formation.html | src | ../assets/images/projects/plan-evaluation-ecran-3.png
+.\projets\plan-evaluation-formation.html | src | ../assets/images/projects/plan-evaluation-ecran-3.png
+.\projets\plan-evaluation-formation.html | src | ../assets/images/projects/plan-evaluation-ecran-4.png
+.\projets\plan-evaluation-formation.html | src | ../assets/images/projects/plan-evaluation-ecran-4.png
+.\projets\plan-evaluation-formation.html | src | ../assets/images/projects/plan-evaluation-ecran-5.png
+.\projets\plan-evaluation-formation.html | src | ../assets/images/projects/plan-evaluation-ecran-5.png
+.\projets\plan-evaluation-formation.html | src | ../assets/images/projects/plan-evaluation-ecran-6.png
+.\projets\plan-evaluation-formation.html | src | ../assets/images/projects/plan-evaluation-ecran-6.png
+.\projets\savoir-utiliser-sa-voix.html | src | ../assets/images/projects/savoir-voix-hero.png
+.\projets\savoir-utiliser-sa-voix.html | src | ../assets/images/projects/savoir-voix-hero.png
+.\projets\savoir-utiliser-sa-voix.html | src | ../assets/images/projects/savoir-voix-ecran-1.png
+.\projets\savoir-utiliser-sa-voix.html | src | ../assets/images/projects/savoir-voix-ecran-1.png
+.\projets\savoir-utiliser-sa-voix.html | src | ../assets/images/projects/savoir-voix-ecran-2.png
+.\projets\savoir-utiliser-sa-voix.html | src | ../assets/images/projects/savoir-voix-ecran-2.png
+.\projets\savoir-utiliser-sa-voix.html | src | ../assets/images/projects/savoir-voix-ecran-3.png
+.\projets\savoir-utiliser-sa-voix.html | src | ../assets/images/projects/savoir-voix-ecran-3.png
+.\projets\savoir-utiliser-sa-voix.html | src | ../assets/images/projects/savoir-voix-ecran-4.png
+.\projets\savoir-utiliser-sa-voix.html | src | ../assets/images/projects/savoir-voix-ecran-4.png
+.\projets\savoir-utiliser-sa-voix.html | src | ../assets/images/projects/savoir-voix-ecran-5.png
+.\projets\savoir-utiliser-sa-voix.html | src | ../assets/images/projects/savoir-voix-ecran-5.png
+.\projets\savoir-utiliser-sa-voix.html | src | ../assets/images/projects/savoir-voix-ecran-6.png
+.\projets\savoir-utiliser-sa-voix.html | src | ../assets/images/projects/savoir-voix-ecran-6.png

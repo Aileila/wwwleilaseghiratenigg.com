@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Plan d'évaluation d'une formation hybride — Leila Seghirate-Nigg</title>
+  <meta name="description" content="Case study — Conception d'un plan d'évaluation d'une formation blended learning sur la prise de parole en public, selon la méthode Kirkpatrick 4 niveaux."/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%233333CC'/%3E%3Ctext x='16' y='22' font-family='serif' font-weight='700' font-size='20' fill='white' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="Portfolio · Leila Seghirate-Nigg"/>
+  <meta property="og:title" content="Plan d'évaluation d'une formation hybride — Leila Seghirate-Nigg"/>
+  <meta property="og:description" content="Case study — Conception d'un plan d'évaluation d'une formation blended learning sur la prise de parole en public, selon la méthode Kirkpatrick 4 niveaux."/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Plan d'évaluation d'une formation hybride — Leila Seghirate-Nigg"/>
+  <meta name="twitter:description" content="Case study — Conception d'un plan d'évaluation d'une formation blended learning sur la prise de parole en public, selon la méthode Kirkpatrick 4 niveaux."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2A2A34","primary-container": "#3333CC","on-primary": "#ffffff",
+            "on-primary-container": "#EDE9E3","secondary": "#5f5e5e","secondary-container": "#e5e2e1",
+            "background": "#fbf9f9","on-background": "#2A2A34","surface": "#fbf9f9",
+            "on-surface": "#2A2A34","surface-variant": "#e3e2e2","on-surface-variant": "#2A2A34",
+            "surface-container-lowest": "#ffffff","surface-container-low": "#f5f3f3",
+            "surface-container": "#efeded","surface-container-high": "#e9e8e7",
+            "surface-container-highest": "#e3e2e2","outline": "#948F8A","outline-variant": "#948F8A",
+            "inverse-primary": "#EDE9E3","surface-tint": "#3333CC"
+          },
+          fontFamily: {
+            "display": ["Noto Serif","serif"],"headline": ["Noto Serif","serif"],
+            "body": ["Manrope","sans-serif"],"label": ["Manrope","sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Brand Interaction Matrix - official palette lock */
+    :root {
+      --brand-blue: #3333CC;
+      --brand-cream: #EDE9E3;
+      --brand-ink: #2A2A34;
+      --brand-taupe: #948F8A;
+    }
+    .bg-primary-container { background-color: var(--brand-blue) !important; }
+    .hover\:bg-primary:hover { background-color: var(--brand-ink) !important; }
+    .text-primary-container { color: var(--brand-blue) !important; }
+    .hover\:text-primary-container:hover { color: var(--brand-blue) !important; }
+    .border-primary-container { border-color: var(--brand-blue) !important; }
+    .hover\:border-primary-container:hover { border-color: var(--brand-blue) !important; }
+    .border-outline-variant { border-color: var(--brand-taupe) !important; }
+    .text-on-surface-variant { color: var(--brand-ink) !important; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
+    .skip-link { position:absolute;top:-40px;left:1rem;background:#3333CC;color:#fff;padding:.5rem 1rem;border-radius:4px;font-weight:600;z-index:100;transition:top .2s;font-family:Manrope,sans-serif; }
+    .skip-link:focus { top:1rem; }
+    #mobile-menu { display:none; }
+    #mobile-menu.open { display:block; }
+    #lightbox { display:none; position:fixed; inset:0; z-index:200; background:rgba(15,15,15,.88); align-items:center; justify-content:center; }
+    #lightbox.open { display:flex; }
+    #lightbox img { max-width:90vw; max-height:88vh; border-radius:12px; box-shadow:0 24px 64px rgba(0,0,0,.5); }
+    #lightbox-close { position:absolute; top:1.5rem; right:1.5rem; background:#fff; border:none; border-radius:50%; width:2.5rem; height:2.5rem; font-size:1.2rem; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased min-h-screen flex flex-col">
+
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- Nav -->
+  <nav id="main-nav" class="sticky top-0 z-50 backdrop-blur-md border-b border-surface-variant" style="background:rgba(237,233,227,0.95);">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="../index.html" class="font-headline font-bold text-xl tracking-tight text-on-surface hover:text-primary-container transition-colors">Leila Seghirate-Nigg</a>
+        <div class="hidden sm:flex sm:items-center sm:space-x-8">
+          <a href="../offre.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Expertise</a>
+          <a href="../index.html" class="text-primary-container text-sm font-medium border-b-2 border-primary-container pb-1">Réalisations</a>
+          <a href="../methodologie.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Méthodologie</a>
+          <a href="../frameworks.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Frameworks</a>
+          <a href="../a-propos.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">À propos</a>
+          <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" class="bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Me contacter</a>
+        </div>
+        <button id="hamburger" class="sm:hidden p-2 rounded-md text-on-surface hover:bg-surface-container transition-colors" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="sm:hidden pb-4 border-t border-surface-variant mt-1">
+        <div class="flex flex-col gap-2 pt-3">
+          <a href="../offre.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Expertise</a>
+          <a href="../index.html" class="px-3 py-2 text-primary-container bg-surface-container-low rounded-md text-sm font-medium">Réalisations</a>
+          <a href="../methodologie.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Méthodologie</a>
+          <a href="../frameworks.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Frameworks</a>
+          <a href="../a-propos.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">À propos</a>
+          <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" class="mt-2 mx-3 text-center bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Me contacter</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="bg-surface-container-low border-b border-surface-variant px-4 sm:px-8 py-3">
+    <div class="max-w-[1200px] mx-auto">
+      <nav aria-label="Fil d'Ariane" class="text-sm text-on-surface-variant">
+        <a href="../index.html" class="hover:text-primary-container transition-colors">Réalisations</a>
+        <span class="mx-2 text-outline">/</span>
+        <span class="text-xs font-bold tracking-widest uppercase text-outline mr-2 font-label">Formation &amp; transmission</span>
+        <span class="text-on-surface font-medium">Plan d'évaluation d'une formation hybride</span>
+      </nav>
+    </div>
+  </div>
+
+  <main id="main" class="flex-grow">
+
+    <!-- Hero -->
+    <section class="bg-[#EDE9E3] border-b border-surface-variant px-4 sm:px-8 lg:px-16 py-20 md:py-28">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="inline-block text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label">Formation &amp; transmission</span>
+          <span class="text-outline text-xs">·</span>
+          <span class="text-xs text-outline font-label tracking-wider uppercase">Avant l'IA · Ingénierie évaluative</span>
+        </div>
+        <h1 class="font-headline text-4xl md:text-5xl text-on-surface mb-4 leading-tight">
+          Plan d'évaluation d'une formation hybride
+          <span class="block italic font-normal text-3xl md:text-4xl mt-2">Les fondamentaux de la prise de parole en public</span>
+        </h1>
+        <p class="text-on-surface-variant text-lg leading-relaxed max-w-2xl mt-6">
+          Conception d'un plan d'évaluation complet selon le <strong class="text-on-surface">modèle Kirkpatrick</strong> appliqué à une formation blended learning sur la prise de parole en public — document vivant permettant le suivi sur le long terme.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-8">
+          <span class="inline-flex items-center gap-1.5 bg-white border border-surface-variant text-on-surface text-xs font-semibold px-3 py-1.5 rounded-full">
+            <span class="material-symbols-outlined text-primary-container" style="font-size:14px">business</span>Studigroup
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white border border-surface-variant text-on-surface text-xs font-semibold px-3 py-1.5 rounded-full">
+            <span class="material-symbols-outlined text-primary-container" style="font-size:14px">model_training</span>Kirkpatrick 4 niveaux
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white border border-surface-variant text-on-surface text-xs font-semibold px-3 py-1.5 rounded-full">
+            <span class="material-symbols-outlined text-primary-container" style="font-size:14px">school</span>Blended Learning
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white border border-surface-variant text-on-surface text-xs font-semibold px-3 py-1.5 rounded-full">
+            <span class="material-symbols-outlined text-primary-container" style="font-size:14px">autorenew</span>Document vivant
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero image -->
+    <div class="px-4 sm:px-8 lg:px-16 -mt-8 max-w-[1200px] mx-auto mb-20">
+      <div class="aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl border border-surface-variant bg-surface-container-highest cursor-zoom-in img-lightbox" data-src="../assets/images/pedagogie/a%20ajouter/Plan%20d%27%C3%A9valuation%20d%27une%20formation%202.webp">
+        <img src="../assets/images/pedagogie/a%20ajouter/Plan%20d%27%C3%A9valuation%20d%27une%20formation%202.webp" alt="Page de couverture du plan d'évaluation — Studigroup"
+          class="w-full h-full object-cover"/>
+      </div>
+    </div>
+
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16">
+
+      <!-- Meta strip -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-20 p-6 bg-surface-container-lowest rounded-2xl border border-surface-variant">
+        <div class="text-center p-2">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Client</div>
+          <div class="font-semibold text-primary-container">Studigroup</div>
+        </div>
+        <div class="text-center p-2 border-l border-surface-variant">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Modèle</div>
+          <div class="font-semibold text-primary-container">Kirkpatrick</div>
+        </div>
+        <div class="text-center p-2 border-l border-surface-variant">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Niveaux</div>
+          <div class="font-semibold text-primary-container">4 niveaux d'analyse</div>
+        </div>
+        <div class="text-center p-2 border-l border-surface-variant">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Format</div>
+          <div class="font-semibold text-primary-container">Document vivant</div>
+        </div>
+      </div>
+
+      <!-- Contexte + objectifs -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+        <div class="lg:col-span-2 bg-surface-container-lowest p-10 rounded-2xl border border-surface-variant">
+          <h2 class="font-headline text-2xl text-on-surface mb-6 pb-4 border-b border-surface-variant">Contexte</h2>
+          <div class="space-y-4 text-on-surface-variant leading-relaxed">
+            <p>Ce plan d'évaluation a été conçu pour la formation blended learning <strong class="text-on-surface">«&nbsp;Les fondamentaux de la prise de parole en public&nbsp;»</strong> déployée par Studigroup. Il permet de mesurer l'efficacité de la formation à différents niveaux d'analyse.</p>
+            <p>La <strong class="text-on-surface">méthode Kirkpatrick</strong> a été retenue pour sa vision systémique : chacun des quatre niveaux apporte une information complémentaire, de la satisfaction immédiate des apprenants jusqu'à l'impact réel sur les résultats de l'organisation.</p>
+            <p>Le document est conçu comme un <strong class="text-on-surface">document vivant</strong> permettant un suivi sur le long terme des applications de la formation sur le terrain, dans une perspective d'amélioration continue. Des illustrations viennent compléter chaque niveau pour entrer dans le détail des outils élaborés.</p>
+          </div>
+          <div class="mt-6 p-5 bg-surface-container-low rounded-xl border border-surface-variant">
+            <p class="text-xs font-bold tracking-widest uppercase text-outline font-label mb-2">Approche</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs font-semibold px-3 py-1 bg-primary-container/10 text-primary-container rounded-full">Analyse multiniveaux</span>
+              <span class="text-xs font-semibold px-3 py-1 bg-primary-container/10 text-primary-container rounded-full">Objectifs clairs par niveau</span>
+              <span class="text-xs font-semibold px-3 py-1 bg-primary-container/10 text-primary-container rounded-full">Amélioration continue</span>
+              <span class="text-xs font-semibold px-3 py-1 bg-primary-container/10 text-primary-container rounded-full">Suivi long terme</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-lowest p-10 rounded-2xl border border-surface-variant">
+          <h2 class="font-headline text-2xl text-on-surface mb-6 pb-4 border-b border-surface-variant">Livrables</h2>
+          <ul class="space-y-5">
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-primary-container text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+              <span class="text-sm text-on-surface-variant leading-snug">Plan d'évaluation structuré par niveau Kirkpatrick avec objectifs clairs</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-primary-container text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
+              <span class="text-sm text-on-surface-variant leading-snug">Outils d'évaluation associés à chaque niveau (questionnaires, tests, observations)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-primary-container text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
+              <span class="text-sm text-on-surface-variant leading-snug">Synthèse des résultats et recommandations d'amélioration continue</span>
+            </li>
+          </ul>
+          <div class="mt-8 pt-6 border-t border-surface-variant">
+            <p class="text-xs font-bold tracking-widest uppercase text-outline font-label mb-3">Format de restitution</p>
+            <p class="text-sm text-on-surface-variant italic leading-relaxed">"Texte synthétique, objectifs clairs par niveau, illustrations détaillées."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Les 4 niveaux Kirkpatrick -->
+      <h2 class="font-headline text-3xl text-on-surface mb-4 pb-4 border-t border-surface-variant pt-12">Les 4 niveaux du modèle Kirkpatrick</h2>
+      <p class="text-on-surface-variant mb-10 max-w-2xl">Chaque niveau apporte une image complémentaire de l'efficacité de la formation.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+
+        <div class="bg-surface-container-lowest rounded-2xl border border-surface-variant overflow-hidden">
+          <div class="bg-primary-container/10 border-b border-surface-variant px-8 py-5 flex items-center gap-4">
+            <span class="w-10 h-10 rounded-full bg-primary-container text-white text-sm font-bold flex items-center justify-center flex-shrink-0">N1</span>
+            <div>
+              <div class="text-xs font-bold tracking-widest uppercase text-primary-container font-label">Niveau 1</div>
+              <div class="font-headline text-lg text-on-surface">Réaction</div>
+            </div>
+          </div>
+          <div class="p-8">
+            <p class="text-sm font-semibold text-on-surface mb-3">Mesure de la satisfaction des apprenants</p>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Le premier niveau mesure <strong class="text-on-surface">la réaction des apprenants à la formation</strong> — leur niveau de satisfaction. Cette évaluation se fait généralement par questionnaire ou sondage auprès des participants, recueillant leurs opinions sur la qualité de la formation.</p>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-2xl border border-surface-variant overflow-hidden">
+          <div class="bg-primary-container/10 border-b border-surface-variant px-8 py-5 flex items-center gap-4">
+            <span class="w-10 h-10 rounded-full bg-primary-container text-white text-sm font-bold flex items-center justify-center flex-shrink-0">N2</span>
+            <div>
+              <div class="text-xs font-bold tracking-widest uppercase text-primary-container font-label">Niveau 2</div>
+              <div class="font-headline text-lg text-on-surface">Apprentissage</div>
+            </div>
+          </div>
+          <div class="p-8">
+            <p class="text-sm font-semibold text-on-surface mb-3">Mesure des connaissances et compétences acquises</p>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Le deuxième niveau <strong class="text-on-surface">évalue les connaissances et compétences acquises</strong> grâce à la formation : tests de connaissances, évaluations de compétences, mises en situation. L'objectif est de mesurer la progression et la capacité à appliquer les concepts.</p>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-2xl border border-surface-variant overflow-hidden">
+          <div class="bg-primary-container/10 border-b border-surface-variant px-8 py-5 flex items-center gap-4">
+            <span class="w-10 h-10 rounded-full bg-primary-container text-white text-sm font-bold flex items-center justify-center flex-shrink-0">N3</span>
+            <div>
+              <div class="text-xs font-bold tracking-widest uppercase text-primary-container font-label">Niveau 3</div>
+              <div class="font-headline text-lg text-on-surface">Comportement</div>
+            </div>
+          </div>
+          <div class="p-8">
+            <p class="text-sm font-semibold text-on-surface mb-3">Mesure de l'application en situation réelle</p>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Le troisième niveau <strong class="text-on-surface">mesure l'application des connaissances en situation réelle</strong> — sur le lieu de travail, en observant les comportements et en mesurant la capacité à appliquer les concepts dans le quotidien professionnel.</p>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-2xl border border-surface-variant overflow-hidden">
+          <div class="bg-primary-container/10 border-b border-surface-variant px-8 py-5 flex items-center gap-4">
+            <span class="w-10 h-10 rounded-full bg-primary-container text-white text-sm font-bold flex items-center justify-center flex-shrink-0">N4</span>
+            <div>
+              <div class="text-xs font-bold tracking-widest uppercase text-primary-container font-label">Niveau 4</div>
+              <div class="font-headline text-lg text-on-surface">Résultats</div>
+            </div>
+          </div>
+          <div class="p-8">
+            <p class="text-sm font-semibold text-on-surface mb-3">Mesure de l'impact sur l'organisation</p>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Le quatrième niveau évalue l'<strong class="text-on-surface">impact réel de la formation sur les résultats de l'organisation</strong> : performance, qualité, fidélisation. C'est le niveau le plus difficile à mesurer, mais le plus stratégique pour justifier l'investissement formation.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Galerie écrans -->
+      <h2 class="font-headline text-3xl text-on-surface mb-4 pb-4 border-t border-surface-variant pt-12">Aperçu du document</h2>
+      <p class="text-on-surface-variant mb-8 max-w-2xl">Cliquer sur une image pour l'agrandir.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-20">
+
+        <figure class="rounded-xl overflow-hidden border border-surface-variant shadow-sm cursor-zoom-in img-lightbox group" data-src="../assets/images/pedagogie/a%20ajouter/Plan%20d%27%C3%A9valuation%20d%27une%20formation%202.webp">
+          <div class="aspect-[4/3] bg-surface-container-highest overflow-hidden">
+            <img src="../assets/images/pedagogie/a%20ajouter/Plan%20d%27%C3%A9valuation%20d%27une%20formation%202.webp" alt="Page de couverture — Plan d'évaluation"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.style.display='none'"/>
+          </div>
+          <figcaption class="px-4 py-3 text-xs text-on-surface-variant font-label bg-surface-container-lowest">Page de couverture</figcaption>
+        </figure>
+
+        <figure class="rounded-xl overflow-hidden border border-surface-variant shadow-sm cursor-zoom-in img-lightbox group" data-src="../assets/images/pedagogie/a%20ajouter/Plan%20d%27%C3%A9valuation%20d%27une%20formation3.webp">
+          <div class="aspect-[4/3] bg-surface-container-highest overflow-hidden">
+            <img src="../assets/images/pedagogie/a%20ajouter/Plan%20d%27%C3%A9valuation%20d%27une%20formation3.webp" alt="Contexte — Méthode Kirkpatrick"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.style.display='none'"/>
+          </div>
+          <figcaption class="px-4 py-3 text-xs text-on-surface-variant font-label bg-surface-container-lowest">Contexte — Méthode Kirkpatrick</figcaption>
+        </figure>
+
+        <figure class="rounded-xl overflow-hidden border border-surface-variant shadow-sm cursor-zoom-in img-lightbox group" data-src="../assets/images/pedagogie/Plan%20d%27%C3%A9valuation%20d%27une%20formation.webp">
+          <div class="aspect-[4/3] bg-surface-container-highest overflow-hidden">
+            <img src="../assets/images/pedagogie/Plan%20d%27%C3%A9valuation%20d%27une%20formation.webp" alt="Modèle Kirkpatrick — 3 niveaux"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.style.display='none'"/>
+          </div>
+          <figcaption class="px-4 py-3 text-xs text-on-surface-variant font-label bg-surface-container-lowest">Modèle — Niveaux 1, 2 et 3</figcaption>
+        </figure>
+
+        <figure class="rounded-xl overflow-hidden border border-surface-variant shadow-sm cursor-zoom-in img-lightbox group" data-src="../assets/images/pedagogie/a%20ajouter/Plan%20d%27%C3%A9valuation%20d%27une%20formation%202.webp">
+          <div class="aspect-[4/3] bg-surface-container-highest overflow-hidden">
+            <img src="../assets/images/pedagogie/a%20ajouter/Plan%20d%27%C3%A9valuation%20d%27une%20formation%202.webp" alt="Outils d'évaluation niveau 1"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.style.display='none'"/>
+          </div>
+          <figcaption class="px-4 py-3 text-xs text-on-surface-variant font-label bg-surface-container-lowest">Outils d'évaluation — Niveau 1</figcaption>
+        </figure>
+
+        <figure class="rounded-xl overflow-hidden border border-surface-variant shadow-sm cursor-zoom-in img-lightbox group" data-src="../assets/images/pedagogie/a%20ajouter/Plan%20d%27%C3%A9valuation%20d%27une%20formation3.webp">
+          <div class="aspect-[4/3] bg-surface-container-highest overflow-hidden">
+            <img src="../assets/images/pedagogie/a%20ajouter/Plan%20d%27%C3%A9valuation%20d%27une%20formation3.webp" alt="Outils d'évaluation niveau 2 et 3"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.style.display='none'"/>
+          </div>
+          <figcaption class="px-4 py-3 text-xs text-on-surface-variant font-label bg-surface-container-lowest">Outils d'évaluation — Niveaux 2 &amp; 3</figcaption>
+        </figure>
+
+        <figure class="rounded-xl overflow-hidden border border-surface-variant shadow-sm cursor-zoom-in img-lightbox group" data-src="../assets/images/pedagogie/Plan%20d%27%C3%A9valuation%20d%27une%20formation.webp">
+          <div class="aspect-[4/3] bg-surface-container-highest overflow-hidden">
+            <img src="../assets/images/pedagogie/Plan%20d%27%C3%A9valuation%20d%27une%20formation.webp" alt="Synthèse et recommandations"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.style.display='none'"/>
+          </div>
+          <figcaption class="px-4 py-3 text-xs text-on-surface-variant font-label bg-surface-container-lowest">Synthèse &amp; recommandations</figcaption>
+        </figure>
+
+      </div>
+
+      <!-- Ma démarche -->
+      <h2 class="font-headline text-3xl text-on-surface mb-8 pb-4 border-t border-surface-variant pt-12">Ma démarche</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant">
+          <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center mb-5">
+            <span class="material-symbols-outlined text-primary-container">analytics</span>
+          </div>
+          <h3 class="font-headline text-lg text-on-surface mb-3">Analyse multiniveaux</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Application rigoureuse du modèle Kirkpatrick : chaque niveau est traité indépendamment avec ses propres objectifs, indicateurs et outils de collecte de données — pour une image complète de l'efficacité de la formation.</p>
+        </div>
+        <div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant">
+          <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center mb-5">
+            <span class="material-symbols-outlined text-primary-container">description</span>
+          </div>
+          <h3 class="font-headline text-lg text-on-surface mb-3">Document vivant</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Le plan n'est pas un document figé. Sa structure permet une mise à jour progressive au fil des sessions : les données s'accumulent, les indicateurs s'affinent et les recommandations évoluent en fonction des résultats observés.</p>
+        </div>
+        <div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant">
+          <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center mb-5">
+            <span class="material-symbols-outlined text-primary-container">auto_stories</span>
+          </div>
+          <h3 class="font-headline text-lg text-on-surface mb-3">Restitution illustrée</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Texte synthétique et structuré, avec objectifs clairs par niveau d'analyse. Des illustrations viennent compléter le propos et permettent d'entrer dans le détail des documents élaborés pour chaque niveau.</p>
+        </div>
+      </div>
+
+      <!-- Impact -->
+      <div class="bg-primary-container/5 border border-primary-container/20 rounded-2xl p-10 mb-20">
+        <h2 class="font-headline text-2xl text-on-surface mb-6">Points clés du projet</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="space-y-4 text-on-surface-variant leading-relaxed">
+            <p>Ce projet démontre une compréhension fine de l'<strong class="text-on-surface">ingénierie évaluative en formation</strong> : concevoir un plan d'évaluation, c'est anticiper les preuves d'efficacité dès la conception de la formation — pas après.</p>
+            <p>L'application du modèle Kirkpatrick à une formation hybride est particulièrement complexe car les données sont dispersées entre le LMS, les sessions synchrones et le terrain. Ce plan structure cette collecte de façon cohérente.</p>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-sm text-on-surface">
+              <span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span>
+              <span>Modèle Kirkpatrick appliqué à 4 niveaux d'analyse</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm text-on-surface">
+              <span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span>
+              <span>Objectifs et indicateurs clairs pour chaque niveau</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm text-on-surface">
+              <span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span>
+              <span>Outils de collecte de données associés à chaque niveau</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm text-on-surface">
+              <span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span>
+              <span>Document vivant pour suivi et amélioration continue</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm text-on-surface">
+              <span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span>
+              <span>Restitution synthétique avec illustrations détaillées</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CTA navigation -->
+      <div class="flex flex-col sm:flex-row gap-4 items-center justify-between pt-8 border-t border-surface-variant mb-20">
+        <a href="../index.html" class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary-container transition-colors text-sm font-semibold">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Retour au portfolio
+        </a>
+        <a href="guide-animation-tutorale.html" class="inline-flex items-center gap-2 bg-primary-container text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-primary transition-colors">
+          Voir aussi : Guide d'animation tutorale
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface-container border-t border-surface-variant">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 py-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
+      <span>© 2026 Leila Seghirate-Nigg. Tous droits réservés.</span>
+      <div class="flex gap-6">
+        <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" target="_blank" rel="noopener noreferrer" class="hover:text-primary-container transition-colors">LinkedIn</a>
+        <a href="../index.html" class="hover:text-primary-container transition-colors">Portfolio</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image agrandie">
+    <button id="lightbox-close" aria-label="Fermer">✕</button>
+    <img id="lightbox-img" src="" alt=""/>
+  </div>
+
+  <script>
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', mobileMenu.classList.contains('open'));
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    document.querySelectorAll('.img-lightbox').forEach(el => {
+      el.addEventListener('click', () => {
+        const src = el.dataset.src || el.querySelector('img')?.src;
+        if (src) { lightboxImg.src = src; lightbox.classList.add('open'); }
+      });
+    });
+    lightboxClose.addEventListener('click', () => lightbox.classList.remove('open'));
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') lightbox.classList.remove('open'); });
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

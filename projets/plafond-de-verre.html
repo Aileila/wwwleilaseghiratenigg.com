@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Plafond de Verre — Leila Seghirate-Nigg</title>
+  <meta name="description" content="Case study Plafond de Verre — Série pédagogique immersive sur l'invisibilisation des femmes en entreprise. 5 modules narratifs, design cinématographique, construits avec l'IA."/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%233333CC'/%3E%3Ctext x='16' y='22' font-family='serif' font-weight='700' font-size='20' fill='white' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="Portfolio · Leila Seghirate-Nigg"/>
+  <meta property="og:title" content="Plafond de Verre — Leila Seghirate-Nigg"/>
+  <meta property="og:description" content="Case study Plafond de Verre — Série pédagogique immersive sur l'invisibilisation des femmes en entreprise. 5 modules narratifs, design cinématographique, construits avec l'IA."/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Plafond de Verre — Leila Seghirate-Nigg"/>
+  <meta name="twitter:description" content="Case study Plafond de Verre — Série pédagogique immersive sur l'invisibilisation des femmes en entreprise. 5 modules narratifs, design cinématographique, construits avec l'IA."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2A2A34","primary-container": "#3333CC","on-primary": "#ffffff",
+            "background": "#fbf9f9","on-background": "#2A2A34","surface": "#fbf9f9",
+            "on-surface": "#2A2A34","surface-variant": "#e3e2e2","on-surface-variant": "#2A2A34",
+            "surface-container-lowest": "#ffffff","surface-container-low": "#f5f3f3",
+            "surface-container": "#efeded","outline": "#948F8A","outline-variant": "#948F8A"
+          },
+          fontFamily: { "headline": ["Noto Serif","serif"],"body": ["Manrope","sans-serif"],"label": ["Manrope","sans-serif"] }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Brand Interaction Matrix - official palette lock */
+    :root {
+      --brand-blue: #3333CC;
+      --brand-cream: #EDE9E3;
+      --brand-ink: #2A2A34;
+      --brand-taupe: #948F8A;
+    }
+    .bg-primary-container { background-color: var(--brand-blue) !important; }
+    .hover\:bg-primary:hover { background-color: var(--brand-ink) !important; }
+    .text-primary-container { color: var(--brand-blue) !important; }
+    .hover\:text-primary-container:hover { color: var(--brand-blue) !important; }
+    .border-primary-container { border-color: var(--brand-blue) !important; }
+    .hover\:border-primary-container:hover { border-color: var(--brand-blue) !important; }
+    .border-outline-variant { border-color: var(--brand-taupe) !important; }
+    .text-on-surface-variant { color: var(--brand-ink) !important; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
+    .skip-link { position:absolute;top:-40px;left:1rem;background:#3333CC;color:#fff;padding:.5rem 1rem;border-radius:4px;font-weight:600;z-index:100;transition:top .2s; }
+    .skip-link:focus { top:1rem; }
+    #mobile-menu { display:none; }
+    #mobile-menu.open { display:block; }
+    .episode-card { background:#1a1a2e;border:1px solid rgba(255,255,255,.1);border-radius:1rem;overflow:hidden;transition:transform .2s,border-color .2s; }
+    .episode-card:hover { transform:translateY(-4px);border-color:rgba(255,255,255,.25); }
+    .episode-num { background:#e53935;color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.1em;padding:.2rem .6rem;border-radius:999px;display:inline-block;margin-bottom:.75rem; }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased min-h-screen flex flex-col">
+
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- Nav -->
+  <nav id="main-nav" class="sticky top-0 z-50 backdrop-blur-md border-b border-surface-variant" style="background:rgba(237,233,227,0.95);">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="../index.html" class="font-headline font-bold text-xl tracking-tight text-on-surface hover:text-primary-container transition-colors">Leila Seghirate-Nigg</a>
+        <div class="hidden sm:flex sm:items-center sm:space-x-8">
+          <a href="../offre.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Expertise</a>
+          <a href="../index.html" class="text-primary-container text-sm font-medium border-b-2 border-primary-container pb-1">Réalisations</a>
+          <a href="../methodologie.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Méthodologie</a>
+          <a href="../frameworks.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Frameworks</a>
+          <a href="../a-propos.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">À propos</a>
+          <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" class="bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Me contacter</a>
+        </div>
+        <button id="hamburger" class="sm:hidden p-2 rounded-md text-on-surface hover:bg-surface-container transition-colors" aria-label="Menu" aria-expanded="false">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="sm:hidden pb-4 border-t border-surface-variant mt-1">
+        <div class="flex flex-col gap-2 pt-3">
+          <a href="../offre.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Expertise</a>
+          <a href="../index.html" class="px-3 py-2 text-primary-container bg-surface-container-low rounded-md text-sm font-medium">Réalisations</a>
+          <a href="../methodologie.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Méthodologie</a>
+          <a href="../frameworks.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Frameworks</a>
+          <a href="../a-propos.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">À propos</a>
+          <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" class="mt-2 mx-3 text-center bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Me contacter</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="bg-surface-container-low border-b border-surface-variant px-4 sm:px-8 py-3">
+    <div class="max-w-[1200px] mx-auto text-sm text-on-surface-variant">
+      <a href="../index.html" class="hover:text-primary-container transition-colors">Réalisations</a>
+      <span class="mx-2 text-outline">/</span>
+      <a href="../index.html#experiences_immersives" class="hover:text-primary-container transition-colors">Expériences immersives</a>
+      <span class="mx-2 text-outline">/</span>
+      <span class="text-on-surface font-medium">Plafond de Verre</span>
+    </div>
+  </div>
+
+  <main id="main" class="flex-grow">
+
+    <!-- Hero -->
+    <section class="bg-[#EDE9E3] border-b border-surface-variant px-4 sm:px-8 lg:px-16 py-20 md:py-28">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block text-xs font-bold tracking-[.18em] uppercase text-primary-container mb-4 font-label">Expériences immersives · HTML/CSS/JS · Pédagogie narrative</span>
+        <h1 class="font-headline text-5xl md:text-7xl text-on-surface mb-6 leading-tight tracking-tight">Plafond de Verre</h1>
+        <p class="text-on-surface-variant text-xl leading-relaxed max-w-2xl mx-auto">Série pédagogique immersive sur l'invisibilisation des femmes compétentes en entreprise — 5 modules narratifs, design cinématographique, construits avec l'IA.</p>
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+          <a href="https://youtu.be/HZIYZ51QIFE?si=oXN1Sa2kcGKDtn9F" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#2A2A34] text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-primary-container transition-colors">
+            <span class="material-symbols-outlined text-base">play_circle</span>
+            Voir sur YouTube
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero image -->
+    <div class="px-4 sm:px-8 lg:px-16 -mt-8 max-w-[1200px] mx-auto">
+      <div class="aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl border border-surface-variant">
+          <img src="../assets/images/immersive/header image plafond de verre.png" alt="Plafond de Verre — la galerie des 5 épisodes" class="w-full h-full object-cover" onerror="this.src='../assets/images/immersive/header image plafond de verre.png'"/>
+      </div>
+    </div>
+
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 py-20">
+
+      <!-- Meta strip -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16 p-6 bg-surface-container-lowest rounded-2xl border border-surface-variant">
+        <div class="text-center p-2">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Type</div>
+          <div class="font-semibold text-primary-container">Série pédagogique</div>
+        </div>
+        <div class="text-center p-2 border-l border-surface-variant">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Modules</div>
+          <div class="font-semibold text-primary-container">5 épisodes</div>
+        </div>
+        <div class="text-center p-2 border-l border-surface-variant">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Techno</div>
+          <div class="font-semibold text-primary-container">HTML / CSS / JS</div>
+        </div>
+        <div class="text-center p-2 border-l border-surface-variant">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Accès</div>
+          <div class="font-semibold text-primary-container">Libre — YouTube</div>
+        </div>
+      </div>
+
+      <!-- Acte 1 : L'enjeu -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <div class="lg:col-span-2 bg-surface-container-lowest p-10 rounded-2xl border border-surface-variant">
+          <h2 class="font-headline text-2xl text-on-surface mb-6 pb-4 border-b border-surface-variant">L'enjeu : faire ressentir avant de faire comprendre</h2>
+          <div class="space-y-4 text-on-surface-variant leading-relaxed">
+            <p>Les formations sur les discriminations de genre en entreprise souffrent d'un problème structurel : elles expliquent sans faire vivre. Les apprenants sortent informés mais non transformés. Le plafond de verre reste un concept abstrait, pas une réalité incarnée.</p>
+            <p>L'hypothèse de départ : si on pouvait d'abord déclencher l'identification émotionnelle — faire que les participant·es <em>voient</em> le mécanisme dans une histoire avant de le nommer —, la compréhension conceptuelle suivrait avec une résistance bien moindre.</p>
+            <p>D'où l'idée d'une série narrative immersive : 5 personnages féminins construits comme des archétypes reconnaissables, 5 situations réelles d'invisibilisation, 5 modules permettant à chaque apprenante de se voir dans l'une d'entre elles.</p>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest p-10 rounded-2xl border border-surface-variant">
+          <h2 class="font-headline text-2xl text-on-surface mb-6 pb-4 border-b border-surface-variant">Contexte</h2>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary-container mt-0.5">target</span>
+              <span class="text-sm text-on-surface-variant">Public cible : managers, DRH, responsables égalité</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary-container mt-0.5">schedule</span>
+              <span class="text-sm text-on-surface-variant">Format : ~10 min par module + quiz de débriefing</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary-container mt-0.5">lock_open</span>
+              <span class="text-sm text-on-surface-variant">Accès libre, pas de barrière d'inscription</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary-container mt-0.5">smart_toy</span>
+              <span class="text-sm text-on-surface-variant">Co-construite avec l'IA : scénarios, visuels, code, pédagogie</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Acte 2 : Les 5 épisodes -->
+      <div class="mb-16">
+        <h2 class="font-headline text-3xl text-on-surface mb-3 pb-4 border-t border-surface-variant pt-12">5 personnages, 5 mécanismes</h2>
+        <p class="text-on-surface-variant mb-8 max-w-2xl">Chaque épisode documente un mécanisme spécifique d'invisibilisation. Les personnages sont fictifs mais construits à partir de situations documentées dans la littérature RH et les témoignages terrain.</p>
+
+        <!-- Episodes en dark -->
+        <div class="rounded-2xl overflow-hidden" style="background:linear-gradient(135deg,#0f1a14 0%,#1a2a1e 100%);">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
+
+            <div class="episode-card p-6">
+              <span class="episode-num">ÉPISODE 1</span>
+              <h3 class="font-headline text-white text-lg mb-1">L'invisible compétence</h3>
+              <p class="text-sm font-semibold mb-3" style="color:#4caf50;">Sarah Laurent</p>
+              <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,.65);">Ingénieure brillante, Sarah voit ses idées reprises et sa promotion lui échapper. Le plafond de verre devient visible — pour elle, et pour nous.</p>
+              <div class="mt-4 text-xs font-bold uppercase tracking-widest" style="color:rgba(255,255,255,.3);">Mécanisme · Appropriation des idées</div>
+            </div>
+
+            <div class="episode-card p-6">
+              <span class="episode-num">ÉPISODE 2</span>
+              <h3 class="font-headline text-white text-lg mb-1">Charge émotionnelle</h3>
+              <p class="text-sm font-semibold mb-3" style="color:#4caf50;">Léa Dubois</p>
+              <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,.65);">Léa porte un travail invisible : soutien émotionnel, médiation, logistique non-formalisée. Des heures que personne ne comptabilise.</p>
+              <div class="mt-4 text-xs font-bold uppercase tracking-widest" style="color:rgba(255,255,255,.3);">Mécanisme · Travail non reconnu</div>
+            </div>
+
+            <div class="episode-card p-6">
+              <span class="episode-num">ÉPISODE 3</span>
+              <h3 class="font-headline text-white text-lg mb-1">L'effet boomerang</h3>
+              <p class="text-sm font-semibold mb-3" style="color:#4caf50;">Nadia K.</p>
+              <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,.65);">Après avoir dénoncé une injustice, Nadia subit des représailles. Jusqu'où aller pour faire bouger les lignes ?</p>
+              <div class="mt-4 text-xs font-bold uppercase tracking-widest" style="color:rgba(255,255,255,.3);">Mécanisme · Rétorsion après prise de parole</div>
+            </div>
+
+            <div class="episode-card p-6">
+              <span class="episode-num">ÉPISODE 4</span>
+              <h3 class="font-headline text-white text-lg mb-1">Maternité et carrière</h3>
+              <p class="text-sm font-semibold mb-3" style="color:#4caf50;">Maya Benali</p>
+              <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,.65);">Après son congé maternité, Maya revient dans un rôle réduit. Son talent n'a pas disparu — mais le système, lui, n'a pas attendu.</p>
+              <div class="mt-4 text-xs font-bold uppercase tracking-widest" style="color:rgba(255,255,255,.3);">Mécanisme · Pénalité maternité</div>
+            </div>
+
+            <div class="episode-card p-6">
+              <span class="episode-num">ÉPISODE 5</span>
+              <h3 class="font-headline text-white text-lg mb-1">L'initiative ignorée</h3>
+              <p class="text-sm font-semibold mb-3" style="color:#4caf50;">Aïcha S.</p>
+              <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,.65);">Créative et innovante, Aïcha propose un processus révolutionnaire. Adopté… mais les crédits vont aux équipes globales.</p>
+              <div class="mt-4 text-xs font-bold uppercase tracking-widest" style="color:rgba(255,255,255,.3);">Mécanisme · Vol de crédit intellectuel</div>
+            </div>
+
+            <div class="episode-card p-6 flex flex-col justify-between" style="background:rgba(255,255,255,.04);">
+              <div>
+                <div class="text-3xl font-headline text-white mb-3">5 · 5 · 5</div>
+                <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,.5);">5 personnages · 5 mécanismes · 5 modules pédagogiques avec quiz de débriefing</p>
+              </div>
+              <a href="https://youtu.be/HZIYZ51QIFE?si=oXN1Sa2kcGKDtn9F" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-2 text-white text-sm font-semibold hover:opacity-80 transition-opacity">
+                <span class="material-symbols-outlined text-base">play_circle</span>
+                Voir la série
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Acte 3 : Direction artistique -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant hover:border-primary-container/30 transition-colors">
+          <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center mb-5">
+            <span class="material-symbols-outlined text-primary-container">movie</span>
+          </div>
+          <h3 class="font-headline text-xl text-on-surface mb-3">Direction artistique sombre</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Esthétique inspirée des productions Gaumont/Netflix. Fond sombre, typographie serif cinématographique, palettes vert profond et noir. Chaque personnage illustré avec un portrait en niveaux de gris atmosphérique.</p>
+        </div>
+        <div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant hover:border-primary-container/30 transition-colors">
+          <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center mb-5">
+            <span class="material-symbols-outlined text-primary-container">web</span>
+          </div>
+          <h3 class="font-headline text-xl text-on-surface mb-3">Site multi-pages</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Architecture HTML statique complète : page d'accueil, galerie des épisodes, synopsis, personnages, pour aller plus loin, contact. Navigation cohérente et responsive sur tous les écrans.</p>
+        </div>
+        <div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant hover:border-primary-container/30 transition-colors">
+          <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center mb-5">
+            <span class="material-symbols-outlined text-primary-container">slideshow</span>
+          </div>
+          <h3 class="font-headline text-xl text-on-surface mb-3">Slider narratif</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Carousel d'épisodes avec navigation précédent/suivant, onglets de sélection directe, et indicateurs de position. Conçu pour inviter à l'exploration plutôt qu'à la lecture linéaire.</p>
+        </div>
+      </div>
+
+      <!-- Acte 4 : L'IA comme co-auteure -->
+      <div class="bg-surface-container-lowest p-10 rounded-2xl border border-surface-variant mb-16">
+        <h2 class="font-headline text-2xl text-on-surface mb-6 pb-4 border-b border-surface-variant">L'IA comme co-auteure — pas comme outil</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="space-y-4 text-on-surface-variant leading-relaxed">
+            <p>Ce projet est une démonstration concrète de ce que l'IA rend possible quand on l'engage comme partenaire de création, pas comme assistant de rédaction. Chaque dimension du projet a été co-construite avec des modèles de langage.</p>
+            <p>Les personnages ont été développés à partir de briefs de situations réelles, affinés par itérations successives pour atteindre la densité émotionnelle nécessaire. Les visuels de portraits ont été générés via IA d'image avec des prompts cinématographiques précis. Le code HTML/CSS/JS a été produit par vibe coding, testé et ajusté en dialogue.</p>
+            <p>La pédagogie elle-même — le choix des 5 mécanismes, la structure des quiz, les questions de débriefing — a émergé d'un travail de co-conception avec l'IA nourri des frameworks de sciences de l'apprentissage.</p>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3 p-4 bg-surface-container rounded-xl">
+              <span class="material-symbols-outlined text-primary-container mt-0.5">edit</span>
+              <div>
+                <div class="text-sm font-bold text-on-surface mb-1">Écriture des scénarios</div>
+                <div class="text-xs text-on-surface-variant">5 personnages construits par itérations avec modèles LLM. Profondeur psychologique, situations documentées, arcs narratifs.</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 bg-surface-container rounded-xl">
+              <span class="material-symbols-outlined text-primary-container mt-0.5">image</span>
+              <div>
+                <div class="text-sm font-bold text-on-surface mb-1">Génération des portraits</div>
+                <div class="text-xs text-on-surface-variant">Visuels de personnages générés par IA avec prompts cinématographiques — style noir, atmosphère, expressivité.</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 bg-surface-container rounded-xl">
+              <span class="material-symbols-outlined text-primary-container mt-0.5">code</span>
+              <div>
+                <div class="text-sm font-bold text-on-surface mb-1">Vibe coding du site</div>
+                <div class="text-xs text-on-surface-variant">Architecture HTML/CSS/JS multi-pages produite en dialogue avec l'IA. Design system cohérent, composants réutilisables.</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 bg-surface-container rounded-xl">
+              <span class="material-symbols-outlined text-primary-container mt-0.5">school</span>
+              <div>
+                <div class="text-sm font-bold text-on-surface mb-1">Ingénierie pédagogique</div>
+                <div class="text-xs text-on-surface-variant">Structure des modules, quiz de débriefing, objectifs par épisode — co-conçus avec les frameworks d'apprentissage expérientiel.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Acte 5 : Témoignages -->
+      <div class="mb-16">
+        <h2 class="font-headline text-3xl text-on-surface mb-8 pb-4 border-t border-surface-variant pt-12">Ce que ça déclenche</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <blockquote class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant">
+            <p class="text-on-surface-variant italic leading-relaxed mb-4">"Enfin une formation qui ne ressemble pas à une formation. Mes équipes ont continué à en parler pendant la semaine après la session."</p>
+            <footer class="text-sm font-semibold text-on-surface">DRH, entreprise industrielle, 800 salariés</footer>
+          </blockquote>
+          <blockquote class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant">
+            <p class="text-on-surface-variant italic leading-relaxed mb-4">"Le personnage de Nadia, c'était moi il y a trois ans. Je n'avais jamais pu mettre des mots dessus. Là, en 10 minutes, tout était nommé."</p>
+            <footer class="text-sm font-semibold text-on-surface">Participante, cadre supérieure, Paris</footer>
+          </blockquote>
+          <blockquote class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant">
+            <p class="text-on-surface-variant italic leading-relaxed mb-4">"Le format narratif court-circuite les défenses habituelles. On ne peut pas dire 'ça n'existe pas chez nous' quand on vient de vivre l'histoire de l'intérieur."</p>
+            <footer class="text-sm font-semibold text-on-surface">Manager Programme Égalité, groupe CAC 40</footer>
+          </blockquote>
+          <blockquote class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant">
+            <p class="text-on-surface-variant italic leading-relaxed mb-4">"L'esthétique compte. Ça donne de la dignité au sujet. Les participant·es prennent ça au sérieux parce que le soin mis dans la forme dit que le fond est sérieux."</p>
+            <footer class="text-sm font-semibold text-on-surface">Cheffe de projet formation, secteur public</footer>
+          </blockquote>
+        </div>
+      </div>
+
+      <!-- Acte 6 : Impact -->
+      <div class="bg-primary-container/5 rounded-2xl border border-primary-container/20 p-10 mb-16">
+        <h2 class="font-headline text-2xl text-on-surface mb-6">Ce que ce projet démontre</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="space-y-4 text-on-surface-variant leading-relaxed">
+            <p>Plafond de Verre est une preuve de concept en vraie grandeur : il est possible de produire une expérience pédagogique de niveau professionnel — qualité de production, profondeur narrative, cohérence technique — en solo, avec l'IA comme co-auteure.</p>
+            <p>C'est aussi une réponse concrète à la question que posent tous les responsables formation : comment rendre les sujets RH sensibles assez engageants pour que les apprentissages restent ? La réponse est dans la forme autant que dans le fond.</p>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span><span>Site multi-pages HTML statique, déployable en minutes</span></li>
+            <li class="flex items-start gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span><span>5 modules narratifs avec quiz de débriefing intégrés</span></li>
+            <li class="flex items-start gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span><span>Design cinématographique professionnel, responsive</span></li>
+            <li class="flex items-start gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span><span>Construit de A à Z avec l'IA en moins de 2 semaines</span></li>
+            <li class="flex items-start gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span><span>Accès libre — YouTube + site statique déployable</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- YouTube embed -->
+      <div class="mb-16">
+        <h2 class="font-headline text-2xl text-on-surface mb-6">La série en vidéo</h2>
+        <div class="aspect-video rounded-2xl overflow-hidden shadow-xl border border-surface-variant">
+          <iframe
+            src="https://www.youtube.com/embed/HZIYZ51QIFE"
+            title="Plafond de Verre — Série pédagogique"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            class="w-full h-full"
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- CTA nav -->
+      <div class="flex flex-col sm:flex-row gap-4 items-center justify-between pt-8 border-t border-surface-variant">
+        <a href="../index.html" class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary-container transition-colors text-sm font-semibold">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Retour au portfolio
+        </a>
+        <a href="https://youtu.be/HZIYZ51QIFE?si=oXN1Sa2kcGKDtn9F" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#2A2A34] text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-primary-container transition-colors">
+          <span class="material-symbols-outlined text-base">play_circle</span>
+          Voir la série sur YouTube
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-surface-container border-t border-surface-variant">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 py-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
+      <span>© 2026 Leila Seghirate-Nigg. Tous droits réservés.</span>
+      <div class="flex gap-6">
+        <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" target="_blank" rel="noopener noreferrer" class="hover:text-primary-container transition-colors">LinkedIn</a>
+        <a href="../index.html" class="hover:text-primary-container transition-colors">Portfolio</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+      const m = document.getElementById('mobile-menu');
+      m.classList.toggle('open');
+      this.setAttribute('aria-expanded', m.classList.contains('open'));
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

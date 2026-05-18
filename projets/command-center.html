@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Command Center — Leila Seghirate-Nigg</title>
+  <meta name="description" content="Case study Command Center — Hub de production central donnant accès à plusieurs générateurs IA."/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%233333CC'/%3E%3Ctext x='16' y='22' font-family='serif' font-weight='700' font-size='20' fill='white' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="Portfolio · Leila Seghirate-Nigg"/>
+  <meta property="og:title" content="Command Center — Leila Seghirate-Nigg"/>
+  <meta property="og:description" content="Case study Command Center — Hub de production central donnant accès à plusieurs générateurs IA."/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Command Center — Leila Seghirate-Nigg"/>
+  <meta name="twitter:description" content="Case study Command Center — Hub de production central donnant accès à plusieurs générateurs IA."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2A2A34","primary-container": "#3333CC","on-primary": "#ffffff",
+            "on-primary-container": "#EDE9E3","secondary": "#5f5e5e","secondary-container": "#e5e2e1",
+            "background": "#fbf9f9","on-background": "#2A2A34","surface": "#fbf9f9",
+            "on-surface": "#2A2A34","surface-variant": "#e3e2e2","on-surface-variant": "#2A2A34",
+            "surface-container-lowest": "#ffffff","surface-container-low": "#f5f3f3",
+            "surface-container": "#efeded","surface-container-high": "#e9e8e7",
+            "surface-container-highest": "#e3e2e2","outline": "#948F8A","outline-variant": "#948F8A",
+            "inverse-primary": "#EDE9E3","surface-tint": "#3333CC"
+          },
+          fontFamily: {
+            "display": ["Noto Serif","serif"],"headline": ["Noto Serif","serif"],
+            "body": ["Manrope","sans-serif"],"label": ["Manrope","sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Brand Interaction Matrix - official palette lock */
+    :root {
+      --brand-blue: #3333CC;
+      --brand-cream: #EDE9E3;
+      --brand-ink: #2A2A34;
+      --brand-taupe: #948F8A;
+    }
+    .bg-primary-container { background-color: var(--brand-blue) !important; }
+    .hover\:bg-primary:hover { background-color: var(--brand-ink) !important; }
+    .text-primary-container { color: var(--brand-blue) !important; }
+    .hover\:text-primary-container:hover { color: var(--brand-blue) !important; }
+    .border-primary-container { border-color: var(--brand-blue) !important; }
+    .hover\:border-primary-container:hover { border-color: var(--brand-blue) !important; }
+    .border-outline-variant { border-color: var(--brand-taupe) !important; }
+    .text-on-surface-variant { color: var(--brand-ink) !important; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
+    .skip-link { position:absolute;top:-40px;left:1rem;background:#3333CC;color:#fff;padding:.5rem 1rem;border-radius:4px;font-weight:600;z-index:100;transition:top .2s;font-family:Manrope,sans-serif; }
+    .skip-link:focus { top:1rem; }
+    #mobile-menu { display:none; }
+    #mobile-menu.open { display:block; }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased min-h-screen flex flex-col">
+
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- Nav -->
+  <nav id="main-nav" class="sticky top-0 z-50 backdrop-blur-md border-b border-surface-variant" style="background:rgba(237,233,227,0.95);">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="../index.html" class="font-headline font-bold text-xl tracking-tight text-on-surface hover:text-primary-container transition-colors">Leila Seghirate-Nigg</a>
+        <div class="hidden sm:flex sm:items-center sm:space-x-8">
+          <a href="../offre.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Expertise</a>
+          <a href="../index.html" class="text-primary-container text-sm font-medium border-b-2 border-primary-container pb-1">Réalisations</a>
+          <a href="../methodologie.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Méthodologie</a>
+          <a href="../frameworks.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Frameworks</a>
+          <a href="../a-propos.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">À propos</a>
+          <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" class="bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Me contacter</a>
+        </div>
+        <button id="hamburger" class="sm:hidden p-2 rounded-md text-on-surface hover:bg-surface-container transition-colors" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="sm:hidden pb-4 border-t border-surface-variant mt-1">
+        <div class="flex flex-col gap-2 pt-3">
+          <a href="../offre.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Expertise</a>
+          <a href="../index.html" class="px-3 py-2 text-primary-container bg-surface-container-low rounded-md text-sm font-medium">Réalisations</a>
+          <a href="../methodologie.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Méthodologie</a>
+          <a href="../frameworks.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Frameworks</a>
+          <a href="../a-propos.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">À propos</a>
+          <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" class="mt-2 mx-3 text-center bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Me contacter</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="bg-surface-container-low border-b border-surface-variant px-4 sm:px-8 py-3">
+    <div class="max-w-[1200px] mx-auto">
+      <nav aria-label="Fil d'Ariane" class="text-sm text-on-surface-variant">
+        <a href="../index.html" class="hover:text-primary-container transition-colors">Réalisations</a>
+        <span class="mx-2 text-outline">/</span>
+        <span class="text-on-surface font-medium">Command Center</span>
+      </nav>
+    </div>
+  </div>
+
+  <main id="main" class="flex-grow">
+
+    <!-- Hero -->
+    <section class="bg-[#EDE9E3] border-b border-surface-variant px-4 sm:px-8 lg:px-16 py-20 md:py-28">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block text-xs font-bold tracking-[.18em] uppercase text-primary-container mb-4 font-label">Systèmes &amp; automatisation · HTML/JS</span>
+        <h1 class="font-headline text-5xl md:text-6xl text-on-surface mb-6 leading-tight">Command Center</h1>
+        <p class="text-on-surface-variant text-xl leading-relaxed max-w-2xl mx-auto">Hub de production central — synthèse de générateurs fragmentés en une interface de pilotage unifiée.</p>
+      </div>
+    </section>
+
+    <!-- Hero image -->
+    <div class="px-4 sm:px-8 lg:px-16 -mt-8 max-w-[1200px] mx-auto">
+      <div class="aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl border border-surface-variant">
+        <img src="../assets/images/heroes/image.webp" alt="Dashboard Command Center" class="w-full h-full object-cover"/>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 py-20">
+
+      <!-- Meta strip -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16 p-6 bg-surface-container-lowest rounded-2xl border border-surface-variant">
+        <div class="text-center p-2">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Type</div>
+          <div class="font-semibold text-primary-container">Dashboard</div>
+        </div>
+        <div class="text-center p-2 border-l border-surface-variant">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Techno</div>
+          <div class="font-semibold text-primary-container">HTML/JS + Python</div>
+        </div>
+        <div class="text-center p-2 border-l border-surface-variant">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Statut</div>
+          <div class="font-semibold text-primary-container">Opérationnel</div>
+        </div>
+        <div class="text-center p-2 border-l border-surface-variant">
+          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Catégorie</div>
+          <div class="font-semibold text-primary-container">Automatisation</div>
+        </div>
+      </div>
+
+      <!-- Narrative + Tech stack -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <div class="lg:col-span-2 bg-surface-container-lowest p-10 rounded-2xl border border-surface-variant">
+          <h2 class="font-headline text-2xl text-on-surface mb-6 pb-4 border-b border-surface-variant">La problématique</h2>
+          <div class="space-y-4 text-on-surface-variant leading-relaxed">
+            <p>Le projet Command Center est né d'un goulot d'étranglement opérationnel critique : la fragmentation des outils de génération créatifs et analytiques. À mesure que l'écosystème de générateurs IA spécialisés s'est développé, la friction du changement de contexte impactait sévèrement la vélocité du workflow.</p>
+            <p>Cette initiative représente une synthèse de systèmes disparates en un cadre architectural unifié. En établissant un hub centralisé, une interface de pilotage a été construite où plusieurs modèles — de la synthèse textuelle à la visualisation de données — opèrent de façon fluide depuis un seul point d'entrée.</p>
+            <p>Le design évite de submerger l'utilisateur en appliquant des principes éditoriaux minimalistes stricts, avec des espaces blancs généreux et des alignements de grille rigoureux pour catégoriser les processus actifs.</p>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest p-10 rounded-2xl border border-surface-variant">
+          <h2 class="font-headline text-2xl text-on-surface mb-6 pb-4 border-b border-surface-variant">Stack technique</h2>
+          <ul class="space-y-4">
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container">code</span>
+              <span class="text-sm font-bold uppercase tracking-widest text-on-surface font-label">HTML / JS</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container">terminal</span>
+              <span class="text-sm font-bold uppercase tracking-widest text-on-surface font-label">Python</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container">api</span>
+              <span class="text-sm font-bold uppercase tracking-widest text-on-surface font-label">Claude API</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container">dashboard</span>
+              <span class="text-sm font-bold uppercase tracking-widest text-on-surface font-label">Interface SPA</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Features bento -->
+      <h2 class="font-headline text-3xl text-on-surface mb-8 pb-4 border-t border-surface-variant pt-12">Architecture centrale</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant hover:border-primary-container/30 transition-colors">
+          <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center mb-5">
+            <span class="material-symbols-outlined text-primary-container">hub</span>
+          </div>
+          <h3 class="font-headline text-xl text-on-surface mb-3">Accès centralisé</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Un point d'entrée unique éliminant la friction de navigation entre outils disparates, regroupant tous les générateurs actifs dans un plan unifié.</p>
+        </div>
+        <div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant hover:border-primary-container/30 transition-colors">
+          <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center mb-5">
+            <span class="material-symbols-outlined text-primary-container">insights</span>
+          </div>
+          <h3 class="font-headline text-xl text-on-surface mb-3">Optimisation de workflow</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Routage algorithmique réduisant les inputs redondants — les outputs d'un générateur alimentent automatiquement le contexte du suivant.</p>
+        </div>
+        <div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant hover:border-primary-container/30 transition-colors">
+          <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center mb-5">
+            <span class="material-symbols-outlined text-primary-container">monitoring</span>
+          </div>
+          <h3 class="font-headline text-xl text-on-surface mb-3">Monitoring en direct</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Feedback immédiat sur l'état du système, l'utilisation des tokens et le statut de génération sur tous les nœuds actifs.</p>
+        </div>
+      </div>
+
+      <!-- Impact -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16 bg-primary-container/5 rounded-2xl border border-primary-container/20 p-10">
+        <div>
+          <h2 class="font-headline text-2xl text-on-surface mb-6">Impact &amp; résultats</h2>
+          <div class="space-y-4 text-on-surface-variant leading-relaxed">
+            <p>Le déploiement du Command Center a produit un changement profond dans la vélocité de production. En ancrant la nature chaotique de plusieurs modèles IA dans une interface disciplinée et minimaliste, la charge cognitive a été considérablement réduite.</p>
+            <p>Réduction du temps de navigation entre outils. Interface de pilotage personnalisée et extensible, capable d'intégrer de nouveaux générateurs à la volée.</p>
+          </div>
+          <ul class="mt-6 space-y-2">
+            <li class="flex items-start gap-3 text-sm text-on-surface">
+              <span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span>
+              <span>Accès à tous les générateurs depuis un seul écran</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm text-on-surface">
+              <span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span>
+              <span>Réduction significative du temps de changement de contexte</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm text-on-surface">
+              <span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span>
+              <span>Architecture extensible pour intégrer de nouveaux outils</span>
+            </li>
+          </ul>
+        </div>
+        <div class="flex items-center justify-center">
+          <div class="w-full aspect-square max-w-xs rounded-2xl overflow-hidden border border-surface-variant shadow-lg">
+            <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=400&h=400&fit=crop" alt="Architecture système" class="w-full h-full object-cover"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA navigation -->
+      <div class="flex flex-col sm:flex-row gap-4 items-center justify-between pt-8 border-t border-surface-variant">
+        <a href="../index.html" class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary-container transition-colors text-sm font-semibold">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Retour au portfolio
+        </a>
+        <a href="mj-prompt-generator.html" class="inline-flex items-center gap-2 bg-primary-container text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-primary transition-colors">
+          Projet suivant : MJ Prompt Generator
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface-container border-t border-surface-variant">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 py-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
+      <span>© 2026 Leila Seghirate-Nigg. Tous droits réservés.</span>
+      <div class="flex gap-6">
+        <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" target="_blank" rel="noopener noreferrer" class="hover:text-primary-container transition-colors">LinkedIn</a>
+        <a href="../index.html" class="hover:text-primary-container transition-colors">Portfolio</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+      const m = document.getElementById('mobile-menu');
+      m.classList.toggle('open');
+      this.setAttribute('aria-expanded', m.classList.contains('open'));
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

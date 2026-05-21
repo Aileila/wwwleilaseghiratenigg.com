@@ -1,0 +1,24 @@
+# robots.txt — Portfolio Leila Seghirate-Nigg
+# https://www.leilaseghirate-nigg.com
+
+User-agent: *
+Allow: /
+
+# Crawl-delay raisonnable pour les bots non identifiés
+Crawl-delay: 1
+
+# Bloquer les bots agressifs / IA non souhaités
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap
+Sitemap: https://www.leilaseghirate-nigg.com/sitemap.xml

@@ -128,6 +128,9 @@
       *{animation-duration:.01ms!important;transition-duration:.01ms!important}
       .reveal{opacity:1;transform:none}
     }
+    @media (max-width:480px){
+      .fw-btn-radiant{min-width:0}
+    }
 
     /* Interactive explorer */
     .fw-explorer-stage{
@@ -285,7 +288,7 @@
   <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
       <a href="index.html" class="font-headline font-bold text-xl tracking-tight text-on-surface hover:text-primary-container transition-colors">Leila Seghirate-Nigg</a>
-      <div class="hidden sm:flex sm:items-center sm:space-x-8">
+      <div class="hidden lg:flex lg:items-center lg:space-x-6 xl:space-x-8">
         <a href="offre.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Expertise</a>
         <a href="a-propos.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">À propos</a>
         <a href="index.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Réalisations</a>
@@ -293,12 +296,12 @@
         <a href="frameworks.html" class="text-primary-container text-sm font-medium border-b-2 border-primary-container pb-1">Frameworks</a>
         <a href="https://www.linkedin.com/in/leila-seghirate/" class="bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Me contacter</a>
       </div>
-      <button id="hamburger" class="sm:hidden p-2 rounded-md text-on-surface hover:bg-surface-container transition-colors" aria-label="Menu" aria-expanded="false">
+      <button id="hamburger" class="lg:hidden p-2 rounded-md text-on-surface hover:bg-surface-container transition-colors" aria-label="Menu" aria-expanded="false">
         <svg id="icon-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         <svg id="icon-close" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
     </div>
-    <div id="mobile-menu" class="sm:hidden pb-4 border-t border-surface-variant mt-1">
+    <div id="mobile-menu" class="lg:hidden pb-4 border-t border-surface-variant mt-1">
       <div class="flex flex-col gap-2 pt-3">
         <a href="offre.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium">Expertise</a>
         <a href="a-propos.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium">À propos</a>
@@ -339,7 +342,7 @@
         </div>
       </div>
 
-      <div class="grid lg:grid-cols-[1.35fr_.8fr] gap-6 items-stretch">
+      <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,.8fr)] gap-6 items-stretch">
         <div class="fw-explorer-stage">
           <img id="fwExplorerImage" src="assets/images/heroes/image.webp" alt="Galerie des frameworks LSN" class="fw-explorer-bg"/>
           <div class="fw-explorer-layer"></div>
@@ -557,7 +560,7 @@ function setActiveFramework(id) {
       `).join('')}
     </div>
 
-    <div class="flex items-center justify-between gap-3 sm:gap-4">
+    <div class="flex flex-wrap items-center justify-between gap-3 sm:gap-4">
       <button type="button" id="fwPrev" class="fw-btn-radiant">← Précédent</button>
       <a href="#${data.id}" class="fw-btn-ink">Voir le framework complet</a>
       <button type="button" id="fwNext" class="fw-btn-radiant">Suivant →</button>

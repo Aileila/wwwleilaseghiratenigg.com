@@ -336,30 +336,12 @@
     </div>
   </section>
 
-  <!-- MAIN CONTENT -->
-  <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
-    <div class="flex gap-12 items-start">
-
-      <!-- SIDEBAR NAV (desktop) -->
-      <aside class="hidden lg:block w-52 flex-shrink-0 sidebar-sticky">
-        <div class="text-xs font-bold tracking-widest uppercase text-on-surface-variant font-label mb-4">Navigation</div>
-        <nav id="sidebarNav" class="flex flex-col gap-1"></nav>
-        <div class="mt-8 pt-6 border-t border-surface-variant">
-          <a href="methodologie.html" class="text-xs font-bold font-label text-primary-container hover:underline flex items-center gap-1">← Méthodologie</a>
-        </div>
-      </aside>
-
-      <!-- FRAMEWORKS LIST -->
-      <div class="flex-1 min-w-0" id="fwList"></div>
-    </div>
-  </div>
-
   <!-- CTA -->
-  <section class="border-t border-surface-variant" style="background:var(--creme)">
+  <section id="mission" class="border-t border-surface-variant" style="background:var(--creme)">
     <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-14 flex flex-col sm:flex-row items-center justify-between gap-6 reveal">
       <div>
-        <h2 class="font-headline text-2xl font-bold text-on-surface tracking-tight">Un de ces frameworks correspond à votre besoin&nbsp;?</h2>
-        <p class="text-on-surface-variant text-sm mt-2">Discutons de son application dans votre contexte.</p>
+        <h2 class="font-headline text-2xl font-bold text-on-surface tracking-tight">Ces frameworks s'activent en mission.</h2>
+        <p class="text-on-surface-variant text-sm mt-2">Discutons de leur application dans votre contexte.</p>
       </div>
       <a href="mailto:seghiratel@gmail.com" class="flex-shrink-0 bg-primary-container text-white px-7 py-3 rounded-full text-sm font-bold hover:bg-primary transition-colors" style="box-shadow:0 6px 20px rgba(51,51,204,.3)">
         Démarrer une conversation →
@@ -544,7 +526,7 @@ function setActiveFramework(id) {
 
     <div class="flex flex-wrap items-center justify-between gap-3 sm:gap-4">
       <button type="button" id="fwPrev" class="fw-btn-radiant">← Précédent</button>
-      <a href="#${data.id}" class="fw-btn-ink">Voir le framework complet</a>
+      <a href="#mission" class="fw-btn-ink">Activer ce framework →</a>
       <button type="button" id="fwNext" class="fw-btn-radiant">Suivant →</button>
     </div>
   `;
@@ -609,102 +591,6 @@ document.addEventListener('visibilitychange', () => {
 
 startAutoPlay();
 
-// ── Build sidebar nav ──
-const sidebar = document.getElementById('sidebarNav');
-frameworks.forEach(f => {
-  const a = document.createElement('a');
-  a.href = `#${f.id}`;
-  a.className = 'fw-nav-link';
-  a.dataset.id = f.id;
-  a.innerHTML = `<span class="text-primary-container font-bold">${f.num}</span> ${f.title.split(' ').slice(0,3).join(' ')}…`;
-  sidebar.appendChild(a);
-});
-
-// ── Build framework sections ──
-const list = document.getElementById('fwList');
-frameworks.forEach((f, i) => {
-  const section = document.createElement('section');
-  section.id = f.id;
-  section.className = 'fw-section reveal';
-
-  section.innerHTML = `
-    <!-- Header -->
-    <div class="flex items-start gap-4 mb-8">
-      <div class="fw-badge">${f.num}</div>
-      <div class="flex-1">
-        <h2 class="font-headline text-2xl sm:text-3xl font-bold text-on-surface tracking-tight leading-tight">${f.title}</h2>
-        <p class="font-label text-on-surface-variant mt-1">${f.tagline}</p>
-      </div>
-    </div>
-
-    <!-- Content grid -->
-    <div class="grid lg:grid-cols-3 gap-6 mb-8">
-
-      <!-- Description + tags (2 cols) -->
-      <div class="lg:col-span-2 flex flex-col gap-5">
-        <div>
-          <div class="text-xs font-bold tracking-widest uppercase font-label mb-2" style="color:var(--blue)">Description</div>
-          <p class="text-on-surface text-sm leading-relaxed">${f.desc}</p>
-        </div>
-        <div class="flex flex-wrap gap-2">
-          ${f.tags.map(t => `<span class="pill" style="color:var(--blue);border-color:rgba(51,51,204,.2);background:rgba(51,51,204,.04)">${t}</span>`).join('')}
-        </div>
-      </div>
-
-      <!-- Meta (1 col) -->
-      <div class="flex flex-col gap-4">
-        <!-- Gain highlight -->
-        <div class="gain-card">
-          <div class="text-xs font-bold tracking-widest uppercase font-label mb-2 opacity-70">Gain mesurable</div>
-          <p class="text-sm font-semibold leading-snug font-label">${f.gain}</p>
-        </div>
-        <!-- Cible -->
-        <div class="bg-surface-container-low rounded-xl p-4 border border-surface-variant">
-          <div class="text-xs font-bold tracking-widest uppercase font-label text-on-surface-variant mb-2">Cible</div>
-          <p class="text-sm text-on-surface font-label leading-relaxed">${f.cible}</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Composants -->
-    <div>
-      <div class="text-xs font-bold tracking-widest uppercase font-label mb-4" style="color:var(--blue)">Composants du framework</div>
-      <div class="grid sm:grid-cols-2 gap-3">
-        ${f.composants.map(c => `
-          <div class="composant-item">
-            <div class="composant-num">${c.num}</div>
-            <div>
-              <div class="text-sm font-semibold text-on-surface font-label mb-0.5">${c.label}</div>
-              <div class="text-xs text-on-surface-variant font-label leading-relaxed">${c.detail}</div>
-            </div>
-          </div>
-        `).join('')}
-      </div>
-    </div>
-
-    <!-- Nav prev/next -->
-    <div class="flex items-center justify-between mt-10 pt-6 border-t border-surface-variant">
-      ${i > 0 ? `<a href="#${frameworks[i-1].id}" class="text-xs font-bold font-label flex items-center gap-2 hover:gap-3 transition-all" style="color:var(--blue)">← ${frameworks[i-1].num} ${frameworks[i-1].title.split(' ').slice(0,3).join(' ')}</a>` : '<span></span>'}
-      ${i < frameworks.length-1 ? `<a href="#${frameworks[i+1].id}" class="text-xs font-bold font-label flex items-center gap-2 hover:gap-3 transition-all ml-auto" style="color:var(--blue)">${frameworks[i+1].num} ${frameworks[i+1].title.split(' ').slice(0,3).join(' ')} →</a>` : '<span></span>'}
-    </div>
-  `;
-
-  list.appendChild(section);
-});
-
-// ── Active sidebar on scroll ──
-const sections = frameworks.map(f => document.getElementById(f.id));
-const navLinks = document.querySelectorAll('.fw-nav-link');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if(e.isIntersecting) {
-      navLinks.forEach(l => l.classList.toggle('active', l.dataset.id === e.target.id));
-    }
-  });
-}, {threshold:0.3, rootMargin:'-80px 0px -60% 0px'});
-
-sections.forEach(s => { if(s) observer.observe(s); });
 
 // ── Nav ──
 document.getElementById('hamburger').addEventListener('click', function() {

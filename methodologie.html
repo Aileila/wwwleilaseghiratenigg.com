@@ -4,15 +4,15 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Méthodologie — Leila Seghirate-Nigg</title>
-  <meta name="description" content="Méthodologie complète — La Chaîne LSN, Expériences Immersives, Architecture IA, Stratégie d'Adoption."/>
+  <meta name="description" content="Méthodologie complète — Expériences Immersives, Architecture IA, Stratégie d'Adoption."/>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%233333CC'/%3E%3Ctext x='16' y='22' font-family='serif' font-weight='700' font-size='20' fill='white' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E"/>
   <meta property="og:type" content="website"/>
   <meta property="og:site_name" content="Portfolio · Leila Seghirate-Nigg"/>
   <meta property="og:title" content="Méthodologie — Leila Seghirate-Nigg"/>
-  <meta property="og:description" content="Méthodologie complète — La Chaîne LSN, Expériences Immersives, Architecture IA, Stratégie d'Adoption."/>
+  <meta property="og:description" content="Méthodologie complète — Expériences Immersives, Architecture IA, Stratégie d'Adoption."/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Méthodologie — Leila Seghirate-Nigg"/>
-  <meta name="twitter:description" content="Méthodologie complète — La Chaîne LSN, Expériences Immersives, Architecture IA, Stratégie d'Adoption."/>
+  <meta name="twitter:description" content="Méthodologie complète — Expériences Immersives, Architecture IA, Stratégie d'Adoption."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet"/>
@@ -154,10 +154,9 @@
     <h1 class="font-headline text-4xl sm:text-5xl font-bold tracking-tight text-on-surface leading-tight mb-5 max-w-2xl">
       Comment je travaille —<br><span class="font-light text-on-surface-variant">structure, méthodes, livrables</span>
     </h1>
-    <p class="text-on-surface-variant text-base leading-relaxed max-w-xl mb-8">Une méthodologie transversale et trois approches spécialisées. Chaque engagement est structuré, documenté et livré avec des critères de validation explicites.</p>
+    <p class="text-on-surface-variant text-base leading-relaxed max-w-xl mb-8">Trois approches spécialisées. Chaque engagement est structuré, documenté et livré avec des critères de validation explicites.</p>
     <div class="flex flex-wrap gap-2">
       <a href="#immersif" class="text-xs font-bold tracking-wider uppercase px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary-container hover:text-primary-container transition-all font-label">↓ Expériences Immersives</a>
-      <a href="#chaine" class="text-xs font-bold tracking-wider uppercase px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary-container hover:text-primary-container transition-all font-label">↓ Chaîne LSN</a>
       <a href="#archi" class="text-xs font-bold tracking-wider uppercase px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary-container hover:text-primary-container transition-all font-label">↓ Architecture & IA</a>
       <a href="#adoption" class="text-xs font-bold tracking-wider uppercase px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary-container hover:text-primary-container transition-all font-label">↓ Adoption & Transmission</a>
     </div>
@@ -307,33 +306,6 @@
 </script>
   </section>
 
-  <!-- ══ CHAÎNE LSN ══ -->
-  <section id="chaine" class="border-t border-surface-variant py-16">
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-12">
-        <div class="pillar-band">
-          <span class="text-xs font-bold tracking-widest uppercase text-primary-container font-label">Méthodologie transversale</span>
-          <h2 class="font-headline text-3xl font-bold tracking-tight text-on-surface mt-1">La Chaîne LSN</h2>
-          <p class="text-on-surface-variant text-sm mt-2 max-w-xl leading-relaxed">6 phases séquentielles pour transformer une demande en <strong>parcours de formation synchrone ou asynchrone complet</strong>. Chaque phase produit des livrables définis, mesurables et actionnables. Cliquez sur une phase pour explorer.</p>
-        </div>
-      </div>
-      
-      <!-- Timeline horizontale -->
-      <div class="relative mb-8">
-        <!-- Ligne de connexion (desktop only) -->
-        <div class="hidden lg:block absolute top-12 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-surface-variant to-transparent" style="pointer-events:none"></div>
-        
-        <!-- Timeline grid -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-2" id="phaseGrid"></div>
-      </div>
-      
-      <!-- Phase detail drawer -->
-      <div id="phaseDetailPanel" class="hidden mt-12 p-8 bg-surface-container-lowest rounded-2xl border border-surface-variant animate-in fade-in duration-300">
-        <button onclick="document.getElementById('phaseDetailPanel').classList.add('hidden')" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface transition-colors" aria-label="Fermer">✕</button>
-        <div id="phaseDetailContent"></div>
-      </div>
-    </div>
-  </section>
 
   <!-- ══ PILIER 2 — ARCHITECTURE & IA ══ -->
   <section id="archi" class="border-t border-surface-variant py-16">
@@ -514,7 +486,7 @@ const phaseDetailPanel = document.getElementById('phaseDetailPanel');
 const phaseDetailContent = document.getElementById('phaseDetailContent');
 let activePhase = null;
 
-phases.forEach(p => {
+if (phaseGrid) phases.forEach(p => {
   const el = document.createElement('article');
   el.className = 'phase-card';
   el.setAttribute('role','button'); 

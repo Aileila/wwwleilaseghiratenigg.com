@@ -15,26 +15,8 @@
   <meta name="twitter:description" content="Six frameworks propriétaires pour orchestrer la conception pédagogique : CARTE, SCÈNE, SIGNE, ORBITE, Chaîne LSN. Activables en mission L&D."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <script>
-    tailwind.config = {
-      theme: { extend: {
-        colors: {
-          "primary":"#2A2A34","primary-container":"#3333CC","on-primary":"#ffffff",
-          "background":"#fbf9f9","on-background":"#2A2A34","surface":"#fbf9f9","on-surface":"#2A2A34",
-          "surface-variant":"#e3e2e2","on-surface-variant":"#2A2A34","surface-container-lowest":"#ffffff",
-          "surface-container-low":"#f5f3f3","surface-container":"#efeded","surface-container-high":"#e9e8e7",
-          "outline":"#948F8A","outline-variant":"#948F8A",
-        },
-        fontFamily: {
-          "headline":["Montserrat","serif"],
-          "body":["Montserrat","sans-serif"],
-          "label":["Montserrat","sans-serif"]
-        }
-      }}
-    }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/tailwind.css"/>
   <style>
     /* Brand Interaction Matrix - official palette lock */
     :root {
@@ -71,7 +53,7 @@
     .fw-nav-link{
       display:block;padding:.5rem 1rem;border-left:2px solid transparent;
       font-size:.72rem;font-weight:600;letter-spacing:.06em;color:var(--grey);
-      font-family: Montserrat, sans-serif;transition:all .2s;cursor:pointer;text-decoration:none;
+      font-family: "Instrument Sans", sans-serif;transition:all .2s;cursor:pointer;text-decoration:none;
     }
     .fw-nav-link:hover{color:var(--blue);border-left-color:rgba(51,51,204,.3);}
     .fw-nav-link.active{color:var(--blue);border-left-color:var(--blue);background:rgba(51,51,204,.04);}
@@ -88,7 +70,7 @@
       display:inline-flex;align-items:center;justify-content:center;
       width:42px;height:42px;border-radius:10px;
       background:#2A2A34;color:#EDE9E3;
-      font-size:.78rem;font-weight:700;font-family: Montserrat, sans-serif;
+      font-size:.78rem;font-weight:700;font-family: "Instrument Sans", sans-serif;
       flex-shrink:0;
     }
 
@@ -103,14 +85,14 @@
     .composant-num{
       width:26px;height:26px;border-radius:50%;background:rgba(51,51,204,.08);
       display:flex;align-items:center;justify-content:center;
-      font-size:.6rem;font-weight:700;color:var(--blue);flex-shrink:0;font-family: Montserrat, sans-serif;
+      font-size:.6rem;font-weight:700;color:var(--blue);flex-shrink:0;font-family: "Instrument Sans", sans-serif;
     }
 
     /* Pill tags */
     .pill{
       display:inline-block;font-size:.58rem;font-weight:700;letter-spacing:.12em;
       text-transform:uppercase;padding:.28rem .75rem;border-radius:999px;
-      border:1px solid;font-family: Montserrat, sans-serif;
+      border:1px solid;font-family: "Instrument Sans", sans-serif;
     }
 
     /* Gain highlight */

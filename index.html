@@ -15,61 +15,9 @@
   <meta name="twitter:description" content="Portfolio de Leila Seghirate-Nigg — Pédagogie digitale, IA, vibe coding, automatisation et création visuelle."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary": "#2A2A34",
-            "primary-container": "#3333CC",
-            "on-primary": "#ffffff",
-            "on-primary-container": "#EDE9E3",
-            "secondary": "#5f5e5e",
-            "secondary-container": "#e5e2e1",
-            "on-secondary": "#ffffff",
-            "on-secondary-container": "#656464",
-            "tertiary": "#393b3a",
-            "tertiary-container": "#505251",
-            "on-tertiary": "#ffffff",
-            "on-tertiary-container": "#c4c5c3",
-            "background": "#fbf9f9",
-            "on-background": "#2A2A34",
-            "surface": "#fbf9f9",
-            "on-surface": "#2A2A34",
-            "surface-variant": "#e3e2e2",
-            "on-surface-variant": "#2A2A34",
-            "surface-container-lowest": "#ffffff",
-            "surface-container-low": "#f5f3f3",
-            "surface-container": "#efeded",
-            "surface-container-high": "#e9e8e7",
-            "surface-container-highest": "#e3e2e2",
-            "outline": "#948F8A",
-            "outline-variant": "#948F8A",
-            "inverse-surface": "#303031",
-            "inverse-on-surface": "#f2f0f0",
-            "inverse-primary": "#EDE9E3",
-            "surface-tint": "#3333CC",
-            "surface-dim": "#dbdad9",
-            "surface-bright": "#fbf9f9",
-            "error": "#ba1a1a",
-            "on-error": "#ffffff",
-            "error-container": "#ffdad6",
-            "on-error-container": "#93000a"
-          },
-          fontFamily: {
-              "display": ["Montserrat", "sans-serif"],
-              "headline": ["Montserrat", "sans-serif"],
-              "body": ["Montserrat", "sans-serif"],
-              "label": ["Montserrat", "sans-serif"]
-            }
-        }
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="assets/css/tailwind.css"/>
   <style>
     /* Brand Interaction Matrix - official palette lock */
     :root {
@@ -105,7 +53,7 @@
       background: var(--blue); color: #fff;
       padding: .5rem 1rem; border-radius: var(--rsm);
       font-weight: 600; z-index: 100; transition: top .2s;
-      font-family: Montserrat, sans-serif;
+      font-family: "Instrument Sans", sans-serif;
     }
     .skip-link:focus { top: 1rem; }
 
@@ -148,7 +96,7 @@
     .drawer-title {
       font-size: 1.4rem; font-weight: 900; color: #fff;
       line-height: 1.2; letter-spacing: -.02em; text-transform: uppercase;
-      font-family: Montserrat, sans-serif;
+      font-family: "Instrument Sans", sans-serif;
     }
     .drawer-close {
       position: absolute; top: 1rem; right: 1rem; z-index: 2;
@@ -170,13 +118,13 @@
     .drawer-body::-webkit-scrollbar-thumb { background: rgba(3,4,90,.15); border-radius: 2px; }
 
     .drawer-section { display: flex; flex-direction: column; gap: .55rem; }
-    .drawer-section-label { font-size: .65rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--blue); font-family: Montserrat, sans-serif; }
+    .drawer-section-label { font-size: .65rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--blue); font-family: "Instrument Sans", sans-serif; }
     .drawer-section-content { font-size: .93rem; color: var(--dark); line-height: 1.7; }
 
     .drawer-meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .drawer-meta-item { background: var(--pearl); border-radius: var(--rmd); padding: 1rem 1.1rem; border: 1px solid rgba(3,4,90,.07); }
-    .meta-label { font-size: .62rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: #5E5A57; margin-bottom: .35rem; font-family: Montserrat, sans-serif; }
-    .meta-value { font-size: .88rem; font-weight: 600; color: var(--indigo); font-family: Montserrat, sans-serif; }
+    .meta-label { font-size: .62rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: #5E5A57; margin-bottom: .35rem; font-family: "Instrument Sans", sans-serif; }
+    .meta-value { font-size: .88rem; font-weight: 600; color: var(--indigo); font-family: "Instrument Sans", sans-serif; }
 
     .drawer-divider { height: 1px; background: rgba(3,4,90,.08); border: none; }
     .drawer-cta { display: flex; gap: .75rem; flex-wrap: wrap; }
@@ -184,7 +132,7 @@
     .btn-drawer {
       flex: 1; min-width: 160px;
       display: inline-flex; align-items: center; justify-content: center; gap: .4rem;
-      font-family: Montserrat, sans-serif; font-size: .82rem; font-weight: 700; letter-spacing: .04em;
+      font-family: "Instrument Sans", sans-serif; font-size: .82rem; font-weight: 700; letter-spacing: .04em;
       text-decoration: none; padding: .8rem 1.4rem;
       border-radius: var(--rsm); border: none; cursor: pointer;
       background: var(--blue); color: #fff;

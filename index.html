@@ -371,6 +371,49 @@
   <meta property="og:image:height" content="630"/>
   <meta name="twitter:image" content="https://wwwleilaseghiratenigg.com/assets/images/og-image.png"/>
   <meta property="og:url" content="https://wwwleilaseghiratenigg.com/"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://wwwleilaseghiratenigg.com/#leila",
+        "name": "Leila Seghirate-Nigg",
+        "jobTitle": "Architecte de systèmes pédagogiques IA compliant",
+        "email": "seghiratel@gmail.com",
+        "url": "https://wwwleilaseghiratenigg.com/",
+        "sameAs": ["https://www.linkedin.com/in/leila-seghirate/"],
+        "knowsLanguage": ["fr", "en"],
+        "knowsAbout": [
+          "Architecture pédagogique",
+          "Ingénierie pédagogique",
+          "IA générative appliquée à la formation",
+          "Digital learning",
+          "Marketing de la formation"
+        ]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://wwwleilaseghiratenigg.com/#lsn",
+        "name": "LSN Consulting",
+        "founder": {"@id": "https://wwwleilaseghiratenigg.com/#leila"},
+        "url": "https://wwwleilaseghiratenigg.com/",
+        "areaServed": "FR",
+        "availableLanguage": ["fr", "en"],
+        "description": "Conception de dispositifs de formation : architecture pédagogique, IA créative, stratégie marketing de la formation.",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Domaines d'intervention",
+          "itemListElement": [
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Architecture pédagogique"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "IA créative"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Stratégie marketing de la formation"}}
+          ]
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-background text-on-background font-body antialiased min-h-screen flex flex-col">
 
@@ -524,7 +567,7 @@
         <!-- Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 lg:gap-12" id="grid">
 
-          <article class="project-card group cursor-pointer" data-category="prototypes_vibe_coding" data-id="simulateur_communication">
+          <article class="project-card group cursor-pointer" data-category="prototypes_vibe_coding" data-id="simulateur_communication" data-href="projets/simulateur-communication.html">
             <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
               <img src="assets/images/projects/brief%20analytic%20image.webp" alt="Simulateur de styles de communication" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
               <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary-container uppercase tracking-wider shadow-sm">Outils sur mesure</div>
@@ -537,10 +580,10 @@
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">simulator</span>
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">HTML/JS</span>
             </div>
-            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+            <a href="projets/simulateur-communication.html" class="card-link text-sm font-bold text-primary-container inline-flex items-center gap-1 group-hover:gap-2 transition-all" aria-label="Étude de cas : Simulateur de styles de communication">Voir l'étude de cas <span aria-hidden="true">→</span></a>
           </article>
 
-          <article class="project-card group cursor-pointer" data-category="creation_visuelle_immersive" data-id="mj_prompt_generator">
+          <article class="project-card group cursor-pointer" data-category="creation_visuelle_immersive" data-id="mj_prompt_generator" data-href="projets/mj-prompt-generator.html">
             <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
               <img src="assets/images/projects/MJ%20Prompt%20Generator%202.webp" alt="MJ Prompt Generator" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='assets/images/projects/MJ%20Prompt%20Generator%202.webp'"/>
               <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary-container uppercase tracking-wider shadow-sm">Création visuelle IA &amp; immersif</div>
@@ -553,10 +596,10 @@
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">generator</span>
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">HTML/JS</span>
             </div>
-            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+            <a href="projets/mj-prompt-generator.html" class="card-link text-sm font-bold text-primary-container inline-flex items-center gap-1 group-hover:gap-2 transition-all" aria-label="Étude de cas : MJ Prompt Generator">Voir l'étude de cas <span aria-hidden="true">→</span></a>
           </article>
 
-          <article class="project-card group cursor-pointer" data-category="prototypes_vibe_coding" data-id="canva_api_starter">
+          <article class="project-card group cursor-pointer" data-category="prototypes_vibe_coding" data-id="canva_api_starter" data-href="projets/canva-api.html">
             <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
               <img src="assets/images/projects/Canva%20API%20Starter%20New.webp" alt="Canva API Starter" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
               <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary-container uppercase tracking-wider shadow-sm">Outils sur mesure</div>
@@ -569,10 +612,10 @@
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">automation</span>
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">Python</span>
             </div>
-            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+            <a href="projets/canva-api.html" class="card-link text-sm font-bold text-primary-container inline-flex items-center gap-1 group-hover:gap-2 transition-all" aria-label="Étude de cas : Canva API Starter">Voir l'étude de cas <span aria-hidden="true">→</span></a>
           </article>
 
-          <article class="project-card group cursor-pointer" data-category="creation_visuelle_immersive" data-id="plafond_de_verre">
+          <article class="project-card group cursor-pointer" data-category="creation_visuelle_immersive" data-id="plafond_de_verre" data-href="projets/plafond-de-verre.html">
             <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
               <img src="assets/images/immersive/header image plafond de verre.webp" alt="Plafond de Verre — série pédagogique immersive" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&h=400&fit=crop'"/>
               <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary-container uppercase tracking-wider shadow-sm">Création visuelle IA &amp; immersif</div>
@@ -585,10 +628,10 @@
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">série pédagogique</span>
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">HTML/CSS/JS</span>
             </div>
-            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+            <a href="projets/plafond-de-verre.html" class="card-link text-sm font-bold text-primary-container inline-flex items-center gap-1 group-hover:gap-2 transition-all" aria-label="Étude de cas : Plafond de Verre">Voir l'étude de cas <span aria-hidden="true">→</span></a>
           </article>
 
-          <article class="project-card group cursor-pointer" data-category="prototypes_vibe_coding" data-id="generateur_propre">
+          <article class="project-card group cursor-pointer" data-category="prototypes_vibe_coding" data-id="generateur_propre" data-href="projets/generateur-propre.html">
             <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
               <img src="assets/images/projects/generateur-identites-symboliques-hero.webp" alt="Générateur d'identités symboliques" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=600&h=400&fit=crop'"/>
               <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary-container uppercase tracking-wider shadow-sm">Outils sur mesure</div>
@@ -600,7 +643,7 @@
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">generator</span>
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">HTML/JS</span>
             </div>
-            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+            <a href="projets/generateur-propre.html" class="card-link text-sm font-bold text-primary-container inline-flex items-center gap-1 group-hover:gap-2 transition-all" aria-label="Étude de cas : Générateur d'identités symboliques">Voir l'étude de cas <span aria-hidden="true">→</span></a>
           </article>
 
           <article class="project-card group cursor-pointer" data-category="prototypes_vibe_coding" data-id="document_template_generator">
@@ -648,7 +691,7 @@
             <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
           </article>
 
-          <article class="project-card group cursor-pointer" data-category="prototypes_vibe_coding" data-id="lsn_chaine_equipe">
+          <article class="project-card group cursor-pointer" data-category="prototypes_vibe_coding" data-id="lsn_chaine_equipe" data-href="projets/lsn-chaine-equipe.html">
             <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
               <img src="assets/images/team/lsn%20chaine%20equipe%201-768.webp" srcset="assets/images/team/lsn%20chaine%20equipe%201-480.webp 480w, assets/images/team/lsn%20chaine%20equipe%201-768.webp 768w, assets/images/team/lsn%20chaine%20equipe%201-1200.webp 1200w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 560px" alt="LSN Chaîne Équipe" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
               <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary-container uppercase tracking-wider shadow-sm">Outils sur mesure</div>
@@ -661,10 +704,10 @@
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">outil équipe</span>
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">HTML/CSS/JS</span>
             </div>
-            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+            <a href="projets/lsn-chaine-equipe.html" class="card-link text-sm font-bold text-primary-container inline-flex items-center gap-1 group-hover:gap-2 transition-all" aria-label="Étude de cas : LSN Chaîne Équipe">Voir l'étude de cas <span aria-hidden="true">→</span></a>
           </article>
 
-          <article class="project-card group cursor-pointer" data-category="strategie_marketing_formation" data-id="campagne_learning_for_life">
+          <article class="project-card group cursor-pointer" data-category="strategie_marketing_formation" data-id="campagne_learning_for_life" data-href="projets/campagne-learning-for-life.html">
             <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
               <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Campagne Learning for Life" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop'"/>
@@ -678,10 +721,10 @@
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">LinkedIn Learning</span>
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">CAC 40</span>
             </div>
-            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+            <a href="projets/campagne-learning-for-life.html" class="card-link text-sm font-bold text-primary-container inline-flex items-center gap-1 group-hover:gap-2 transition-all" aria-label="Étude de cas : Campagne Learning for Life">Voir l'étude de cas <span aria-hidden="true">→</span></a>
           </article>
 
-          <article class="project-card group cursor-pointer" data-category="strategie_marketing_formation" data-id="data_driven_learning_reporting">
+          <article class="project-card group cursor-pointer" data-category="strategie_marketing_formation" data-id="data_driven_learning_reporting" data-href="projets/data-driven-learning-reporting.html">
             <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
               <img src="assets/images/projects/Data-driven%20learning%20%E2%80%94%20Reporting%20%26%20webinars.webp" alt="Data-driven learning — Reporting & webinars" loading="lazy" decoding="async" class="w-full h-full object-cover focus-laptop transition-transform duration-500 group-hover:scale-105"
                 onerror="this.src='assets/images/projects/Data-driven%20learning%20%E2%80%94%20Reporting%20%26%20webinars.webp'"/>
@@ -695,10 +738,10 @@
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">LinkedIn Learning</span>
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">Reporting</span>
             </div>
-            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+            <a href="projets/data-driven-learning-reporting.html" class="card-link text-sm font-bold text-primary-container inline-flex items-center gap-1 group-hover:gap-2 transition-all" aria-label="Étude de cas : Data-driven learning">Voir l'étude de cas <span aria-hidden="true">→</span></a>
           </article>
 
-          <article class="project-card group cursor-pointer" data-category="formation_pedagogie" data-id="savoir_utiliser_sa_voix">
+          <article class="project-card group cursor-pointer" data-category="formation_pedagogie" data-id="savoir_utiliser_sa_voix" data-href="projets/savoir-utiliser-sa-voix.html">
             <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
               <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=600&h=400&fit=crop" alt="Module Savoir utiliser sa voix" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 onerror="this.src='https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=600&h=400&fit=crop'"/>
@@ -712,10 +755,10 @@
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">iSpring Suite</span>
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">Parcours hybride</span>
             </div>
-            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+            <a href="projets/savoir-utiliser-sa-voix.html" class="card-link text-sm font-bold text-primary-container inline-flex items-center gap-1 group-hover:gap-2 transition-all" aria-label="Étude de cas : Savoir utiliser sa voix">Voir l'étude de cas <span aria-hidden="true">→</span></a>
           </article>
 
-          <article class="project-card group cursor-pointer" data-category="formation_pedagogie" data-id="arret_cardiaque_module">
+          <article class="project-card group cursor-pointer" data-category="formation_pedagogie" data-id="arret_cardiaque_module" data-href="projets/arret-cardiaque-module.html">
             <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
               <img src="assets/images/projects/image de coouverture.webp" alt="Module auto-formatif arrêt cardiaque" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 onerror="this.src='https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop'"/>
@@ -730,10 +773,10 @@
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">SCORM</span>
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">15 min</span>
             </div>
-            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le d&eacute;tail <span aria-hidden="true">→</span></span>
+            <a href="projets/arret-cardiaque-module.html" class="card-link text-sm font-bold text-primary-container inline-flex items-center gap-1 group-hover:gap-2 transition-all" aria-label="Étude de cas : Module auto-formatif Arrêt cardiaque">Voir l'étude de cas <span aria-hidden="true">→</span></a>
           </article>
 
-          <article class="project-card group cursor-pointer" data-category="formation_pedagogie" data-id="guide_animation_tutorale">
+          <article class="project-card group cursor-pointer" data-category="formation_pedagogie" data-id="guide_animation_tutorale" data-href="projets/guide-animation-tutorale.html">
             <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
               <img src="assets/images/projects/guide%20d%27animation%20tutorale-768.webp" srcset="assets/images/projects/guide%20d%27animation%20tutorale-480.webp 480w, assets/images/projects/guide%20d%27animation%20tutorale-768.webp 768w, assets/images/projects/guide%20d%27animation%20tutorale-1200.webp 1200w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 560px" alt="Guide d'animation tutorale" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 onerror="this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=400&fit=crop'"/>
@@ -747,10 +790,10 @@
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">LMS TOTARA</span>
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">Blended Learning</span>
             </div>
-            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+            <a href="projets/guide-animation-tutorale.html" class="card-link text-sm font-bold text-primary-container inline-flex items-center gap-1 group-hover:gap-2 transition-all" aria-label="Étude de cas : Guide d'animation tutorale">Voir l'étude de cas <span aria-hidden="true">→</span></a>
           </article>
 
-          <article class="project-card group cursor-pointer" data-category="formation_pedagogie" data-id="plan_evaluation_formation">
+          <article class="project-card group cursor-pointer" data-category="formation_pedagogie" data-id="plan_evaluation_formation" data-href="projets/plan-evaluation-formation.html">
             <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
               <img src="assets/images/pedagogie/Plan%20d%27%C3%A9valuation%20d%27une%20formation.webp" alt="Plan d'évaluation d'une formation hybride" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 onerror="this.src='assets/images/pedagogie/Plan%20d%27%C3%A9valuation%20d%27une%20formation.webp'"/>
@@ -764,10 +807,10 @@
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">Kirkpatrick</span>
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">Studigroup</span>
             </div>
-            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+            <a href="projets/plan-evaluation-formation.html" class="card-link text-sm font-bold text-primary-container inline-flex items-center gap-1 group-hover:gap-2 transition-all" aria-label="Étude de cas : Plan d'évaluation d'une formation hybride">Voir l'étude de cas <span aria-hidden="true">→</span></a>
           </article>
 
-          <article class="project-card group cursor-pointer" data-category="formation_pedagogie" data-id="gestion_projet_parcours_mooc">
+          <article class="project-card group cursor-pointer" data-category="formation_pedagogie" data-id="gestion_projet_parcours_mooc" data-href="projets/gestion-projet-parcours-mooc.html">
             <div class="aspect-[3/2] overflow-hidden rounded-xl mb-4 relative bg-surface-container">
               <img src="assets/images/pedagogie/mooc-gestion-hero.webp" alt="Gestion de projet Parcours MOOC" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop'"/>
@@ -781,7 +824,7 @@
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">2022-2023</span>
               <span class="text-xs font-medium px-2 py-1 bg-surface-container-low text-on-surface rounded">SCORM</span>
             </div>
-            <span class="text-sm font-bold text-primary-container flex items-center gap-1 group-hover:gap-2 transition-all">Voir le détail <span aria-hidden="true">→</span></span>
+            <a href="projets/gestion-projet-parcours-mooc.html" class="card-link text-sm font-bold text-primary-container inline-flex items-center gap-1 group-hover:gap-2 transition-all" aria-label="Étude de cas : Gestion de projet Parcours MOOC">Voir l'étude de cas <span aria-hidden="true">→</span></a>
           </article>
 
           <!-- Empty state -->
@@ -1223,9 +1266,22 @@
     drawer.removeEventListener('keydown', trapFocus);
   }
 
-  // Attach click to all cards
+  // Attach click to all cards.
+  // Une carte qui possede une etude de cas navigue vers sa page : l'URL est
+  // partageable et indexable. Le lien reel vit dans .card-link, la carte
+  // entiere ne fait qu'elargir sa zone de clic. Les trois projets sans page
+  // conservent le tiroir.
   cards.forEach(card => {
-    card.addEventListener('click', () => openDrawer(card.dataset.id));
+    const href = card.dataset.href;
+
+    card.addEventListener('click', e => {
+      if (e.target.closest('a')) return; // laisser le lien reel faire son travail
+      if (href) window.location.href = href;
+      else openDrawer(card.dataset.id);
+    });
+
+    if (href) return; // le <a> interne porte deja le focus et la semantique
+
     card.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();

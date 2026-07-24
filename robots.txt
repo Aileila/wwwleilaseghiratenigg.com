@@ -1,5 +1,5 @@
 # robots.txt — Portfolio Leila Seghirate-Nigg
-# https://www.leilaseghirate-nigg.com
+# https://wwwleilaseghiratenigg.com
 
 User-agent: *
 Allow: /
@@ -21,4 +21,4 @@ User-agent: DotBot
 Disallow: /
 
 # Sitemap
-Sitemap: https://www.leilaseghirate-nigg.com/sitemap.xml
+Sitemap: https://wwwleilaseghiratenigg.com/sitemap.xml

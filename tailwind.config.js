@@ -48,8 +48,8 @@ module.exports = {
         "on-error-container": "#93000a"
       },
       fontFamily: {
-        "display": ["Fraunces", "Georgia", "serif"],
-        "headline": ["Fraunces", "Georgia", "serif"],
+        "display": ["'Source Serif 4'", "Georgia", "serif"],
+        "headline": ["'Source Serif 4'", "Georgia", "serif"],
         "body": ["Instrument Sans", "system-ui", "sans-serif"],
         "label": ["Instrument Sans", "system-ui", "sans-serif"]
       }

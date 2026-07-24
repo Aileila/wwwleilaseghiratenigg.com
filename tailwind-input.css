@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  /* Focus clavier visible (WCAG 2.4.7).
+     Le reset Tailwind supprime les contours par defaut : sans cette regle,
+     une personne qui navigue au clavier ne voit jamais ou elle se trouve.
+     Le halo clair rend le trait bleu lisible aussi sur le hero sombre ;
+     sur fond creme il reste discret. :focus-visible n'apparait pas au clic
+     souris, seulement au clavier. */
+  :focus-visible {
+    outline: 3px solid #3333CC;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.85);
+    border-radius: 2px;
+  }
+
+  /* Les navigateurs sans :focus-visible gardent un contour utilisable. */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+}

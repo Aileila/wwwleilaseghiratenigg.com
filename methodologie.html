@@ -124,12 +124,12 @@
     @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}.card-in{animation:none;opacity:1}}
   </style>
 
-  <link rel="canonical" href="https://www.leilaseghirate-nigg.com/methodologie.html"/>
-  <meta property="og:image" content="https://www.leilaseghirate-nigg.com/assets/images/og-image.png"/>
+  <link rel="canonical" href="https://wwwleilaseghiratenigg.com/methodologie.html"/>
+  <meta property="og:image" content="https://wwwleilaseghiratenigg.com/assets/images/og-image.png"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
-  <meta name="twitter:image" content="https://www.leilaseghirate-nigg.com/assets/images/og-image.png"/>
-  <meta property="og:url" content="https://www.leilaseghirate-nigg.com/methodologie.html"/>
+  <meta name="twitter:image" content="https://wwwleilaseghiratenigg.com/assets/images/og-image.png"/>
+  <meta property="og:url" content="https://wwwleilaseghiratenigg.com/methodologie.html"/>
 </head>
 <body class="bg-background text-on-background font-body antialiased min-h-screen flex flex-col">
 
@@ -144,7 +144,7 @@
         <a href="index.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Réalisations</a>
         <a href="methodologie.html" class="text-primary-container text-sm font-medium border-b-2 border-primary-container pb-1">Méthodologie</a>
         <a href="frameworks.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Frameworks</a>
-        <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" class="bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Me contacter</a>
+        <a href="https://www.linkedin.com/in/leila-seghirate/" class="bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Me contacter</a>
       </div>
       <button id="hamburger" class="sm:hidden p-2 rounded-md text-on-surface hover:bg-surface-container transition-colors" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg id="icon-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -158,7 +158,7 @@
         <a href="index.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium">Réalisations</a>
         <a href="methodologie.html" class="px-3 py-2 text-primary-container bg-surface-container-low rounded-md text-sm font-medium">Méthodologie</a>
         <a href="frameworks.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium">Frameworks</a>
-        <a href="https://www.linkedin.com/in/leila-seghirate/?locale=en?locale=en?locale=en?locale=en" class="mt-2 mx-3 text-center bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold">Me contacter</a>
+        <a href="https://www.linkedin.com/in/leila-seghirate/" class="mt-2 mx-3 text-center bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold">Me contacter</a>
       </div>
     </div>
   </div>
@@ -389,7 +389,7 @@
         <h2 class="font-headline text-2xl font-bold text-on-surface tracking-tight">Prêt·e à structurer votre projet&nbsp;?</h2>
         <p class="text-on-surface-variant text-sm mt-2">Discutons de votre besoin — de la commande à la livraison mesurée.</p>
       </div>
-      <a href="mailto:seghirate@gmail.com" class="flex-shrink-0 bg-primary-container text-white px-7 py-3 rounded-full text-sm font-bold hover:bg-primary transition-colors" style="box-shadow:0 6px 20px rgba(51,51,204,.3)">Démarrer un projet →</a>
+      <a href="mailto:seghiratel@gmail.com" class="flex-shrink-0 bg-primary-container text-white px-7 py-3 rounded-full text-sm font-bold hover:bg-primary transition-colors" style="box-shadow:0 6px 20px rgba(51,51,204,.3)">Démarrer un projet →</a>
     </div>
   </section>
 </main>
@@ -802,6 +802,33 @@ document.querySelectorAll('.reveal').forEach(el=>rObs.observe(el));
 let ci=0;
 const cObs=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){en.target.style.animationDelay=`${ci*55}ms`;en.target.classList.add('card-in');ci++;cObs.unobserve(en.target);}}),{threshold:.06});
 document.querySelectorAll('.phase-card').forEach(c=>{c.style.opacity='0';cObs.observe(c);});
+</script>
+
+<script>
+/* Filet de securite reveal : si un IntersectionObserver rate un element
+   (saut d'ancre, scroll rapide, restauration de position), tout element
+   deja dans le viewport est revele. S'auto-desactive une fois tout visible. */
+(function () {
+  function sweep() {
+    var pending = document.querySelectorAll('.section-reveal:not(.visible), .reveal:not(.visible)');
+    pending.forEach(function (el) {
+      if (el.getBoundingClientRect().top < window.innerHeight + 80) el.classList.add('visible');
+    });
+    document.querySelectorAll('.project-card:not(.card-reveal)').forEach(function (el) {
+      if (el.style.opacity === '0' && el.getBoundingClientRect().top < window.innerHeight + 80) {
+        el.classList.add('card-reveal');
+      }
+    });
+    if (!document.querySelector('.section-reveal:not(.visible), .reveal:not(.visible), .project-card:not(.card-reveal)')) {
+      window.removeEventListener('scroll', sweep);
+      clearInterval(timer);
+    }
+  }
+  window.addEventListener('scroll', sweep, { passive: true });
+  window.addEventListener('pageshow', sweep);
+  var timer = setInterval(sweep, 1500);
+  sweep();
+})();
 </script>
 </body>
 </html>

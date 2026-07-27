@@ -6,6 +6,7 @@ module.exports = {
   content: [
     "./*.html",
     "./projets/*.html",
+    "./blog/*.html",
     "./tools/**/*.html"
   ],
   theme: {

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Articles — réflexions sur la pédagogie et l'IA · LSN Consulting</title>
+  <meta name="description" content="Réflexions de Leila Seghirate-Nigg sur l'apprentissage, l'ingénierie pédagogique et l'IA appliquée à la formation."/>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logos/favicon-32.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logos/favicon-180.png"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Portfolio · Leila Seghirate-Nigg"/>
+  <meta property="og:title" content="Articles — réflexions sur la pédagogie et l'IA"/>
+  <meta property="og:description" content="Réflexions de Leila Seghirate-Nigg sur l'apprentissage, l'ingénierie pédagogique et l'IA appliquée à la formation."/>
+  <meta property="og:image" content="https://wwwleilaseghiratenigg.com/assets/images/og-image.png"/>
+  <meta property="og:url" content="https://wwwleilaseghiratenigg.com/blog.html"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Articles — réflexions sur la pédagogie et l'IA"/>
+  <meta name="twitter:description" content="Réflexions de Leila Seghirate-Nigg sur l'apprentissage, l'ingénierie pédagogique et l'IA appliquée à la formation."/>
+  <link rel="canonical" href="https://wwwleilaseghiratenigg.com/blog.html"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/tailwind.css"/>
+  <style>
+    :root { --brand-blue:#3333CC; --brand-cream:#EDE9E3; --brand-ink:#2A2A34; --brand-taupe:#948F8A; }
+    .bg-primary-container { background-color: var(--brand-blue) !important; }
+    .hover\:bg-primary:hover { background-color: var(--brand-ink) !important; }
+    .text-primary-container { color: var(--brand-blue) !important; }
+    .hover\:text-primary-container:hover { color: var(--brand-blue) !important; }
+    .border-primary-container { border-color: var(--brand-blue) !important; }
+    .text-on-surface-variant { color: var(--brand-ink) !important; }
+    .skip-link { position:absolute;top:-40px;left:1rem;background:#3333CC;color:#fff;padding:.5rem 1rem;border-radius:4px;font-weight:600;z-index:100;transition:top .2s; }
+    .skip-link:focus { top:1rem; }
+    #mobile-menu { display:none; }
+    #mobile-menu.open { display:block; }
+    .post-card img { transition: transform .5s ease; }
+    .post-card:hover img { transform: scale(1.04); }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased min-h-screen flex flex-col">
+
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- Nav -->
+  <nav class="sticky top-0 z-50 backdrop-blur-md border-b border-surface-variant" style="background:rgba(237,233,227,0.95);">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="flex-shrink-0 inline-flex items-center gap-3.5 group" aria-label="Accueil — LSN Consulting, Leila Seghirate-Nigg"><img src="assets/images/logos/lsn-monogramme.webp" alt="" class="h-10 w-auto" width="47" height="40"/><span class="hidden sm:block w-px h-7 bg-outline/25" aria-hidden="true"></span><span class="font-headline text-lg font-medium tracking-tight text-on-surface group-hover:text-primary-container transition-colors leading-none">Leila Seghirate-Nigg</span></a>
+        <div class="hidden lg:flex lg:items-center lg:space-x-6 xl:space-x-8">
+          <a href="offre.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Expertise</a>
+          <a href="a-propos.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">À propos</a>
+          <a href="index.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Réalisations</a>
+          <a href="methodologie.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Méthodologie</a>
+          <a href="frameworks.html" class="text-on-surface-variant hover:text-primary-container text-sm font-medium border-b-2 border-transparent hover:border-primary-container pb-1 transition-all">Frameworks</a>
+          <a href="blog.html" class="text-primary-container text-sm font-medium border-b-2 border-primary-container pb-1">Articles</a>
+          <a href="https://www.linkedin.com/in/leila-seghirate/" class="bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Me contacter</a>
+        </div>
+        <button id="hamburger" class="lg:hidden p-2 rounded-md text-on-surface hover:bg-surface-container transition-colors" aria-label="Menu" aria-expanded="false">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="lg:hidden pb-4 border-t border-surface-variant mt-1">
+        <div class="flex flex-col gap-2 pt-3">
+          <a href="offre.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Expertise</a>
+          <a href="a-propos.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">À propos</a>
+          <a href="index.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Réalisations</a>
+          <a href="methodologie.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Méthodologie</a>
+          <a href="frameworks.html" class="px-3 py-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low rounded-md text-sm font-medium transition-colors">Frameworks</a>
+          <a href="blog.html" class="px-3 py-2 text-primary-container bg-surface-container-low rounded-md text-sm font-medium">Articles</a>
+          <a href="https://www.linkedin.com/in/leila-seghirate/" class="mt-2 mx-3 text-center bg-primary-container text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors">Me contacter</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="flex-grow">
+
+    <!-- En-tête de section -->
+    <header class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 pt-16 pb-10">
+      <p class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label mb-3">Articles · LSN Consulting</p>
+      <h1 class="font-headline text-4xl sm:text-5xl font-bold text-on-surface leading-tight mb-5 max-w-3xl">Réflexions sur l'apprentissage et l'IA</h1>
+      <p class="text-on-surface-variant text-lg leading-relaxed max-w-2xl">Des notes de fond sur la pédagogie, les conditions sensibles de la transmission et l'usage juste de l'intelligence artificielle en formation.</p>
+    </header>
+
+    <!-- Liste des articles -->
+    <section class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 pb-20">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+
+        <!-- Article : La beauté dans la transmission -->
+        <article class="post-card group">
+          <a href="blog/la-beaute-dans-la-transmission.html" class="block">
+            <div class="aspect-[16/9] overflow-hidden rounded-xl mb-5 bg-surface-container">
+              <img src="assets/images/blog/beaute-transmission-cover.webp" alt="Un papillon bleu dans un intérieur clair et épuré." loading="lazy" class="w-full h-full object-cover"/>
+            </div>
+            <p class="text-xs font-bold tracking-[.16em] uppercase text-primary-container font-label mb-2">Réflexion · Pédagogie &amp; atmosphères</p>
+            <h2 class="font-headline text-2xl text-on-surface leading-tight mb-3 group-hover:text-primary-container transition-colors">La beauté dans la transmission</h2>
+            <p class="text-on-surface-variant text-[0.97rem] leading-relaxed mb-4">Nous avons perfectionné les outils qui distribuent le savoir. Nous avons beaucoup moins pensé les conditions sensibles qui donnent envie de le recevoir.</p>
+            <div class="flex items-center gap-x-2.5 text-xs text-on-surface-variant">
+              <time datetime="2026-07-27">27 juillet 2026</time>
+              <span aria-hidden="true">·</span>
+              <span>8 min de lecture</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- Encart "à venir" -->
+        <div class="rounded-xl border border-dashed border-outline/40 p-8 flex flex-col justify-center items-start bg-surface-container-low/40 min-h-[280px]">
+          <p class="text-xs font-bold tracking-[.16em] uppercase text-on-surface-variant font-label mb-3">Prochainement</p>
+          <p class="font-headline text-xl text-on-surface leading-snug mb-4">D'autres réflexions arrivent.</p>
+          <p class="text-sm text-on-surface-variant leading-relaxed mb-5">Pour ne rien manquer, suivez la publication des prochains articles sur LinkedIn.</p>
+          <a href="https://www.linkedin.com/in/leila-seghirate/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-primary-container hover:gap-2.5 transition-all">
+            Suivre sur LinkedIn <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-surface-container border-t border-surface-variant">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <img src="assets/images/logos/lsn-logo-complet.webp" alt="LSN Consulting" class="h-20 w-auto mb-3" width="130" height="80"/>
+          <p class="font-headline text-base text-on-surface mb-3">Leila Seghirate-Nigg</p>
+          <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Architecte de systèmes pédagogiques IA compliant.</p>
+          <div class="flex gap-1.5 flex-wrap">
+            <span class="text-xs px-2.5 py-1 rounded-full border border-outline/30 text-on-surface-variant">Architecture pédagogique</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-outline/30 text-on-surface-variant">IA créative</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-outline/30 text-on-surface-variant">Stratégie marketing</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold tracking-[.18em] uppercase text-on-surface mb-4 font-label">Navigation</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="offre.html" class="text-on-surface-variant hover:text-primary-container transition-colors">Expertise</a></li>
+            <li><a href="index.html" class="text-on-surface-variant hover:text-primary-container transition-colors">Réalisations</a></li>
+            <li><a href="blog.html" class="text-on-surface-variant hover:text-primary-container transition-colors">Articles</a></li>
+            <li><a href="a-propos.html" class="text-on-surface-variant hover:text-primary-container transition-colors">À propos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold tracking-[.18em] uppercase text-on-surface mb-4 font-label">Contact</h4>
+          <a href="mailto:seghiratel@gmail.com" class="text-sm text-primary-container hover:underline">seghiratel@gmail.com</a>
+          <div class="mt-4">
+            <a href="https://www.linkedin.com/in/leila-seghirate/" target="_blank" rel="noopener noreferrer" class="text-on-surface-variant hover:text-primary-container transition-colors" aria-label="LinkedIn">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pt-6 border-t border-surface-variant text-center text-xs text-on-surface-variant">
+        <p>© 2026 Leila Seghirate-Nigg · LSN Consulting. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function () {
+      const open = document.getElementById('mobile-menu').classList.toggle('open');
+      this.setAttribute('aria-expanded', open);
+    });
+  </script>
+</body>
+</html>

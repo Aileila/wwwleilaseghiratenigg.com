@@ -147,6 +147,11 @@
     .pv-orga h2{font-size:1.8rem;color:#fff;margin-bottom:.6rem}
     .pv-orga p{color:#a9bab5;max-width:32rem;line-height:1.6}
     @media (prefers-reduced-motion:reduce){.pv-ouverture-img,.pv-slide.actif img{animation:none}}
+    .pv-ouverture::before,.pv-diapo::before,.pm-tuile::before,.pv-ecran-film::before{content:"";position:absolute;inset:-50%;z-index:1;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1.4 -.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");background-size:200px;opacity:.16;mix-blend-mode:overlay;animation:pvGrain .9s steps(6) infinite}
+    .pv-ouverture-texte{z-index:2}.pv-barres{z-index:3}
+    .pv-ecran-film{position:relative;overflow:hidden;border-radius:0 0 12px 12px}
+    @keyframes pvGrain{0%{transform:translate(0,0)}20%{transform:translate(-4%,3%)}40%{transform:translate(3%,-5%)}60%{transform:translate(-6%,-2%)}80%{transform:translate(5%,4%)}100%{transform:translate(0,0)}}
+    @media (prefers-reduced-motion:reduce){.pv-ouverture::before,.pv-diapo::before,.pm-tuile::before,.pv-ecran-film::before{animation:none}}
   </style>
 </head>
 <body class="bg-background text-on-background font-body antialiased min-h-screen flex flex-col">
@@ -302,7 +307,7 @@
           </div>
           <figure class="pv-ecran">
             <div class="pv-ecran-barre"><span></span><span></span><span></span></div>
-            <video src="../assets/images/immersive/pdv-module/serie-defile.mp4" poster="../assets/images/immersive/pdv-module/serie-defile.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Le site de la série Plafond de Verre, qui défile"></video>
+            <div class="pv-ecran-film"><video src="../assets/images/immersive/pdv-module/serie-defile.mp4" poster="../assets/images/immersive/pdv-module/serie-defile.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Le site de la série Plafond de Verre, qui défile"></video></div>
             <figcaption>Le site de la série : les six histoires, un parcours pour les organisations.</figcaption>
           </figure>
         </div>

@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Architecture pédagogique, IA créative et adoption · LSN Consulting</title>
-  <meta name="description" content="Solutions digitales pour la formation — Architecture pédagogique, IA créative, stratégie marketing de la formation. LSN Consulting par Leila Seghirate-Nigg."/>
+  <title>Ce que je conçois · Expériences pédagogiques et immersives · LSN Consulting</title>
+  <meta name="description" content="Pédagogue et architecte d’expériences : apprentissage, expériences immersives, outils intelligents, stratégie d’adoption. LSN Consulting par Leila Seghirate-Nigg."/>
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logos/favicon-32.png"/>
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logos/favicon-180.png"/>
   <meta property="og:type" content="website"/>
   <meta property="og:site_name" content="Portfolio · Leila Seghirate-Nigg"/>
-  <meta property="og:title" content="Architecture pédagogique, IA créative et adoption · LSN Consulting"/>
-  <meta property="og:description" content="Solutions digitales pour la formation — Architecture pédagogique, IA créative, stratégie marketing de la formation. LSN Consulting par Leila Seghirate-Nigg."/>
+  <meta property="og:title" content="Ce que je conçois · Expériences pédagogiques et immersives · LSN Consulting"/>
+  <meta property="og:description" content="Pédagogue et architecte d’expériences : apprentissage, expériences immersives, outils intelligents, stratégie d’adoption. LSN Consulting par Leila Seghirate-Nigg."/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Architecture pédagogique, IA créative et adoption · LSN Consulting"/>
-  <meta name="twitter:description" content="Solutions digitales pour la formation — Architecture pédagogique, IA créative, stratégie marketing de la formation. LSN Consulting par Leila Seghirate-Nigg."/>
+  <meta name="twitter:title" content="Ce que je conçois · Expériences pédagogiques et immersives · LSN Consulting"/>
+  <meta name="twitter:description" content="Pédagogue et architecte d’expériences : apprentissage, expériences immersives, outils intelligents, stratégie d’adoption. LSN Consulting par Leila Seghirate-Nigg."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet"/>
@@ -272,6 +272,71 @@
       border-radius: 2px;
       margin-bottom: 1.5rem;
     }
+  
+    /* ── Domaines : accordéon des quatre piliers ── */
+    .domaines { --d-ink:#2A2A34; --d-pri:#3333CC; --d-beige:#EDE9E3; --d-ease:cubic-bezier(0.16,1,0.3,1); background:var(--d-beige); color:var(--d-ink); }
+    .dom-rule { display:flex; justify-content:space-between; gap:16px; padding-top:14px; border-top:1px solid rgba(42,42,52,.16); font-family:"Instrument Sans",sans-serif; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:rgba(42,42,52,.6); }
+    .dom-head { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:48px; align-items:end; margin-top:48px; }
+    .dom-head h2 { margin:0; font-size:clamp(2.2rem,4.4vw,3.6rem); line-height:1.02; font-weight:300; letter-spacing:-.02em; color:var(--d-ink); }
+    .dom-head p { margin:0; max-width:46ch; font-size:1.02rem; line-height:1.65; color:rgba(42,42,52,.72); }
+    .dom-atlas { display:flex; width:100%; gap:12px; height:620px; margin-top:64px; }
+    .dom { position:relative; min-width:0; flex:.6 1 0; overflow:hidden; border:1px solid rgba(42,42,52,.1); border-radius:4px; background:#F5F2EC; filter:grayscale(.5); opacity:.86; transition:flex .9s var(--d-ease), filter .7s ease, opacity .7s ease; }
+    .dom.is-on { flex:2.8 1 0; filter:none; opacity:1; }
+    .dom:not(.is-on):hover { filter:none; opacity:1; }
+    .dom-bg { position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; opacity:.85; transform:scale(1.05); transition:opacity .7s ease, transform 1.4s var(--d-ease); }
+    .dom.is-on .dom-bg { opacity:1; transform:none; }
+    .dom::before { content:""; position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(180deg, rgba(237,233,227,.85), rgba(237,233,227,0) 20%, rgba(237,233,227,0) 42%, rgba(237,233,227,.92) 78%); }
+    .dom-trigger { position:absolute; top:0; left:0; right:0; z-index:8; display:flex; align-items:center; gap:14px; min-height:64px; padding:0 18px; border:0; border-bottom:1px solid rgba(42,42,52,.12); background:transparent; color:var(--d-ink); font-family:"Instrument Sans",sans-serif; text-align:left; cursor:pointer; }
+    .dom:not(.is-on) .dom-trigger { bottom:0; align-items:flex-start; padding-top:22px; border-bottom:0; background:linear-gradient(rgba(42,42,52,.12),rgba(42,42,52,.12)) 0 63px / 100% 1px no-repeat; }
+    .dom-trigger:focus-visible { outline:2px solid var(--d-pri); outline-offset:-4px; }
+    .dom .t-num { font-size:11px; line-height:20px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; white-space:nowrap; font-variant-numeric:tabular-nums; }
+    .dom .t-name { flex:1; min-width:0; overflow:hidden; font-size:11px; line-height:20px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; white-space:nowrap; text-overflow:ellipsis; color:rgba(42,42,52,.6); }
+    .dom .t-plus { position:relative; flex:0 0 24px; height:24px; margin-left:auto; border:1px solid rgba(42,42,52,.35); border-radius:50%; background:rgba(245,242,236,.7); }
+    .dom .t-plus::before, .dom .t-plus::after { content:""; position:absolute; left:50%; top:50%; width:8px; height:1px; background:currentColor; transform:translate(-50%,-50%); transition:transform .5s var(--d-ease); }
+    .dom .t-plus::after { transform:translate(-50%,-50%) rotate(90deg); }
+    .dom.is-on .t-plus::after { transform:translate(-50%,-50%) rotate(0deg); }
+    .dom:not(.is-on) .t-name, .dom:not(.is-on) .t-pre { display:none; }
+    .dom-vtitle { position:absolute; left:18px; bottom:28px; z-index:4; margin:0; writing-mode:vertical-rl; transform:rotate(180deg); font-family:"Source Serif 4",serif; font-size:28px; line-height:1; font-weight:300; color:var(--d-ink); white-space:nowrap; transition:opacity .4s ease; }
+    .dom.is-on .dom-vtitle { opacity:0; }
+    .dom-body { position:absolute; left:0; right:0; bottom:0; z-index:6; display:flex; flex-direction:column; gap:12px; padding:0 32px 32px; opacity:0; visibility:hidden; transform:translateY(40px); transition:opacity .4s ease, transform .6s var(--d-ease), visibility 0s linear .4s; }
+    .dom.is-on .dom-body { opacity:1; visibility:visible; transform:none; transition:opacity .5s ease .25s, transform .8s var(--d-ease) .25s, visibility 0s; }
+    .dom-label { margin:0; font-family:"Instrument Sans",sans-serif; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--d-pri); }
+    .dom-body h3 { margin:0; max-width:16ch; font-size:clamp(2.2rem,3.6vw,3.2rem); line-height:1; font-weight:300; letter-spacing:-.02em; color:var(--d-ink); }
+    .dom-drawer { display:flex; flex-direction:column; gap:18px; margin-top:12px; padding:22px 24px; background:rgba(245,242,236,.9); border:1px solid rgba(42,42,52,.08); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px); }
+    .dom-drawer p { margin:0; max-width:62ch; font-size:15px; line-height:24px; color:rgba(42,42,52,.85); }
+    .dom-metrics { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    .dom-metrics > span { display:flex; flex-direction:column; gap:6px; min-width:0; padding-left:14px; border-left:1px solid var(--d-pri); }
+    .dom-metrics small { font-family:"Instrument Sans",sans-serif; font-size:11px; line-height:16px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:rgba(42,42,52,.55); }
+    .dom-metrics strong { font-size:16px; line-height:22px; font-weight:600; color:var(--d-ink); }
+    .dom:not(.dom--portrait) .dom-bg { height:66%; }
+    .dom:not(.dom--portrait)::before { background:linear-gradient(180deg, rgba(246,242,235,.7), rgba(246,242,235,0) 18%, rgba(246,242,235,0) 34%, #F6F2EB 58%); }
+    .dom:not(.dom--portrait) { background:#F6F2EB; }
+    .dom--portrait .dom-bg { filter:grayscale(1) brightness(1.35) contrast(.8); }
+    .dom--portrait::before { background:linear-gradient(90deg, rgba(237,233,227,.92) 0%, rgba(237,233,227,.55) 45%, rgba(237,233,227,0) 70%), linear-gradient(180deg, rgba(237,233,227,.85), rgba(237,233,227,0) 20%, rgba(237,233,227,0) 42%, rgba(237,233,227,.92) 78%); }
+    @media (max-width:1100px) { .dom-atlas { height:680px; } .dom.is-on { flex:2.2 1 0; } }
+    @media (max-width:860px) {
+      .dom-head { grid-template-columns:1fr; gap:20px; margin-top:32px; }
+      .dom-atlas { flex-direction:column; height:auto; gap:8px; margin-top:40px; }
+      .dom, .dom.is-on { flex:none; }
+      .dom { height:72px; transition:height .9s var(--d-ease), filter .7s ease, opacity .7s ease; }
+      .dom.is-on { height:auto; }
+      .dom.is-on .dom-body { position:relative; padding:236px 16px 16px; }
+      .dom-bg { height:260px; bottom:auto; }
+      .dom::before, .dom--portrait::before { background:linear-gradient(180deg, rgba(237,233,227,.85), rgba(237,233,227,0) 64px, rgba(237,233,227,0) 170px, #F5F2EC 260px); }
+      .dom:not(.is-on) .dom-trigger { padding-top:0; align-items:center; background:none; }
+      .dom:not(.is-on) .t-name, .dom:not(.is-on) .t-pre { display:inline; }
+      .dom-vtitle { display:none; }
+      .dom-drawer { padding:16px; }
+      .dom-metrics { grid-template-columns:1fr; }
+    }
+    @media (prefers-reduced-motion:reduce) { .dom, .dom-bg, .dom-body { transition:none !important; } }
+  
+    /* épure : ni surtitres en capitales, ni numéros */
+    .dom-head { margin-top:0; }
+    .dom-accroche { margin:0; font-family:"Source Serif 4",serif; font-style:italic; font-size:1.15rem; line-height:1.4; color:rgba(42,42,52,.75); }
+    .dom-metrics small { font-family:"Source Serif 4",serif; font-style:italic; font-size:14px; letter-spacing:0; text-transform:none; color:rgba(42,42,52,.6); }
+    .dom .dom-trigger { justify-content:flex-end; }
+    .dom:not(.is-on) .dom-trigger { justify-content:center; }
   </style>
 
   <link rel="canonical" href="https://wwwleilaseghiratenigg.com/offre.html"/>
@@ -375,7 +440,7 @@
           Mon <span class="text-[#EDE9E3]">expertise</span>
         </h1>
         <p class="text-white/85 text-xl leading-relaxed mb-6 max-w-lg">
-          Architecture pédagogique · IA créative · Stratégie marketing de la formation
+          Je pars d’un problème humain, souvent invisible, et je construis ce qui le rend compréhensible.
         </p>
         <!-- 3 stats -->
         <div class="flex flex-wrap gap-6 mb-6">
@@ -389,7 +454,7 @@
           </div>
           <div class="border-l border-white/20 pl-6">
             <span class="block text-3xl font-headline font-bold text-white leading-none">3 ans</span>
-            <span class="text-[#EDE9E3] text-xs font-bold tracking-widest uppercase font-label">R&D IA intensive</span>
+            <span class="text-[#EDE9E3] text-xs font-bold tracking-widest uppercase font-label">Recherche IA intensive</span>
           </div>
         </div>
         <div class="flex flex-wrap justify-center gap-3 mt-16">
@@ -404,126 +469,73 @@
       </div>
     </section>
 
-    <!-- ── Pillars headline ── -->
-    <section class="bg-[#2A2A34] reveal">
-      <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 py-3">
-        <div class="flex flex-col sm:flex-row items-stretch divide-y sm:divide-y-0 sm:divide-x divide-white/10">
-          <div class="pillar-tile flex-1 text-center px-10 py-4" data-target="pillar-architecture" role="link" tabindex="0" aria-label="Aller à Architecture pédagogique">
-            <p class="pillar-tile-text font-body font-light text-[#EDE9E3] uppercase tracking-[.2em] text-xs leading-snug transition-colors duration-200">Architecture pédagogique</p>
-          </div>
-          <div class="pillar-tile flex-1 text-center px-10 py-4" data-target="pillar-ia" role="link" tabindex="0" aria-label="Aller à IA créative">
-            <p class="pillar-tile-text font-body font-light text-[#EDE9E3] uppercase tracking-[.2em] text-xs leading-snug transition-colors duration-200">IA créative</p>
-          </div>
-          <div class="pillar-tile flex-1 text-center px-10 py-4" data-target="pillar-marketing" role="link" tabindex="0" aria-label="Aller à Stratégie marketing">
-            <p class="pillar-tile-text font-body font-light text-[#EDE9E3] uppercase tracking-[.2em] text-xs leading-snug transition-colors duration-200">Stratégie marketing de la formation</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── Pillar cards ── -->
-    <section class="px-4 sm:px-8 lg:px-16 py-14">
+    <!-- ── Piliers : accordéon des domaines ── -->
+    <section class="domaines px-4 sm:px-8 lg:px-16 py-16 md:py-20" id="domaines">
       <div class="max-w-[1200px] mx-auto">
-
-        <div class="mb-10 reveal">
-          <span class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label mb-2 block">Ce que je propose</span>
-          <h2 class="font-headline text-3xl text-on-surface">Trois domaines d'intervention</h2>
+        <div class="dom-head reveal">
+          <h2 class="font-headline">Quatre domaines d'intervention.</h2>
+          <p>Toujours le même point de départ : une difficulté humaine, souvent invisible. Ce qui empêche de comprendre, de décider, d'oser. Le format vient après. Ouvrez un domaine pour le parcourir.</p>
         </div>
 
-        <!-- Pillar 1 — Architecture pédagogique -->
-        <div id="pillar-architecture" class="pillar-card pillar-scroll reveal bg-surface-container-lowest rounded-3xl border border-surface-variant p-8 md:p-12 mb-8 relative overflow-hidden">
-          <span class="pillar-number">01</span>
-          <!-- Bannière pilier pleine largeur -->
-          <div class="pillar-banner overflow-hidden mb-8 -mx-8 md:-mx-12 -mt-8 md:-mt-12 rounded-t-3xl" aria-hidden="true">
-            <img src="assets/images/piliers/pilier-architecture-banner.webp" alt="" class="w-full block" />
-          </div>
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div class="pillar-copy-main">
-              <div class="pillar-divider"></div>
-              <span class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label mb-3 block">Pilier 01</span>
-              <h3 class="font-headline text-3xl text-on-surface mb-6 leading-tight">Architecture <span class="text-primary-container">pédagogique</span></h3>
-              <p class="font-headline text-lg text-on-surface leading-snug mb-8">
-                Une expérience immersive sans architecture reste un décor. Je construis la structure d'abord.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">Scénarisation & arcs narratifs</span>
-                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">Parcours à embranchements</span>
-                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">Three.js / WebGL</span>
-                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">Évaluation d'impact</span>
+        <div class="dom-atlas reveal">
+
+          <article class="dom is-on" id="pillar-architecture">
+            <img class="dom-bg" decoding="async" src="assets/images/piliers/dom-apprentissage.webp" alt="" style="object-position:50% 25%">
+            <button type="button" class="dom-trigger" aria-expanded="true" aria-controls="dom-body-01"><i class="t-plus" aria-hidden="true"></i></button>
+            <p class="dom-vtitle" aria-hidden="true">Apprentissage &amp; transmission</p>
+            <div class="dom-body" id="dom-body-01">
+              <h3 class="font-headline">Apprentissage &amp; transmission</h3>
+              <p class="dom-accroche">La structure d'abord.</p>
+              <div class="dom-drawer">
+                <p>Derrière chaque formation qui ne prend pas, une personne décroche sans le dire. Je pars d'elle, puis je pose la structure : objectifs réels, séquençage, nœuds de décision, évaluation. C'est peu spectaculaire, et c'est ce qui tient.</p>
+                <div class="dom-metrics"><span><small>Le point de départ</small><strong>Pourquoi décrochent-ils ?</strong></span><span><small>Sur le terrain</small><strong>MOOC, tutorat, plans d'évaluation</strong></span></div>
               </div>
             </div>
-            <div class="pillar-copy-side space-y-5 text-on-surface-variant leading-relaxed text-[1.02rem]">
-              <p>Diaporama commenté, quiz en fin de module, taux de complétion présenté comme un résultat. Ce format tient depuis quinze ans parce qu'il est simple à produire, pas parce qu'il fait apprendre.</p>
-              <p>Je commence par la structure : objectifs réels, séquençage, nœuds de décision, critères d'évaluation. C'est peu spectaculaire et c'est ce qui tient.</p>
-              <p>Une fois la structure posée, on peut y injecter de la créativité sans que l'ensemble s'effondre : scénarios à embranchements, interfaces 3D navigables en WebGL, séries narratives comme <em>Plafond de Verre</em> et ses cinq modules sur l'invisibilisation des femmes. L'immersif n'est pas le point de départ, c'est ce que la structure rend possible.</p>
-              <p>L'exigence ne change pas selon le format. Un MOOC, un parcours hybride ou une expérience narrative se jugent au même endroit : ce que l'apprenant fait différemment trois mois plus tard.</p>
-            </div>
-          </div>
-        </div>
+          </article>
 
-        <!-- Pillar 2 — IA créative -->
-        <div id="pillar-ia" class="pillar-card pillar-scroll reveal bg-surface-container-lowest rounded-3xl border border-surface-variant p-8 md:p-12 mb-8 relative overflow-hidden">
-          <span class="pillar-number">02</span>
-          <!-- Bannière pilier pleine largeur -->
-          <div class="pillar-banner overflow-hidden mb-8 -mx-8 md:-mx-12 -mt-8 md:-mt-12 rounded-t-3xl" aria-hidden="true">
-            <img src="assets/images/piliers/pilier-ia-banner.webp" alt="" class="w-full block" />
-          </div>
-          <!-- Contenu texte 2-col -->
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div class="pillar-copy-main">
-              <div class="pillar-divider"></div>
-              <span class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label mb-3 block">Pilier 02</span>
-              <h3 class="font-headline text-3xl text-on-surface mb-6 leading-tight">IA <span class="text-primary-container">créative</span></h3>
-              <p class="font-headline text-lg text-on-surface leading-snug mb-8">
-                L’IA n’est pas un raccourci. C’est un amplificateur, et tout dépend de ce qu’on lui donne à amplifier.
-              </p>
-              <div class="flex flex-wrap gap-2 mb-6">
-                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">Prompt engineering</span>
-                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">Assistants pédagogiques IA</span>
-                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">Génération d'images</span>
-                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">Outils IA sur mesure</span>
+          <article class="dom dom--portrait" id="pillar-immersif">
+            <img class="dom-bg" decoding="async" src="assets/images/immersive/pdv-module/ouverture-helene.webp" alt="" style="object-position:62% 40%">
+            <button type="button" class="dom-trigger" aria-expanded="false" aria-controls="dom-body-02"><i class="t-plus" aria-hidden="true"></i></button>
+            <p class="dom-vtitle" aria-hidden="true">Expériences immersives</p>
+            <div class="dom-body" id="dom-body-02">
+              <h3 class="font-headline">Expériences immersives &amp; narratives</h3>
+              <p class="dom-accroche">Rendre visible l'invisible.</p>
+              <div class="dom-drawer">
+                <p>Un biais, un rapport de force, un réflexe qui manque au moment d'agir : ce qui compte le plus ne se voit pas. Je conçois des expériences où on le traverse au lieu de se le faire expliquer. On n'apprend pas seulement avec des contenus, on apprend avec des atmosphères.</p>
+                <div class="dom-metrics"><span><small>Le point de départ</small><strong>Qu'est-ce qu'on ne voit pas ?</strong></span><span><small>Sur le terrain</small><strong><em>Plafond de Verre</em>, <em>Arrêt cardiaque</em></strong></span></div>
               </div>
             </div>
-            <div class="pillar-copy-side space-y-3 text-on-surface-variant leading-[1.55] text-[0.98rem]">
-              <p>La plupart des projets IA en formation produisent du contenu plus vite. Peu produisent de meilleurs apprentissages. L'écart se joue dans ce qu'on demande à la machine, pas dans le choix de l'outil.</p>
-              <p>Je suis l'écosystème LLM depuis <strong>fin 2022</strong>, assez longtemps pour avoir vu passer trois générations d'outils annoncés comme définitifs. Ce qui survit tient à peu de choses : des prompts calibrés par usage, une validation humaine aux points à enjeu, une intégration qui ne casse pas l'existant.</p>
-              <p>Le reste se joue dans les conditions. Une interface, un rythme, une ambiance. On n'apprend pas seulement avec des contenus, on apprend avec des atmosphères.</p>
-              <p>Chaque outil que je livre est documenté et transmissible. Vos équipes doivent pouvoir le reprendre sans moi.</p>
-            </div>
-          </div>
-        </div>
+          </article>
 
-        <!-- Pillar 3 — Marketing de la Formation -->
-        <div id="pillar-marketing" class="pillar-card pillar-scroll reveal bg-surface-container-lowest rounded-3xl border border-surface-variant p-8 md:p-12 mb-8 relative overflow-hidden">
-          <span class="pillar-number">03</span>
-          <!-- Bannière pilier pleine largeur -->
-          <div class="pillar-banner overflow-hidden mb-8 -mx-8 md:-mx-12 -mt-8 md:-mt-12 rounded-t-3xl" aria-hidden="true">
-            <img src="assets/images/piliers/pilier-strategie-banner.webp" alt="" class="w-full block" />
-          </div>
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div class="pillar-copy-main">
-              <div class="pillar-divider"></div>
-              <span class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label mb-3 block">Pilier 03</span>
-              <h3 class="font-headline text-3xl text-on-surface mb-6 leading-tight">Stratégie marketing <span class="text-primary-container">de la formation</span></h3>
-              <p class="font-headline text-lg text-on-surface leading-snug mb-8">
-                Une bonne formation que personne ne trouve n’a formé personne.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">Stratégie de contenu</span>
-                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">Pages de vente</span>
-                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">Positionnement d’offre</span>
-                <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border border-outline/40 text-on-surface-variant bg-surface-container-low">Séquences email</span>
+          <article class="dom" id="pillar-ia">
+            <img class="dom-bg" decoding="async" src="assets/images/piliers/dom-outils.webp" alt="" style="object-position:50% 45%">
+            <button type="button" class="dom-trigger" aria-expanded="false" aria-controls="dom-body-03"><i class="t-plus" aria-hidden="true"></i></button>
+            <p class="dom-vtitle" aria-hidden="true">Outils intelligents</p>
+            <div class="dom-body" id="dom-body-03">
+              <h3 class="font-headline">Applications &amp; outils intelligents</h3>
+              <p class="dom-accroche">L'IA en coulisses, à pleine puissance.</p>
+              <div class="dom-drawer">
+                <p>Je travaille avec l'IA chaque jour depuis fin 2022 : prototypes en quelques jours, assistants calibrés par usage, images, sons, vidéos. Avec un regard critique : la machine accélère, elle ne décide pas. Validation humaine aux points à enjeu, RGPD et AI Act, et des outils que vos équipes reprennent sans moi.</p>
+                <div class="dom-metrics"><span><small>Le point de départ</small><strong>Qui va s'en servir, et pour quoi faire ?</strong></span><span><small>Sur le terrain</small><strong>Simulateur de styles de communication</strong></span></div>
               </div>
             </div>
-            <div class="pillar-copy-side space-y-5 text-on-surface-variant leading-relaxed text-[1.02rem]">
-              <p>Les catalogues internes souffrent rarement d'un problème de qualité pédagogique. Ils souffrent d'un problème d'entrée : personne ne sait pourquoi cette formation, maintenant, pour eux.</p>
-              <p>Quinze ans de marketing stratégique international chez <strong>Pfizer, Renault-Dacia, Hewlett-Packard et MoneyGram</strong> m'ont appris que les mêmes erreurs reviennent, et qu'aucune n'est une question de budget. Positionnement flou, promesse interchangeable, lancement improvisé.</p>
-              <p>J'ai appliqué cette méthode à l'adoption de <strong>LinkedIn Learning chez AXA</strong> : stratégie de contenu, séquences email, reporting d'usage pour piloter au lieu de constater.</p>
-              <p>Le discours n'habille pas l'offre. Il décide si elle existe.</p>
-            </div>
-          </div>
-        </div>
+          </article>
 
+          <article class="dom" id="pillar-marketing">
+            <img class="dom-bg" decoding="async" src="assets/images/piliers/dom-strategie.webp" alt="" style="object-position:50% 45%">
+            <button type="button" class="dom-trigger" aria-expanded="false" aria-controls="dom-body-04"><i class="t-plus" aria-hidden="true"></i></button>
+            <p class="dom-vtitle" aria-hidden="true">Stratégie &amp; adoption</p>
+            <div class="dom-body" id="dom-body-04">
+              <h3 class="font-headline">Stratégie &amp; adoption</h3>
+              <p class="dom-accroche">Le lancement.</p>
+              <div class="dom-drawer">
+                <p>Une bonne formation que personne ne trouve n'a formé personne. Quinze ans de marketing stratégique chez Pfizer, Renault-Dacia, Hewlett-Packard et MoneyGram, puis l'adoption de LinkedIn Learning chez AXA. Le discours n'habille pas l'offre : il décide si elle existe.</p>
+                <div class="dom-metrics"><span><small>Le point de départ</small><strong>Pourquoi cette formation, maintenant, pour eux ?</strong></span><span><small>Sur le terrain</small><strong>AXA, <em>Learning for Life</em></strong></span></div>
+              </div>
+            </div>
+          </article>
+
+        </div>
       </div>
     </section>
 
@@ -695,6 +707,9 @@
 })();
 </script>
 <script src="assets/js/navigation.js" defer></script>
+<script>
+  (function(){var d=[].slice.call(document.querySelectorAll('.dom'));d.forEach(function(r){var t=r.querySelector('.dom-trigger');t.addEventListener('click',function(){d.forEach(function(o){var on=o===r;o.classList.toggle('is-on',on);o.querySelector('.dom-trigger').setAttribute('aria-expanded',on?'true':'false');});});});})();
+  </script>
 </body>
 </html>
 

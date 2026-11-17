@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Leila Seghirate-Nigg, consultante digital learning et IA</title>
+  <title>Leila Seghirate-Nigg · Pédagogue et architecte d’expériences</title>
   <meta name="description" content="À propos de Leila Seghirate-Nigg — pédagogue, conceptrice d'expériences pédagogiques et immersives."/>
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logos/favicon-32.png"/>
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logos/favicon-180.png"/>
   <meta property="og:type" content="website"/>
   <meta property="og:site_name" content="Portfolio · Leila Seghirate-Nigg"/>
-  <meta property="og:title" content="Leila Seghirate-Nigg, consultante digital learning et IA"/>
+  <meta property="og:title" content="Leila Seghirate-Nigg · Pédagogue et architecte d’expériences"/>
   <meta property="og:description" content="À propos de Leila Seghirate-Nigg — pédagogue, conceptrice d'expériences pédagogiques et immersives."/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Leila Seghirate-Nigg, consultante digital learning et IA"/>
+  <meta name="twitter:title" content="Leila Seghirate-Nigg · Pédagogue et architecte d’expériences"/>
   <meta name="twitter:description" content="À propos de Leila Seghirate-Nigg — pédagogue, conceptrice d'expériences pédagogiques et immersives."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -77,6 +77,65 @@
     .editorial-portrait:hover {
       filter: saturate(0.90) brightness(1.04) contrast(0.97);
     }
+  
+    /* ── À propos : domaines et expertise ── */
+    .ap-rule { display:flex; justify-content:space-between; gap:16px; padding-top:14px; border-top:1px solid rgba(42,42,52,.16); font-family:"Instrument Sans",sans-serif; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:rgba(42,42,52,.6); }
+    .ap-h2 { margin:40px 0 40px; font-size:clamp(2rem,3.8vw,3rem); line-height:1.05; font-weight:300; letter-spacing:-.02em; color:#2A2A34; }
+    .ap-domaines { list-style:none; margin:0; padding:0; border-top:1px solid rgba(42,42,52,.12); }
+    .ap-domaines li { display:grid; grid-template-columns:64px minmax(0,1fr) minmax(0,1.3fr); gap:24px; align-items:baseline; padding:26px 0; border-bottom:1px solid rgba(42,42,52,.12); transition:background-color .5s ease, padding .5s cubic-bezier(0.16,1,0.3,1); }
+    .ap-domaines li:hover { background:#EDE9E3; padding-left:16px; padding-right:16px; }
+    .ap-num { font-family:"Instrument Sans",sans-serif; font-size:11px; font-weight:600; letter-spacing:.14em; color:#3333CC; }
+    .ap-domaines h3 { margin:0; font-size:1.45rem; line-height:1.2; font-weight:400; color:#2A2A34; }
+    .ap-domaines p { margin:0; font-size:1rem; line-height:1.6; color:rgba(42,42,52,.72); }
+    .ap-lien { display:inline-flex; gap:10px; margin-top:28px; padding-bottom:4px; border-bottom:1px solid #3333CC; font-family:"Instrument Sans",sans-serif; font-size:13px; font-weight:600; letter-spacing:.06em; color:#3333CC; transition:gap .4s ease; }
+    .ap-lien:hover { gap:16px; }
+    .ap-familles { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0; background:#EDE9E3; border-radius:4px; }
+    .ap-familles > div { padding:32px 28px; border-left:1px solid rgba(42,42,52,.1); }
+    .ap-familles > div:first-child { border-left:0; }
+    .ap-familles h3 { min-height:2.9em; margin:0 0 12px; font-family:"Instrument Sans",sans-serif; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#3333CC; }
+    .ap-familles ul { list-style:none; margin:0; padding:0; }
+    .ap-familles li { padding:9px 0; border-top:1px solid rgba(42,42,52,.08); font-size:.95rem; line-height:1.45; color:#2A2A34; }
+    @media (max-width:1000px) { .ap-familles { grid-template-columns:repeat(2,minmax(0,1fr)); } .ap-familles > div:nth-child(3) { border-left:0; } .ap-familles > div:nth-child(n+3) { border-top:1px solid rgba(42,42,52,.1); } }
+    @media (max-width:640px) {
+      .ap-familles h3 { min-height:0; }
+      .ap-rule span:last-child { display:none; }
+      .ap-domaines li { grid-template-columns:1fr; gap:6px; }
+      .ap-familles { grid-template-columns:1fr; }
+      .ap-familles > div { border-left:0; border-top:1px solid rgba(42,42,52,.1); padding:24px 20px; }
+      .ap-familles > div:first-child { border-top:0; }
+    }
+  
+    .ap-domaines li { grid-template-columns:80px 40px minmax(0,1fr) minmax(0,1.3fr); align-items:center; }
+    .ap-picto { width:80px; height:80px; object-fit:cover; border-radius:50%; background:#EDE9E3; box-shadow:0 10px 24px -14px rgba(42,42,52,.35); transition:transform 1s cubic-bezier(0.16,1,0.3,1); }
+    .ap-domaines li:hover .ap-picto { transform:scale(1.06) rotate(-2deg); }
+    .ap-citation { margin:0 auto 96px; max-width:860px; padding:72px 24px 0; text-align:center; }
+    .ap-citation-trait { display:block; width:1px; height:72px; margin:0 auto 40px; background:linear-gradient(#3333CC, rgba(51,51,204,0)); transform-origin:top; }
+    .ap-citation blockquote { margin:0; }
+    .ap-citation blockquote p { margin:0; font-size:clamp(1.6rem,3.2vw,2.5rem); line-height:1.3; font-weight:300; font-style:italic; letter-spacing:-.01em; color:#2A2A34; }
+    .ap-citation figcaption { display:flex; flex-direction:column; gap:6px; margin-top:32px; }
+    .ap-citation figcaption span { font-family:"Instrument Sans",sans-serif; font-size:11px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:#3333CC; }
+    .ap-citation figcaption em { font-size:.95rem; color:rgba(42,42,52,.6); }
+    .js .ap-citation-trait { transform:scaleY(0); transition:transform 1.4s cubic-bezier(0.16,1,0.3,1); }
+    .js .ap-citation blockquote p span { display:inline-block; opacity:0; transform:translateY(14px); filter:blur(4px); transition:opacity 1.2s ease, transform 1.4s cubic-bezier(0.16,1,0.3,1), filter 1.2s ease; }
+    .js .ap-citation figcaption { opacity:0; transition:opacity 1.2s ease 1.6s; }
+    .ap-citation.is-in .ap-citation-trait { transform:scaleY(1); }
+    .ap-citation.is-in blockquote p span { opacity:1; transform:none; filter:none; }
+    .ap-citation.is-in blockquote p span:nth-child(1) { transition-delay:.5s; }
+    .ap-citation.is-in blockquote p span:nth-child(2) { transition-delay:.8s; }
+    .ap-citation.is-in blockquote p span:nth-child(3) { transition-delay:1.1s; }
+    .ap-citation.is-in blockquote p span:nth-child(4) { transition-delay:1.4s; }
+    .ap-citation.is-in figcaption { opacity:1; }
+    @media (max-width:640px) { .ap-domaines li { grid-template-columns:64px 1fr; } .ap-picto { width:64px; height:64px; grid-row:span 3; } }
+    @media (prefers-reduced-motion:reduce) { .js .ap-citation-trait, .js .ap-citation blockquote p span, .js .ap-citation figcaption { transition:none; transform:none; opacity:1; filter:none; } }
+  
+    /* épure : ni surtitres en capitales, ni numéros */
+    .ap-h2 { margin-top:0; }
+    .ap-domaines li { grid-template-columns:80px minmax(0,1fr) minmax(0,1.3fr); }
+    .ap-familles h3 { min-height:0; margin:0 0 14px; font-family:"Source Serif 4",serif; font-size:1.2rem; font-weight:400; letter-spacing:0; text-transform:none; color:#2A2A34; }
+    .ap-citation figcaption span { font-family:"Source Serif 4",serif; font-size:1.05rem; font-weight:400; letter-spacing:0; text-transform:none; color:#2A2A34; }
+    .ap-citation figcaption span::before { content:"— "; color:#3333CC; }
+    .ap-lien { letter-spacing:0; font-size:14px; font-weight:500; }
+    @media (max-width:640px) { .ap-domaines li { grid-template-columns:64px 1fr; } }
   </style>
 
   <link rel="canonical" href="https://wwwleilaseghiratenigg.com/a-propos.html"/>
@@ -180,7 +239,7 @@
           Leila<br/><span class="text-[#EDE9E3]">Seghirate-Nigg</span>
         </h1>
         <p class="text-white/75 text-xl leading-relaxed mb-8 max-w-lg">
-          Pédagogue et conceptrice d'expériences. Je crée des expériences qui donnent envie de comprendre, en formation comme en culture.
+          Pédagogue et architecte d'expériences. Je crée des expériences qui donnent envie de comprendre, et je rends compréhensible ce qui ne se voit pas, en formation comme en culture.
         </p>
         <div class="flex flex-wrap gap-3">
           <a href="index.html" class="inline-flex items-center gap-2 bg-primary-container text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-primary transition-colors">
@@ -202,14 +261,10 @@
           <h2 class="font-headline text-3xl font-bold text-on-surface mb-6 pb-4 border-b border-surface-variant">Ma démarche</h2>
 
           <div class="space-y-5 text-on-surface-variant leading-relaxed text-[1.05rem]">
-            <p>
-              <span class="block text-on-surface italic font-headline text-xl mb-3">"L'apprentissage n'est pas une obligation mais une opportunité. C'est une chance de grandir, de découvrir de nouvelles choses et de se réinventer."</span>
-              <span class="block text-sm uppercase tracking-[.14em] text-outline font-label mb-4">Wendy Schaetzel LesKo</span>
-              Je me suis construite avec cette idée en fil conducteur.</p>
-            <p class="mt-4">J'ai grandi entre Alger, Nice, Brazzaville, Londres et Bruxelles, une trajectoire cosmopolite qui m'a appris <strong class="font-headline not-italic font-semibold text-xl" style="color:#3333CC;">l'adaptation</strong>, mais surtout le goût des <strong class="font-headline not-italic font-semibold text-xl" style="color:#3333CC;">mondes inconnus</strong> et une <strong class="font-headline not-italic font-semibold text-xl" style="color:#3333CC;">curiosité</strong> tenace pour ce qui reste à comprendre. Après des études en information-communication et marketing, puis une spécialisation en dynamique des organisations et ressources humaines, j'ai passé plus de quinze ans dans le <strong class="text-on-surface font-semibold">marketing stratégique international</strong> (Pfizer, Renault/Dacia, Hewlett-Packard, MoneyGram), puis par amour pour l'apprentissage et la transmission dans le monde de la <strong class="text-on-surface font-semibold">formation pour adultes</strong>.
+            <p>J'ai grandi entre Alger, Nice, Brazzaville, Londres et Bruxelles, une trajectoire cosmopolite qui m'a appris <strong class="font-headline not-italic font-semibold text-xl" style="color:#3333CC;">l'adaptation</strong>, mais surtout le goût des <strong class="font-headline not-italic font-semibold text-xl" style="color:#3333CC;">mondes inconnus</strong> et une <strong class="font-headline not-italic font-semibold text-xl" style="color:#3333CC;">curiosité</strong> tenace pour ce qui reste à comprendre. Après des études en information-communication et marketing, puis une spécialisation en dynamique des organisations et ressources humaines, j'ai passé plus de quinze ans dans le <strong class="text-on-surface font-semibold">marketing stratégique international</strong> (Pfizer, Renault/Dacia, Hewlett-Packard, MoneyGram), puis par amour pour l'apprentissage et la transmission dans le monde de la <strong class="text-on-surface font-semibold">formation pour adultes</strong>.
             </p>
             <p class="font-headline text-xl text-on-surface leading-relaxed mt-6">
-              Aujourd'hui, j'ai déplacé ce même regard — celui qui relie vision, expérience et impact — vers <strong class="not-italic font-semibold">la pédagogie, les récits, et l'IA générative</strong>.
+              Aujourd'hui, j'ai déplacé ce même regard — celui qui relie vision, expérience et impact — vers <strong class="not-italic font-semibold">la pédagogie et les récits</strong>, avec l'IA comme atelier de fabrication, et un regard critique sur ce qu'elle produit.
             </p>
             <p class="mt-4">Je m'intéresse particulièrement à la manière dont nous apprenons, percevons et interprétons le monde. Mon travail consiste à transformer ces sujets en expériences qui rendent les savoirs accessibles, stimulent la curiosité et ouvrent de nouvelles perspectives.</p>
           </div>
@@ -234,114 +289,49 @@
         </div>
       </div>
 
-      <!-- 3 piliers — cartes avec pictos -->
-      <div class="mb-24 pt-14 border-t border-surface-variant">
-        <h2 class="font-headline text-3xl font-bold text-on-surface mb-8">Ce que je crée concrètement</h2>
+      <!-- Ce que je crée : les 4 domaines -->
+      <section class="ap-bloc mb-24" aria-labelledby="ap-cree">
+        <h2 id="ap-cree" class="font-headline ap-h2">Ce que je crée concrètement.</h2>
+        <ol class="ap-domaines">
+          <li><img class="ap-picto" src="assets/images/piliers/picto-01.webp" alt="" width="80" height="80" loading="lazy"><h3 class="font-headline">Apprentissage &amp; transmission</h3><p>Des parcours qui partent de la personne qui décroche, puis posent une structure qui tient.</p></li>
+          <li><img class="ap-picto" src="assets/images/piliers/picto-02.webp" alt="" width="80" height="80" loading="lazy"><h3 class="font-headline">Expériences immersives &amp; narratives</h3><p>Des situations à traverser pour rendre visible ce qui ne se voit pas.</p></li>
+          <li><img class="ap-picto" src="assets/images/piliers/picto-03.webp" alt="" width="80" height="80" loading="lazy"><h3 class="font-headline">Applications &amp; outils intelligents</h3><p>L'IA en coulisses, à pleine puissance, au service d'une construction claire et transmissible.</p></li>
+          <li><img class="ap-picto" src="assets/images/piliers/picto-04.webp" alt="" width="80" height="80" loading="lazy"><h3 class="font-headline">Stratégie &amp; adoption</h3><p>Le discours et le lancement qui font qu'une formation existe aux yeux de ceux à qui elle s'adresse.</p></li>
+        </ol>
+        <a href="offre.html#domaines" class="ap-lien">Parcourir les quatre domaines <span aria-hidden="true">→</span></a>
+      </section>
 
-        <!-- Grande image -->
-        <img src="assets/images/design/icones ce que je cree.webp" alt="IA créative, pédagogie, stratégie" class="w-full max-w-3xl mx-auto block mb-10 object-contain" loading="lazy"/>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-          <!-- Pédagogie -->
-          <div class="bg-[#EDE9E3] rounded-2xl p-6 flex flex-col gap-4">
-            <div>
-              <h4 class="font-headline text-base text-on-surface mb-2 leading-snug">Expériences apprenantes <strong>immersives</strong></h4>
-              <p class="text-sm text-on-surface-variant leading-relaxed">
-                Parcours narratifs, scénarios à embranchements, design émotionnel — former autrement qu'avec des slides pour aider les apprenants à décider, ressentir, comprendre.
-              </p>
-            </div>
+      <!-- Domaines d'expertise -->
+      <section class="ap-bloc mb-28" aria-labelledby="ap-expertise">
+        <h2 id="ap-expertise" class="font-headline ap-h2">Un savoir-faire, quatre familles.</h2>
+        <div class="ap-familles">
+          <div>
+            <h3>Apprentissage &amp; transmission</h3>
+            <ul><li>Ingénierie pédagogique</li><li>Expérience apprenant</li><li>Méthode ADDIE</li><li>Blended learning</li><li>Classes virtuelles</li><li>Coaching d'intervenants</li><li>Évaluation d'impact</li></ul>
           </div>
-
-          <!-- Intelligence artificielle -->
-          <div class="bg-[#EDE9E3] rounded-2xl p-6 flex flex-col gap-4">
-            <div>
-              <h4 class="font-headline text-base text-on-surface mb-2 leading-snug">Architecture pédagogique <strong>augmentée par l'IA</strong></h4>
-              <p class="text-sm text-on-surface-variant leading-relaxed">
-                Du prompt engineering à l'automatisation (agents Notion, pipelines script → visuel → voix → vidéo) — pour les équipes L&amp;D qui veulent gagner en vitesse sans perdre en cohérence.
-              </p>
-            </div>
+          <div>
+            <h3>Expériences immersives</h3>
+            <ul><li>Storyboard &amp; narration</li><li>Scénarios à embranchements</li><li>Design émotionnel</li><li>Univers 3D dans le navigateur</li><li>Articulate Storyline</li><li>Genially</li></ul>
           </div>
-
-          <!-- Stratégie -->
-          <div class="bg-[#EDE9E3] rounded-2xl p-6 flex flex-col gap-4">
-            <div>
-              <h4 class="font-headline text-base text-on-surface mb-2 leading-snug">Stratégie d'<strong>adoption</strong> et de transmission</h4>
-              <p class="text-sm text-on-surface-variant leading-relaxed">
-                Ateliers, acculturation, accompagnement (FR/EN) pour directions Innovation et RH — installer des usages concrets, mesurables et réellement appropriés par les équipes.
-              </p>
-            </div>
+          <div>
+            <h3>Outils intelligents</h3>
+            <ul><li>Production augmentée : image, son, vidéo</li><li>Prototypage rapide</li><li>Assistants pédagogiques</li><li>Automatisation</li><li>Développement web</li><li>SCORM / xAPI</li><li>RGPD &amp; AI Act</li></ul>
           </div>
-
+          <div>
+            <h3>Stratégie &amp; adoption</h3>
+            <ul><li>Positionnement</li><li>Ligne éditoriale</li><li>Brand storytelling</li><li>Campagnes d'activation</li><li>Marketing multi-pays</li><li>Pilotage par la data</li></ul>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Compétences -->
-      <div class="mb-28">
-        <h2 class="font-headline text-3xl text-on-surface mb-10 pb-4 border-t border-surface-variant pt-14">Domaines d'expertise</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <!-- Colonne 1 -->
-          <div>
-            <h3 class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label mb-4">Pédagogie &amp; design learning</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill-pill"><span class="dot"></span>Ingénierie pédagogique</span>
-              <span class="skill-pill"><span class="dot"></span>Expérience apprenant</span>
-              <span class="skill-pill"><span class="dot"></span>Formation digitale</span>
-              <span class="skill-pill"><span class="dot"></span>Scénarisation LMS</span>
-              <span class="skill-pill"><span class="dot"></span>Méthode ADDIE</span>
-              <span class="skill-pill"><span class="dot"></span>Storyboard & narration</span>
-              <span class="skill-pill"><span class="dot"></span>Classes virtuelles</span>
-              <span class="skill-pill"><span class="dot"></span>Blended learning</span>
-              <span class="skill-pill"><span class="dot"></span>Coaching d'intervenants</span>
-            </div>
-          </div>
-          <!-- Colonne 2 -->
-          <div>
-            <h3 class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label mb-4">IA &amp; technologie</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill-pill"><span class="dot"></span>Prompt engineering</span>
-              <span class="skill-pill"><span class="dot"></span>Vibe coding</span>
-              <span class="skill-pill"><span class="dot"></span>Automatisation Python</span>
-              <span class="skill-pill"><span class="dot"></span>Midjourney / génération d'images</span>
-              <span class="skill-pill"><span class="dot"></span>Claude / ChatGPT</span>
-              <span class="skill-pill"><span class="dot"></span>Runway · CapCut · Heygen</span>
-              <span class="skill-pill"><span class="dot"></span>Krea AI · Suno</span>
-              <span class="skill-pill"><span class="dot"></span>SCORM / xAPI</span>
-            </div>
-          </div>
-          <!-- Colonne 3 -->
-          <div>
-            <h3 class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label mb-4">Création &amp; outils</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill-pill"><span class="dot"></span>Canva API</span>
-              <span class="skill-pill"><span class="dot"></span>HTML / CSS / JS</span>
-              <span class="skill-pill"><span class="dot"></span>Three.js / WebGL</span>
-              <span class="skill-pill"><span class="dot"></span>Articulate Storyline</span>
-              <span class="skill-pill"><span class="dot"></span>iSpring</span>
-              <span class="skill-pill"><span class="dot"></span>Genially</span>
-              <span class="skill-pill"><span class="dot"></span>Notion AI</span>
-              <span class="skill-pill"><span class="dot"></span>Microsoft 365 Copilot</span>
-            </div>
-          </div>
-          <!-- Colonne 4 -->
-          <div>
-            <h3 class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label mb-4">Stratégie marketing &amp; marque</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill-pill"><span class="dot"></span>Stratégie de marque</span>
-              <span class="skill-pill"><span class="dot"></span>Identité visuelle</span>
-              <span class="skill-pill"><span class="dot"></span>Ligne éditoriale</span>
-              <span class="skill-pill"><span class="dot"></span>Positionnement</span>
-              <span class="skill-pill"><span class="dot"></span>Brand storytelling</span>
-              <span class="skill-pill"><span class="dot"></span>Marketing de contenu</span>
-              <span class="skill-pill"><span class="dot"></span>Campagnes d'activation</span>
-              <span class="skill-pill"><span class="dot"></span>Marketing multi-pays</span>
-              <span class="skill-pill"><span class="dot"></span>Expérience utilisateur</span>
-              <span class="skill-pill"><span class="dot"></span>Pilotage par la data</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
+      <!-- Citation : apparition finale -->
+      <figure class="ap-citation" aria-label="Citation de Wendy Schaetzel Lesko">
+        <span class="ap-citation-trait" aria-hidden="true"></span>
+        <blockquote class="font-headline">
+          <p><span>L'apprentissage n'est pas une obligation</span> <span>mais une opportunité.</span> <span>Une chance de grandir, de découvrir</span> <span>et de se réinventer.</span></p>
+        </blockquote>
+        <figcaption><span>Wendy Schaetzel Lesko</span><em>une idée qui me sert de fil conducteur</em></figcaption>
+      </figure>
 
       <!-- CTA final -->
       <section id="form-contact" class="relative bg-surface py-8 mb-4">
@@ -415,6 +405,11 @@
     });
   </script>
 <script src="assets/js/navigation.js" defer></script>
+<script>
+  (function(){var q=document.querySelector('.ap-citation');if(!q)return;document.documentElement.classList.add('js');
+  if(!('IntersectionObserver' in window)){q.classList.add('is-in');return;}
+  var o=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){q.classList.add('is-in');o.disconnect();}});},{threshold:.35});o.observe(q);})();
+  </script>
 </body>
 </html>
 

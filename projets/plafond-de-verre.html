@@ -4,16 +4,16 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Plafond de Verre — Leila Seghirate-Nigg</title>
-  <meta name="description" content="Case study Plafond de Verre — Série pédagogique immersive sur l'invisibilisation des femmes en entreprise. 5 modules narratifs construits avec l'IA."/>
+  <meta name="description" content="Plafond de Verre, série pédagogique en six épisodes sur l'invisibilisation des femmes au travail : voir, questionner, déplacer."/>
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/logos/favicon-32.png"/>
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/logos/favicon-180.png"/>
   <meta property="og:type" content="article"/>
   <meta property="og:site_name" content="Portfolio · Leila Seghirate-Nigg"/>
   <meta property="og:title" content="Plafond de Verre — Leila Seghirate-Nigg"/>
-  <meta property="og:description" content="Case study Plafond de Verre — Série pédagogique immersive sur l'invisibilisation des femmes en entreprise. 5 modules narratifs construits avec l'IA."/>
+  <meta property="og:description" content="Plafond de Verre, série pédagogique en six épisodes sur l'invisibilisation des femmes au travail : voir, questionner, déplacer."/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Plafond de Verre — Leila Seghirate-Nigg"/>
-  <meta name="twitter:description" content="Case study Plafond de Verre — Série pédagogique immersive sur l'invisibilisation des femmes en entreprise. 5 modules narratifs construits avec l'IA."/>
+  <meta name="twitter:description" content="Plafond de Verre, série pédagogique en six épisodes sur l'invisibilisation des femmes au travail : voir, questionner, déplacer."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet"/>
@@ -52,6 +52,102 @@
   <meta name="twitter:image" content="https://wwwleilaseghiratenigg.com/assets/images/og-image.png"/>
   <meta property="og:url" content="https://wwwleilaseghiratenigg.com/projets/plafond-de-verre.html"/>
   <link rel="stylesheet" href="../assets/css/navigation.css"/>
+  <style>
+    .pm-grille{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:92px;gap:10px}
+    .pm-tuile{position:relative;margin:0;overflow:hidden;border-radius:14px;background:#1d2622}
+    .pm-tuile img{width:100%;height:100%;object-fit:cover;transform:scale(1.18);transition:transform 1.4s cubic-bezier(.2,.7,.2,1),filter 1.2s}
+    .pm-tuile:hover img{transform:scale(1.04)}
+    .pm-tuile::after{content:"";position:absolute;inset:0;pointer-events:none}
+    .pm-voile-droite::after{background:linear-gradient(90deg,transparent 45%,#EDE9E3 100%)}
+    .pm-voile-gauche::after{background:linear-gradient(270deg,transparent 40%,#EDE9E3 100%)}
+    .pm-voile-bas::after{background:linear-gradient(180deg,transparent 50%,#EDE9E3 100%)}
+    .pm-voile-flou img{filter:blur(3px) grayscale(.4)}
+    .pm-voile-flou:hover img{filter:none}
+    .pm-label{position:absolute;left:14px;bottom:12px;z-index:1;font:600 10px/1 Montserrat,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:rgba(20,26,24,.55);padding:6px 9px;border-radius:999px;backdrop-filter:blur(4px)}
+    .pm-a{grid-column:1/6;grid-row:span 5}
+    .pm-b{grid-column:6/13;grid-row:span 2}
+    .pm-c{grid-column:6/9;grid-row:span 3}
+    .pm-d{grid-column:9/13;grid-row:span 3}
+    .pm-e{grid-column:1/8;grid-row:span 3}
+    .pm-f{grid-column:8/13;grid-row:span 3}
+    .pm-g{grid-column:1/4;grid-row:span 2}
+    .pm-h{grid-column:4/9;grid-row:span 2}
+    .pm-i{grid-column:9/13;grid-row:span 2}
+    .pm-j{grid-column:1/13;grid-row:span 3}
+    .pm-h .pm-label{bottom:auto;top:12px}
+    .pm-pied{margin-top:14px;font-size:.8rem;letter-spacing:.06em;color:#948F8A}
+    @media (max-width:767px){
+      .pm-grille{grid-template-columns:repeat(2,1fr);grid-auto-rows:120px;gap:8px}
+      .pm-tuile{grid-column:span 1 !important;grid-row:span 2 !important}
+      .pm-a,.pm-d,.pm-e,.pm-j{grid-column:1/3 !important}
+    }
+    @media (prefers-reduced-motion:reduce){.pm-tuile img{transition:none}}
+    .pv-ouverture{position:relative;min-height:min(86vh,760px);display:flex;align-items:flex-end;overflow:hidden;background:#0c1412}
+    .pv-ouverture-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 35%;animation:pvZoom 14s ease-out both}
+    .pv-ouverture::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,20,18,.92) 0%,rgba(12,20,18,.55) 45%,rgba(12,20,18,0) 75%),linear-gradient(0deg,rgba(12,20,18,.7),transparent 40%)}
+    .pv-ouverture-texte{position:relative;z-index:1;max-width:1200px;width:100%;margin:0 auto;padding:0 1rem 4.5rem;color:#e9efec}
+    @media(min-width:640px){.pv-ouverture-texte{padding:0 2rem 5rem}}
+    @media(min-width:1024px){.pv-ouverture-texte{padding:0 4rem 6rem}}
+    .pv-surtitre{font:600 11px/1 Montserrat,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#9fd3c1;margin-bottom:1.2rem}
+    .pv-titre{font-size:clamp(2.8rem,8vw,6rem);line-height:.95;color:#fff;margin-bottom:1.4rem}
+    .pv-accroche{font-size:clamp(1.05rem,2vw,1.35rem);line-height:1.5;max-width:30rem;color:#e9efec;margin-bottom:1.4rem}
+    .pv-chiffres{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;font-size:.82rem;color:#a9bab5;margin-bottom:2rem}
+    .pv-chiffres span::before{content:"";display:inline-block;width:18px;height:1px;background:#c8102e;vertical-align:middle;margin-right:.6rem}
+    .pv-boutons{display:flex;flex-wrap:wrap;gap:.8rem}
+    .pv-btn{display:inline-flex;align-items:center;padding:.85rem 1.5rem;border-radius:999px;font-size:.875rem;font-weight:600;border:1px solid rgba(233,239,236,.4);color:inherit;transition:background .3s,border-color .3s}
+    .pv-btn:hover{border-color:currentColor}
+    .pv-btn-plein{background:#c8102e;border-color:#c8102e;color:#fff}
+    .pv-btn-plein:hover{background:#a50d26;border-color:#a50d26}
+    @keyframes pvZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+    .pv-temps{display:grid;gap:2rem;margin-top:1.5rem}
+    @media(min-width:768px){.pv-temps{grid-template-columns:repeat(3,1fr)}}
+    .pv-temps>div{border-top:1px solid #c8102e;padding-top:1.2rem;color:#56665f;line-height:1.6}
+    .pv-temps-mot{font-family:Georgia,serif;font-size:1.9rem;color:#16201d;margin-bottom:.5rem}
+    .pv-histoires{background:linear-gradient(180deg,#0c1412 0%,#1d332d 100%);padding:5rem 0;color:#e9efec}
+    .pv-h-sur{font:600 11px/1 Montserrat,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#c8102e;margin-bottom:.9rem}
+    .pv-h-titre{font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.05;color:#fff;margin-bottom:.9rem}
+    .pv-h-intro{color:#a9bab5;max-width:34rem;line-height:1.6;margin-bottom:2.5rem}
+    .pv-h-grille{display:grid;gap:2rem;align-items:center}
+    @media(min-width:900px){.pv-h-grille{grid-template-columns:5fr 6fr;gap:3rem}}
+    .pv-diapo{position:relative;aspect-ratio:4/5;border-radius:14px;overflow:hidden;background:#0c1412;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+    .pv-slide{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 1.2s ease}
+    .pv-slide.actif{opacity:1}
+    .pv-slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.12)}
+    .pv-slide.actif img{animation:pvKen 7s ease-out forwards}
+    @keyframes pvKen{from{transform:scale(1.12) translateY(1.5%)}to{transform:scale(1.01) translateY(0)}}
+    .pv-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(12,20,18,.92) 0%,rgba(12,20,18,.25) 45%,transparent 70%)}
+    .pv-slide figcaption{position:absolute;left:1.6rem;right:1.6rem;bottom:2.6rem;z-index:1;display:flex;flex-direction:column;gap:.45rem}
+    .pv-slide figcaption>*{opacity:0;transform:translateY(12px);transition:opacity .8s .5s,transform .8s .5s}
+    .pv-slide.actif figcaption>*{opacity:1;transform:none}
+    .pv-slide.actif .pv-slide-titre{transition-delay:.7s}
+    .pv-slide.actif .pv-slide-qui{transition-delay:.9s}
+    .pv-slide-num{font:600 10px/1.4 Montserrat,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#9fd3c1}
+    .pv-slide-titre{font-family:Georgia,serif;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.1;color:#fff}
+    .pv-slide-qui{font-size:.85rem;color:#a9bab5}
+    .pv-barres{position:absolute;left:1.6rem;right:1.6rem;bottom:1.2rem;z-index:2;display:flex;gap:6px}
+    .pv-barres button{flex:1;height:14px;background:none;border:0;padding:6px 0;cursor:pointer}
+    .pv-barres i{display:block;height:2px;background:rgba(233,239,236,.25);position:relative;overflow:hidden}
+    .pv-barres i::after{content:"";position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:left}
+    .pv-barres .fait i::after{transform:scaleX(1)}
+    .pv-barres .actif i::after{animation:pvBarre var(--duree,5200ms) linear forwards}
+    .pv-diapo.pause .pv-barres .actif i::after{animation-play-state:paused}
+    @keyframes pvBarre{to{transform:scaleX(1)}}
+    .pv-ecran{margin:0}
+    .pv-ecran-barre{display:flex;gap:6px;padding:10px 12px;background:#16201d;border-radius:12px 12px 0 0}
+    .pv-ecran-barre span{width:9px;height:9px;border-radius:50%;background:#2f6b5e}
+    .pv-ecran video{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:#0c1412;border-radius:0 0 12px 12px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+    .pv-ecran figcaption{margin-top:.9rem;font-size:.82rem;color:#a9bab5}
+    .pv-choix{display:grid;gap:2rem;margin-top:1.5rem}
+    @media(min-width:768px){.pv-choix{grid-template-columns:repeat(3,1fr)}}
+    .pv-choix h3{font-size:1.3rem;color:#2A2A34;margin-bottom:.5rem}
+    .pv-choix p{color:#5f5a55;line-height:1.6}
+    .pv-pilotage{margin-top:2.5rem;font-style:italic;color:#3333CC;font-size:1.05rem}
+    .pv-orga{display:flex;flex-direction:column;gap:1.5rem;background:#1d332d;color:#e9efec;border-radius:20px;padding:2.5rem}
+    @media(min-width:768px){.pv-orga{flex-direction:row;align-items:center;justify-content:space-between;padding:3rem 3.5rem}}
+    .pv-orga h2{font-size:1.8rem;color:#fff;margin-bottom:.6rem}
+    .pv-orga p{color:#a9bab5;max-width:32rem;line-height:1.6}
+    @media (prefers-reduced-motion:reduce){.pv-ouverture-img,.pv-slide.actif img{animation:none}}
+  </style>
 </head>
 <body class="bg-background text-on-background font-body antialiased min-h-screen flex flex-col">
 
@@ -102,260 +198,163 @@
 
   <main id="main" class="flex-grow">
 
-    <!-- Hero -->
-    <section class="bg-[#EDE9E3] border-b border-surface-variant px-4 sm:px-8 lg:px-16 py-20 md:py-28">
-      <div class="max-w-4xl mx-auto text-center">
-        <span class="inline-block text-xs font-bold tracking-[.18em] uppercase text-primary-container mb-4 font-label">Expériences immersives · HTML/CSS/JS · Pédagogie narrative</span>
-        <h1 class="font-headline text-5xl md:text-7xl text-on-surface mb-6 leading-tight tracking-tight">Plafond de Verre</h1>
-        <p class="text-on-surface-variant text-xl leading-relaxed max-w-2xl mx-auto">Série pédagogique immersive sur l'invisibilisation des femmes compétentes en entreprise — 5 modules narratifs, design cinématographique, construits avec l'IA.</p>
-        <div class="mt-8 flex flex-wrap justify-center gap-3">
-          <a href="https://youtu.be/HZIYZ51QIFE?si=oXN1Sa2kcGKDtn9F" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#2A2A34] text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-primary-container transition-colors">
-            <span class="material-symbols-outlined text-base">play_circle</span>
-            Voir sur YouTube
-          </a>
+    <!-- 1 · Ouverture -->
+    <section class="pv-ouverture">
+      <img src="../assets/images/immersive/pdv-module/ouverture-helene.webp" alt="Hélène Laurent, personnage de l'épisode 6" class="pv-ouverture-img" fetchpriority="high"/>
+      <div class="pv-ouverture-texte">
+        <p class="pv-surtitre">Série pédagogique · Égalité professionnelle</p>
+        <h1 class="font-headline pv-titre">Plafond de Verre</h1>
+        <p class="pv-accroche">Elles ont le talent. L'expérience. La légitimité.<br/>Et pourtant, quelque chose bloque.</p>
+        <p class="pv-chiffres"><span>6 épisodes</span><span>6 mécanismes</span><span>20 minutes chacun</span></p>
+        <div class="pv-boutons">
+          <a href="#pm-titre" class="pv-btn pv-btn-plein">Suivre le parcours d'Hélène</a>
+          <a href="../index.html#form-contact" class="pv-btn">Déployer la série</a>
         </div>
       </div>
     </section>
 
-    <!-- Hero image -->
-    <div class="px-4 sm:px-8 lg:px-16 -mt-8 max-w-[1200px] mx-auto">
-      <div class="aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl border border-surface-variant">
-          <img src="../assets/images/immersive/header image plafond de verre.webp" alt="Plafond de Verre — la galerie des 5 épisodes" class="w-full h-full object-cover" onerror="this.src='../assets/images/immersive/header image plafond de verre.webp'"/>
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 py-16 md:py-20">
+
+      <!-- 2 · Un parcours en exemple -->
+      <section class="mb-20" aria-labelledby="pm-titre">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+          <div>
+            <span class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label">Un parcours en exemple</span>
+            <h2 id="pm-titre" class="font-headline text-3xl md:text-4xl text-on-surface mt-2">Celui d'Hélène</h2>
+          </div>
+          <p class="text-on-surface-variant max-w-md leading-relaxed">Trente ans de métier, huit mois de travail, un nom qu'on ne prononce pas. On y entre comme spectateur, on en sort en ayant choisi.</p>
+        </div>
+        <div class="pm-grille">
+          <figure class="pm-tuile pm-a pm-voile-droite"><img src="../assets/images/immersive/pdv-module/helene-01.webp" alt="" loading="lazy" decoding="async" style="object-position:62% 28%"/><span class="pm-label">Rencontre</span></figure>
+          <figure class="pm-tuile pm-b pm-voile-bas"><img src="../assets/images/immersive/pdv-module/helene-05.webp" alt="" loading="lazy" decoding="async" style="object-position:78% 38%"/><span class="pm-label">À vous</span></figure>
+          <figure class="pm-tuile pm-c"><img src="../assets/images/immersive/pdv-module/helene-03.webp" alt="" loading="lazy" decoding="async" style="object-position:82% 30%"/></figure>
+          <figure class="pm-tuile pm-d pm-voile-gauche"><img src="../assets/images/immersive/pdv-module/helene-26.webp" alt="" loading="lazy" decoding="async" style="object-position:70% 50%"/></figure>
+          <figure class="pm-tuile pm-e pm-voile-bas"><img src="../assets/images/immersive/pdv-module/helene-07.webp" alt="" loading="lazy" decoding="async" style="object-position:34% 46%"/><span class="pm-label">Le comité</span></figure>
+          <figure class="pm-tuile pm-f"><img src="../assets/images/immersive/pdv-module/helene-15.webp" alt="" loading="lazy" decoding="async" style="object-position:62% 42%"/></figure>
+          <figure class="pm-tuile pm-g pm-voile-flou"><img src="../assets/images/immersive/pdv-module/helene-16.webp" alt="" loading="lazy" decoding="async" style="object-position:38% 34%"/></figure>
+          <figure class="pm-tuile pm-h"><img src="../assets/images/immersive/pdv-module/helene-20.webp" alt="" loading="lazy" decoding="async" style="object-position:50% 66%"/><span class="pm-label">Le silence</span></figure>
+          <figure class="pm-tuile pm-i pm-voile-gauche"><img src="../assets/images/immersive/pdv-module/helene-22.webp" alt="" loading="lazy" decoding="async" style="object-position:78% 52%"/><span class="pm-label">Comprendre</span></figure>
+          <figure class="pm-tuile pm-j pm-voile-gauche"><img src="../assets/images/immersive/pdv-module/helene-28.webp" alt="" loading="lazy" decoding="async" style="object-position:84% 22%"/><span class="pm-label">Agir</span></figure>
+        </div>
+        <p class="pm-pied">Épisode 6 · L'invisible compétence · environ 20 minutes · en autonomie ou en atelier</p>
+      </section>
+
+      <!-- 3 · Ce que vit l'apprenant -->
+      <section>
+        <span class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label">Ce que vit l'apprenant</span>
+        <div class="pv-temps">
+          <div><p class="pv-temps-mot">Voir</p><p>Une scène de travail ordinaire, jouée réplique par réplique. Rien n'est expliqué : on regarde.</p></div>
+          <div><p class="pv-temps-mot">Questionner</p><p>Trier les faits des interprétations, prendre la place du personnage, choisir. Chaque choix a un prix.</p></div>
+          <div><p class="pv-temps-mot">Déplacer</p><p>Le mécanisme est nommé, chiffré, puis rejoué autrement. Chacun repart avec un geste possible.</p></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 4 · Les autres histoires (charte de la série) -->
+    <section class="pv-histoires" aria-labelledby="pv-h-titre">
+      <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16">
+        <p class="pv-h-sur">Les autres histoires</p>
+        <h2 id="pv-h-titre" class="font-headline pv-h-titre">Indispensables, et invisibles.</h2>
+        <p class="pv-h-intro">Cinq autres femmes, cinq mécanismes documentés. Les personnages sont fictifs, les situations ne le sont pas.</p>
+        <div class="pv-h-grille">
+          <div class="pv-diapo" aria-roledescription="diaporama" aria-label="Les cinq autres épisodes">
+            <figure class="pv-slide actif" data-i="0">
+              <img src="../assets/images/immersive/pdv-module/portrait-1.webp" alt="Sarah Vidal"  loading="lazy" decoding="async"/>
+              <figcaption>
+                <span class="pv-slide-num">Épisode 1 · L'idée reprise</span>
+                <span class="pv-slide-titre">La réunion stratégique</span>
+                <span class="pv-slide-qui">Sarah Vidal, 34 ans · Ingénieure R&amp;D senior</span>
+              </figcaption>
+            </figure>
+            <figure class="pv-slide" data-i="1">
+              <img src="../assets/images/immersive/pdv-module/portrait-2.webp" alt="Maya Diallo" fetchpriority="low" loading="lazy" decoding="async"/>
+              <figcaption>
+                <span class="pv-slide-num">Épisode 2 · La charge émotionnelle</span>
+                <span class="pv-slide-titre">La charge émotionnelle invisible</span>
+                <span class="pv-slide-qui">Maya Diallo, 32 ans · Responsable projet</span>
+              </figcaption>
+            </figure>
+            <figure class="pv-slide" data-i="2">
+              <img src="../assets/images/immersive/pdv-module/portrait-3.webp" alt="Claire Morel" fetchpriority="low" loading="lazy" decoding="async"/>
+              <figcaption>
+                <span class="pv-slide-num">Épisode 3 · La compétence mise en doute</span>
+                <span class="pv-slide-titre">La voix qui ne porte pas</span>
+                <span class="pv-slide-qui">Claire Morel, 36 ans · Ingénieure</span>
+              </figcaption>
+            </figure>
+            <figure class="pv-slide" data-i="3">
+              <img src="../assets/images/immersive/pdv-module/portrait-4.webp" alt="Nora Lambert" fetchpriority="low" loading="lazy" decoding="async"/>
+              <figcaption>
+                <span class="pv-slide-num">Épisode 4 · La pénalité maternité</span>
+                <span class="pv-slide-titre">La pénalité maternité</span>
+                <span class="pv-slide-qui">Nora Lambert, 38 ans · Directrice de programme</span>
+              </figcaption>
+            </figure>
+            <figure class="pv-slide" data-i="4">
+              <img src="../assets/images/immersive/pdv-module/portrait-5.webp" alt="Selma Rahmani" fetchpriority="low" loading="lazy" decoding="async"/>
+              <figcaption>
+                <span class="pv-slide-num">Épisode 5 · Le leadership sans titre</span>
+                <span class="pv-slide-titre">Le leadership invisibilisé</span>
+                <span class="pv-slide-qui">Selma Rahmani, 37 ans · Responsable innovation</span>
+              </figcaption>
+            </figure>
+            <div class="pv-barres"><button type="button" aria-label="Épisode 1" data-i="0"><i></i></button><button type="button" aria-label="Épisode 2" data-i="1"><i></i></button><button type="button" aria-label="Épisode 3" data-i="2"><i></i></button><button type="button" aria-label="Épisode 4" data-i="3"><i></i></button><button type="button" aria-label="Épisode 5" data-i="4"><i></i></button></div>
+          </div>
+          <figure class="pv-ecran">
+            <div class="pv-ecran-barre"><span></span><span></span><span></span></div>
+            <video src="../assets/images/immersive/pdv-module/serie-defile.mp4" poster="../assets/images/immersive/pdv-module/serie-defile.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Le site de la série Plafond de Verre, qui défile"></video>
+            <figcaption>Le site de la série : les six histoires, un parcours pour les organisations.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 py-16 md:py-20">
+
+      <!-- 5 · Mes choix d'architecte -->
+      <section class="mb-16">
+        <span class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label">Mes choix d'architecte</span>
+        <div class="pv-choix">
+          <div><h3 class="font-headline">Le récit avant le concept</h3><p>On ressent la situation avant de la nommer. Le mot arrive quand l'apprenant l'a déjà vécu.</p></div>
+          <div><h3 class="font-headline">Des personnages vrais</h3><p>Des visages, des âges, des métiers crédibles. L'identification fait tomber le « ça n'existe pas chez nous ».</p></div>
+          <div><h3 class="font-headline">Une esthétique qui donne de la dignité</h3><p>Le soin de la forme dit que le sujet compte. On le prend au sérieux parce qu'il est traité au sérieux.</p></div>
+        </div>
+        <p class="pv-pilotage">Chaque épisode est piloté comme un film : écriture, casting, mise en scène, relecture plan par plan.</p>
+      </section>
+
+      <!-- 6 · Pour les organisations -->
+      <section class="pv-orga">
+        <div>
+          <h2 class="font-headline">Pour les organisations</h2>
+          <p>Un parcours de sensibilisation pour les managers, les RH et les comités de direction : en autonomie, ou en atelier pour ouvrir le dialogue.</p>
+        </div>
+        <a href="../index.html#form-contact" class="pv-btn pv-btn-plein">Déployer la série dans votre organisation</a>
+      </section>
+
+      <div class="pt-10 mt-16 border-t border-surface-variant">
+        <a href="../index.html" class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary-container transition-colors text-sm font-semibold">← Retour au portfolio</a>
       </div>
     </div>
 
-    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 py-20">
-
-      <!-- Meta strip -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16 p-6 bg-surface-container-lowest rounded-2xl border border-surface-variant">
-        <div class="text-center p-2">
-          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Type</div>
-          <div class="font-semibold text-primary-container">Série pédagogique</div>
-        </div>
-        <div class="text-center p-2 border-l border-surface-variant">
-          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Modules</div>
-          <div class="font-semibold text-primary-container">5 épisodes</div>
-        </div>
-        <div class="text-center p-2 border-l border-surface-variant">
-          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Techno</div>
-          <div class="font-semibold text-primary-container">HTML / CSS / JS</div>
-        </div>
-        <div class="text-center p-2 border-l border-surface-variant">
-          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Accès</div>
-          <div class="font-semibold text-primary-container">Libre — YouTube</div>
-        </div>
-      </div>
-
-      <!-- Acte 1 : L'enjeu -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-        <div class="lg:col-span-2 bg-surface-container-lowest p-10 rounded-2xl border border-surface-variant">
-          <h2 class="font-headline text-2xl text-on-surface mb-6 pb-4 border-b border-surface-variant">L'enjeu : faire ressentir avant de faire comprendre</h2>
-          <div class="space-y-4 text-on-surface-variant leading-relaxed">
-            <p>Les formations sur les discriminations de genre en entreprise souffrent d'un problème structurel : elles expliquent sans faire vivre. Les apprenants sortent informés mais non transformés. Le plafond de verre reste un concept abstrait, pas une réalité incarnée.</p>
-            <p>L'hypothèse de départ : si on pouvait d'abord déclencher l'identification émotionnelle — faire que les participant·es <em>voient</em> le mécanisme dans une histoire avant de le nommer —, la compréhension conceptuelle suivrait avec une résistance bien moindre.</p>
-            <p>D'où l'idée d'une série narrative immersive : 5 personnages féminins construits comme des archétypes reconnaissables, 5 situations réelles d'invisibilisation, 5 modules permettant à chaque apprenante de se voir dans l'une d'entre elles.</p>
-          </div>
-        </div>
-        <div class="bg-surface-container-lowest p-10 rounded-2xl border border-surface-variant">
-          <h2 class="font-headline text-2xl text-on-surface mb-6 pb-4 border-b border-surface-variant">Contexte</h2>
-          <ul class="space-y-4">
-            <li class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-primary-container mt-0.5">target</span>
-              <span class="text-sm text-on-surface-variant">Public cible : managers, DRH, responsables égalité</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-primary-container mt-0.5">schedule</span>
-              <span class="text-sm text-on-surface-variant">Format : ~10 min par module + quiz de débriefing</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-primary-container mt-0.5">lock_open</span>
-              <span class="text-sm text-on-surface-variant">Accès libre, pas de barrière d'inscription</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-primary-container mt-0.5">smart_toy</span>
-              <span class="text-sm text-on-surface-variant">Co-construite avec l'IA : scénarios, visuels, code, pédagogie</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Acte 2 : Les 5 épisodes -->
-      <div class="mb-16">
-        <h2 class="font-headline text-3xl text-on-surface mb-3 pb-4 border-t border-surface-variant pt-12">5 personnages, 5 mécanismes</h2>
-        <p class="text-on-surface-variant mb-8 max-w-2xl">Chaque épisode documente un mécanisme spécifique d'invisibilisation. Les personnages sont fictifs mais construits à partir de situations documentées dans la littérature RH et les témoignages terrain.</p>
-
-        <!-- Episodes en dark -->
-        <div class="rounded-2xl overflow-hidden" style="background:linear-gradient(135deg,#0f1a14 0%,#1a2a1e 100%);">
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
-
-            <div class="episode-card p-6">
-              <span class="episode-num">ÉPISODE 1</span>
-              <h3 class="font-headline text-white text-lg mb-1">L'invisible compétence</h3>
-              <p class="text-sm font-semibold mb-3" style="color:#4caf50;">Sarah Laurent</p>
-              <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,.65);">Ingénieure brillante, Sarah voit ses idées reprises et sa promotion lui échapper. Le plafond de verre devient visible — pour elle, et pour nous.</p>
-              <div class="mt-4 text-xs font-bold uppercase tracking-widest" style="color:rgba(255,255,255,.3);">Mécanisme · Appropriation des idées</div>
-            </div>
-
-            <div class="episode-card p-6">
-              <span class="episode-num">ÉPISODE 2</span>
-              <h3 class="font-headline text-white text-lg mb-1">Charge émotionnelle</h3>
-              <p class="text-sm font-semibold mb-3" style="color:#4caf50;">Léa Dubois</p>
-              <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,.65);">Léa porte un travail invisible : soutien émotionnel, médiation, logistique non-formalisée. Des heures que personne ne comptabilise.</p>
-              <div class="mt-4 text-xs font-bold uppercase tracking-widest" style="color:rgba(255,255,255,.3);">Mécanisme · Travail non reconnu</div>
-            </div>
-
-            <div class="episode-card p-6">
-              <span class="episode-num">ÉPISODE 3</span>
-              <h3 class="font-headline text-white text-lg mb-1">L'effet boomerang</h3>
-              <p class="text-sm font-semibold mb-3" style="color:#4caf50;">Nadia K.</p>
-              <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,.65);">Après avoir dénoncé une injustice, Nadia subit des représailles. Jusqu'où aller pour faire bouger les lignes ?</p>
-              <div class="mt-4 text-xs font-bold uppercase tracking-widest" style="color:rgba(255,255,255,.3);">Mécanisme · Rétorsion après prise de parole</div>
-            </div>
-
-            <div class="episode-card p-6">
-              <span class="episode-num">ÉPISODE 4</span>
-              <h3 class="font-headline text-white text-lg mb-1">Maternité et carrière</h3>
-              <p class="text-sm font-semibold mb-3" style="color:#4caf50;">Maya Benali</p>
-              <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,.65);">Après son congé maternité, Maya revient dans un rôle réduit. Son talent n'a pas disparu — mais le système, lui, n'a pas attendu.</p>
-              <div class="mt-4 text-xs font-bold uppercase tracking-widest" style="color:rgba(255,255,255,.3);">Mécanisme · Pénalité maternité</div>
-            </div>
-
-            <div class="episode-card p-6">
-              <span class="episode-num">ÉPISODE 5</span>
-              <h3 class="font-headline text-white text-lg mb-1">L'initiative ignorée</h3>
-              <p class="text-sm font-semibold mb-3" style="color:#4caf50;">Aïcha S.</p>
-              <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,.65);">Créative et innovante, Aïcha propose un processus révolutionnaire. Adopté… mais les crédits vont aux équipes globales.</p>
-              <div class="mt-4 text-xs font-bold uppercase tracking-widest" style="color:rgba(255,255,255,.3);">Mécanisme · Vol de crédit intellectuel</div>
-            </div>
-
-            <div class="episode-card p-6 flex flex-col justify-between" style="background:rgba(255,255,255,.04);">
-              <div>
-                <div class="text-3xl font-headline text-white mb-3">5 · 5 · 5</div>
-                <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,.5);">5 personnages · 5 mécanismes · 5 modules pédagogiques avec quiz de débriefing</p>
-              </div>
-              <a href="https://youtu.be/HZIYZ51QIFE?si=oXN1Sa2kcGKDtn9F" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-2 text-white text-sm font-semibold hover:opacity-80 transition-opacity">
-                <span class="material-symbols-outlined text-base">play_circle</span>
-                Voir la série
-              </a>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- Acte 3 : Direction artistique -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-        <div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant hover:border-primary-container/30 transition-colors">
-          <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center mb-5">
-            <span class="material-symbols-outlined text-primary-container">movie</span>
-          </div>
-          <h3 class="font-headline text-xl text-on-surface mb-3">Direction artistique sombre</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Esthétique inspirée des productions Gaumont/Netflix. Fond sombre, typographie serif cinématographique, palettes vert profond et noir. Chaque personnage illustré avec un portrait en niveaux de gris atmosphérique.</p>
-        </div>
-        <div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant hover:border-primary-container/30 transition-colors">
-          <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center mb-5">
-            <span class="material-symbols-outlined text-primary-container">web</span>
-          </div>
-          <h3 class="font-headline text-xl text-on-surface mb-3">Site multi-pages</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Architecture HTML statique complète : page d'accueil, galerie des épisodes, synopsis, personnages, pour aller plus loin, contact. Navigation cohérente et responsive sur tous les écrans.</p>
-        </div>
-        <div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant hover:border-primary-container/30 transition-colors">
-          <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center mb-5">
-            <span class="material-symbols-outlined text-primary-container">slideshow</span>
-          </div>
-          <h3 class="font-headline text-xl text-on-surface mb-3">Slider narratif</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Carousel d'épisodes avec navigation précédent/suivant, onglets de sélection directe, et indicateurs de position. Conçu pour inviter à l'exploration plutôt qu'à la lecture linéaire.</p>
-        </div>
-      </div>
-
-      <!-- Acte 4 : L'IA comme co-auteure -->
-      <div class="bg-surface-container-lowest p-10 rounded-2xl border border-surface-variant mb-16">
-        <h2 class="font-headline text-2xl text-on-surface mb-6 pb-4 border-b border-surface-variant">L'IA comme co-auteure — pas comme outil</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="space-y-4 text-on-surface-variant leading-relaxed">
-            <p>Ce projet est une démonstration concrète de ce que l'IA rend possible quand on l'engage comme partenaire de création, pas comme assistant de rédaction. Chaque dimension du projet a été co-construite avec des modèles de langage.</p>
-            <p>Les personnages ont été développés à partir de briefs de situations réelles, affinés par itérations successives pour atteindre la densité émotionnelle nécessaire. Les visuels de portraits ont été générés via IA d'image avec des prompts cinématographiques précis. Le code HTML/CSS/JS a été produit par vibe coding, testé et ajusté en dialogue.</p>
-            <p>La pédagogie elle-même — le choix des 5 mécanismes, la structure des quiz, les questions de débriefing — a émergé d'un travail de co-conception avec l'IA nourri des frameworks de sciences de l'apprentissage.</p>
-          </div>
-          <div class="space-y-3">
-            <div class="flex items-start gap-3 p-4 bg-surface-container rounded-xl">
-              <span class="material-symbols-outlined text-primary-container mt-0.5">edit</span>
-              <div>
-                <div class="text-sm font-bold text-on-surface mb-1">Écriture des scénarios</div>
-                <div class="text-xs text-on-surface-variant">5 personnages construits par itérations avec modèles LLM. Profondeur psychologique, situations documentées, arcs narratifs.</div>
-              </div>
-            </div>
-            <div class="flex items-start gap-3 p-4 bg-surface-container rounded-xl">
-              <span class="material-symbols-outlined text-primary-container mt-0.5">image</span>
-              <div>
-                <div class="text-sm font-bold text-on-surface mb-1">Génération des portraits</div>
-                <div class="text-xs text-on-surface-variant">Visuels de personnages générés par IA avec prompts cinématographiques — style noir, atmosphère, expressivité.</div>
-              </div>
-            </div>
-            <div class="flex items-start gap-3 p-4 bg-surface-container rounded-xl">
-              <span class="material-symbols-outlined text-primary-container mt-0.5">code</span>
-              <div>
-                <div class="text-sm font-bold text-on-surface mb-1">Vibe coding du site</div>
-                <div class="text-xs text-on-surface-variant">Architecture HTML/CSS/JS multi-pages produite en dialogue avec l'IA. Design system cohérent, composants réutilisables.</div>
-              </div>
-            </div>
-            <div class="flex items-start gap-3 p-4 bg-surface-container rounded-xl">
-              <span class="material-symbols-outlined text-primary-container mt-0.5">school</span>
-              <div>
-                <div class="text-sm font-bold text-on-surface mb-1">Ingénierie pédagogique</div>
-                <div class="text-xs text-on-surface-variant">Structure des modules, quiz de débriefing, objectifs par épisode — co-conçus avec les frameworks d'apprentissage expérientiel.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- Acte 6 : Impact -->
-      <div class="bg-primary-container/5 rounded-2xl border border-primary-container/20 p-10 mb-16">
-        <h2 class="font-headline text-2xl text-on-surface mb-6">Ce que ce projet démontre</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="space-y-4 text-on-surface-variant leading-relaxed">
-            <p>Plafond de Verre est une preuve de concept en vraie grandeur : il est possible de produire une expérience pédagogique de niveau professionnel — qualité de production, profondeur narrative, cohérence technique — en solo, avec l'IA comme co-auteure.</p>
-            <p>C'est aussi une réponse concrète à la question que posent tous les responsables formation : comment rendre les sujets RH sensibles assez engageants pour que les apprentissages restent ? La réponse est dans la forme autant que dans le fond.</p>
-          </div>
-          <ul class="space-y-3">
-            <li class="flex items-start gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span><span>Site multi-pages HTML statique, déployable en minutes</span></li>
-            <li class="flex items-start gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span><span>5 modules narratifs avec quiz de débriefing intégrés</span></li>
-            <li class="flex items-start gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span><span>Design cinématographique professionnel, responsive</span></li>
-            <li class="flex items-start gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span><span>Construit de A à Z avec l'IA en moins de 2 semaines</span></li>
-            <li class="flex items-start gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary-container text-lg mt-0.5">check_circle</span><span>Accès libre — YouTube + site statique déployable</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- YouTube embed -->
-      <div class="mb-16">
-        <h2 class="font-headline text-2xl text-on-surface mb-6">La série en vidéo</h2>
-        <div class="aspect-video rounded-2xl overflow-hidden shadow-xl border border-surface-variant">
-          <iframe
-            src="https://www.youtube.com/embed/HZIYZ51QIFE"
-            title="Plafond de Verre — Série pédagogique"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            class="w-full h-full"
-          ></iframe>
-        </div>
-      </div>
-
-      <!-- CTA nav -->
-      <div class="flex flex-col sm:flex-row gap-4 items-center justify-between pt-8 border-t border-surface-variant">
-        <a href="../index.html" class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary-container transition-colors text-sm font-semibold">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-          Retour au portfolio
-        </a>
-        <a href="https://youtu.be/HZIYZ51QIFE?si=oXN1Sa2kcGKDtn9F" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#2A2A34] text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-primary-container transition-colors">
-          <span class="material-symbols-outlined text-base">play_circle</span>
-          Voir la série sur YouTube
-        </a>
-      </div>
-    </div>
+    <script>
+    (function () {
+      var d = document.querySelector('.pv-diapo'); if (!d) return;
+      var sl = d.querySelectorAll('.pv-slide'), bt = d.querySelectorAll('.pv-barres button'), i = 0, t = null;
+      var calme = matchMedia('(prefers-reduced-motion: reduce)').matches, DUREE = 5200;
+      function voir(n) {
+        i = (n + sl.length) % sl.length;
+        sl.forEach(function (s, k) { s.classList.toggle('actif', k === i); });
+        bt.forEach(function (b, k) { b.classList.toggle('fait', k < i); b.classList.toggle('actif', k === i); });
+        d.style.setProperty('--duree', DUREE + 'ms');
+      }
+      function lancer() { arreter(); if (!calme) t = setInterval(function () { voir(i + 1); }, DUREE); }
+      function arreter() { clearInterval(t); t = null; }
+      bt.forEach(function (b) { b.addEventListener('click', function () { voir(+b.dataset.i); lancer(); }); });
+      d.addEventListener('mouseenter', function () { arreter(); d.classList.add('pause'); });
+      d.addEventListener('mouseleave', function () { d.classList.remove('pause'); voir(i); lancer(); });
+      voir(0); lancer();
+    })();
+    </script>
   </main>
 
   <footer class="bg-surface-container border-t border-surface-variant">

@@ -1,0 +1,159 @@
+/* Navigation LSN — briques de l'Atlas des mouvements habillées LSN :
+   03-04 en-tête qui se resserre · 05-05 pictogramme menu · 06-03 tiroir latéral · 07-08 progression de lecture.
+   Tout ne s'applique que lorsque navigation.js a posé .nav-pro sur le menu. */
+
+:root {
+  --lsn-creme: rgba(237, 233, 227, 0.95);
+  --lsn-encre: #2A2A34;
+  --lsn-bleu: #3333CC;
+  --lsn-filet: #e3e2e2;
+  --lsn-sortie: cubic-bezier(0.16, 1, 0.3, 1);
+  --lsn-entree: cubic-bezier(0.4, 0, 1, 1);
+}
+
+#main-nav a { white-space: nowrap; }
+
+/* ── 03-04 · En-tête qui se resserre ─────────────────────────────────
+   Le menu garde 64 px dans le flux : seule sa bande visible se resserre à 52 px.
+   Le contenu ne saute donc jamais, il passe sous la bande. */
+#main-nav.nav-pro {
+  height: 64px;
+  background: transparent !important;
+  border-bottom: 0 !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  pointer-events: none;
+}
+#main-nav.nav-pro::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 64px;
+  background: var(--lsn-creme);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--lsn-filet);
+  transition: height 320ms var(--lsn-sortie);
+}
+#main-nav.nav-pro > div { position: relative; pointer-events: auto; }
+#main-nav.nav-pro > div > div:first-child { transition: height 320ms var(--lsn-sortie); }
+#main-nav.nav-pro > div > div:first-child > a:first-child img {
+  transform-origin: left center;
+  transition: transform 320ms var(--lsn-sortie);
+}
+#main-nav.nav-pro.is-small::before { height: 52px; }
+#main-nav.nav-pro.is-small > div > div:first-child { height: 52px; }
+#main-nav.nav-pro.is-small > div > div:first-child > a:first-child img { transform: scale(0.75); }
+#main-nav.nav-pro #mobile-menu { display: none !important; }
+
+/* ── 06-03 · Tiroir latéral ─────────────────────────────────────────── */
+.lsn-tiroir {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: transparent;
+}
+.lsn-tiroir::backdrop { background: transparent; }
+.lsn-tiroir__voile {
+  position: absolute;
+  inset: 0;
+  background: var(--lsn-encre);
+  opacity: 0;
+  transition: opacity 220ms var(--lsn-entree);
+}
+.lsn-tiroir__panneau {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  width: min(320px, 100%);
+  padding: 8px 24px 32px;
+  overflow-y: auto;
+  background: #EDE9E3;
+  transform: translateX(100%);
+  transition: transform 220ms var(--lsn-entree);
+}
+.lsn-tiroir.is-open .lsn-tiroir__voile { opacity: 0.4; transition: opacity 560ms var(--lsn-sortie); }
+.lsn-tiroir.is-open .lsn-tiroir__panneau { transform: translateX(0); transition: transform 560ms var(--lsn-sortie); }
+
+.lsn-tiroir__haut {
+  display: flex;
+  justify-content: flex-end;
+  height: 48px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.lsn-tiroir__liens { display: flex; flex-direction: column; gap: 4px; }
+.lsn-tiroir__liens a {
+  display: block;
+  padding: 12px 12px;
+  border-radius: 8px;
+  color: var(--lsn-encre);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+.lsn-tiroir__liens a[aria-current="page"] { color: var(--lsn-bleu); background: rgba(51, 51, 204, 0.07); }
+.lsn-tiroir__liens a.lsn-tiroir__contact {
+  margin-top: 16px;
+  text-align: center;
+  border-radius: 999px;
+  background: var(--lsn-bleu);
+  color: #fff;
+  font-weight: 600;
+}
+@media (hover: hover) {
+  .lsn-tiroir__liens a:hover { color: var(--lsn-bleu); background: rgba(51, 51, 204, 0.07); }
+  .lsn-tiroir__liens a.lsn-tiroir__contact:hover { color: #fff; background: #2626a8; }
+}
+
+/* ── 05-05 · Pictogramme menu (bouton du menu et bouton de fermeture) ── */
+.lsn-picto {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--lsn-encre);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.lsn-picto svg path { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.lsn-picto:focus-visible,
+.lsn-tiroir__liens a:focus-visible { outline: 3px solid var(--lsn-bleu); outline-offset: 2px; }
+
+/* ── 07-08 · Progression de lecture (articles du blog) ──────────────── */
+.lsn-lecture {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 60;
+  background: var(--lsn-bleu);
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #main-nav.nav-pro::before,
+  #main-nav.nav-pro > div > div:first-child,
+  #main-nav.nav-pro > div > div:first-child > a:first-child img,
+  .lsn-tiroir__voile, .lsn-tiroir__panneau,
+  .lsn-tiroir.is-open .lsn-tiroir__voile, .lsn-tiroir.is-open .lsn-tiroir__panneau { transition: none; }
+}
+
+/* Le bouton menu reste caché sur grand écran, comme l'ancien. */
+@media (min-width: 1024px) { #main-nav .lsn-picto { display: none; } }

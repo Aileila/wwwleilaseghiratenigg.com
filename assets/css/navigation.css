@@ -157,3 +157,45 @@
 
 /* Le bouton menu reste caché sur grand écran, comme l'ancien. */
 @media (min-width: 1024px) { #main-nav .lsn-picto { display: none; } }
+
+/* ── En-têtes clairs : série « Métamorphose » (papillon bleu charte, voile crème, texte encre) ── */
+.hero-clair > img { object-position: right center; }
+.hero-clair > .hero-voile {
+  background: linear-gradient(to right, rgba(237,233,227,.96) 0%, rgba(237,233,227,.86) 38%, rgba(237,233,227,.25) 64%, transparent 100%) !important;
+}
+@media (max-width: 767px) {
+  .hero-clair > .hero-voile { background: linear-gradient(to bottom, rgba(237,233,227,.9), rgba(237,233,227,.72)) !important; }
+}
+.hero-clair h1, .hero-clair h1 span,
+.hero-clair .text-white:not(a), .hero-clair .text-\[\#EDE9E3\]:not(a) { color: var(--lsn-encre) !important; }
+.hero-clair p.text-white\/85, .hero-clair p.text-white\/75 { color: rgba(42,42,52,.85) !important; }
+.hero-clair span.uppercase.text-white\/70,
+.hero-clair span.uppercase.text-\[\#EDE9E3\] { color: var(--lsn-bleu) !important; }
+.hero-clair .border-white\/20 { border-color: rgba(42,42,52,.15) !important; }
+.hero-clair a.border-white\/40 { color: var(--lsn-encre) !important; border-color: rgba(42,42,52,.35) !important; }
+.hero-clair [style*="rgba(42,42,52,0.82)"] { background: rgba(255,255,255,.72) !important; border-color: rgba(42,42,52,.15) !important; }
+.hero-clair [style*="rgba(42,42,52,0.82)"] span { color: var(--lsn-encre) !important; }
+
+/* ── 11-04 · Niveaux d'élévation : les visuels reposent au niveau 2 et montent d'un niveau
+   (ombres grises, 200 ms, sans déplacement). Cartes projets, piliers, articles. ── */
+:root { --lsn-ombre: rgba(42, 42, 52, 0.24); }
+.project-card, .pillar-card { transform: none !important; }
+.project-card > div:first-child,
+.post-card .aspect-\[16\/9\],
+.pillar-card {
+  box-shadow: 0 4px 8px 0 var(--lsn-ombre);
+  transition: box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.project-card:focus-within > div:first-child,
+.post-card:focus-within .aspect-\[16\/9\],
+.pillar-card:focus-within { box-shadow: 0 12px 24px 0 var(--lsn-ombre); }
+@media (hover: hover) {
+  .project-card:hover > div:first-child,
+  .post-card:hover .aspect-\[16\/9\],
+  .pillar-card:hover { box-shadow: 0 12px 24px 0 var(--lsn-ombre) !important; }
+}
+.project-card:hover, .pillar-card:hover { box-shadow: none; }
+.pillar-card:hover { box-shadow: 0 12px 24px 0 var(--lsn-ombre) !important; }
+@media (prefers-reduced-motion: reduce) {
+  .project-card > div:first-child, .post-card .aspect-\[16\/9\], .pillar-card { transition: none !important; }
+}

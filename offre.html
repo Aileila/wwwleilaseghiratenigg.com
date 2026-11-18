@@ -321,8 +321,11 @@
       .dom, .dom.is-on { flex:none; }
       .dom { height:72px; transition:height .9s var(--d-ease), filter .7s ease, opacity .7s ease; }
       .dom.is-on { height:auto; }
-      .dom.is-on .dom-body { position:relative; padding:236px 16px 16px; }
-      .dom-bg { height:260px; bottom:auto; }
+      .dom.is-on .dom-body { position:relative; padding:280px 16px 16px; }
+      .dom-body h3 { font-size:2rem; max-width:none; }
+      .dom-bg, .dom:not(.dom--portrait) .dom-bg { height:260px; bottom:auto; }
+      .dom { scroll-margin-top:76px; }
+      .dom.is-on .dom-trigger { left:auto; width:64px; border-bottom:0; background:none; }
       .dom::before, .dom--portrait::before { background:linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,0) 64px, rgba(255,255,255,0) 170px, #fff 260px); }
       .dom:not(.is-on) .dom-trigger { padding-top:0; align-items:center; background:none; }
       .dom:not(.is-on) .t-name, .dom:not(.is-on) .t-pre { display:inline; }
@@ -530,7 +533,7 @@
               <p class="dom-accroche">Le lancement.</p>
               <div class="dom-drawer">
                 <p>Une bonne formation que personne ne trouve n'a formé personne. Quinze ans de marketing stratégique chez Pfizer, Renault-Dacia, Hewlett-Packard et MoneyGram, puis l'adoption de LinkedIn Learning chez AXA. Le discours n'habille pas l'offre : il décide si elle existe.</p>
-                <div class="dom-metrics"><span><small>Le point de départ</small><strong>Pourquoi cette formation, maintenant, pour eux ?</strong></span><span><small>Sur le terrain</small><strong>AXA, <em>Learning for Life</em></strong></span></div>
+                <div class="dom-metrics"><span><small>Le point de départ</small><strong>Pourquoi cette formation, maintenant, pour eux ?</strong></span><span><small>Sur le terrain</small><strong>AXA, Learning for Life</strong></span></div>
               </div>
             </div>
           </article>
@@ -708,7 +711,7 @@
 </script>
 <script src="assets/js/navigation.js" defer></script>
 <script>
-  (function(){var d=[].slice.call(document.querySelectorAll('.dom'));d.forEach(function(r){var t=r.querySelector('.dom-trigger');t.addEventListener('click',function(){d.forEach(function(o){var on=o===r;o.classList.toggle('is-on',on);o.querySelector('.dom-trigger').setAttribute('aria-expanded',on?'true':'false');});});});})();
+  (function(){var d=[].slice.call(document.querySelectorAll('.dom'));d.forEach(function(r){var t=r.querySelector('.dom-trigger');t.addEventListener('click',function(){d.forEach(function(o){var on=o===r;o.classList.toggle('is-on',on);o.querySelector('.dom-trigger').setAttribute('aria-expanded',on?'true':'false');});if(window.matchMedia('(max-width:860px)').matches){setTimeout(function(){r.scrollIntoView({behavior:'smooth',block:'start'});},120);}});});})();
   </script>
 </body>
 </html>

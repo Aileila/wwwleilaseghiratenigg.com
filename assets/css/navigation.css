@@ -3,7 +3,7 @@
    Tout ne s'applique que lorsque navigation.js a posé .nav-pro sur le menu. */
 
 :root {
-  --lsn-creme: rgba(237, 233, 227, 0.95);
+  --lsn-creme: rgba(250, 249, 247, 0.95);
   --lsn-encre: #2A2A34;
   --lsn-bleu: #3333CC;
   --lsn-filet: #e3e2e2;
@@ -218,3 +218,10 @@
 }
 .btn-p:active, .btn-s:active { transform: translateY(1px) scale(.97,.94); transition-duration: 90ms; }
 @media (prefers-reduced-motion: reduce) { .btn-p, .btn-s { transition: none; } .btn-p:hover, .btn-s:hover, .btn-p:active, .btn-s:active { transform: none; } }
+
+/* Téléphone : le menu ne bouge pas au défilement (logo et nom restent en place) */
+@media (max-width: 767px) {
+  #main-nav.nav-pro.is-small::before { height: 64px; }
+  #main-nav.nav-pro.is-small > div > div:first-child { height: 64px; }
+  #main-nav.nav-pro.is-small > div > div:first-child > a:first-child img { transform: none; }
+}

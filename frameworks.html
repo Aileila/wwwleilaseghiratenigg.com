@@ -485,6 +485,11 @@ function setActiveFramework(id) {
       fwExplorerImage.style.removeProperty('--fw-scale');
       fwExplorerImage.style.removeProperty('--fw-pos-x');
       fwExplorerImage.style.removeProperty('--fw-pos-y');
+      // Livre : seulement l'éventail des pages, sans le dos.
+      if (id === 'apprentissage') {
+        fwExplorerImage.style.setProperty('--fw-scale', '1.12');
+        fwExplorerImage.style.setProperty('--fw-pos-y', '8%');
+      }
     }
 
     fwExplorerImage.classList.add('is-changing');

@@ -40,3 +40,8 @@ env/
 # Logs
 *.log
 npm-debug.log*
+
+# Suivi local (jamais publie)
+SUIVI-AVANT-APRES.html
+assets/images/demarche/_source/
+BOUTONS.html

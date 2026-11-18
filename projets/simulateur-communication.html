@@ -78,7 +78,7 @@
     .kpi-card-demo.trust::before    { background: #34D399; }
     .kpi-card-demo.risk::before     { background: #FB7185; }
     .kpi-val { font-size: 1.5rem; font-weight: 700; color: var(--brand-ink); line-height: 1; font-family: 'Courier New', monospace; }
-    .kpi-lbl { font-size: 0.65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--brand-taupe); margin-bottom: 6px; }
+    .kpi-lbl { font-size: 0.65rem; font-weight: 700; letter-spacing: .01em; color: var(--brand-taupe); margin-bottom: 6px; }
     .kpi-bar { height: 3px; background: #e3e2e2; border-radius: 3px; margin-top: 8px; overflow: hidden; }
     .kpi-bar-fill { height: 100%; border-radius: 3px; }
     .kpi-card-demo.clarity  .kpi-bar-fill { background: #6EE7FF; width: 75%; }
@@ -145,7 +145,7 @@
     <!-- Hero -->
     <section class="bg-[#EDE9E3] border-b border-surface-variant px-4 sm:px-8 lg:px-16 py-20 md:py-28">
       <div class="max-w-4xl mx-auto text-center">
-        <span class="inline-block text-xs font-bold tracking-[.18em] uppercase text-primary-container mb-4 font-label">Simulation pédagogique · Pédagogie digitale</span>
+        <span class="inline-block text-xs font-bold text-primary-container mb-4 font-label">Simulation pédagogique · Pédagogie digitale</span>
         <h1 class="font-headline text-4xl sm:text-5xl md:text-6xl text-on-surface mb-6 leading-tight">Simulateur de styles<br/>de communication</h1>
         <p class="text-on-surface-variant text-xl leading-relaxed max-w-2xl mx-auto">Démo interactive à embranchements pour entraîner les managers à adapter leur communication selon le profil analytique de leur interlocuteur — conçue à partir de contenus de formation classiques.</p>
       </div>
@@ -189,19 +189,19 @@
       <!-- Meta strip -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16 p-6 bg-surface-container-lowest rounded-2xl border border-surface-variant">
         <div class="text-center p-2">
-          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Type</div>
+          <div class="text-xs font-bold text-outline mb-2 font-label">Type</div>
           <div class="font-semibold text-primary-container">Simulateur interactif</div>
         </div>
         <div class="text-center p-2 border-l border-surface-variant">
-          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Format</div>
+          <div class="text-xs font-bold text-outline mb-2 font-label">Format</div>
           <div class="font-semibold text-primary-container">HTML autonome · 0 back-end</div>
         </div>
         <div class="text-center p-2 border-l border-surface-variant">
-          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Langues</div>
+          <div class="text-xs font-bold text-outline mb-2 font-label">Langues</div>
           <div class="font-semibold text-primary-container">Bilingue FR / EN</div>
         </div>
         <div class="text-center p-2 border-l border-surface-variant">
-          <div class="text-xs font-bold tracking-[.15em] uppercase text-outline mb-2 font-label">Profil ciblé</div>
+          <div class="text-xs font-bold text-outline mb-2 font-label">Profil ciblé</div>
           <div class="font-semibold text-primary-container">High Analytical</div>
         </div>
       </div>
@@ -211,11 +211,11 @@
         <div class="lg:col-span-2 bg-surface-container-lowest p-10 rounded-2xl border border-surface-variant">
           <h2 class="font-headline text-2xl text-on-surface mb-6 pb-4 border-b border-surface-variant">La problématique</h2>
           <div class="space-y-4 text-on-surface-variant leading-relaxed">
-            <p class="text-xs font-bold tracking-[.15em] uppercase text-outline font-label">FR</p>
+            <p class="text-xs font-bold text-outline font-label">FR</p>
             <p>Ce document présente une démo créée suite à un échange avec un ami, directeur e-learning. En parlant d'IA et de pédagogies plus engageantes, je lui ai proposé de transformer des contenus "classiques" en scénarios à embranchements, afin de concevoir des expériences d'apprentissage décisionnel — des dispositifs qui font vivre une situation plutôt que l'expliquer.</p>
             <p>À partir d'un cas d'usage lié aux styles de communication (profil "High Analytical"), j'ai construit une simulation interactive en HTML autonome : 3 chemins de décision, des indicateurs qui évoluent (clarté, accuracy, confiance, risque) et des fins émotionnelles qui ancrent l'apprentissage.</p>
             <p>Cette démo est aussi une base extensible : elle peut évoluer vers une suite Communication Styles intégrant les 4 profils (Analytical, Driver, Expressif, Amiable), avec un simulateur multi-profils (sélecteur de profil), un kit de facilitation complet, et un dispositif de formation des formateurs internes.</p>
-            <p class="text-xs font-bold tracking-[.15em] uppercase text-outline font-label pt-3">EN</p>
+            <p class="text-xs font-bold text-outline font-label pt-3">EN</p>
             <p>This document presents a demo created after a conversation with a friend, an e-learning director. While discussing AI and more engaging learning approaches, I suggested transforming "classic" content into branching scenarios to design decision-based learning experiences — formats that let learners live a situation rather than only read about it.</p>
             <p>Using a communication-styles use case ("High Analytical" profile), I built a standalone HTML interactive simulation with 3 decision paths, evolving indicators (clarity, accuracy, trust, risk), and emotional endings that reinforce learning.</p>
             <p>This demo is also an extensible foundation: it can evolve into a full Communication Styles suite covering the 4 profiles (Analytical, Driver, Expressive, Amiable), with a multi-profile simulator (profile selector), a complete facilitation kit, and a train-the-trainer program for internal facilitators.</p>
@@ -224,11 +224,11 @@
         <div class="bg-surface-container-lowest p-10 rounded-2xl border border-surface-variant">
           <h2 class="font-headline text-2xl text-on-surface mb-6 pb-4 border-b border-surface-variant">Stack technique</h2>
           <ul class="space-y-4">
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container">code</span><span class="text-sm font-bold uppercase tracking-widest text-on-surface font-label">HTML / CSS / JS</span></li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container">account_tree</span><span class="text-sm font-bold uppercase tracking-widest text-on-surface font-label">Moteur à graphe de nœuds</span></li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container">analytics</span><span class="text-sm font-bold uppercase tracking-widest text-on-surface font-label">KPIs dynamiques temps réel</span></li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container">translate</span><span class="text-sm font-bold uppercase tracking-widest text-on-surface font-label">Toggle bilingue FR / EN</span></li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container">download</span><span class="text-sm font-bold uppercase tracking-widest text-on-surface font-label">Export de session</span></li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container">code</span><span class="text-sm font-bold text-on-surface font-label">HTML / CSS / JS</span></li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container">account_tree</span><span class="text-sm font-bold text-on-surface font-label">Moteur à graphe de nœuds</span></li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container">analytics</span><span class="text-sm font-bold text-on-surface font-label">KPIs dynamiques temps réel</span></li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container">translate</span><span class="text-sm font-bold text-on-surface font-label">Toggle bilingue FR / EN</span></li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container">download</span><span class="text-sm font-bold text-on-surface font-label">Export de session</span></li>
           </ul>
         </div>
       </div>
@@ -294,7 +294,7 @@
           </div>
           <!-- KPI demo widget -->
           <div class="bg-surface-container-lowest rounded-2xl border border-surface-variant p-8">
-            <p class="text-xs font-bold tracking-widest uppercase text-outline mb-4 font-label">KPIs — état en cours de simulation</p>
+            <p class="text-xs font-bold text-outline mb-4 font-label">KPIs — état en cours de simulation</p>
             <div class="kpi-demo mb-4">
               <div class="kpi-card-demo clarity">
                 <div class="kpi-lbl">Clarté</div>

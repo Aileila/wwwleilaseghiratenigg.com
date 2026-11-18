@@ -63,7 +63,7 @@
     .pm-voile-bas::after{background:linear-gradient(180deg,transparent 50%,#EDE9E3 100%)}
     .pm-voile-flou img{filter:blur(3px) grayscale(.4)}
     .pm-voile-flou:hover img{filter:none}
-    .pm-label{position:absolute;left:14px;bottom:12px;z-index:1;font:600 10px/1 Montserrat,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:rgba(20,26,24,.55);padding:6px 9px;border-radius:999px;backdrop-filter:blur(4px)}
+    .pm-label{position:absolute;left:14px;bottom:12px;z-index:1;font:600 10px/1 Montserrat,sans-serif;letter-spacing: .01em;color:#fff;background:rgba(20,26,24,.55);padding:6px 9px;border-radius:999px;backdrop-filter:blur(4px)}
     .pm-a{grid-column:1/6;grid-row:span 5}
     .pm-b{grid-column:6/13;grid-row:span 2}
     .pm-c{grid-column:6/9;grid-row:span 3}
@@ -88,7 +88,7 @@
     .pv-ouverture-texte{position:relative;z-index:1;max-width:1200px;width:100%;margin:0 auto;padding:0 1rem 4.5rem;color:#e9efec}
     @media(min-width:640px){.pv-ouverture-texte{padding:0 2rem 5rem}}
     @media(min-width:1024px){.pv-ouverture-texte{padding:0 4rem 6rem}}
-    .pv-surtitre{font:600 11px/1 Montserrat,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#9fd3c1;margin-bottom:1.2rem}
+    .pv-surtitre{font:600 11px/1 Montserrat,sans-serif;letter-spacing: .01em;color:#9fd3c1;margin-bottom:1.2rem}
     .pv-titre{font-size:clamp(2.8rem,8vw,6rem);line-height:.95;color:#fff;margin-bottom:1.4rem}
     .pv-accroche{font-size:clamp(1.05rem,2vw,1.35rem);line-height:1.5;max-width:30rem;color:#e9efec;margin-bottom:1.4rem}
     .pv-chiffres{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;font-size:.82rem;color:#a9bab5;margin-bottom:2rem}
@@ -104,7 +104,7 @@
     .pv-temps>div{border-top:1px solid #c8102e;padding-top:1.2rem;color:#56665f;line-height:1.6}
     .pv-temps-mot{font-family:Georgia,serif;font-size:1.9rem;color:#16201d;margin-bottom:.5rem}
     .pv-histoires{background:linear-gradient(180deg,#0c1412 0%,#1d332d 100%);padding:5rem 0;color:#e9efec}
-    .pv-h-sur{font:600 11px/1 Montserrat,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#c8102e;margin-bottom:.9rem}
+    .pv-h-sur{font:600 11px/1 Montserrat,sans-serif;letter-spacing: .01em;color:#c8102e;margin-bottom:.9rem}
     .pv-h-titre{font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.05;color:#fff;margin-bottom:.9rem}
     .pv-h-intro{color:#a9bab5;max-width:34rem;line-height:1.6;margin-bottom:2.5rem}
     .pv-h-grille{display:grid;gap:2rem;align-items:center}
@@ -121,7 +121,7 @@
     .pv-slide.actif figcaption>*{opacity:1;transform:none}
     .pv-slide.actif .pv-slide-titre{transition-delay:.7s}
     .pv-slide.actif .pv-slide-qui{transition-delay:.9s}
-    .pv-slide-num{font:600 10px/1.4 Montserrat,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#9fd3c1}
+    .pv-slide-num{font:600 10px/1.4 Montserrat,sans-serif;letter-spacing: .01em;color:#9fd3c1}
     .pv-slide-titre{font-family:Georgia,serif;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.1;color:#fff}
     .pv-slide-qui{font-size:.85rem;color:#a9bab5}
     .pv-barres{position:absolute;left:1.6rem;right:1.6rem;bottom:1.2rem;z-index:2;display:flex;gap:6px}
@@ -224,7 +224,7 @@
       <section class="mb-20" aria-labelledby="pm-titre">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
           <div>
-            <span class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label">Un parcours en exemple</span>
+            <span class="text-xs font-bold text-primary-container font-label">Un parcours en exemple</span>
             <h2 id="pm-titre" class="font-headline text-3xl md:text-4xl text-on-surface mt-2">Celui d'Hélène</h2>
           </div>
           <p class="text-on-surface-variant max-w-md leading-relaxed">Trente ans de métier, huit mois de travail, un nom qu'on ne prononce pas. On y entre comme spectateur, on en sort en ayant choisi.</p>
@@ -246,7 +246,7 @@
 
       <!-- 3 · Ce que vit l'apprenant -->
       <section>
-        <span class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label">Ce que vit l'apprenant</span>
+        <span class="text-xs font-bold text-primary-container font-label">Ce que vit l'apprenant</span>
         <div class="pv-temps">
           <div><p class="pv-temps-mot">Voir</p><p>Une scène de travail ordinaire, jouée réplique par réplique. Rien n'est expliqué : on regarde.</p></div>
           <div><p class="pv-temps-mot">Questionner</p><p>Trier les faits des interprétations, prendre la place du personnage, choisir. Chaque choix a un prix.</p></div>
@@ -318,7 +318,7 @@
 
       <!-- 5 · Mes choix d'architecte -->
       <section class="mb-16">
-        <span class="text-xs font-bold tracking-[.18em] uppercase text-primary-container font-label">Mes choix d'architecte</span>
+        <span class="text-xs font-bold text-primary-container font-label">Mes choix d'architecte</span>
         <div class="pv-choix">
           <div><h3 class="font-headline">Le récit avant le concept</h3><p>On ressent la situation avant de la nommer. Le mot arrive quand l'apprenant l'a déjà vécu.</p></div>
           <div><h3 class="font-headline">Des personnages vrais</h3><p>Des visages, des âges, des métiers crédibles. L'identification fait tomber le « ça n'existe pas chez nous ».</p></div>
